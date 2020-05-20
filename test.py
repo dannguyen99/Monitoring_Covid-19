@@ -28,7 +28,7 @@ def collect_data():
     get_data_ecdc()
 
 
-schedule.every().day.at("17:02").do(collect_data)
+schedule.every().day.at("01:00").do(collect_data)
 while True:
     schedule.run_pending()
     time.sleep(60)  # wait one minute
