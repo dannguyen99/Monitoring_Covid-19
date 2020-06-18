@@ -10,7 +10,6 @@ from bs4 import BeautifulSoup
 logging.basicConfig(filename='app.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 
-# get data from John Hopkins University ( USA )
 def get_data_jhu():
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
     try:
@@ -60,7 +59,9 @@ def collect_data():
 
 
 # everyday do at 15 : 00 PM
-schedule.every().day.at("15:00").do(collect_data)
-while True:
-    schedule.run_pending()
-    time.sleep(60)  # wait one minute
+#schedule.every().day.at("15:00").do(collect_data)
+#while True:
+#   schedule.run_pending()
+#    time.sleep(60)  # wait one minute
+
+collect_data()
