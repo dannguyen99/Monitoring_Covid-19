@@ -1,30 +1,84 @@
 <html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {
-        'packages':['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-      });
-      google.charts.setOnLoadCallback(drawRegionsMap);
 
-      function drawRegionsMap() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Country')
-        data.addColumn('number', 'Confirmed')
-        data.addRows({{ table|safe}})
+<head>
 
-        var options = {};
 
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+  <style>
+    /* Header/Logo Title */
+    .header {
+      padding: 30px;
+      text-align: center;
+      background: #1abc9c;
+      color: white;
+      font-size: 30px;
+      margin-bottom: 60px;
+    }
+  </style>
+</head>
 
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
-  </body>
+<body style="text-align: center;">
+  <div class="header">
+    <h2>Monitoring Covid 19</h2>
+  </div>
+  <h4>Covid 19 cases by Country</h4>
+  <div id="regions_div" style="width: 50%; height: auto; margin: 0 auto;"></div>
+  
+  <div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+</body>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages': ['geochart'],
+    // Note: you will need to get a mapsApiKey for your project.
+    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+  });
+  google.charts.setOnLoadCallback(drawRegionsMap);
+
+  function drawRegionsMap() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Country');
+    data.addColumn('number', 'Confirmed');
+    data.addRows({{ table| safe}});
+
+  var options = {
+    colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
+    backgroundColor: '#81d4fa',
+    datalessRegionColor: '#f8bbd0',
+    defaultColor: '#f5f5f5',
+  };
+
+  var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+  chart.draw(data, options);
+    }
+</script>
+
+<script type="text/javascript">
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Year', 'Sales', 'Expenses'],
+      ['2004', 1000, 400],
+      ['2005', 1170, 460],
+      ['2006', 660, 1120],
+      ['2007', 1030, 540]
+    ]);
+
+    var options = {
+      title: 'Company Performance',
+      curveType: 'function',
+      legend: { position: 'bottom' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+    chart.draw(data, options);
+  }
+</script>
+
 </html>

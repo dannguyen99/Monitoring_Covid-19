@@ -3,14 +3,16 @@ import pandas as pd
 import numpy as np
 from django.http import HttpResponse
 from django.shortcuts import render
-from.models import Table
+from.models import Table, JhuData
 
 # Create your views here.
 
 
 def index(request):
-    csv_file = pd.read_csv(Table.objects.first().csv_file)
-    data_arr = csv_file.to_numpy()[:, [4, 8]].tolist()
+    csv_file = pd.read_csv(JhuData.objects.first().csv_file)
+    country = csv_file.groupby(['Country_Region']).sum().reset_index()
+    data_arr = country.to_numpy()[:, [0, 5]].tolist()
+    print(data_arr)
     context = {
         "table": json.dumps(data_arr)
     }
