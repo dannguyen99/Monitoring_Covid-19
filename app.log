@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 2020-06-08 23:05:19,540 - root - WARNING - Successfully updated data from JHU on 06-07-2020
 2020-06-08 23:05:28,275 - root - WARNING - Successfully updated data from ECDC on 06-07-2020
 2020-06-08 23:05:28,737 - root - WARNING - Successfully updated data from VN on 06-07-2020
 2020-06-08 23:05:28,745 - root - WARNING - Successfully updated data from VN on 06-07-2020
+=======
+2020-06-22 23:50:39,973 - root - WARNING - Successfully updated data from JHU on 06-21-2020
+2020-06-22 23:50:49,242 - root - WARNING - Successfully updated data from ECDC on 06-21-2020
+2020-06-22 23:50:50,649 - root - WARNING - Successfully updated data from VN on 06-21-2020
+2020-06-22 23:50:50,658 - root - WARNING - Successfully updated data from VN on 06-21-2020
+>>>>>>> 936a19137f468d35d1a9db63d92042b644f41f6b
