@@ -1,31 +1,32 @@
-<html>
+{% extends "web/base.html" %}
 
-<head>
-
-
-  <style>
-    /* Header/Logo Title */
-    .header {
-      padding: 30px;
-      text-align: center;
-      background: #1abc9c;
-      color: white;
-      font-size: 30px;
-      margin-bottom: 60px;
-    }
-  </style>
+{% block head%}
+<style>
+  /* Header/Logo Title */
+  .header {
+    padding: 30px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 60px;
+  }
+</style>
 </head>
+{% endblock %}
 
-<body style="text-align: center;">
-  <div class="header">
-    <h2>Monitoring Covid 19</h2>
-  </div>
-  <h4>Covid 19 cases by Country</h4>
-  <div id="regions_div" style="width: 50%; height: auto; margin: 0 auto;"></div>
-  
-  <div id="curve_chart" style="width: 900px; height: 500px"></div>
+{% block body %}
+<div class="header">
+  <h2>Monitoring Covid 19</h2>
+</div>
+<h4>Covid 19 cases by Country</h4>
+<div id="regions_div" style="width: 50%; height: auto; margin: 0 auto;"></div>
 
-</body>
+<div id="curve_chart" style="width: 900px; height: 500px"></div>
+
+
+
+
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
@@ -80,5 +81,4 @@
     chart.draw(data, options);
   }
 </script>
-
-</html>
+{% endblock %}
