@@ -1,0 +1,350 @@
+Patient number,Age,Gender,Location,Status,Nationality
+BN349,12,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN348,39,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN347,6,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN346,6,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN345,39,Nữ,Hà Nội,Đang điều trị,Việt Nam
+BN344,52,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN343,27,Nữ,Hà Nội,Đang điều trị,Việt Nam
+BN342,41,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN341,35,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN340,33,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN339,37,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN338,38,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN337,25,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN336,29,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN335,24,Nam,Hồ Chí Minh,Đang điều trị,Việt Nam
+BN334,29,Nam,Quảng Ninh,Khỏi,Việt Nam
+BN333,37,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN332,18,Nam,Đồng Tháp,Đang điều trị,Việt Nam
+BN331,47,Nữ,Quảng Nam,Đang điều trị,Việt Nam
+BN330,28,Nữ,Quảng Nam,Đang điều trị,Việt Nam
+BN329,22,Nam,Hồ Chí Minh,Đang điều trị,Việt Nam
+BN328,1,Nam,Hải Dương,Đang điều trị,Việt Nam
+BN327,31,Nam,Thái Bình,Khỏi,Việt Nam
+BN326,20,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN325,34,Nữ,Hải Dương,Khỏi,Việt Nam
+BN324,18,Nam,Hà Nội,Khỏi,Việt Nam
+BN323,19,Nữ,Hà Nội,Khỏi,Việt Nam
+BN322,39,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN321,44,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN320,29,Nam,Thái Bình,Khỏi,Việt Nam
+BN319,26,Nam,Thái Bình,Khỏi,Việt Nam
+BN318,41,Nữ,Thái Bình,Khỏi,Việt Nam
+BN317,29,Nam,Thái Bình,Khỏi,Việt Nam
+BN316,19,Nam,Đồng Tháp,Khỏi,Việt Nam
+BN315,39,Nam,Tây Ninh,Khỏi,Việt Nam
+BN314,62,Nữ,Hải Dương,Khỏi,Việt Nam
+BN313,28,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN312,50,Nữ,Quảng Ninh,Khỏi,Việt Nam
+BN311,26,Nam,Thái Bình,Khỏi,Việt Nam
+BN310,26,Nam,Thái Bình,Khỏi,Việt Nam
+BN309,30,Nam,Thái Bình,Khỏi,Việt Nam
+BN308,42,Nam,Thái Bình,Khỏi,Việt Nam
+BN307,30,Nam,Thái Bình,Khỏi,Việt Nam
+BN306,25,Nam,Thái Bình,Khỏi,Việt Nam
+BN305,36,Nam,Thái Bình,Khỏi,Việt Nam
+BN304,47,Nam,Thái Bình,Khỏi,Việt Nam
+BN303,48,Nam,Thái Bình,Khỏi,Việt Nam
+BN302,25,Nam,Thái Bình,Khỏi,Việt Nam
+BN301,29,Nam,Thái Bình,Khỏi,Việt Nam
+BN300,26,Nam,Thái Bình,Khỏi,Việt Nam
+BN299,35,Nam,Thái Bình,Khỏi,Việt Nam
+BN298,29,Nam,Thái Bình,Khỏi,Việt Nam
+BN297,30,Nam,Thái Bình,Khỏi,Việt Nam
+BN296,45,Nam,Thái Bình,Khỏi,Việt Nam
+BN295,26,Nam,Thái Bình,Khỏi,Việt Nam
+BN294,29,Nam,Thái Bình,Khỏi,Việt Nam
+BN293,30,Nam,Thái Bình,Khỏi,Việt Nam
+BN292,27,Nam,Thái Bình,Đang điều trị,Việt Nam
+BN291,24,Nam,Thái Bình,Khỏi,Việt Nam
+BN290,40,Nam,Thái Bình,Khỏi,Việt Nam
+BN289,25,Nam,Thái Bình,Khỏi,Việt Nam
+BN288,32,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN287,28,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN286,23,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN285,30,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN284,30,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN283,20,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN282,37,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN281,30,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN280,29,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN279,20,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN278,50,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN277,22,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN276,36,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN275,33,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN274,0,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN273,30,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN272,58,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN271,37,Nam,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN270,22,Nữ,Thái Bình,Khỏi,Việt Nam
+BN269,23,Nam,Thái Bình,Khỏi,Việt Nam
+BN268,16,Nữ,Hà Giang,Khỏi,Việt Nam
+BN267,46,Nam,Hà Nội,Khỏi,Việt Nam
+BN266,36,Nữ,Hà Nội,Khỏi,Việt Nam
+BN265,26,Nam,Hà Tĩnh,Khỏi,Việt Nam
+BN264,24,Nữ,Hà Nội,Khỏi,Việt Nam
+BN263,45,Nữ,Hà Nội,Khỏi,Việt Nam
+BN262,26,Nam,Hà Nội,Khỏi,Việt Nam
+BN261,60,Nữ,Hà Nội,Khỏi,Việt Nam
+BN260,35,Nữ,Hà Nội,Khỏi,Việt Nam
+BN259,41,Nữ,Hà Nội,Khỏi,Việt Nam
+BN258,47,Nữ,Hà Nội,Khỏi,Việt Nam
+BN257,15,Nữ,Hà Nội,Khỏi,Việt Nam
+BN256,52,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN255,29,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN254,51,Nam,Hà Nội,Khỏi,Việt Nam
+BN253,41,Nữ,Hà Nội,Khỏi,Việt Nam
+BN252,6,Nam,Tây Ninh,Khỏi,Việt Nam
+BN251,64,Nam,Hà Nam,Khỏi,Việt Nam
+BN250,50,Nữ,Hà Nội,Khỏi,Việt Nam
+BN249,55,Nam,Hà Nội,Khỏi,Việt Nam
+BN248,20,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN247,28,Nam,Đồng Nai,Khỏi,Việt Nam
+BN246,33,Nam,Hà Nội,Khỏi,Việt Nam
+BN245,21,Nữ,Hà Nội,Khỏi,Việt Nam
+BN244,44,Nữ,Hà Nội,Khỏi,Việt Nam
+BN243,47,Nam,Hà Nội,Khỏi,Việt Nam
+BN242,34,Nữ,Hà Nội,Khỏi,Việt Nam
+BN241,20,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN240,29,Nữ,Ninh Bình,Khỏi,Việt Nam
+BN239,71,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN238,17,Nữ,Hà Tĩnh,Khỏi,Việt Nam
+BN237,64,Nam,Hà Nội,Khỏi,Thụy Điển
+BN236,26,Nữ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN235,25,Nam,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN234,69,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN233,24,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN232,67,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN231,57,Nữ,Hà Nam,Khỏi,Việt Nam
+BN230,28,Nữ,Ninh Bình,Khỏi,Việt Nam
+BN229,30,Nữ,Ninh Bình,Khỏi,Việt Nam
+BN228,29,Nam,Ninh Bình,Khỏi,Việt Nam
+BN227,32,Nam,Hà Nội,Khỏi,Việt Nam
+BN226,22,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN225,35,Nam,Hà Nội,Khỏi,Việt Nam
+BN224,39,Nam,Hồ Chí Minh,Khỏi,Bra-xin
+BN223,29,Nữ,Hà Nội,Khỏi,Việt Nam
+BN222,22,Nữ,Hà Nội,Khỏi,Việt Nam
+BN221,24,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN220,20,Nam,Hà Nội,Khỏi,Việt Nam
+BN219,59,Nữ,Hưng Yên,Khỏi,Việt Nam
+BN218,43,Nữ,Hà Nội,Khỏi,Việt Nam
+BN217,25,Nữ,Hà Nội,Khỏi,Việt Nam
+BN216,48,Nữ,Hà Nội,Khỏi,Việt Nam
+BN215,31,Nam,Hà Nội,Khỏi,Việt Nam
+BN214,45,Nữ,Hà Nội,Khỏi,Việt Nam
+BN213,40,Nữ,Hà Nội,Khỏi,Việt Nam
+BN212,35,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN211,23,Nữ,Ninh Bình,Khỏi,Việt Nam
+BN210,26,Nữ,Hà Tĩnh,Khỏi,Việt Nam
+BN209,55,Nữ,Hà Nội,Khỏi,Việt Nam
+BN208,38,Nữ,Hà Nội,Khỏi,Việt Nam
+BN207,49,Nam,Hồ Chí Minh,Khỏi,Bra-xin
+BN206,48,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN205,41,Nam,Hà Nội,Khỏi,Việt Nam
+BN204,10,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN203,35,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN202,57,Nữ,Hà Nội,Khỏi,Việt Nam
+BN201,23,Nữ,Hà Nội,Khỏi,Việt Nam
+BN200,61,Nữ,Hà Nội,Khỏi,Việt Nam
+BN199,57,Nữ,Hà Nội,Khỏi,Việt Nam
+BN198,53,Nữ,Hà Nội,Khỏi,Việt Nam
+BN197,41,Nam,Hà Nội,Khỏi,Việt Nam
+BN196,34,Nữ,Hà Nội,Khỏi,Việt Nam
+BN195,41,Nữ,Hà Nội,Khỏi,Việt Nam
+BN194,42,Nữ,Hà Nội,Khỏi,Việt Nam
+BN193,23,Nữ,Hà Nội,Khỏi,Việt Nam
+BN192,21,Nữ,Hà Nội,Khỏi,Việt Nam
+BN191,36,Nữ,Hà Nội,Khỏi,Việt Nam
+BN190,49,Nữ,Hà Nội,Khỏi,Việt Nam
+BN189,46,Nữ,Hà Nội,Khỏi,Việt Nam
+BN188,44,Nữ,Hà Nam,Khỏi,Việt Nam
+BN187,30,Nam,Hà Nội,Khỏi,Hoa Kỳ
+BN186,52,Nữ,Hà Nội,Khỏi,Pháp
+BN185,38,Nam,Hà Nội,Khỏi,Việt Nam
+BN184,42,Nữ,Hà Nội,Khỏi,Việt Nam
+BN183,43,Nữ,Hà Nội,Khỏi,Việt Nam
+BN182,19,Nữ,Ninh Bình,Khỏi,Việt Nam
+BN181,33,Nam,Ninh Bình,Khỏi,Việt Nam
+BN180,27,Nữ,Ninh Bình,Khỏi,Việt Nam
+BN179,62,Nam,Thanh Hóa,Khỏi,Việt Nam
+BN178,44,Nữ,Thái Nguyên,Khỏi,Việt Nam
+BN177,49,Nữ,Hà Nội,Khỏi,Việt Nam
+BN176,38,Nữ,Hà Nội,Khỏi,Việt Nam
+BN175,57,Nam,Hà Nội,Khỏi,Việt Nam
+BN174,57,Nữ,Hà Nội,Khỏi,Việt Nam
+BN173,43,Nữ,Hà Nội,Khỏi,Việt Nam
+BN172,35,Nữ,Hà Nội,Khỏi,Việt Nam
+BN171,19,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN170,27,Nam,Ninh Bình,Khỏi,Việt Nam
+BN169,47,Nữ,Hà Nội,Khỏi,Việt Nam
+BN168,35,Nữ,Hà Nam,Khỏi,Việt Nam
+BN167,20,Nữ,Hà Nội,Khỏi,Đan Mạch
+BN166,25,Nữ,Ninh Bình,Khỏi,Việt Nam
+BN165,58,Nam,Ninh Bình,Khỏi,Việt Nam
+BN164,23,Nam,Ninh Bình,Khỏi,Việt Nam
+BN163,43,Nữ,Hà Nội,Khỏi,Việt Nam
+BN162,63,Nữ,Hà Nội,Khỏi,Việt Nam
+BN161,88,Nữ,Hà Nội,Khỏi,Việt Nam
+BN160,30,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN159,33,Nam,Hồ Chí Minh,Khỏi,Bra-xin
+BN158,45,Nam,Hồ Chí Minh,Khỏi,Bra-xin
+BN157,31,Nữ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN156,21,Nam,Bạc Liêu,Khỏi,Việt Nam
+BN155,21,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN154,23,Nữ,Cần Thơ,Khỏi,Việt Nam
+BN153,60,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN152,27,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN151,45,Nữ,Hồ Chí Minh,Khỏi,Bra-xin
+BN150,55,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN149,40,Nam,Quảng Ninh,Khỏi,Việt Nam
+BN148,58,Nam,Hà Nội,Khỏi,Pháp
+BN147,19,Nam,Hà Nội,Khỏi,Việt Nam
+BN146,17,Nữ,Hà Tĩnh,Khỏi,Việt Nam
+BN145,34,Nam,Cần Thơ,Khỏi,Việt Nam
+BN144,22,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN143,58,Nữ,Hồ Chí Minh,Khỏi,Cộng hòa Nam Phi
+BN142,26,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN141,29,Nữ,Hà Nội,Khỏi,Việt Nam
+BN140,21,Nam,Hà Nội,Khỏi,Việt Nam
+BN139,24,Nữ,Hà Nội,Khỏi,Việt Nam
+BN138,23,Nam,Hà Nội,Khỏi,Việt Nam
+BN137,36,Nam,Hà Nội,Khỏi,Việt Nam
+BN136,23,Nữ,Hà Nội,Khỏi,Việt Nam
+BN135,27,Nữ,Đà Nẵng,Khỏi,Việt Nam
+BN134,10,Nam,Thanh Hóa,Khỏi,Việt Nam
+BN133,66,Nữ,Lai Châu,Khỏi,Việt Nam
+BN132,25,Nữ,Bắc Giang,Khỏi,Việt Nam
+BN131,23,Nam,Bắc Giang,Khỏi,Việt Nam
+BN130,30,Nam,Bắc Giang,Khỏi,Việt Nam
+BN129,20,Nam,Hà Nội,Khỏi,Việt Nam
+BN128,20,Nam,Hà Nội,Khỏi,Việt Nam
+BN127,23,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN126,28,Nam,Hồ Chí Minh,Khỏi,Cộng hòa Nam Phi
+BN125,22,Nữ,Hồ Chí Minh,Khỏi,Cộng hòa Nam Phi
+BN124,52,Nam,Hồ Chí Minh,Khỏi,Bra-xin
+BN123,17,Nữ,Bến Tre,Khỏi,Việt Nam
+BN122,24,Nữ,Đà Nẵng,Khỏi,Việt Nam
+BN121,58,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN120,27,Nam,Hồ Chí Minh,Khỏi,Canada
+BN119,29,Nam,Hồ Chí Minh,Khỏi,Hoa Kỳ
+BN118,23,Nữ,Tây Ninh,Khỏi,Việt Nam
+BN117,30,Nam,Tây Ninh,Khỏi,Việt Nam
+BN116,29,Nam,Hà Nội,Khỏi,Việt Nam
+BN115,44,Nữ,Hà Nội,Khỏi,Việt Nam
+BN114,19,Nam,Hà Nội,Khỏi,Việt Nam
+BN113,18,Nữ,Hà Nội,Khỏi,Việt Nam
+BN112,30,Nữ,Hà Nội,Khỏi,Việt Nam
+BN111,25,Nữ,Hà Nội,Khỏi,Việt Nam
+BN110,19,Nam,Hà Nội,Khỏi,Việt Nam
+BN109,42,Nam,Hà Nội,Khỏi,Việt Nam
+BN108,19,Nam,Hà Nội,Khỏi,Việt Nam
+BN107,25,Nữ,Hà Nội,Khỏi,Việt Nam
+BN106,20,Nữ,Trà Vinh,Khỏi,Việt Nam
+BN105,35,Nữ,Trà Vinh,Khỏi,Việt Nam
+BN104,33,Nữ,Đồng Tháp,Khỏi,Việt Nam
+BN103,22,Nam,Đồng Tháp,Khỏi,Việt Nam
+BN102,9,Nữ,Đồng Tháp,Khỏi,Việt Nam
+BN101,26,Nữ,Đồng Tháp,Khỏi,Việt Nam
+BN100,55,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN99,29,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN98,34,Nam,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN97,34,Nam,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN96,21,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN95,20,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN94,64,Nữ,Bắc Giang,Khỏi,Việt Nam
+BN93,20,Nam,Hà Nội,Khỏi,Việt Nam
+BN92,21,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN91,43,Nam,Hồ Chí Minh,Đang điều trị,Vương quốc Anh
+BN90,21,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN89,22,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN88,25,Nữ,Hà Nội,Khỏi,Việt Nam
+BN87,34,Nữ,Hà Nội,Khỏi,Việt Nam
+BN86,54,Nữ,Hà Nội,Khỏi,Việt Nam
+BN85,20,Nam,Hà Nội,Khỏi,Việt Nam
+BN84,21,Nam,Hà Nội,Khỏi,Việt Nam
+BN83,50,Nữ,Hồ Chí Minh,Khỏi,Hoa Kỳ
+BN82,16,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN81,20,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN80,18,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN79,48,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN78,22,Nam,Hà Nội,Khỏi,Việt Nam
+BN77,25,Nữ,Bắc Ninh,Khỏi,Việt Nam
+BN76,52,Nam,Hà Nội,Khỏi,Pháp
+BN75,40,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN74,23,Nam,Hà Nội,Khỏi,Việt Nam
+BN73,11,Nam,Hải Dương,Khỏi,Việt Nam
+BN72,25,Nữ,Hà Nội,Khỏi,Pháp
+BN71,19,Nữ,Hà Nội,Khỏi,Việt Nam
+BN70,19,Nam,Hà Nội,Khỏi,Việt Nam
+BN69,30,Nam,Hà Nội,Khỏi,Đức
+BN68,41,Nam,Đà Nẵng,Khỏi,Hoa Kỳ
+BN67,36,Nam,Ninh Thuận,Khỏi,Việt Nam
+BN66,21,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN65,28,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN64,36,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN63,20,Nữ,Hà Nội,Khỏi,Việt Nam
+BN62,18,Nam,Quảng Ninh,Khỏi,Việt Nam
+BN61,42,Nam,Ninh Thuận,Khỏi,Việt Nam
+BN60,29,Nam,Hà Nội,Khỏi,Pháp
+BN59,26,Nữ,Hà Nội,Khỏi,Việt Nam
+BN58,26,Nữ,Hà Nội,Khỏi,Việt Nam
+BN57,66,Nam,Quảng Nam,Khỏi,Vương quốc Anh
+BN56,30,Nam,Hà Nội,Khỏi,Vương quốc Anh
+BN55,35,Nam,Hà Nội,Khỏi,Đức
+BN54,33,Nam,Hồ Chí Minh,Khỏi,Lát-vi-a
+BN53,53,Nam,Hồ Chí Minh,Khỏi,Cộng hòa Séc
+BN52,24,Nữ,Quảng Ninh,Khỏi,Việt Nam
+BN51,22,Nữ,Hà Nội,Khỏi,Việt Nam
+BN50,50,Nam,Hà Nội,Khỏi,Việt Nam
+BN49,71,Nam,Thừa Thiên Huế,Khỏi,Vương quốc Anh
+BN48,31,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN47,43,Nữ,Hà Nội,Khỏi,Việt Nam
+BN46,30,Nữ,Hà Nội,Khỏi,Việt Nam
+BN45,25,Nam,Hồ Chí Minh,Khỏi,Việt Nam
+BN44,13,Nam,Bình Thuận,Khỏi,Việt Nam
+BN43,47,Nữ,Bình Thuận,Khỏi,Việt Nam
+BN42,28,Nam,Bình Thuận,Khỏi,Việt Nam
+BN41,59,Nam,Bình Thuận,Khỏi,Việt Nam
+BN40,2,Nữ,Bình Thuận,Khỏi,Việt Nam
+BN39,25,Nam,Hà Nội,Khỏi,Việt Nam
+BN38,28,Nữ,Bình Thuận,Khỏi,Việt Nam
+BN37,37,Nữ,Bình Thuận,Khỏi,Việt Nam
+BN36,64,Nữ,Bình Thuận,Khỏi,Việt Nam
+BN35,29,Nữ,Đà Nẵng,Khỏi,Việt Nam
+BN34,51,Nữ,Bình Thuận,Khỏi,Việt Nam
+BN33,58,Nam,Quảng Nam,Khỏi,Vương quốc Anh
+BN32,24,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
+BN31,49,Nam,Quảng Nam,Khỏi,Vương quốc Anh
+BN30,66,Nữ,Thừa Thiên Huế,Khỏi,Vương quốc Anh
+BN29,58,Nam,Đà Nẵng,Khỏi,Vương quốc Anh
+BN28,74,Nam,Đà Nẵng,Khỏi,Vương quốc Anh
+BN27,67,Nam,Lào Cai,Khỏi,Vương quốc Anh
+BN26,50,Nữ,Lào Cai,Khỏi,Ai-xơ-len
+BN25,70,Nữ,Quảng Ninh,Khỏi,Vương quốc Anh
+BN24,69,Nam,Quảng Ninh,Khỏi,Vương quốc Anh
+BN23,66,Nam,Quảng Ninh,Khỏi,Vương quốc Anh
+BN22,60,Nam,Quảng Ninh,Khỏi,Vương quốc Anh
+BN21,61,Nam,Hà Nội,Khỏi,Việt Nam
+BN20,28,Nam,Hà Nội,Khỏi,Việt Nam
+BN19,64,Nữ,Hà Nội,Khỏi,Việt Nam
+BN18,27,Nam,Ninh Bình,Khỏi,Việt Nam
+BN17,26,Nữ,Hà Nội,Khỏi,Việt Nam
+BN16,50,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN15,0,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN14,55,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN13,29,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN12,16,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN11,49,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN10,42,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN9,30,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN8,29,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN7,73,Nam,Hồ Chí Minh,Khỏi,Hoa Kỳ
+BN6,25,Nữ,Khánh Hòa,Khỏi,Việt Nam
+BN5,23,Nữ,Vĩnh Phúc,Khỏi,Việt Nam
+BN4,29,Nam,Vĩnh Phúc,Khỏi,Việt Nam
+BN3,25,Nữ,Thanh Hóa,Khỏi,Việt Nam
+BN2,28,Nam,Hồ Chí Minh,Khỏi,Trung Quốc
+BN1,66,Nam,Hồ Chí Minh,Khỏi,Trung Quốc

@@ -12,7 +12,7 @@ class Table(models.Model):
 
 
 class JhuData(models.Model):
-    date = models.DateField(default=timezone.now(), unique=True)
+    date = models.DateField()
     csv_file = models.FileField(upload_to='data/uploads/JHU')
 
     def __str__(self):
@@ -26,7 +26,7 @@ class VnData(models.Model):
     ]
     data_type = models.CharField(
         max_length=2, choices=TYPE_CHOICES, default='CITIES')
-    date = models.DateField(default=timezone.now(), unique=True)
+    date = models.DateField()
     csv_file = models.FileField(upload_to='data/uploads/VN')
 
     def __str__(self):

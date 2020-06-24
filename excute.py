@@ -33,7 +33,7 @@ def get_data_vn():
     req = requests.get('https://ncov.moh.gov.vn/', verify=False)
     soup = BeautifulSoup(req.text, "lxml")
     table_ncov = soup.find_all("table", {"class": "table table-striped table-covid19"})
-    headers = ["City,Total cases,Active, Recovered,Death",
+    headers = ["City,Total cases,Active,Recovered,Death",
                "Patient number,Age,Gender,Location,Status,Nationality"]
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
     names = ["cities", "patients"]
