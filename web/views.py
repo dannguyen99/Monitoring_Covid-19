@@ -1,10 +1,10 @@
+from datetime import datetime
 import json
 import pandas as pd
 import numpy as np
 from django.http import HttpResponse
 from django.shortcuts import render
 from.models import Table, JhuData, VnData
-from datetime import datetime
 
 # Create your views here.
 
@@ -21,18 +21,36 @@ def index(request):
 
 def vietNamView(request):
     rows = []
-    for d in reversed(VnData.objects.all()):
-        if d.data_type == "PT":
-            continue
-        row = []
+    sexs = []
+    for d in VnData.objects.all().order_by('date'):
         csv_file = pd.read_csv(d.csv_file)
-        row.append(datetime.strftime(d.date, '%d/%m'))
-        row.append(int(csv_file['Total cases'].sum()))
-        row.append(int(csv_file['Death'].sum()))
-        row.append(int(csv_file['Active'].sum()))
-        row.append(int(csv_file['Recovered'].sum()))
-        rows.append(row)
+        if d.data_type == "PT":
+            sex = []
+            stats = csv_file.groupby(
+                'Gender')['Patient number'].nunique().to_numpy()
+            male = int(stats[0])
+            female = int(stats[1])
+            total = male + female
+            sex.append(datetime.strftime(d.date, '%d/%m'))
+            sex.append(male)
+            sex.append(female)
+            sex.append(total)
+            sexs.append(sex)
+        else:
+            row = []
+            row.append(datetime.strftime(d.date, '%d/%m'))
+            row.append(int(csv_file['Total cases'].sum()))
+            row.append(int(csv_file['Death'].sum()))
+            row.append(int(csv_file['Active'].sum()))
+            row.append(int(csv_file['Recovered'].sum()))
+            rows.append(row)
     context = {
-        "rows": json.dumps(rows)
+        "rows": json.dumps(rows),
+        "sexs": json.dumps(sexs)
     }
     return render(request, 'web/vn_view.html', context)
+
+
+def test(request):
+    context = {}
+    return render(request, 'web/test.html', context)
