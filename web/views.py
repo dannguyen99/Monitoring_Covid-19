@@ -46,10 +46,12 @@ def vietNamView(request):
             rows.append(row)
     ages = pd.concat([csv_file['Patient number'],
                       csv_file['Age']], axis=1).to_numpy().tolist()
+    summary = rows[-1]
     context = {
         "ages": json.dumps(ages),
         "rows": json.dumps(rows),
-        "sexs": json.dumps(sexs)
+        "sexs": json.dumps(sexs),
+        "summary": summary
     }
     return render(request, 'web/vn_view.html', context)
 
