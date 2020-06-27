@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 from datetime import datetime
->>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 import json
 import pandas as pd
 import numpy as np
@@ -13,11 +10,7 @@ from.models import Table, JhuData, VnData
 
 
 def index(request):
-<<<<<<< HEAD
-    csv_file = pd.read_csv(JhuData.objects.first().csv_file)
-=======
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
->>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
     country = csv_file.groupby(['Country_Region']).sum().reset_index()
     data_arr = country.to_numpy()[:, [0, 5]].tolist()
     context = {
@@ -25,13 +18,6 @@ def index(request):
     }
     return render(request, 'web/index.html', context)
 
-<<<<<<< HEAD
-def vietNamView(request):
-    csv_files = []
-    for d in VnData.objects.all():
-        csv_files.append(pd.read_csv(d.csv_file))
-    return render(request, 'web/vn_view.html')
-=======
 
 def vietNamView(request):
     rows = []
@@ -71,4 +57,3 @@ def vietNamView(request):
 def test(request):
     context = {}
     return render(request, 'web/test.html', context)
->>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
