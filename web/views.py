@@ -10,7 +10,7 @@ from.models import Table, JhuData, VnData
 
 
 def index(request):
-    csv_file = pd.read_csv(JhuData.objects.first().csv_file)
+    csv_file = pd.read_csv(JhuData.objects.last().csv_file)
     country = csv_file.groupby(['Country_Region']).sum().reset_index()
     data_arr = country.to_numpy()[:, [0, 5]].tolist()
     context = {
@@ -44,7 +44,10 @@ def vietNamView(request):
             row.append(int(csv_file['Active'].sum()))
             row.append(int(csv_file['Recovered'].sum()))
             rows.append(row)
+    ages = pd.concat([csv_file['Patient number'],
+                      csv_file['Age']], axis=1).to_numpy().tolist()
     context = {
+        "ages": json.dumps(ages),
         "rows": json.dumps(rows),
         "sexs": json.dumps(sexs)
     }
