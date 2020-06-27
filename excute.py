@@ -1,7 +1,10 @@
 import pandas as pd
 from datetime import datetime, timedelta
 import logging
+<<<<<<< HEAD
 import schedule
+=======
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 import time
 import requests
 import csv
@@ -33,7 +36,11 @@ def get_data_vn():
     req = requests.get('https://ncov.moh.gov.vn/', verify=False)
     soup = BeautifulSoup(req.text, "lxml")
     table_ncov = soup.find_all("table", {"class": "table table-striped table-covid19"})
+<<<<<<< HEAD
     headers = ["City,Total cases,Active, Recovered,Death",
+=======
+    headers = ["City,Total cases,Active,Recovered,Death",
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
                "Patient number,Age,Gender,Location,Status,Nationality"]
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
     names = ["cities", "patients"]

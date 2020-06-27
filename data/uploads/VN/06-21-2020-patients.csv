@@ -1,22 +1,32 @@
-<<<<<<< HEAD:data/VN/06-16-2020-patients.csv
-Patient number, Age, Gender, Location, Status, Nationality
-=======
 Patient number,Age,Gender,Location,Status,Nationality
->>>>>>> d319f865d427a1a5986da926ddfedeac91b17383:data/VN/06-16-2020-patients.csv
+BN349,12,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN348,39,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN347,6,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN346,6,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN345,39,Nữ,Hà Nội,Đang điều trị,Việt Nam
+BN344,52,Nam,Hà Nội,Đang điều trị,Việt Nam
+BN343,27,Nữ,Hà Nội,Đang điều trị,Việt Nam
+BN342,41,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN341,35,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN340,33,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN339,37,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN338,38,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN337,25,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN336,29,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
 BN335,24,Nam,Hồ Chí Minh,Đang điều trị,Việt Nam
 BN334,29,Nam,Quảng Ninh,Khỏi,Việt Nam
-BN333,37,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN333,37,Nam,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
 BN332,18,Nam,Đồng Tháp,Đang điều trị,Việt Nam
 BN331,47,Nữ,Quảng Nam,Đang điều trị,Việt Nam
 BN330,28,Nữ,Quảng Nam,Đang điều trị,Việt Nam
-BN329,22,Nam,Hồ Chí Minh,Đang điều trị,Việt Nam
+BN329,22,Nam,Hồ Chí Minh,Khỏi,Việt Nam
 BN328,1,Nam,Hải Dương,Đang điều trị,Việt Nam
 BN327,31,Nam,Thái Bình,Khỏi,Việt Nam
 BN326,20,Nữ,Hồ Chí Minh,Khỏi,Việt Nam
 BN325,34,Nữ,Hải Dương,Khỏi,Việt Nam
 BN324,18,Nam,Hà Nội,Khỏi,Việt Nam
 BN323,19,Nữ,Hà Nội,Khỏi,Việt Nam
-BN322,39,Nam,Hồ Chí Minh,Đang điều trị,Việt Nam
+BN322,39,Nam,Hồ Chí Minh,Khỏi,Việt Nam
 BN321,44,Nam,Hồ Chí Minh,Khỏi,Việt Nam
 BN320,29,Nam,Thái Bình,Khỏi,Việt Nam
 BN319,26,Nam,Thái Bình,Khỏi,Việt Nam

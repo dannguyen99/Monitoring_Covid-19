@@ -1,6 +1,10 @@
 {% extends "web/base.html" %}
 
+<<<<<<< HEAD
 {% block head%}
+=======
+{% block head %}
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 <style>
   /* Header/Logo Title */
   .header {
@@ -16,18 +20,30 @@
 {% endblock %}
 
 {% block body %}
+<<<<<<< HEAD
 <div id="regions_div" style="width: 50%; height: auto; margin: 0 auto;"></div>
 
 <div id="curve_chart" style="width: 900px; height: 500px"></div>
 
 <div id="sex-age_chart" style="width: 900px; height: 500px"> </div>
+=======
+<div class="header">
+  <h2>Monitoring Covid 19</h2>
+</div>
+<h4>Covid 19 cases by Country</h4>
+<div id="regions_div" style="width: 50%; height: auto; margin: 0 auto;"></div>
+
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 
 
 
 
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<<<<<<< HEAD
 <!-- map chart -->
+=======
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 <script type="text/javascript">
   google.charts.load('current', {
     'packages': ['geochart'],
@@ -56,6 +72,7 @@
     }
 </script>
 
+<<<<<<< HEAD
 <script type="text/javascript">
   google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(drawChart);
@@ -106,4 +123,7 @@
     chart.draw(data, google.charts.Bar.convertOptions(options));
   }
 </script>
+=======
+
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 {% endblock %}

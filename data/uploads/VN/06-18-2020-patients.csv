@@ -1,8 +1,11 @@
-<<<<<<< HEAD:data/VN/06-16-2020-patients.csv
-Patient number, Age, Gender, Location, Status, Nationality
-=======
 Patient number,Age,Gender,Location,Status,Nationality
->>>>>>> d319f865d427a1a5986da926ddfedeac91b17383:data/VN/06-16-2020-patients.csv
+BN342,41,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN341,35,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN340,33,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN339,37,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN338,38,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN337,25,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN336,29,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
 BN335,24,Nam,Hồ Chí Minh,Đang điều trị,Việt Nam
 BN334,29,Nam,Quảng Ninh,Khỏi,Việt Nam
 BN333,37,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam

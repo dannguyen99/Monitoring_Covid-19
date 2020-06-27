@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 City,Total cases,Active, Recovered,Death
+=======
+City,Total cases,Active,Recovered,Death
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 Hà Nội,121,7,114,0
 Hồ Chí Minh,61,2,59,0
 Thái Bình,30,1,29,0

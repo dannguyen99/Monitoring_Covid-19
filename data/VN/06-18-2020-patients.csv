@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Patient number, Age, Gender, Location, Status, Nationality
+=======
+Patient number,Age,Gender,Location,Status,Nationality
+>>>>>>> d319f865d427a1a5986da926ddfedeac91b17383
 BN342,41,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
 BN341,35,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
 BN340,33,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
