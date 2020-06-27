@@ -1,12 +1,142 @@
 <html>
-
-<head>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <title>COVID-19</title>
     {% block head %}{% endblock %}
-</head>
+  </head>
 
-<body>
-    {% block body %}
-    {% endblock %}
-</body>
+  <body>
+    <div class="container">
+      <!-- title of the page -->
+      <header>
+        <div class="title bg-info">
+          <h1 id="mainContent_Title">COVID-19 Outbreak In The World</h1>
+          <h5 id="mainContent_SubTitle">Last updated at bla blo ble</h5>
+        </div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              href="{% url 'vietnam' %}"
+              aria-selected="true"
+              >Việt Nam</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              data-toggle="tab"
+              href="europe_view.html"
+              aria-selected="false"
+              >Europe</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" aria-selected="false">America</a>
+          </li>
+        </ul>
+      </header>
+      <!-- main area whereares charts, numbers,... -->
+      <div class="main-area">
+        <!-- summary of cases -->
+        <div class="summary-cases">
+          <h3 class="text-center">Summary of Cases in Vietnam</h3>
+          <div clss="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr class="table text-center">
+                  <th scope="col">Total Cases</th>
+                  <th scope="col">Active</th>
+                  <th scope="col">Recovered</th>
+                  <th scope="col">Death</th>
+                </tr>
+                <tr class="table text-center">
+                  <th scope="col">0</th>
+                  <th scope="col">0</th>
+                  <th scope="col">0</th>
+                  <th scope="col">0</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% block body %} {% endblock %}
+      <!-- Footer -->
+      <footer class="page-footer font-small bg-info">
+        <!-- Footer Links -->
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+          <!-- Grid column -->
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">About us</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
 
+          <!-- Grid column -->
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">Help</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 mb-3">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!">Contact</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+        <hr class="rgba-white-light" style="margin: 0 15%;" />
+
+        <!-- Grid row-->
+        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+          <!-- Grid column -->
+          <div class="col-md-8 col-12 mt-5">
+            <p style="line-height: 1.7rem;">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+              quae ab illo inventore veritatis et quasi architecto beatae vitae
+              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+              aspernatur aut odit aut fugit, sed quia consequuntur.
+            </p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+        <hr
+          class="clearfix d-md-none rgba-white-light"
+          style="margin: 10% 15% 5%;"
+        />
+        <!-- Footer Links -->
+      </footer>
+      <!-- Footer -->
+    </div>
+    <!-- bootstrap -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
