@@ -5,6 +5,32 @@
 {% endblock %}
 
 {% block body %}
+<div class="main-area">
+  <!-- summary of cases -->
+  <div class="summary-cases">
+    <h3 class="text-center">Summary of Cases in Vietnam</h3>
+    <div clss="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table text-center">
+            <th scope="col">Total Cases</th>
+            <th scope="col">Active</th>
+            <th scope="col">Recovered</th>
+            <th scope="col">Death</th>
+          </tr>
+          <tr class="table text-center">
+            <th scope="col">0</th>
+            <th scope="col">0</th>
+            <th scope="col">0</th>
+            <th scope="col">0</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+
+
 <div id="curve_chart" style="width: 900px; height: 500px"></div>
 <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
 <div id="chart_div" style="width: 900px; height: 500px;"></div>
@@ -70,7 +96,7 @@
     var data = new google.visualization.DataTable()
     data.addColumn('string', 'Patient')
     data.addColumn('number', 'Age')
-    data.addRows({{ ages|safe}})
+    data.addRows({{ ages| safe}})
 
   var options = {
     title: 'Age of patients, in year',
