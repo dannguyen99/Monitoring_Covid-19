@@ -1,3 +1,5 @@
+{% load static %}
+
 <html>
   <head>
     <link
@@ -6,6 +8,7 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" type="text/css" href="{% static 'web/css/base.css' %}">
     <title>COVID-19</title>
     {% block head %}{% endblock %}
   </head>
@@ -15,7 +18,7 @@
       <!-- title of the page -->
       <header>
         <div class="title bg-info">
-          <h1 id="mainContent_Title">COVID-19 Outbreak In The World</h1>
+          <h1 id="mainContent_Title"> <a href="{% url 'index' %}"> COVID-19 Outbreak In The World</a></h1>
           <h5 id="mainContent_SubTitle">Last updated at bla blo ble</h5>
         </div>
         <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -41,31 +44,7 @@
           </li>
         </ul>
       </header>
-      <!-- main area whereares charts, numbers,... -->
-      <div class="main-area">
-        <!-- summary of cases -->
-        <div class="summary-cases">
-          <h3 class="text-center">Summary of Cases in Vietnam</h3>
-          <div clss="table-responsive">
-            <table class="table table-bordered">
-              <thead>
-                <tr class="table text-center">
-                  <th scope="col">Total Cases</th>
-                  <th scope="col">Active</th>
-                  <th scope="col">Recovered</th>
-                  <th scope="col">Death</th>
-                </tr>
-                <tr class="table text-center">
-                  <th scope="col">0</th>
-                  <th scope="col">0</th>
-                  <th scope="col">0</th>
-                  <th scope="col">0</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-        </div>
-      </div>
+      
       {% block body %} {% endblock %}
       <!-- Footer -->
       <footer class="page-footer font-small bg-info">
