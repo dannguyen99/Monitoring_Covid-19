@@ -1,17 +1,41 @@
-{% extends "web/base.html" %}
-
-{% block head %}
+{% extends "web/base.html" %} {% block head %}
 <title>Vietnam Situation</title>
-{% endblock %}
+{% endblock %} {% block body %}
 
-{% block body %}
-<div class="container mt-">
-<div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
-<div class="w-100 h-75 mt-5" id="age_chart"></div>
-<div class="w-100 h-75 mt-5 mb-5" id="gender_chart"></div>
+<div class="main-area">
+  <!-- summary of cases -->
+  <div class="summary-cases">
+    <h3 class="text-center">Summary of Cases in Vietnam</h3>
+    <div clss="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table text-center">
+            <th scope="col">Total Cases</th>
+            <th scope="col">Active</th>
+            <th scope="col">Recovered</th>
+            <th scope="col">Death</th>
+          </tr>
+          <tr class="table text-center">
+            <th scope="col">{{ summary.1 }}</th>
+            <th scope="col">{{ summary.3 }}</th>
+            <th scope="col">{{ summary.4 }}</th>
+            <th scope="col">{{ summary.2 }}</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="container">
+      <div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
+      <div class="w-100 h-75 mt-5" id="age_chart"></div>
+      <div class="w-100 h-75 mt-5 mb-5" id="gender_chart"></div>
+    </div>
+  </div>
 </div>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script
+  type="text/javascript"
+  src="https://www.gstatic.com/charts/loader.js"
+></script>
 <!-- case chart with curve -->
 <script type="text/javascript">
   google.charts.load('current', { 'packages': ['corechart'] });
