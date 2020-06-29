@@ -19,7 +19,10 @@ def get_data_jhu():
     try:
         data = pd.read_csv("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data"
                            "/csse_covid_19_daily_reports/%s.csv" % yesterday)
-        data.to_csv('data/JHU/%s.csv' % yesterday)
+        
+        filePath = 'data/JHU/%s.csv' % yesterday
+        data.to_csv(filePath)
+        insertJhuData(filePath)
         logging.warning("Successfully updated data from JHU on %s" % yesterday)
     except Exception as e:
         logging.error(e)
@@ -29,7 +32,8 @@ def get_data_jhu():
 def get_data_ecdc():
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
     data = pd.read_csv("https://opendata.ecdc.europa.eu/covid19/casedistribution/csv")
-    data.to_csv('data/ECDC/%s.csv' % yesterday)
+    filePath='data/ECDC/%s.csv' % yesterday
+    data.to_csv(filePath)
     logging.warning("Successfully updated data from ECDC on %s" % yesterday)
 
 
@@ -49,11 +53,13 @@ def get_data_vn():
             for column in columns:
                 output_row.append(column.text)
             output_rows.append(output_row)
-        with open('data/VN/' + yesterday + '-' + name + '.csv', 'w') as csvfile:
+        filePath = 'data/VN/' + yesterday + '-' + name + '.csv'
+        with open(filePath, 'w') as csvfile:
             csvfile.write(header)
             writer = csv.writer(csvfile)
             writer.writerows(output_rows)
             logging.warning("Successfully updated data from VN on %s" % yesterday)
+            insertVnData(filePath, name)
 
 
 def collect_data():
@@ -61,8 +67,28 @@ def collect_data():
     get_data_ecdc()
     get_data_vn()
 
-from web.models import JhuData, VnData
+from web.models import JhuData, VnData, EcdcData
 
-def insertVnData(file_name):
-    
-    
+def insertVnData(filePath, dataType):
+    if dataType == "cities":
+        dtype = "CT"
+    else:
+        dtype = "PT"
+    yesterday = datetime.now() - timedelta(1)
+    if len(VnData.objects.filter(date = yesterday, dataType = dtype)) == 0:
+        data = VnData(dataType=dtype, date=yesterday, csvFile = filePath)
+        data.save()
+
+def insertJhuData(filePath):
+    yesterday = datetime.now() - timedelta(1)
+    if len(JhuData.objects.filter(date = yesterday)) == 0:
+        data = JhuData(date=yesterday, csvFile=filePath)
+        data.save()
+
+    yesterday = datetime.now() - timedelta(1)
+def insertEcdcData(filePath):
+    if len(EcdcData.objects.filter(date = yesterday)) == 0:
+        data = EcdcData(date=yesterday, csvFile=filePath)
+        data.save()
+
+collect_data()
