@@ -1,13 +1,18 @@
 import pandas as pd
-from datetime import datetime, timedelta
+import os
+import django
 import logging
 import time
 import requests
 import csv
+
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 logging.basicConfig(filename='app.log', filemode='w', format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'covid19.settings'
+django.setup()
 
 def get_data_jhu():
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
@@ -56,11 +61,8 @@ def collect_data():
     get_data_ecdc()
     get_data_vn()
 
+from web.models import JhuData, VnData
 
-# everyday do at 15 : 00 PM
-#schedule.every().day.at("15:00").do(collect_data)
-#while True:
-#   schedule.run_pending()
-#    time.sleep(60)  # wait one minute
-
-collect_data()
+def insertVnData(file_name):
+    
+    

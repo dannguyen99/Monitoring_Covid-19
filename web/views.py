@@ -4,7 +4,7 @@ import pandas as pd
 import numpy as np
 from django.http import HttpResponse
 from django.shortcuts import render
-from.models import Table, JhuData, VnData
+from.models import JhuData, VnData, EcdcData
 
 # Create your views here.
 
@@ -25,6 +25,7 @@ def vietNamView(request):
     for d in VnData.objects.all().order_by('date'):
         csv_file = pd.read_csv(d.csv_file)
         if d.data_type == "PT":
+            age_csv = csv_file
             sex = []
             stats = csv_file.groupby(
                 'Gender')['Patient number'].nunique().to_numpy()
@@ -44,8 +45,8 @@ def vietNamView(request):
             row.append(int(csv_file['Active'].sum()))
             row.append(int(csv_file['Recovered'].sum()))
             rows.append(row)
-    ages = pd.concat([csv_file['Patient number'],
-                      csv_file['Age']], axis=1).to_numpy().tolist()
+    ages = pd.concat([age_csv['Patient number'],
+                      age_csv['Age']], axis=1).to_numpy().tolist()
     summary = rows[-1]
     context = {
         "ages": json.dumps(ages),
@@ -57,5 +58,10 @@ def vietNamView(request):
 
 
 def test(request):
-    context = {}
+    ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')
+    datas = EcdcData.objects.all()
+    context = {
+        'datas': datas,
+        'ecdc':ecdc
+    }
     return render(request, 'web/test.html', context)
