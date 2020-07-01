@@ -35,6 +35,7 @@ def get_data_ecdc():
     filePath='data/ECDC/%s.csv' % yesterday
     data.to_csv(filePath)
     logging.warning("Successfully updated data from ECDC on %s" % yesterday)
+    insertEcdcData(filePath)
 
 
 def get_data_vn():
