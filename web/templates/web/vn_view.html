@@ -2,6 +2,25 @@
 
 {% block head %}
 <title>Vietnam Situation</title>
+
+<style>
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    width: auto;
+  }
+
+  .fixed_header tbody {
+    display: block;
+    overflow-y: auto;
+    height: 200px;
+  }
+
+  .fixed_header thead tr {
+    display: block;
+  }
+</style>
 {% endblock %}
 
 {% block body %}
@@ -19,10 +38,10 @@
             <th scope="col">Death</th>
           </tr>
           <tr class="table text-center">
-            <th scope="col">{{ summary.1 }}</th>
-            <th scope="col">{{ summary.3 }}</th>
-            <th scope="col">{{ summary.4 }}</th>
-            <th scope="col">{{ summary.2 }}</th>
+            <td scope="col">{{ summary.1 }}</td>
+            <td scope="col">{{ summary.3 }}</td>
+            <td scope="col">{{ summary.4 }}</td>
+            <td scope="col">{{ summary.2 }}</td>
           </tr>
         </thead>
       </table>
@@ -30,6 +49,28 @@
   </div>
 </div>
 
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>City/Province</th>
+      <th>Total Cases</th>
+      <th>Active</th>
+      <th>Recovered</th>
+      <th>Death</th>
+    </tr>
+  </thead>
+  <tbody style="overflow-y: auto;height: 200px">
+    {% for city in cities %}
+    <tr>
+      <td> {{ city.0 }}</td>
+      <td> {{ city.1 }}</td>
+      <td> {{ city.2 }}</td>
+      <td> {{ city.3 }}</td>
+      <td> {{ city.4 }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
 <div id="curve_chart" style="width: 900px; height: 500px"></div>
 <div id="columnchart_material" style="width: 800px; height: 500px;"></div>

@@ -88,6 +88,7 @@ def insertJhuData(filePath):
 
     yesterday = datetime.now() - timedelta(1)
 def insertEcdcData(filePath):
+    yesterday = datetime.now() - timedelta(1)
     if len(EcdcData.objects.filter(date = yesterday)) == 0:
         data = EcdcData(date=yesterday, csvFile=filePath)
         data.save()

@@ -10,8 +10,8 @@ from.models import JhuData, VnData, EcdcData
 
 
 def index(request):
-    csvFile = pd.read_csv(JhuData.objects.last().csvFile)
-    country = csvFile.groupby(['Country_Region']).sum().reset_index().sort_values(by= 'Confirmed', ascending=False)
+    csv_file = pd.read_csv(JhuData.objects.last().csv_file)
+    country = csv_file.groupby(['Country_Region']).sum().reset_index().sort_values(by= 'Confirmed', ascending=False)
     data_arr = country.to_numpy()[:, [0, 5]].tolist()
     countryTable = country.to_numpy()[:, [0, 5, 6, 7, 8]]
     context = {
@@ -25,11 +25,11 @@ def vietNamView(request):
     rows = []
     sexs = []
     for d in VnData.objects.all().order_by('date'):
-        csvFile = pd.read_csv(d.csvFile)
+        csv_file = pd.read_csv(d.csvFile)
         if d.dataType == "PT":
-            age_csv = csvFile
+            age_csv = csv_file
             sex = []
-            stats = csvFile.groupby(
+            stats = csv_file.groupby(
                 'Gender')['Patient number'].nunique().to_numpy()
             male = int(stats[0])
             female = int(stats[1])
@@ -40,21 +40,24 @@ def vietNamView(request):
             sex.append(total)
             sexs.append(sex)
         else:
+            cities_csv = csv_file
             row = []
             row.append(datetime.strftime(d.date, '%d/%m'))
-            row.append(int(csvFile['Total cases'].sum()))
-            row.append(int(csvFile['Death'].sum()))
-            row.append(int(csvFile['Active'].sum()))
-            row.append(int(csvFile['Recovered'].sum()))
+            row.append(int(csv_file['Total cases'].sum()))
+            row.append(int(csv_file['Death'].sum()))
+            row.append(int(csv_file['Active'].sum()))
+            row.append(int(csv_file['Recovered'].sum()))
             rows.append(row)
     ages = pd.concat([age_csv['Patient number'],
                       age_csv['Age']], axis=1).to_numpy().tolist()
     summary = rows[-1]
+    cities = cities_csv.to_numpy()
     context = {
         "ages": json.dumps(ages),
         "rows": json.dumps(rows),
         "sexs": json.dumps(sexs),
-        "summary": summary
+        "summary": summary,
+        "cities": cities
     }
     return render(request, 'web/vn_view.html', context)
 
