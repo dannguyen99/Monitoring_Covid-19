@@ -41,7 +41,7 @@ def addEcdcData():
         date = datetime.strptime(fileName[:10], '%m-%d-%Y')
         if len(EcdcData.objects.filter(date = date)) == 0:
             filePath = 'data/ECDC/%s' % fileName
-            data = JhuData(date=date, csvFile = filePath)
+            data = EcdcData(date=date, csvFile = filePath)
             data.save()
 
 def addData():

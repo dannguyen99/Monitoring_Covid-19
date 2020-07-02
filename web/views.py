@@ -11,9 +11,11 @@ from.models import JhuData, VnData, EcdcData
 
 def index(request):
     csvFile = pd.read_csv(JhuData.objects.last().csvFile)
-    country = csvFile.groupby(['Country_Region']).sum().reset_index()
+    country = csvFile.groupby(['Country_Region']).sum().reset_index().sort_values(by= 'Confirmed', ascending=False)
     data_arr = country.to_numpy()[:, [0, 5]].tolist()
+    countryTable = country.to_numpy()[:, [0, 5, 6, 7, 8]]
     context = {
+        "countries": countryTable,
         "table": json.dumps(data_arr)
     }
     return render(request, 'web/index.html', context)
