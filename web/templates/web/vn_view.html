@@ -2,113 +2,113 @@
 <title>Vietnam Situation</title>
 {% endblock %} {% block body %}
 
-<div class="main-area">
-  <!-- summary of cases -->
-  <div class="summary-cases">
-    <h3 class="text-center">Summary of Cases in Vietnam</h3>
-    <div clss="table-responsive">
-      <table class="table table-bordered">
-        <thead>
-          <tr class="table text-center">
-            <th scope="col">Total Cases</th>
-            <th scope="col">Active</th>
-            <th scope="col">Recovered</th>
-            <th scope="col">Death</th>
-          </tr>
-          <tr class="table text-center">
-            <th scope="col">{{ summary.1 }}</th>
-            <th scope="col">{{ summary.3 }}</th>
-            <th scope="col">{{ summary.4 }}</th>
-            <th scope="col">{{ summary.2 }}</th>
-          </tr>
-        </thead>
-      </table>
-    </div>
-    <div class="container">
-      <div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
-      <div class="w-100 h-75 mt-5" id="age_chart"></div>
-      <div class="w-100 h-75 mt-5 mb-5" id="gender_chart"></div>
-    </div>
+<!-- summary of cases -->
+<div class="summary-cases">
+  <h3 class="text-center">Summary of Cases in Vietnam</h3>
+  <div clss="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="table text-center">
+          <th scope="col">Total Cases</th>
+          <th scope="col">Active</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Death</th>
+        </tr>
+        <tr class="table text-center">
+          <th scope="col">{{ summary.1 }}</th>
+          <th scope="col">{{ summary.3 }}</th>
+          <th scope="col">{{ summary.4 }}</th>
+          <th scope="col">{{ summary.2 }}</th>
+        </tr>
+      </thead>
+    </table>
   </div>
 </div>
 
-<script
-  type="text/javascript"
-  src="https://www.gstatic.com/charts/loader.js"
-></script>
-<!-- case chart with curve -->
-<script type="text/javascript">
-  google.charts.load('current', { 'packages': ['corechart'] });
-  google.charts.setOnLoadCallback(drawChart);
+  <div class="container">
+    <div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
+    <div class="w-100 h-75 mt-5" id="age_chart"></div>
+    <div class="w-100 h-75 mt-5 mb-5" id="gender_chart"></div>
+  </div>
 
-  function drawChart() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Date')
-    data.addColumn('number', 'Confirmed');
-    data.addColumn('number', 'Death');
-    data.addColumn('number', 'Active');
-    data.addColumn('number', 'Recovered');
+  <script
+    type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"
+  ></script>
+  <!-- case chart with curve -->
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
 
-    data.addRows({{ rows| safe}});
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Date')
+      data.addColumn('number', 'Confirmed');
+      data.addColumn('number', 'Death');
+      data.addColumn('number', 'Active');
+      data.addColumn('number', 'Recovered');
 
-  var options = {
-    title: 'Vietnam Covid 19 Cases',
-    curveType: 'function',
-    backgroundColor: '#fbf9f9',
-    legend: { position: 'right' }
-  };
+      data.addRows({{ rows| safe}});
 
-  var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
-
-  chart.draw(data, options);
-    };
-</script>
-
-<!-- case by age -->
-<script type="text/javascript">
-  google.charts.load("current", { packages: ["corechart"] });
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = new google.visualization.DataTable()
-    data.addColumn('string', 'Patient')
-    data.addColumn('number', 'Age')
-    data.addRows({{ ages|safe}})
-
-  var options = {
-    title: 'Vietnam COVID-19 cases by ages',
-    backgroundColor: '#fbf9f9',
-    legend: { position: 'right' },
-  };
-
-  var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
-  chart.draw(data, options);
-  }
-</script>
-<!-- case by gender -->
-<script type="text/javascript">
-  google.charts.load('current', { 'packages': ['bar'] });
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Date')
-    data.addColumn('number', 'Male');
-    data.addColumn('number', 'Female');
-    data.addColumn('number', 'Total');
-
-    data.addRows({{ sexs| safe }});
-
-
-  var options = {
-    chart: {
-      title: 'Cases by Gender',
+    var options = {
+      title: 'Vietnam Covid 19 Cases',
+      curveType: 'function',
       backgroundColor: '#fbf9f9',
+      legend: { position: 'right' }
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
+
+    chart.draw(data, options);
+      };
+  </script>
+
+  <!-- case by age -->
+  <script type="text/javascript">
+    google.charts.load("current", { packages: ["corechart"] });
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = new google.visualization.DataTable()
+      data.addColumn('string', 'Patient')
+      data.addColumn('number', 'Age')
+      data.addRows({{ ages|safe}})
+
+    var options = {
+      title: 'Vietnam COVID-19 cases by ages',
+      backgroundColor: '#fbf9f9',
+      legend: { position: 'right' },
+    };
+
+    var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
+    chart.draw(data, options);
     }
-  };
+  </script>
+  <!-- case by gender -->
+  <script type="text/javascript">
+    google.charts.load('current', { 'packages': ['bar'] });
+    google.charts.setOnLoadCallback(drawChart);
 
-  var chart = new google.charts.Bar(document.getElementById('gender_chart'));
+    function drawChart() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Date')
+      data.addColumn('number', 'Male');
+      data.addColumn('number', 'Female');
+      data.addColumn('number', 'Total');
 
-  chart.draw(data, google.charts.Bar.convertOptions(options));
-  }
-</script>
-{% endblock %}
+      data.addRows({{ sexs| safe }});
+
+
+    var options = {
+      chart: {
+        title: 'Cases by Gender',
+        backgroundColor: '#fbf9f9',
+      }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('gender_chart'));
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+  </script>
+  {% endblock %}
+

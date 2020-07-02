@@ -56,6 +56,8 @@ def vietNamView(request):
     }
     return render(request, 'web/vn_view.html', context)
 
+def euView(request):
+    return render(request, 'web/eu_view.html')
 
 def test(request):
     ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')
