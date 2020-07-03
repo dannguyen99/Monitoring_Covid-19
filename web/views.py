@@ -11,9 +11,11 @@ from.models import JhuData, VnData, EcdcData
 
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
-    country = csv_file.groupby(['Country_Region']).sum().reset_index()
+    country = csv_file.groupby(['Country_Region']).sum().reset_index().sort_values(by= 'Confirmed', ascending=False)
     data_arr = country.to_numpy()[:, [0, 5]].tolist()
+    countryTable = country.to_numpy()[:, [0, 5, 6, 7, 8]]
     context = {
+        "countries": countryTable,
         "table": json.dumps(data_arr)
     }
     return render(request, 'web/index.html', context)
@@ -23,8 +25,8 @@ def vietNamView(request):
     rows = []
     sexs = []
     for d in VnData.objects.all().order_by('date'):
-        csv_file = pd.read_csv(d.csv_file)
-        if d.data_type == "PT":
+        csv_file = pd.read_csv(d.csvFile)
+        if d.dataType == "PT":
             age_csv = csv_file
             sex = []
             stats = csv_file.groupby(
@@ -38,6 +40,7 @@ def vietNamView(request):
             sex.append(total)
             sexs.append(sex)
         else:
+            cities_csv = csv_file
             row = []
             row.append(datetime.strftime(d.date, '%d/%m'))
             row.append(int(csv_file['Total cases'].sum()))
@@ -48,11 +51,13 @@ def vietNamView(request):
     ages = pd.concat([age_csv['Patient number'],
                       age_csv['Age']], axis=1).to_numpy().tolist()
     summary = rows[-1]
+    cities = cities_csv.to_numpy()
     context = {
         "ages": json.dumps(ages),
         "rows": json.dumps(rows),
         "sexs": json.dumps(sexs),
-        "summary": summary
+        "summary": summary,
+        "cities": cities
     }
     return render(request, 'web/vn_view.html', context)
 
