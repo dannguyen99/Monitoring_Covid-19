@@ -11,7 +11,8 @@ from.models import JhuData, VnData, EcdcData
 
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
-    country = csv_file.groupby(['Country_Region']).sum().reset_index().sort_values(by= 'Confirmed', ascending=False)
+    country = csv_file.groupby(['Country_Region']).sum(
+    ).reset_index().sort_values(by='Confirmed', ascending=False)
     data_arr = country.to_numpy()[:, [0, 5]].tolist()
     countryTable = country.to_numpy()[:, [0, 5, 6, 7, 8]]
     context = {
@@ -21,12 +22,12 @@ def index(request):
     return render(request, 'web/index.html', context)
 
 
-def vietNamView(request):
+def vietnam_view(request):
     rows = []
     sexs = []
     for d in VnData.objects.all().order_by('date'):
-        csv_file = pd.read_csv(d.csvFile)
-        if d.dataType == "PT":
+        csv_file = pd.read_csv(d.csv_file)
+        if d.data_type == "PT":
             age_csv = csv_file
             sex = []
             stats = csv_file.groupby(
@@ -62,11 +63,22 @@ def vietNamView(request):
     return render(request, 'web/vn_view.html', context)
 
 
+def us_view(request):
+    csv_file = pd.read_csv(JhuData.objects.last().csv_file)
+    country = csv_file.groupby(['Province_State']).sum(
+    ).reset_index().sort_values(by='Confirmed', ascending=False)
+    data_arr = country.to_numpy()[:, [0, 5, 6, 7, 8]].tolist()
+    context = {
+        "states": data_arr
+    }
+    return render(request, 'web/us_view.html', context)
+
+
 def test(request):
     ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')
     datas = EcdcData.objects.all()
     context = {
         'datas': datas,
-        'ecdc':ecdc
+        'ecdc': ecdc
     }
     return render(request, 'web/test.html', context)

@@ -12,11 +12,10 @@
     margin-bottom: 60px;
   }
 </style>
-</head>
 {% endblock %}
 
 {% block body %}
-<div id="regions_div" style="width: 50%; height: auto; margin: 0 auto;"></div>
+<div id="regions_div" style="width: 80%; height: auto; margin: 0 auto;"></div>
 
 <div class="main-area">
   <div class="summary-cases">
@@ -35,11 +34,11 @@
         <tbody>
           {% for country in countries %}
           <tr class="table text-center">
-            <th scope="col">{{ country.0 }}</th>
-            <th scope="col">{{ country.1 }}</th>
-            <th scope="col">{{ country.3 }}</th>
-            <th scope="col">{{ country.4 }}</th>
-            <th scope="col">{{ country.2 }}</th>
+            <td scope="col">{{ country.0 }}</td>
+            <td scope="col">{{ country.1 }}</td>
+            <td scope="col">{{ country.3 }}</td>
+            <td scope="col">{{ country.4 }}</td>
+            <td scope="col">{{ country.2 }}</td>
           </tr>
           {% endfor %}
         </tbody>
