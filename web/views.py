@@ -52,7 +52,7 @@ def vietnam_view(request):
     ages = pd.concat([age_csv['Patient number'],
                       age_csv['Age']], axis=1).to_numpy().tolist()
     summary = rows[-1]
-    cities = cities_csv.to_numpy()
+    cities = VnData.cities_geomap()
     context = {
         "ages": json.dumps(ages),
         "rows": json.dumps(rows),
@@ -79,6 +79,7 @@ def us_view(request):
 def test(request):
     ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')
     datas = EcdcData.objects.all()
+    cities_csv = VnData.cities_geomap()
     context = {
         'datas': datas,
         'ecdc': ecdc

@@ -55,9 +55,9 @@ def get_data_vn():
                 output_row.append(column.text)
             output_rows.append(output_row)
         filePath = 'data/VN/' + yesterday + '-' + name + '.csv'
-        with open(filePath, 'w') as csvfile:
-            csvfile.write(header)
-            writer = csv.writer(csvfile)
+        with open(filePath, 'w') as csv_file:
+            csv_file.write(header)
+            writer = csv.writer(csv_file)
             writer.writerows(output_rows)
             logging.warning("Successfully updated data from VN on %s" % yesterday)
             insertVnData(filePath, name)
@@ -70,27 +70,27 @@ def collect_data():
 
 from web.models import JhuData, VnData, EcdcData
 
-def insertVnData(filePath, dataType):
-    if dataType == "cities":
+def insertVnData(filePath, data_type):
+    if data_type == "cities":
         dtype = "CT"
     else:
         dtype = "PT"
     yesterday = datetime.now() - timedelta(1)
-    if len(VnData.objects.filter(date = yesterday, dataType = dtype)) == 0:
-        data = VnData(dataType=dtype, date=yesterday, csvFile = filePath)
+    if len(VnData.objects.filter(date = yesterday, data_type = dtype)) == 0:
+        data = VnData(data_type=dtype, date=yesterday, csv_file = filePath)
         data.save()
 
 def insertJhuData(filePath):
     yesterday = datetime.now() - timedelta(1)
     if len(JhuData.objects.filter(date = yesterday)) == 0:
-        data = JhuData(date=yesterday, csvFile=filePath)
+        data = JhuData(date=yesterday, csv_file=filePath)
         data.save()
 
     yesterday = datetime.now() - timedelta(1)
 def insertEcdcData(filePath):
     yesterday = datetime.now() - timedelta(1)
     if len(EcdcData.objects.filter(date = yesterday)) == 0:
-        data = EcdcData(date=yesterday, csvFile=filePath)
+        data = EcdcData(date=yesterday, csv_file=filePath)
         data.save()
 
 collect_data()

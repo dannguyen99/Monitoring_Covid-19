@@ -1,5 +1,6 @@
 import os
 
+import pandas as pd
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
@@ -26,6 +27,17 @@ class VnData(models.Model):
     def __str__(self):
         return "%s %s" % (self.data_type, str(self.date))
 
+    def cities_geomap():
+        cities = {"Hà Nội": "VN-HN", "Hồ Chí Minh": "VN-SG", 
+        "Bà Rịa - Vũng Tàu": "Bà Rịa-Vũng Tàu", "Đà Nẵng": "VN-DN", 
+        "Thừa Thiên Huế": "Thừa Thiên-Huế", "Hải Phòng": "Hải Phòng City"}
+        cities_csv = VnData.objects.filter(data_type = "CT").order_by('date').last().csv_file
+        cities_arr = pd.read_csv(cities_csv).to_numpy()
+        for c in cities_arr:
+            city = c[0]
+            if city in cities.keys():
+                c[0] = cities[city]
+        return cities_arr
 
 class EcdcData(models.Model):
     date = models.DateField()
