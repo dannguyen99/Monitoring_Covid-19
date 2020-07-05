@@ -62,6 +62,8 @@ def vietnam_view(request):
     }
     return render(request, 'web/vn_view.html', context)
 
+def euView(request):
+    return render(request, 'web/eu_view.html')
 
 def us_view(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)

@@ -1,26 +1,15 @@
 {% extends "web/base.html" %}
 
-{% block head %}
-<style>
-  /* Header/Logo Title */
-  .header {
-    padding: 30px;
-    text-align: center;
-    background: #1abc9c;
-    color: white;
-    font-size: 30px;
-    margin-bottom: 60px;
-  }
-</style>
+{% block head%}
 {% endblock %}
 
 {% block body %}
-<div id="regions_div" style="width: 80%; height: auto; margin: 0 auto;"></div>
+<div class="w-100 h-75 mt-5" id="regions_div" style="width: 80%; height: auto; margin: 0 auto;"></div>
 
 <div class="main-area">
-  <div class="summary-cases">
+  <div class="summary-cases mt-5">
     <h3 class="text-center">Summary of Cases Worldwide</h3>
-    <div clss="table-responsive">
+    <div class="tableFixHead table-responsive">
       <table class="table table-bordered">
         <thead>
           <tr class="table text-center">
@@ -31,7 +20,7 @@
             <th scope="col">Death</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style="overflow-y: auto;height: 200px;">
           {% for country in countries %}
           <tr class="table text-center">
             <td scope="col">{{ country.0 }}</td>

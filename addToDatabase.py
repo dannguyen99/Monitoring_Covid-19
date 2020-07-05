@@ -15,13 +15,13 @@ def addVnData():
     fileNames = listdir(dirPath)
     for fileName in fileNames:
         if 'cities' in fileName:
-            dataType = "CT"
+            data_type = "CT"
         else:
-            dataType = "PT"
+            data_type = "PT"
         date = datetime.strptime(fileName[:10], '%m-%d-%Y')
-        if len(VnData.objects.filter(date = date, dataType = dataType)) == 0:
+        if len(VnData.objects.filter(date = date, data_type = data_type)) == 0:
             filePath = 'data/VN/%s' % fileName
-            data = VnData(dataType=dataType, date=date, csvFile = filePath)
+            data = VnData(data_type=data_type, date=date, csv_file = filePath)
             data.save()
 
 def addJhuData():
@@ -31,7 +31,7 @@ def addJhuData():
         date = datetime.strptime(fileName[:10], '%m-%d-%Y')
         if len(JhuData.objects.filter(date = date)) == 0:
             filePath = 'data/JHU/%s' % fileName
-            data = JhuData(date=date, csvFile = filePath)
+            data = JhuData(date=date, csv_file = filePath)
             data.save()
 
 def addEcdcData():
@@ -41,7 +41,7 @@ def addEcdcData():
         date = datetime.strptime(fileName[:10], '%m-%d-%Y')
         if len(EcdcData.objects.filter(date = date)) == 0:
             filePath = 'data/ECDC/%s' % fileName
-            data = EcdcData(date=date, csvFile = filePath)
+            data = EcdcData(date=date, csv_file = filePath)
             data.save()
 
 def addData():
