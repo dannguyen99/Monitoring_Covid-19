@@ -1,8 +1,64 @@
-{% extends "web/base.html" %}
+{% extends "web/base.html" %} {% block head %}
+<title>Europe Situation</title>
+{% endblock %} {% block body %}
 
-{% block head %}
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
+<body>
+  <!-- summary of cases -->
+  <div class="summary-cases">
+    <h3 class="text-center">Summary of Cases in US</h3>
+    <div clss="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr class="table text-center">
+            <th scope="col">Total Cases</th>
+            <th scope="col">Active</th>
+            <th scope="col">Recovered</th>
+            <th scope="col">Death</th>
+          </tr>
+          <tr class="table text-center">
+            <th scope="col">0</th>
+            <th scope="col">0</th>
+            <th scope="col">0</th>
+            <th scope="col">0</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+  <div
+    class="w-100 h-75 mt-5"
+    id="geochart-colors"
+    style="width: 80%; height: auto;"
+  ></div>
+  <div class="tableFixHead mt-5">
+    <table>
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Total Cases</th>
+          <th>Active</th>
+          <th>Recovered</th>
+          <th>Death</th>
+        </tr>
+      </thead>
+      <tbody style="overflow-y: auto; height: 200px;">
+        {% for state in states %}
+        <tr>
+          <td>{{ state.0 }}</td>
+          <td>{{ state.1 }}</td>
+          <td>{{ state.3 }}</td>
+          <td>{{ state.4 }}</td>
+          <td>{{ state.2 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <script
+    type="text/javascript"
+    src="https://www.gstatic.com/charts/loader.js"
+  ></script>
+  <script type="text/javascript">
     google.charts.load('current', {
         'packages': ['geochart'],
         // Note: you will need to get a mapsApiKey for your project.
@@ -31,63 +87,6 @@
     var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
     chart.draw(data, options);
     };
-</script>
-
-<style>
-    .tableFixHead {
-        overflow-y: auto;
-        height: 300px;
-    }
-
-    .tableFixHead thead th {
-        position: sticky;
-        top: 0;
-    }
-
-    /* Just common table stuff. Really. */
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    th,
-    td {
-        padding: 8px 16px;
-    }
-
-    th {
-        background: #eee;
-    }
-</style>
-{% endblock %}
-
-{% block body %}
-
-<body>
-    <div id="geochart-colors" style="width: 80%; height: auto;"></div>
-    <div class="tableFixHead">
-        <table>
-            <thead>
-                <tr>
-                    <th>State</th>
-                    <th>Total Cases</th>
-                    <th>Active</th>
-                    <th>Recovered</th>
-                    <th>Death</th>
-                </tr>
-            </thead>
-            <tbody style="overflow-y: auto;height: 200px">
-                {% for state in states %}
-                <tr>
-                    <td> {{ state.0 }}</td>
-                    <td> {{ state.1 }}</td>
-                    <td> {{ state.3 }}</td>
-                    <td> {{ state.4 }}</td>
-                    <td> {{ state.2 }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+  </script>
 </body>
 {% endblock %}

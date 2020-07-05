@@ -1,34 +1,8 @@
 {% extends "web/base.html" %} {% block head %}
 <title>Vietnam Situation</title>
 
-<style>
-  .tableFixHead {
-    overflow-y: auto;
-    height: 300px;
-  }
-
-  .tableFixHead thead th {
-    position: sticky;
-    top: 0;
-  }
-
-  /* Just common table stuff. Really. */
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  th,
-  td {
-    padding: 8px 16px;
-  }
-
-  th {
-    background: #eee;
-  }
-</style>
 {% endblock %} {% block body %}
-<div class="main-area">
+<div class="main-area mt-5">
   <!-- summary of cases -->
   <div class="summary-cases">
     <h3 class="text-center">Summary of Cases in Vietnam</h3>
@@ -51,36 +25,34 @@
       </table>
     </div>
   </div>
-</div>
 
-<div id="geochart-colors" style="width: 80%; height: auto;"></div>
+  <div class="w-100 h-75 mt-5" id="geochart-colors"></div>
 
-<div class="tableFixHead">
-  <table>
-    <thead>
-      <tr>
-        <th>City/Province</th>
-        <th>Total Cases</th>
-        <th>Active</th>
-        <th>Recovered</th>
-        <th>Death</th>
-      </tr>
-    </thead>
-    <tbody style="overflow-y: auto; height: 200px;">
-      {% for city in cities %}
-      <tr>
-        <td>{{ city.0 }}</td>
-        <td>{{ city.1 }}</td>
-        <td>{{ city.2 }}</td>
-        <td>{{ city.3 }}</td>
-        <td>{{ city.4 }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
+  <div class="tableFixHead mt-5">
+    <table>
+      <thead>
+        <tr>
+          <th>City/Province</th>
+          <th>Total Cases</th>
+          <th>Active</th>
+          <th>Recovered</th>
+          <th>Death</th>
+        </tr>
+      </thead>
+      <tbody style="overflow-y: auto; height: 200px;">
+        {% for city in cities %}
+        <tr>
+          <td>{{ city.0 }}</td>
+          <td>{{ city.1 }}</td>
+          <td>{{ city.2 }}</td>
+          <td>{{ city.3 }}</td>
+          <td>{{ city.4 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 
-<div class="container">
   <div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
   <div class="w-100 h-75 mt-5" id="age_chart"></div>
   <div class="w-100 h-75 mt-5 mb-5" id="gender_chart"></div>
