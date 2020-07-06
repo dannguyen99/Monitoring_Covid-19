@@ -23,7 +23,7 @@
         <tbody style="overflow-y: auto;height: 200px;">
           {% for country in countries %}
           <tr class="table text-center">
-            <td scope="col">{{ country.0 }}</td>
+            <td scope="col"><a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a></td>
             <td scope="col">{{ country.1 }}</td>
             <td scope="col">{{ country.3 }}</td>
             <td scope="col">{{ country.4 }}</td>
@@ -66,7 +66,7 @@
   var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
   chart.draw(data, options);
-    }
+    };
 </script>
 
 {% endblock %}

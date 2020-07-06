@@ -30,7 +30,8 @@ class VnData(models.Model):
     def cities_geomap():
         cities = {"Hà Nội": "VN-HN", "Hồ Chí Minh": "VN-SG", 
         "Bà Rịa - Vũng Tàu": "Bà Rịa-Vũng Tàu", "Đà Nẵng": "VN-DN", 
-        "Thừa Thiên Huế": "Thừa Thiên-Huế", "Hải Phòng": "Hải Phòng City"}
+        "Thừa Thiên Huế": "Thừa Thiên-Huế", "Hải Phòng": "Hải Phòng City",
+        "Bạc Liêu": "VN-55", "Cần Thơ": "VN-`CT"}
         cities_csv = VnData.objects.filter(data_type = "CT").order_by('date').last().csv_file
         cities_arr = pd.read_csv(cities_csv).to_numpy()
         for c in cities_arr:
@@ -38,10 +39,24 @@ class VnData(models.Model):
             if city in cities.keys():
                 c[0] = cities[city]
         return cities_arr
+    
+    def cities_summary():
+        cities_csv = VnData.objects.filter(data_type = "CT").order_by('date').last().csv_file
+        cities_arr = pd.read_csv(cities_csv).to_numpy()
+        return cities_arr
 
 class EcdcData(models.Model):
     date = models.DateField()
     csv_file = models.FilePathField(path='data/ECDC')
+
+    def get_country(country_name):
+        csv_file = EcdcData.objects.order_by('date').last().csv_file
+        df = pd.read_csv(csv_file)
+        country_df = df.loc[df['countriesAndTerritories'] == country_name]
+        if country_df.any()['year'] == False:
+            return
+        else:
+            return country_df.to_numpy()
 
     def __str__(self):
         return self.csv_file

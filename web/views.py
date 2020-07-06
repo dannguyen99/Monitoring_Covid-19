@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 import pandas as pd
 import numpy as np
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from.models import JhuData, VnData, EcdcData
 
@@ -52,13 +52,15 @@ def vietnam_view(request):
     ages = pd.concat([age_csv['Patient number'],
                       age_csv['Age']], axis=1).to_numpy().tolist()
     summary = rows[-1]
-    cities = VnData.cities_geomap()
+    cities_geomap = VnData.cities_geomap()
+    cities_summary = VnData.cities_summary()
     context = {
         "ages": json.dumps(ages),
         "rows": json.dumps(rows),
         "sexs": json.dumps(sexs),
         "summary": summary,
-        "cities": cities
+        "cities_summary": cities_summary,
+        "cities_geomap": cities_geomap
     }
     return render(request, 'web/vn_view.html', context)
 
@@ -74,6 +76,16 @@ def us_view(request):
         "states": data_arr
     }
     return render(request, 'web/us_view.html', context)
+
+def country_view(request, geoId):
+    country_df = EcdcData.get_country(geoId)
+    if country_df is None:
+        raise Http404("Country does not exist")
+    context = {
+        "country" : country_df,
+        "name" : geoId
+    }
+    return render(request, 'web/country_view.html', context)
 
 
 def test(request):

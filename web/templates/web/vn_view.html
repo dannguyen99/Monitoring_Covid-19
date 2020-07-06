@@ -40,7 +40,7 @@
         </tr>
       </thead>
       <tbody style="overflow-y: auto; height: 200px;">
-        {% for city in cities %}
+        {% for city in cities_summary %}
         <tr>
           <td>{{ city.0 }}</td>
           <td>{{ city.1 }}</td>
@@ -169,7 +169,7 @@
       var data = new google.visualization.DataTable();
       data.addColumn('string', "City/Province")
       data.addColumn('number', 'Confirmed')
-      {% for city in cities %}
+      {% for city in cities_geomap %}
       data.addRow(['{{ city.0}}', {{ city.1 }}]);
     {% endfor %}
 
