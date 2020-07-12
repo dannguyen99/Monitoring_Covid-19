@@ -64,8 +64,10 @@ def vietnam_view(request):
     }
     return render(request, 'web/vn_view.html', context)
 
+
 def euView(request):
     return render(request, 'web/eu_view.html')
+
 
 def us_view(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
@@ -77,13 +79,17 @@ def us_view(request):
     }
     return render(request, 'web/us_view.html', context)
 
+
 def country_view(request, geoId):
-    country_df = EcdcData.get_country(geoId)
-    if country_df is None:
+    if EcdcData.get_country(geoId) is None:
         raise Http404("Country does not exist")
+    cases, deaths, time_line, pop_2019 = EcdcData.get_country(geoId)
+    cases_per_100k = round(cases/pop_2019 * 100000, 2)
+    summary = [cases, deaths, pop_2019, cases_per_100k]
     context = {
-        "country" : country_df,
-        "name" : geoId
+        "summary": summary,
+        "time_line": time_line,
+        "name": geoId
     }
     return render(request, 'web/country_view.html', context)
 
