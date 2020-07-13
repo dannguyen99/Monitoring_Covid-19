@@ -61,6 +61,7 @@
     type="text/javascript"
     src="https://www.gstatic.com/charts/loader.js"
   ></script>
+
   <!-- case chart with curve -->
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -77,7 +78,16 @@
       data.addRows({{ rows| safe}});
 
     var options = {
+      axisTitlesPosition:'out',
       title: 'Vietnam Covid 19 Cases',
+      titleTextStyle: {
+        // color: <string>,    // any HTML string color ('red', '#cc00cc')
+        // fontName: <string>, // i.e. 'Times New Roman'
+        fontSize: 30,
+        bold: true,    // true or false
+        // italic: <boolean>   // true of false
+      },
+      // titlePosition: 'left',
       curveType: 'function',
       backgroundColor: '#fbf9f9',
       legend: { position: 'right' }
@@ -109,6 +119,7 @@
     chart.draw(data, options);
     }
   </script>
+
   <!-- case by gender -->
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['bar'] });
@@ -137,25 +148,7 @@
     }
   </script>
 
-  <script type="text/javascript">
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = new google.visualization.DataTable()
-      data.addColumn('string', 'Patient')
-      data.addColumn('number', 'Age')
-      data.addRows({{ ages| safe}})
-
-    var options = {
-      title: 'Age of patients, in year',
-      legend: { position: 'right' },
-    };
-
-    var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-    chart.draw(data, options);
-    }
-  </script>
-
+  <!-- map chart -->
   <script type="text/javascript">
     google.charts.load('current', {
       'packages': ['geochart'],
@@ -172,8 +165,6 @@
       {% for city in cities %}
       data.addRow(['{{ city.0}}', {{ city.1 }}]);
     {% endfor %}
-
-
 
     var options = {
       region: 'VN',

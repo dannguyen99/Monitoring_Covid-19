@@ -1,25 +1,25 @@
-function drawChart() {
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Date')
-    data.addColumn('number', 'Confirmed');
-    data.addColumn('number', 'Death');
-    data.addColumn('number', 'Active');
-    data.addColumn('number', 'Recovered');
+// function drawChart() {
+//     google.charts.load('current', { 'packages': ['corechart'] });
+//     google.charts.setOnLoadCallback(drawChart);
+//     var data = new google.visualization.DataTable();
+//     data.addColumn('string', 'Date')
+//     data.addColumn('number', 'Confirmed');
+//     data.addColumn('number', 'Death');
+//     data.addColumn('number', 'Active');
+//     data.addColumn('number', 'Recovered');
 
-    data.addRows({{ rows| safe}});
+//     data.addRows({{ rows| safe}});
 
-var options = {
-    title: 'Vietnam Covid 19 Cases',
-    curveType: 'function',
-    legend: { position: 'bottom' }
-};
+// var options = {
+//     title: 'Vietnam Covid 19 Cases',
+//     curveType: 'function',
+//     legend: { position: 'bottom' }
+// };
 
-var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-chart.draw(data, options);
-};
-drawChart();
+// var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+// chart.draw(data, options);
+// };
+// drawChart();
 /* <script type="text/javascript">
     google.charts.load('current', {'packages': ['bar'] });
   google.charts.setOnLoadCallback(drawChart);
