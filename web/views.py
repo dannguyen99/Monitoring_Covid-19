@@ -11,10 +11,9 @@ from.models import JhuData, VnData, EcdcData
 
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
-    country = csv_file.groupby(['Country_Region']).sum(
-    ).reset_index().sort_values(by='Confirmed', ascending=False)
-    data_arr = country.to_numpy()[:, [0, 5]].tolist()
-    countryTable = country.to_numpy()[:, [0, 5, 6, 7, 8]]
+    jhu_df = JhuData.index_table()
+    data_arr = jhu_df.to_numpy()[:, [0, 5]].tolist()
+    countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8]]
     context = {
         "countries": countryTable,
         "table": json.dumps(data_arr)
@@ -84,7 +83,7 @@ def country_view(request, geoId):
     if EcdcData.get_country(geoId) is None:
         raise Http404("Country does not exist")
     cases, deaths, time_line, pop_2019 = EcdcData.get_country(geoId)
-    cases_per_100k = round(cases/pop_2019 * 100000, 2)
+    cases_per_100k = round(cases/pop_2019 * 1000000, 2)
     summary = [cases, deaths, pop_2019, cases_per_100k]
     context = {
         "summary": summary,

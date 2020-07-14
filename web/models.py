@@ -16,6 +16,21 @@ class JhuData(models.Model):
     def __str__(self):
         return str(self.date)
 
+    def index_table():
+        csv_file = EcdcData.objects.order_by('date').last().csv_file
+        ecdc_df = pd.read_csv(csv_file)
+        ecdc_df = ecdc_df.groupby(
+            'countriesAndTerritories').mean().popData2019.reset_index()
+        csv_file = JhuData.objects.order_by('date').last().csv_file
+        jhu_df = pd.read_csv(csv_file)
+        jhu_df = jhu_df.groupby('Country_Region').sum().reset_index()
+        jhu_df['popData2019'] = jhu_df.Country_Region.map(
+            ecdc_df.set_index('countriesAndTerritories')['popData2019'])
+        jhu_df['casesPer1M'] = jhu_df['Confirmed'] / \
+            jhu_df['popData2019'] * 1000000
+        jhu_df.sort_values(by='Confirmed', ascending=False)
+        print(jhu_df.head())
+        return jhu_df
 
 class VnData(models.Model):
     TYPE_CHOICES = [
@@ -56,7 +71,8 @@ class EcdcData(models.Model):
     csv_file = models.FilePathField(path='data/ECDC')
 
     def get_country(country_name):
-        names = {"US": "United_States_of_America"}
+        names = {"US": "United_States_of_America",
+                 "United Kingdom": "United_Kingdom"}
         if country_name in names.keys():
             country_name = names[country_name]
         csv_file = EcdcData.objects.order_by('date').last().csv_file
