@@ -12,11 +12,11 @@ from.models import JhuData, VnData, EcdcData
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
     jhu_df = JhuData.index_table()
-    data_arr = jhu_df.to_numpy()[:, [0, 5]].tolist()
-    countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8]]
+    data_arr = jhu_df.dropna().to_numpy()[:, [0, 12]].tolist()
+    countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12]]
     context = {
         "countries": countryTable,
-        "table": json.dumps(data_arr)
+        "data_arr": data_arr
     }
     return render(request, 'web/index.html', context)
 

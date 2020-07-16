@@ -7,6 +7,10 @@ from django.utils import timezone
 from django.conf import settings
 
 # Create your models here.
+country_dict = {"United_States_of_America": "US", "Saudi_Arabia": "Saudi Arabia", "Congo":"Congo (Kinshasa)","Bosnia_and_Herzegovina":"Bosnia and Herzegovina",
+                "United_Kingdom": "United Kingdom", "South_Africa": "South Africa",
+                "United_Arab_Emirates": "United Arab Emirates", "Cote_dIvoire": "Cote d'Ivoire",
+                "Dominican_Republic": "Dominican Republic", "South_Korea": "Korea, South", "El_Salvador": "El Salvador", "Costa_Rica": "Costa Rica", "North_Macedonia": "North Macedonia"}
 
 
 class JhuData(models.Model):
@@ -21,6 +25,7 @@ class JhuData(models.Model):
         ecdc_df = pd.read_csv(csv_file)
         ecdc_df = ecdc_df.groupby(
             'countriesAndTerritories').mean().popData2019.reset_index()
+        ecdc_df = ecdc_df.replace({"countriesAndTerritories": country_dict})
         csv_file = JhuData.objects.order_by('date').last().csv_file
         jhu_df = pd.read_csv(csv_file)
         jhu_df = jhu_df.groupby('Country_Region').sum().reset_index()
@@ -28,9 +33,9 @@ class JhuData(models.Model):
             ecdc_df.set_index('countriesAndTerritories')['popData2019'])
         jhu_df['casesPer1M'] = jhu_df['Confirmed'] / \
             jhu_df['popData2019'] * 1000000
-        jhu_df.sort_values(by='Confirmed', ascending=False)
-        print(jhu_df.head())
+        jhu_df = jhu_df.sort_values(by='Confirmed', ascending=False).round(2)
         return jhu_df
+
 
 class VnData(models.Model):
     TYPE_CHOICES = [
@@ -71,12 +76,9 @@ class EcdcData(models.Model):
     csv_file = models.FilePathField(path='data/ECDC')
 
     def get_country(country_name):
-        names = {"US": "United_States_of_America",
-                 "United Kingdom": "United_Kingdom"}
-        if country_name in names.keys():
-            country_name = names[country_name]
         csv_file = EcdcData.objects.order_by('date').last().csv_file
         df = pd.read_csv(csv_file)
+        df = df.replace({"countriesAndTerritories": country_dict})
         country_df = df.loc[df['countriesAndTerritories'] == country_name]
         if country_df.any()['year'] == False:
             return
