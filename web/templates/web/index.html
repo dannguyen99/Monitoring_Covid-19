@@ -1,11 +1,45 @@
 {% extends "web/base.html" %}
 {% load static %}
 {% block head%}
+<title>Home</title>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'web/css/index.css' %}">
+
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 {% endblock %}
 
 {% block body %}
+<div class="summary-cases">
+  <h3 class="text-center">Summary of Cases Worldwide</h3>
+  <div clss="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="table text-center">
+          <th scope="col">Total Cases</th>
+          <th scope="col">Active</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Death</th>
+        </tr>
+        <tr class="table text-center">
+          <td scope="col">{{ summary.0 }}</td>
+          <td scope="col">{{ summary.3 }}</td>
+          <td scope="col">{{ summary.2 }}</td>
+          <td scope="col">{{ summary.1 }}</td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
 <div class="w-100 h-75 mt-5" id="regions_div" style="width: 80%; height: auto; margin: 0 auto;"></div>
+
+<!-- option button -->
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary">Confirmed Cases</button>
+  <button type="button" class="btn btn-secondary">Total Cases/ 1M pop</button>
+</div>
 
 <div class="main-area">
   <div class="summary-cases mt-5">
@@ -28,8 +62,8 @@
           <tr class="table text-center">
             <td scope="col"><a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a></td>
             <td scope="col">{{ country.1 }}</td>
-            <td scope="col">{{ country.3 }}</td>
             <td scope="col">{{ country.4 }}</td>
+            <td scope="col">{{ country.3 }}</td>
             <td scope="col">{{ country.2 }}</td>
             <td scope="col">{{ country.6 }}</td>
             <td scope="col">{{ country.5 }}</td>
@@ -42,10 +76,9 @@
 </div>
 
 
-
 <script type="text/javascript" src="{% static 'web/js/index.js' %}"></script>
 <script type="text/javascript">
-  var data_arr = {{ data_arr| safe }};
-  drawRegionsMap(data_arr);
+  var geochart_data = {{ geochart_data| safe }};
+  drawWorldMap(geochart_data)
 </script>
 {% endblock %}
