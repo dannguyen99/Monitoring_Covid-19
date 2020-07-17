@@ -1,12 +1,23 @@
-{% extends "web/base.html" %} {% block head %}
+{% extends "web/base.html" %} 
+{% load static %}
+
+
+{% block head %}
 <title>Vietnam Situation</title>
+<link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'web/css/vn.css' %}"
+    />
 
 {% endblock %} {% block body %}
-<div class="main-area mt-5">
+<div class="d-flex mt-5" id="summary-div">
+
+<div class="justify-content-start">
   <!-- summary of cases -->
-  <div class="summary-cases">
+  <div class="summary-cases pl-4">
     <h3 class="text-center">Summary of Cases in Vietnam</h3>
-    <div clss="table-responsive">
+    <div clss="table-responsive"> 
       <table class="table table-bordered">
         <thead>
           <tr class="table text-center">
@@ -26,34 +37,49 @@
     </div>
   </div>
 
-  <div class="w-100 h-75 mt-5" id="geochart-colors"></div>
-
-  <div class="tableFixHead mt-5">
-    <table>
-      <thead>
-        <tr>
-          <th>City/Province</th>
-          <th>Total Cases</th>
-          <th>Active</th>
-          <th>Recovered</th>
-          <th>Death</th>
-        </tr>
-      </thead>
-      <tbody style="overflow-y: auto; height: 200px;">
-        {% for city in cities_summary %}
-        <tr>
-          <td>{{ city.0 }}</td>
-          <td>{{ city.1 }}</td>
-          <td>{{ city.2 }}</td>
-          <td>{{ city.3 }}</td>
-          <td>{{ city.4 }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+  <!-- cases by city -->
+  <div class="mt-5 pl-4">
+    <h3 class="text-center">Cases by City/Province</h3>
+    <div class="tableFixHead">
+      <table class="table-bordered">
+        <thead>
+            <th>City/Province</th>
+            <th>Total Cases</th>
+            <th>Active</th>
+            <th>Recovered</th>
+            <th>Death</th>
+          </tr>
+        </thead>
+        <tbody style="overflow-y: auto; height: 200px;">
+          {% for city in cities %}
+          <tr>
+            <td>{{ city.0 }}</td>
+            <td>{{ city.1 }}</td>
+            <td>{{ city.2 }}</td>
+            <td>{{ city.3 }}</td>
+            <td>{{ city.4 }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>
 
-  <div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
+  <!-- vietnam map -->
+  <div class="container justify-content-end ml-5 pl-5 pr-5" >
+    <h3>COVID-19 Vietnam map</h3>
+    <div
+      class="w-100 h-100"
+      id="geochart-colors"
+    ></div>
+  </div>
+</div>
+
+
+
+  <!-- other map -->
+  <div class="w-100 h-75 mt-5 m-r-10" id="case_curve_chart"></div>
   <div class="w-100 h-75 mt-5" id="age_chart"></div>
   <div class="w-100 h-75 mt-5 mb-5" id="gender_chart"></div>
 
@@ -61,6 +87,7 @@
     type="text/javascript"
     src="https://www.gstatic.com/charts/loader.js"
   ></script>
+
   <!-- case chart with curve -->
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['corechart'] });
@@ -77,7 +104,15 @@
       data.addRows({{ rows| safe}});
 
     var options = {
+      axisTitlesPosition:'out',
       title: 'Vietnam Covid 19 Cases',
+      titleTextStyle: {
+        color: '#000000',
+        fontName: 'Times New Roman', 
+        fontSize: 30,
+        bold: true,    // true or false
+        // italic: <boolean>   // true of false
+      },
       curveType: 'function',
       backgroundColor: '#fbf9f9',
       legend: { position: 'right' }
@@ -101,6 +136,13 @@
 
     var options = {
       title: 'Vietnam COVID-19 cases by ages',
+      titleTextStyle: {
+        color: '#000000',
+        fontName: 'Times New Roman', 
+        fontSize: 30,
+        bold: true,    // true or false
+        // italic: <boolean>   // true of false
+      },
       backgroundColor: '#fbf9f9',
       legend: { position: 'right' },
     };
@@ -109,6 +151,7 @@
     chart.draw(data, options);
     }
   </script>
+
   <!-- case by gender -->
   <script type="text/javascript">
     google.charts.load('current', { 'packages': ['bar'] });
@@ -125,10 +168,15 @@
 
 
     var options = {
-      chart: {
         title: 'Cases by Gender',
+        titleTextStyle: {
+        color: '#000000',
+        fontName: 'Times New Roman', 
+        fontSize: 30,
+        bold: true,    // true or false
+        // italic: <boolean>   // true of false
+        },
         backgroundColor: '#fbf9f9',
-      }
     };
 
     var chart = new google.charts.Bar(document.getElementById('gender_chart'));
@@ -137,25 +185,7 @@
     }
   </script>
 
-  <script type="text/javascript">
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = new google.visualization.DataTable()
-      data.addColumn('string', 'Patient')
-      data.addColumn('number', 'Age')
-      data.addRows({{ ages| safe}})
-
-    var options = {
-      title: 'Age of patients, in year',
-      legend: { position: 'right' },
-    };
-
-    var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-    chart.draw(data, options);
-    }
-  </script>
-
+  <!-- map chart -->
   <script type="text/javascript">
     google.charts.load('current', {
       'packages': ['geochart'],
@@ -172,8 +202,6 @@
       {% for city in cities_geomap %}
       data.addRow(['{{ city.0}}', {{ city.1 }}]);
     {% endfor %}
-
-
 
     var options = {
       region: 'VN',

@@ -1,10 +1,5 @@
-.header {
-  padding: 30px;
-  text-align: center;
-  background: beige;
-  color: white;
-  font-size: 30px;
-  margin-bottom: 60px;
+.m-10 {
+  margin: 0% 10% 0%;
 }
 a,
 a:hover,
@@ -38,4 +33,9 @@ td {
 th {
   background: #eee;
 }
-  
+.navbar-nav > li > .dropdown-menu > a:hover {
+  background-color: #6c757d;
+}
+.clicked{
+  background-color: #ff0000 !important;
+}
