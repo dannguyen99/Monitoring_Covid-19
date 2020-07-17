@@ -2,13 +2,13 @@ from datetime import datetime
 import json
 import pandas as pd
 import numpy as np
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, JsonResponse
 from django.shortcuts import render
 from.models import JhuData, VnData, EcdcData
 
 # Create your views here.
 
-
+# render index.html
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
     jhu_df = JhuData.index_table()
@@ -21,6 +21,19 @@ def index(request):
         "geochart_data": data_arr
     }
     return render(request, 'web/index.html', context)
+
+def change_world_map(request):
+    try:
+        jhu_df = JhuData.index_table()
+        filter_type = request.GET['filter_type']
+        geochart_data = jhu_df.dropna().to_numpy()
+        if filter_type == "confirmed":
+            geochart_data = geochart_data[:, [0, 5]]
+        else:
+            geochart_data = geochart_data[:, [0, 12]]
+        return JsonResponse({"success": True, "geochart_data":geochart_data})
+    except Exception as e:
+        return JsonResponse({"success": False, "message": str(e)})
 
 
 def vietnam_view(request):
