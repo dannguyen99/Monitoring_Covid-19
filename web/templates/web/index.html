@@ -1,6 +1,13 @@
 {% extends "web/base.html" %}
-
+{% load static %}
 {% block head%}
+<title>Home</title>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'web/css/index.css' %}">
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
 {% endblock %}
 
 {% block body %}
@@ -20,16 +27,20 @@
             <th scope="col">Active</th>
             <th scope="col">Recovered</th>
             <th scope="col">Death</th>
+            <th scope="col">Total cases/1M pop</th>
+            <th scope="col">Population Data 2019</th>
           </tr>
         </thead>
         <tbody style="overflow-y: auto;height: 200px;">
           {% for country in countries %}
           <tr class="table text-center">
-            <td scope="col">{{ country.0 }}</td>
+            <td scope="col"><a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a></td>
             <td scope="col">{{ country.1 }}</td>
-            <td scope="col">{{ country.3 }}</td>
             <td scope="col">{{ country.4 }}</td>
+            <td scope="col">{{ country.3 }}</td>
             <td scope="col">{{ country.2 }}</td>
+            <td scope="col">{{ country.6 }}</td>
+            <td scope="col">{{ country.5 }}</td>
           </tr>
           {% endfor %}
         </tbody>
@@ -39,36 +50,9 @@
 </div>
 
 
-
-
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="{% static 'web/js/index.js' %}"></script>
 <script type="text/javascript">
-  google.charts.load('current', {
-    'packages': ['geochart'],
-    // Note: you will need to get a mapsApiKey for your project.
-    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-  });
-  google.charts.setOnLoadCallback(drawRegionsMap);
-
-  function drawRegionsMap() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Country');
-    data.addColumn('number', 'Confirmed');
-    data.addRows({{ table| safe}});
-
-  var options = {
-    colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
-    backgroundColor: '#81d4fa',
-    datalessRegionColor: '#f8bbd0',
-    defaultColor: '#f5f5f5',
-  };
-
-  var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-  chart.draw(data, options);
-    }
+  var geochart_data = {{ geochart_data| safe }};
+  drawWorldMap(geochart_data)
 </script>
-
 {% endblock %}

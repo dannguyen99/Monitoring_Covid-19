@@ -199,7 +199,7 @@
       var data = new google.visualization.DataTable();
       data.addColumn('string', "City/Province")
       data.addColumn('number', 'Confirmed')
-      {% for city in cities %}
+      {% for city in cities_geomap %}
       data.addRow(['{{ city.0}}', {{ city.1 }}]);
     {% endfor %}
 

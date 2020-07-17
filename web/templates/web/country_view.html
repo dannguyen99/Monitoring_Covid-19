@@ -1,0 +1,75 @@
+{% extends "web/base.html" %}
+{% block head %}
+<title>{{ name }} Situation</title>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<!-- case chart with curve -->
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Date')
+        data.addColumn('number', 'Cases');
+        data.addColumn('number', 'Death');
+
+        {% for day in time_line %}
+        data.addRow(['{{ day.2}}', {{ day.1 }}, {{ day.0 }}]);
+    {% endfor %}
+
+    var options = {
+        title: '{{ name }} Covid 19 Cases',
+        backgroundColor: '#fbf9f9',
+        legend: { position: 'right' },
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
+
+        chart.draw(data, options);
+    };
+</script>
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table,
+    th,
+    td {
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+
+{% endblock %}
+
+{% block body %}
+
+<!-- summary of cases -->
+<h3 class="text-center">Summary of Cases in {{ name }}</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Total Cases</th>
+            <th style="color: red;">Death</th>
+            <th style="color: green;"> Total Cases/1M pop</th>
+            <th> Population in 2019 </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ summary.0 }}</td>
+            <td style="color: red;">{{ summary.1 }}</td>
+            <td style="color: green;">{{ summary.3 }}</td>
+            <td>{{ summary.2 }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
+{% endblock %}

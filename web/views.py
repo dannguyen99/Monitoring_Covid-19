@@ -2,7 +2,7 @@ from datetime import datetime
 import json
 import pandas as pd
 import numpy as np
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render
 from.models import JhuData, VnData, EcdcData
 
@@ -11,13 +11,14 @@ from.models import JhuData, VnData, EcdcData
 
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
-    country = csv_file.groupby(['Country_Region']).sum(
-    ).reset_index().sort_values(by='Confirmed', ascending=False)
-    data_arr = country.to_numpy()[:, [0, 5]].tolist()
-    countryTable = country.to_numpy()[:, [0, 5, 6, 7, 8]]
+    jhu_df = JhuData.index_table()
+    summary = jhu_df.sum().to_numpy()[5:9]
+    data_arr = jhu_df.dropna().to_numpy()[:, [0, 12]].tolist()
+    countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12]]
     context = {
+        "summary": summary,
         "countries": countryTable,
-        "table": json.dumps(data_arr)
+        "geochart_data": data_arr
     }
     return render(request, 'web/index.html', context)
 
@@ -52,18 +53,22 @@ def vietnam_view(request):
     ages = pd.concat([age_csv['Patient number'],
                       age_csv['Age']], axis=1).to_numpy().tolist()
     summary = rows[-1]
-    cities = cities_csv.to_numpy()
+    cities_geomap = VnData.cities_geomap()
+    cities_summary = VnData.cities_summary()
     context = {
         "ages": json.dumps(ages),
         "rows": json.dumps(rows),
         "sexs": json.dumps(sexs),
         "summary": summary,
-        "cities": cities
+        "cities_summary": cities_summary,
+        "cities_geomap": cities_geomap
     }
     return render(request, 'web/vn_view.html', context)
 
+
 def euView(request):
     return render(request, 'web/eu_view.html')
+
 
 def us_view(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
@@ -76,9 +81,24 @@ def us_view(request):
     return render(request, 'web/us_view.html', context)
 
 
+def country_view(request, geoId):
+    if EcdcData.get_country(geoId) is None:
+        raise Http404("Country does not exist")
+    cases, deaths, time_line, pop_2019 = EcdcData.get_country(geoId)
+    cases_per_100k = round(cases/pop_2019 * 1000000, 2)
+    summary = [cases, deaths, pop_2019, cases_per_100k]
+    context = {
+        "summary": summary,
+        "time_line": time_line,
+        "name": geoId
+    }
+    return render(request, 'web/country_view.html', context)
+
+
 def test(request):
     ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')
     datas = EcdcData.objects.all()
+    cities_csv = VnData.cities_geomap()
     context = {
         'datas': datas,
         'ecdc': ecdc
