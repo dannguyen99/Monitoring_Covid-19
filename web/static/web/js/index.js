@@ -27,14 +27,20 @@ function drawRegionsMap(geochart_data) {
     chart.draw(data, options);
 };
 
-document.querySelector('#confirmed').onclick = () => {
-    $.ajax({
-        url: '/change_world_map',
-        success: function (data) {
-            drawWorldMap(data.geochart_data);
-        },
-        failure: function (data) {
-            alert(data.message);
-        }
-    })
-}
+document.querySelectorAll('.btn').forEach(button => {
+    button.onclick = () => {
+        $.ajax({
+            url: '/index/change_world_map',
+            data: {
+                'filter_type': button.getAttribute("filter_type")
+            },
+            dataType: 'json',
+            success: function (data) {
+                drawWorldMap(JSON.parse(data.geochart_data))
+            },
+            failure: function (data) {
+                alert(data.message);
+            }
+        })
+    }
+});

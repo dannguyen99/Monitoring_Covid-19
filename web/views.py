@@ -31,7 +31,8 @@ def change_world_map(request):
             geochart_data = geochart_data[:, [0, 5]]
         else:
             geochart_data = geochart_data[:, [0, 12]]
-        return JsonResponse({"success": True, "geochart_data":geochart_data})
+        geochart_data = json.dumps(geochart_data.tolist())
+        return JsonResponse({"success": True, "geochart_data":geochart_data, "message":"success"})
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 
