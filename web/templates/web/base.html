@@ -23,8 +23,8 @@
   <body>
     <div class="container-fluid">
       <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
-          <div class="col-9">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="col-7 d-inline-flex">
             <!-- logo -->
             <a class="nav-brand" href="{% url 'index' %}">
               <h1
@@ -53,14 +53,15 @@
               class="navbar-collapse"
               id="navbarNavDropdown"
             >
-              <ul class="navbar-nav" id="nav-list">
-                <li class="nav-item dropdown active">
+              <ul class="navbar-nav text-nowrap" id="nav-list">
+                <li class="nav-item dropdown active pr-4 h-100">
                   <a
                     class="nav-link dropdown-toggle"
                     id="navbarDropdownMenuLink"
                     role="button"
                     data-toggle="dropdown"
                     aria-haspopup="true"
+                    style="color: white;"
                   >
                     Region
                   </a>
@@ -69,38 +70,43 @@
                   <div
                     class="dropdown-menu"
                     aria-labelledby="navbarDropdownMenuLink"
+                    style="background-color: #2D82B5;"
                   >
                     <a
                       class="nav-link dropdown-item"
                       href="{% url 'index' %}"
                       aria-selected="true"
+                      style="color: white;"
                       >The World</a
                     >
                     <a
                       class="nav-link dropdown-item"
                       href="{% url 'vietnam' %}"
                       aria-selected="true"
+                      style="color: white;"
                       >Việt Nam</a
                     >
                     <a
                       class="nav-link dropdown-item"
                       href="{% url 'europe' %}"
                       aria-selected="true"
+                      style="color: white;"
                       >Europe</a
                     >
                     <a
                       class="nav-link dropdown-item"
                       href="{% url 'us' %}"
                       aria-selected="true"
+                      style="color: white;"
                       >America</a
                     >
                   </div>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">References</a>
+                <li class="nav-item active pr-4">
+                  <a class="nav-link" style="color: white;" href="#">References</a>
                 </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">About Us</a>
+                <li class="nav-item active pr-4">
+                  <a class="nav-link" style="color: white;" href="#">About Us</a>
                 </li>
               </ul>
             </div>

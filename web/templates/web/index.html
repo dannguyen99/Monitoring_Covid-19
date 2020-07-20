@@ -1,20 +1,25 @@
-{% extends "web/base.html" %}
-{% load static %}
-{% block head%}
+{% extends "web/base.html" %} {% load static %} {% block head%}
 <title>Home</title>
-<link rel="stylesheet" href="{% static 'web/css/index.css' %}">
+<link rel="stylesheet" href="{% static 'web/css/index.css' %}" />
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"
+></script>
+<script
+  type="text/javascript"
+  src="https://www.gstatic.com/charts/loader.js"
+></script>
 
-{% endblock %}
+{% endblock %} {% block body %}
 
-{% block body %}
-
-<div class="summary-cases">
+<div class="summary-cases m-10 mt-3">
   <h3 class="text-center">Summary of Cases Worldwide</h3>
   <div clss="table-responsive">
     <table class="table table-bordered">
@@ -36,19 +41,27 @@
   </div>
 </div>
 
-<div class="container mt-5 mb-5" style="background-color: #fbf9f9;">
-  <h3>COVID-19 World map</h3>
-  <div class="w-100 h-75" id="regions_div" style="width: 80%; height: auto; margin: 0 auto; padding-bottom: 15px;">
+<div class="flex-fill mb-5 m-10" style="background-color: #f3f3f3;">
+  <div>
+    <h3 class="float-left"style="margin-left: 5%;">COVID-19 World map</h3>
+    <!-- option button -->
+    <div class="btn-group float-right" role="group">
+      <button type="button" class="btn btn-primary" id="confirmed">
+        Confirmed Cases
+      </button>
+      <button type="button" class="btn btn-secondary" id="cases_per_1m">
+        Total Cases/ 1M pop
+      </button>
+    </div>
   </div>
+  <div
+    class="h-75"
+    id="regions_div"
+    style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"
+  ></div>
 </div>
 
-<!-- option button -->
-<div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-primary" id="confirmed">Confirmed Cases</button>
-  <button type="button" class="btn btn-secondary" id="cases_per_1m">Total Cases/ 1M pop</button>
-</div>
-
-<div class="main-area">
+<div class="main-area m-10">
   <div class="summary-cases mt-5">
     <h3 class="text-center">Summary of Cases Worldwide</h3>
     <div class="tableFixHead table-responsive">
@@ -64,10 +77,12 @@
             <th scope="col">Population Data 2019</th>
           </tr>
         </thead>
-        <tbody style="overflow-y: auto;height: 200px;">
+        <tbody style="overflow-y: auto; height: 200px;">
           {% for country in countries %}
           <tr class="table text-center">
-            <td scope="col"><a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a></td>
+            <td scope="col">
+              <a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a>
+            </td>
             <td scope="col">{{ country.1 }}</td>
             <td scope="col">{{ country.4 }}</td>
             <td scope="col">{{ country.3 }}</td>
@@ -81,7 +96,6 @@
     </div>
   </div>
 </div>
-
 
 <script type="text/javascript" src="{% static 'web/js/index.js' %}"></script>
 <script type="text/javascript">

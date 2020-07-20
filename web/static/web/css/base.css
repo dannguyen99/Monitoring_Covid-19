@@ -1,6 +1,9 @@
 .m-10 {
   margin: 0% 10% 0%;
 }
+.header{
+  background-color: #2D82B5;
+}
 a,
 a:hover,
 a:focus,
@@ -33,9 +36,17 @@ td {
 th {
   background: #eee;
 }
-.navbar-nav > li > .dropdown-menu > a:hover {
-  background-color: #6c757d;
+.navbar-nav{
+  margin-left: 20%;
 }
-.clicked{
-  background-color: #ff0000 !important;
+.navbar-nav, .dropdown-menu{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 30px;
+}
+.navbar-nav > li > .dropdown-menu > a:hover{
+  background-color: #88CDF6;
+}
+
+h1,h6{
+  color: white;
 }
