@@ -1,24 +1,6 @@
 {% load static %}
 
 <html>
-  <head>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'web/css/base.css' %}"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function () {});
-    </script>
-    {% block head %}{% endblock %}
-  </head>
 
   <body>
     <div class="container-fluid">
@@ -114,19 +96,39 @@
         </nav>
       </header>
 
-      {% block body %} {% endblock %}
-      <!-- Footer -->
-      <footer class="page-footer font-small bg-secondary mt-5">
-        <!-- Footer Links -->
-        <!-- Grid row-->
-        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
-          <!-- Grid column -->
-          <div class="col-md-2 mb-3">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!">About us</a>
-            </h6>
+                <!-- dropdown menu -->
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="nav-link dropdown-item" href="{% url 'index' %}" aria-selected="true">The World</a>
+                  <a class="nav-link dropdown-item" href="{% url 'vietnam' %}" aria-selected="true">Việt Nam</a>
+                  <a class="nav-link dropdown-item" href="{% url 'europe' %}" aria-selected="true">Europe</a>
+                  <a class="nav-link dropdown-item" href="{% url 'us' %}" aria-selected="true">America</a>
+                </div>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">References</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+            </ul>
           </div>
-          <!-- Grid column -->
+        </div>
+      </nav>
+    </header>
+
+    {% block body %} {% endblock %}
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-secondary mt-5">
+      <!-- Footer Links -->
+      <!-- Grid row-->
+      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a href="#!">About us</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="col-md-2 mb-3">
@@ -168,9 +170,6 @@
     <!-- Footer -->
   </div>
   <!-- bootstrap -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
     crossorigin="anonymous"></script>
