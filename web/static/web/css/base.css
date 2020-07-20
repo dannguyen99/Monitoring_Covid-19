@@ -1,7 +1,7 @@
 .m-10 {
   margin: 0% 10% 0%;
 }
-.header{
+.header, .footer{
   background-color: #2D82B5;
 }
 a,
@@ -39,7 +39,7 @@ th {
 .navbar-nav{
   margin-left: 20%;
 }
-.navbar-nav, .dropdown-menu{
+.navbar-nav, .dropdown-menu, .footer{
   font-family: 'Times New Roman', Times, serif;
   font-size: 30px;
 }

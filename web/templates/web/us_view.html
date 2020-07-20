@@ -1,10 +1,10 @@
 {% extends "web/base.html" %} {% block head %}
-<title>Europe Situation</title>
+<title>America Situation</title>
 {% endblock %} {% block body %}
 
 <body>
   <!-- summary of cases -->
-  <div class="summary-cases mt-5">
+  <div class="summary-cases mt-5 m-10">
     <h3 class="text-center">Summary of Cases in US</h3>
     <div clss="table-responsive">
       <table class="table table-bordered">
@@ -25,37 +25,44 @@
       </table>
     </div>
   </div>
-  <div class="container mt-5 mb-5" style="background-color: #fbf9f9;">
+  <div
+    class="flex-fill mt-5 mb-5 m-10 text-center"
+    style="background-color: #fbf9f9;"
+  >
     <h3>COVID-19 America map</h3>
     <div
-      class="w-100 h-75"
+      class="h-75"
       id="geochart-colors"
-      style="width: 80%; height: auto;padding-bottom: 15px;"
+      style="width: 90%; height: auto; padding-bottom: 15px; margin: 0 auto;"
     ></div>
   </div>
-  <div class="tableFixHead mt-5">
-    <table>
-      <thead>
-        <tr>
-          <th>State</th>
-          <th>Total Cases</th>
-          <th>Active</th>
-          <th>Recovered</th>
-          <th>Death</th>
-        </tr>
-      </thead>
-      <tbody style="overflow-y: auto; height: 200px;">
-        {% for state in states %}
-        <tr>
-          <td>{{ state.0 }}</td>
-          <td>{{ state.1 }}</td>
-          <td>{{ state.3 }}</td>
-          <td>{{ state.4 }}</td>
-          <td>{{ state.2 }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+
+  <div class="summary-cases mt-5 m-10">
+    <h3 class="text-center">Summary of Cases per States</h3>
+    <div class="tableFixHead table-bordered">
+      <table>
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Total Cases</th>
+            <th>Active</th>
+            <th>Recovered</th>
+            <th>Death</th>
+          </tr>
+        </thead>
+        <tbody style="overflow-y: auto; height: 200px;">
+          {% for state in states %}
+          <tr>
+            <td>{{ state.0 }}</td>
+            <td>{{ state.1 }}</td>
+            <td>{{ state.3 }}</td>
+            <td>{{ state.4 }}</td>
+            <td>{{ state.2 }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
   <script
     type="text/javascript"

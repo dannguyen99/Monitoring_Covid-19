@@ -2,7 +2,10 @@
 <title>Home</title>
 <link rel="stylesheet" href="{% static 'web/css/index.css' %}" />
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script
+  type="text/javascript"
+  src="https://www.gstatic.com/charts/loader.js"
+></script>
 
 {% endblock %} {% block body %}
 
@@ -30,56 +33,61 @@
 
 <div class="flex-fill mb-5 m-10" style="background-color: #f3f3f3;">
   <div>
-    <h3 class="float-left"style="margin-left: 5%;">COVID-19 World map</h3>
-    <div class="main-area m-10 float-right">
+    <h3 class="float-left" style="margin-left: 5%;">COVID-19 World map</h3>
+    <div class="main-area float-right" style="margin-right: 5%;">
       <!-- option button -->
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button type="button" class="btn btn-primary" filter_type="confirmed">Confirmed Cases</button>
-        <button type="button" class="btn btn-secondary" filter_type="cases_per_1m">Total Cases/ 1M pop</button>
+        <button type="button" class="btn btn-primary" filter_type="confirmed">
+          Confirmed Cases
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary"
+          filter_type="cases_per_1m"
+        >
+          Total Cases/ 1M pop
+        </button>
       </div>
+    </div>
+    <div
+      class="h-75 d-flex align-items-end"
+      id="regions_div"
+      style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"
+    ></div>
   </div>
-  <div
-    class="h-75"
-    id="regions_div"
-    style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"
-  ></div>
 </div>
 
-
-
-<div class="main-area">
-  <div class="summary-cases mt-5">
-    <h3 class="text-center">Summary of Cases Worldwide</h3>
-    <div class="tableFixHead table-responsive">
-      <table class="table table-bordered">
-        <thead>
-          <tr class="table text-center">
-            <th scope="col">Country</th>
-            <th scope="col">Total Cases</th>
-            <th scope="col">Active</th>
-            <th scope="col">Recovered</th>
-            <th scope="col">Death</th>
-            <th scope="col">Total cases/1M pop</th>
-            <th scope="col">Population Data 2019</th>
-          </tr>
-        </thead>
-        <tbody style="overflow-y: auto; height: 200px;">
-          {% for country in countries %}
-          <tr class="table text-center">
-            <td scope="col">
-              <a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a>
-            </td>
-            <td scope="col">{{ country.1 }}</td>
-            <td scope="col">{{ country.4 }}</td>
-            <td scope="col">{{ country.3 }}</td>
-            <td scope="col">{{ country.2 }}</td>
-            <td scope="col">{{ country.6 }}</td>
-            <td scope="col">{{ country.5 }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
+<div class="summary-cases mt-5 m-10">
+  <h3 class="text-center">Summary of Cases Worldwide</h3>
+  <div class="tableFixHead table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="table text-center">
+          <th scope="col">Country</th>
+          <th scope="col">Total Cases</th>
+          <th scope="col">Active</th>
+          <th scope="col">Recovered</th>
+          <th scope="col">Death</th>
+          <th scope="col">Total cases/1M pop</th>
+          <th scope="col">Population Data 2019</th>
+        </tr>
+      </thead>
+      <tbody style="overflow-y: auto; height: 200px;">
+        {% for country in countries %}
+        <tr class="table text-center">
+          <td scope="col">
+            <a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a>
+          </td>
+          <td scope="col">{{ country.1 }}</td>
+          <td scope="col">{{ country.4 }}</td>
+          <td scope="col">{{ country.3 }}</td>
+          <td scope="col">{{ country.2 }}</td>
+          <td scope="col">{{ country.6 }}</td>
+          <td scope="col">{{ country.5 }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </div>
 
