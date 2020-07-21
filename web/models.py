@@ -7,7 +7,7 @@ from django.utils import timezone
 from django.conf import settings
 
 # Create your models here.
-country_dict = {"United_States_of_America": "US", "Saudi_Arabia": "Saudi Arabia", "Congo":"Congo (Kinshasa)","Bosnia_and_Herzegovina":"Bosnia and Herzegovina",
+country_dict = {"United_States_of_America": "US", "Saudi_Arabia": "Saudi Arabia", "Congo": "Congo (Kinshasa)", "Bosnia_and_Herzegovina": "Bosnia and Herzegovina",
                 "United_Kingdom": "United Kingdom", "South_Africa": "South Africa",
                 "United_Arab_Emirates": "United Arab Emirates", "Cote_dIvoire": "Cote d'Ivoire",
                 "Dominican_Republic": "Dominican Republic", "South_Korea": "Korea, South", "El_Salvador": "El Salvador", "Costa_Rica": "Costa Rica", "North_Macedonia": "North Macedonia"}
@@ -24,7 +24,7 @@ class JhuData(models.Model):
         csv_file = EcdcData.objects.order_by('date').last().csv_file
         ecdc_df = pd.read_csv(csv_file)
         ecdc_df = ecdc_df.groupby(
-            'countriesAndTerritories').mean().popData2019.reset_index()
+            'countriesAndTerritories').first().reset_index()
         ecdc_df = ecdc_df.replace({"countriesAndTerritories": country_dict})
         csv_file = JhuData.objects.order_by('date').last().csv_file
         jhu_df = pd.read_csv(csv_file)
@@ -33,6 +33,10 @@ class JhuData(models.Model):
             ecdc_df.set_index('countriesAndTerritories')['popData2019'])
         jhu_df['casesPer1M'] = jhu_df['Confirmed'] / \
             jhu_df['popData2019'] * 1000000
+        jhu_df['new_cases'] = jhu_df.Country_Region.map(
+            ecdc_df.set_index('countriesAndTerritories')['cases'])
+        jhu_df['new_deaths'] = jhu_df.Country_Region.map(
+            ecdc_df.set_index('countriesAndTerritories')['deaths'])
         jhu_df = jhu_df.sort_values(by='Confirmed', ascending=False).round(2)
         return jhu_df
 

@@ -1,4 +1,4 @@
-2020-07-20 07:56:45,939 - root - WARNING - Successfully updated data from JHU on 07-19-2020
-2020-07-20 07:57:07,704 - root - WARNING - Successfully updated data from ECDC on 07-19-2020
-2020-07-20 07:57:08,629 - root - WARNING - Successfully updated data from VN on 07-19-2020
-2020-07-20 07:57:08,660 - root - WARNING - Successfully updated data from VN on 07-19-2020
+2020-07-21 03:14:35,020 - root - ERROR - HTTP Error 404: Not Found
+2020-07-21 03:14:46,753 - root - WARNING - Successfully updated data from ECDC on 07-20-2020
+2020-07-21 03:14:47,270 - root - WARNING - Successfully updated data from VN on 07-20-2020
+2020-07-21 03:14:47,297 - root - WARNING - Successfully updated data from VN on 07-20-2020

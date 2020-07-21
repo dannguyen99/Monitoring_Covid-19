@@ -2,10 +2,7 @@
 <title>Home</title>
 <link rel="stylesheet" href="{% static 'web/css/index.css' %}" />
 
-<script
-  type="text/javascript"
-  src="https://www.gstatic.com/charts/loader.js"
-></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 {% endblock %} {% block body %}
 
@@ -19,12 +16,16 @@
           <th scope="col">Active</th>
           <th scope="col">Recovered</th>
           <th scope="col">Death</th>
+          <th scope="col">New Cases</th>
+          <th scope="col">New Death</th>
         </tr>
         <tr class="table text-center">
           <td scope="col">{{ summary.0 }}</td>
           <td scope="col">{{ summary.3 }}</td>
           <td scope="col">{{ summary.2 }}</td>
           <td scope="col">{{ summary.1 }}</td>
+          <td scope="col">{{ summary.4 }}</td>
+          <td scope="col">{{ summary.5 }}</td>
         </tr>
       </thead>
     </table>
@@ -40,35 +41,33 @@
         <button type="button" class="btn btn-primary" filter_type="confirmed">
           Confirmed Cases
         </button>
-        <button
-          type="button"
-          class="btn btn-secondary"
-          filter_type="cases_per_1m"
-        >
+        <button type="button" class="btn btn-secondary" filter_type="cases_per_1m">
           Total Cases/ 1M pop
         </button>
       </div>
     </div>
-    <div
-      class="h-75 d-flex align-items-end"
-      id="regions_div"
-      style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"
-    ></div>
+    <div class="h-75 d-flex align-items-end" id="regions_div"
+      style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"></div>
   </div>
+
+  <div id="chart_div" class="m-10"></div>
 </div>
 
 <div class="summary-cases mt-5 m-10">
-  <h3 class="text-center">Summary of Cases Worldwide</h3>
+  <h3 class="text-center">Summary of Cases by Country</h3>
   <div class="tableFixHead table-responsive">
     <table class="table table-bordered">
       <thead>
         <tr class="table text-center">
           <th scope="col">Country</th>
+          <th scope="col">New Cases</th>
+          <th scope="col">New Deaths</th>
           <th scope="col">Total Cases</th>
+          <th scope="col">Total cases/1M pop</th>
+
           <th scope="col">Active</th>
           <th scope="col">Recovered</th>
           <th scope="col">Death</th>
-          <th scope="col">Total cases/1M pop</th>
           <th scope="col">Population Data 2019</th>
         </tr>
       </thead>
@@ -76,14 +75,18 @@
         {% for country in countries %}
         <tr class="table text-center">
           <td scope="col">
-            <a href="{% url 'country_view' country.0 %}">{{ country.0 }}</a>
+            <a href="{% url 'country_view' country.0 %}" class="country_name">{{ country.0 }}</a>
           </td>
+          <td scope="col" style="color: green;">{{ country.7 }}</td>
+          <td scope="col" style="color: red;">{{ country.8 }}</td>
           <td scope="col">{{ country.1 }}</td>
+          <td scope="col">{{ country.6 }}</td>
           <td scope="col">{{ country.4 }}</td>
           <td scope="col">{{ country.3 }}</td>
           <td scope="col">{{ country.2 }}</td>
-          <td scope="col">{{ country.6 }}</td>
+
           <td scope="col">{{ country.5 }}</td>
+
         </tr>
         {% endfor %}
       </tbody>
@@ -95,6 +98,53 @@
 <script type="text/javascript">
   var geochart_data = {{ geochart_data| safe }};
   drawWorldMap(geochart_data);
+</script>
+
+<script>
+  google.charts.load('current', { packages: ['corechart', 'bar'] });
+google.charts.setOnLoadCallback(drawTrendlines);
+
+function drawTrendlines() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('timeofday', 'Time of Day');
+    data.addColumn('number', 'Motivation Level');
+    data.addColumn('number', 'Energy Level');
+
+    data.addRows([
+        [{ v: [8, 0, 0], f: '8 am' }, 1, .25],
+        [{ v: [9, 0, 0], f: '9 am' }, 2, .5],
+        [{ v: [10, 0, 0], f: '10 am' }, 3, 1],
+        [{ v: [11, 0, 0], f: '11 am' }, 4, 2.25],
+        [{ v: [12, 0, 0], f: '12 pm' }, 5, 2.25],
+        [{ v: [13, 0, 0], f: '1 pm' }, 6, 3],
+        [{ v: [14, 0, 0], f: '2 pm' }, 7, 4],
+        [{ v: [15, 0, 0], f: '3 pm' }, 8, 5.25],
+        [{ v: [16, 0, 0], f: '4 pm' }, 9, 7.5],
+        [{ v: [17, 0, 0], f: '5 pm' }, 10, 10],
+    ]);
+
+    var options = {
+        title: 'Motivation and Energy Level Throughout the Day',
+        trendlines: {
+            0: { type: 'linear', lineWidth: 5, opacity: .3 },
+            1: { type: 'exponential', lineWidth: 10, opacity: .3 }
+        },
+        hAxis: {
+            title: 'Time of Day',
+            format: 'h:mm a',
+            viewWindow: {
+                min: [7, 30, 0],
+                max: [17, 30, 0]
+            }
+        },
+        vAxis: {
+            title: 'Rating (scale of 1-10)'
+        }
+    };
+
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+}
 </script>
 
 {% endblock %}

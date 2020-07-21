@@ -12,9 +12,9 @@ from.models import JhuData, VnData, EcdcData
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
     jhu_df = JhuData.index_table()
-    summary = jhu_df.sum().to_numpy()[5:9]
+    summary = jhu_df.sum().to_numpy()[5:11]
     data_arr = jhu_df.dropna().to_numpy()[:, [0, 12]].tolist()
-    countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12]]
+    countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12, 13, 14]]
     context = {
         "summary": summary,
         "countries": countryTable,
@@ -53,7 +53,6 @@ def vietnam_view(request):
             sex.append(datetime.strftime(d.date, '%d/%m'))
             sex.append(male)
             sex.append(female)
-            sex.append(total)
             sexs.append(sex)
         else:
             cities_csv = csv_file
