@@ -1,10 +1,12 @@
 import os
-
 import pandas as pd
 import numpy as np
+
+from datetime import datetime
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+
 
 # Create your models here.
 country_dict = {"United_States_of_America": "US", "Saudi_Arabia": "Saudi Arabia", "Congo": "Congo (Kinshasa)", "Bosnia_and_Herzegovina": "Bosnia and Herzegovina",
@@ -92,6 +94,18 @@ class EcdcData(models.Model):
             time_line = np.flip(country_df.to_numpy()[:, [1, 5, 6]])
             pop_2019 = int(country_df.popData2019.iloc[0])
             return cases, deaths, time_line, pop_2019
+
+    def index_daily_cases_chart():
+        csv_file = EcdcData.objects.order_by('date').last().csv_file
+        df = pd.read_csv(csv_file)
+        df['dateRep'] = pd.to_datetime(df.dateRep, format="%d/%m/%Y")
+        df = df.groupby('dateRep').sum().reset_index()
+        df = df.sort_values(by='dateRep')
+        begin = datetime(2020, 3, 13)
+        df = df[(df['dateRep'] >= begin)]
+        df['dateRep'] = df.dateRep.dt.strftime('%Y,%m,%d')
+        data = df.to_numpy()[:, [0, 5, 6]]
+        return data
 
     def __str__(self):
         return self.csv_file

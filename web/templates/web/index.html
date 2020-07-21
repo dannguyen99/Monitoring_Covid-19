@@ -24,8 +24,8 @@
           <td scope="col">{{ summary.3 }}</td>
           <td scope="col">{{ summary.2 }}</td>
           <td scope="col">{{ summary.1 }}</td>
-          <td scope="col">{{ summary.4 }}</td>
-          <td scope="col">{{ summary.5 }}</td>
+          <td scope="col">{{ summary.7 }}</td>
+          <td scope="col">{{ summary.8 }}</td>
         </tr>
       </thead>
     </table>
@@ -49,10 +49,11 @@
     <div class="h-75 d-flex align-items-end" id="regions_div"
       style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"></div>
   </div>
-
-  <div id="chart_div" class="m-10"></div>
 </div>
 
+<div id="daily_cases_chart_div" class="m-10"></div>
+
+<div id="daily_deaths_chart_div" class="m-10"></div>
 <div class="summary-cases mt-5 m-10">
   <h3 class="text-center">Summary of Cases by Country</h3>
   <div class="tableFixHead table-responsive">
@@ -102,49 +103,56 @@
 
 <script>
   google.charts.load('current', { packages: ['corechart', 'bar'] });
-google.charts.setOnLoadCallback(drawTrendlines);
+  google.charts.setOnLoadCallback(drawTrendlines);
 
-function drawTrendlines() {
+  function drawTrendlines() {
     var data = new google.visualization.DataTable();
-    data.addColumn('timeofday', 'Time of Day');
-    data.addColumn('number', 'Motivation Level');
-    data.addColumn('number', 'Energy Level');
+    data.addColumn('date', 'Day');
+    data.addColumn('number', 'Cases');
 
-    data.addRows([
-        [{ v: [8, 0, 0], f: '8 am' }, 1, .25],
-        [{ v: [9, 0, 0], f: '9 am' }, 2, .5],
-        [{ v: [10, 0, 0], f: '10 am' }, 3, 1],
-        [{ v: [11, 0, 0], f: '11 am' }, 4, 2.25],
-        [{ v: [12, 0, 0], f: '12 pm' }, 5, 2.25],
-        [{ v: [13, 0, 0], f: '1 pm' }, 6, 3],
-        [{ v: [14, 0, 0], f: '2 pm' }, 7, 4],
-        [{ v: [15, 0, 0], f: '3 pm' }, 8, 5.25],
-        [{ v: [16, 0, 0], f: '4 pm' }, 9, 7.5],
-        [{ v: [17, 0, 0], f: '5 pm' }, 10, 10],
-    ]);
+    {% for data in daily_cases_data %}
+    day = new Date({{ data.0 }})
+  day.setMonth(day.getMonth() - 1)
+  data.addRow([day, {{ data.1 }}]);
+  {% endfor %}
 
-    var options = {
-        title: 'Motivation and Energy Level Throughout the Day',
-        trendlines: {
-            0: { type: 'linear', lineWidth: 5, opacity: .3 },
-            1: { type: 'exponential', lineWidth: 10, opacity: .3 }
-        },
-        hAxis: {
-            title: 'Time of Day',
-            format: 'h:mm a',
-            viewWindow: {
-                min: [7, 30, 0],
-                max: [17, 30, 0]
-            }
-        },
-        vAxis: {
-            title: 'Rating (scale of 1-10)'
-        }
-    };
+  var options = {
+    title: 'Daily New Cases',
+    trendlines: {
+      0: { type: 'linear', lineWidth: 5, opacity: .3 },
+    },
+  }
 
-    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
+  var chart = new google.visualization.ColumnChart(document.getElementById('daily_cases_chart_div'));
+  chart.draw(data, options);
 }
 </script>
 
+<script>
+  google.charts.load('current', { packages: ['corechart', 'bar'] });
+  google.charts.setOnLoadCallback(drawTrendlines);
+
+  function drawTrendlines() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('date', 'Day');
+    data.addColumn('number', 'Deaths');
+
+    {% for data in daily_deaths_data %}
+    day = new Date({{ data.0 }})
+  day.setMonth(day.getMonth() - 1)
+  data.addRow([day, {{ data.1 }}]);
+  {% endfor %}
+
+  var options = {
+    title: 'Daily New Deaths',
+    trendlines: {
+      0: { type: 'linear', lineWidth: 5, opacity: .3 },
+    },
+    colors: ['red'],
+  }
+
+  var chart = new google.visualization.ColumnChart(document.getElementById('daily_deaths_chart_div'));
+  chart.draw(data, options);
+}
+</script>
 {% endblock %}

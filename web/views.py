@@ -12,10 +12,15 @@ from.models import JhuData, VnData, EcdcData
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
     jhu_df = JhuData.index_table()
-    summary = jhu_df.sum().to_numpy()[5:11]
+    summary = jhu_df.sum().to_numpy()[5:14]
     data_arr = jhu_df.dropna().to_numpy()[:, [0, 12]].tolist()
     countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12, 13, 14]]
+    daily_data = EcdcData.index_daily_cases_chart()
+    daily_cases = daily_data[:, [0, 1]]
+    daily_deaths = daily_data[:, [0, 2]]
     context = {
+        "daily_deaths_data":daily_deaths,
+        "daily_cases_data": daily_cases,
         "summary": summary,
         "countries": countryTable,
         "geochart_data": data_arr
