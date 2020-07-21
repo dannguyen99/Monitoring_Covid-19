@@ -11,7 +11,7 @@
     />
 
 {% endblock %} {% block body %}
-<div class="d-flex mt-5" id="summary-div">
+<div class="d-flex mt-5 m-10" id="summary-div">
 
 <div class="justify-content-start">
   <!-- summary of cases -->
@@ -79,9 +79,12 @@
 
 
   <!-- other map -->
-  <div class="w-100 h-75 mt-5 m-r-10" id="case_curve_chart"></div>
-  <div class="w-100 h-75 mt-5" id="age_chart"></div>
-  <div class="w-100 h-75 mt-5 mb-5" id="gender_chart"></div>
+  <div class="h-75 mt-5 m-10" id="case_curve_chart"></div>
+
+  <div class="h-100 m-10">
+    <div class="w-50 h-75 mt-5 float-left" id="age_chart"></div>
+    <div class="w-50 h-75 mt-5 pl-5 float-right" id="gender_chart"></div>
+  </div>
 
   <script
     type="text/javascript"
@@ -105,11 +108,11 @@
 
     var options = {
       axisTitlesPosition:'out',
-      title: 'Vietnam Covid 19 Cases',
+      title: 'Vietnam Covid 19 cases by Days',
       titleTextStyle: {
         color: '#000000',
         fontName: 'Times New Roman', 
-        fontSize: 30,
+        fontSize: 25,
         bold: true,    // true or false
         // italic: <boolean>   // true of false
       },
@@ -135,11 +138,11 @@
       data.addRows({{ ages|safe}})
 
     var options = {
-      title: 'Vietnam COVID-19 cases by ages',
+      title: 'Vietnam COVID-19 cases by Ages',
       titleTextStyle: {
         color: '#000000',
         fontName: 'Times New Roman', 
-        fontSize: 30,
+        fontSize: 25,
         bold: true,    // true or false
         // italic: <boolean>   // true of false
       },
@@ -168,11 +171,11 @@
 
 
     var options = {
-        title: 'Cases by Gender',
+        title: 'Vietnam COVID-19 cases by Gender',
         titleTextStyle: {
         color: '#000000',
         fontName: 'Times New Roman', 
-        fontSize: 30,
+        fontSize: 25,
         bold: true,    // true or false
         // italic: <boolean>   // true of false
         },
@@ -217,4 +220,3 @@
     };
   </script>
   {% endblock %}
-</div>
