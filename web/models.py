@@ -33,13 +33,16 @@ class JhuData(models.Model):
         jhu_df = jhu_df.groupby('Country_Region').sum().reset_index()
         jhu_df['popData2019'] = jhu_df.Country_Region.map(
             ecdc_df.set_index('countriesAndTerritories')['popData2019'])
-        jhu_df['casesPer1M'] = jhu_df['Confirmed'] / \
-            jhu_df['popData2019'] * 1000000
+        jhu_df = jhu_df.dropna()
+        jhu_df['casesPer1M'] = (jhu_df['Confirmed'] / \
+            jhu_df['popData2019'] * 1000000).astype(int)
         jhu_df['new_cases'] = jhu_df.Country_Region.map(
-            ecdc_df.set_index('countriesAndTerritories')['cases'])
+            ecdc_df.set_index('countriesAndTerritories')['cases']).astype(int)
         jhu_df['new_deaths'] = jhu_df.Country_Region.map(
-            ecdc_df.set_index('countriesAndTerritories')['deaths'])
-        jhu_df = jhu_df.sort_values(by='Confirmed', ascending=False).round(2)
+            ecdc_df.set_index('countriesAndTerritories')['deaths']).astype(int)
+        jhu_df.Active = jhu_df.Active.astype(int)
+        jhu_df.popData2019 = jhu_df.popData2019.astype(int)
+        jhu_df = jhu_df.sort_values(by='Confirmed', ascending=False)
         return jhu_df
 
 

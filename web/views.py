@@ -16,8 +16,8 @@ def index(request):
     data_arr = jhu_df.dropna().to_numpy()[:, [0, 12]].tolist()
     countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12, 13, 14]]
     daily_data = EcdcData.index_daily_cases_chart()
-    daily_cases = daily_data[:, [0, 1]]
-    daily_deaths = daily_data[:, [0, 2]]
+    daily_cases = daily_data[:, [0, 1]].tolist()
+    daily_deaths = daily_data[:, [0, 2]].tolist()
     context = {
         "daily_deaths_data":daily_deaths,
         "daily_cases_data": daily_cases,
