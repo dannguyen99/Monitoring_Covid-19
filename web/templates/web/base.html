@@ -84,7 +84,7 @@
                       aria-selected="true"
                       style="color: white;"
                       >Việt Nam</a
-                    >            
+                    >
                     <a
                       class="nav-link dropdown-item"
                       href="{% url 'us' %}"
@@ -102,12 +102,20 @@
                   </div>
                 </li>
                 <li class="nav-item active pr-4">
-                  <a class="nav-link" style="color: white;" href="#"
+                  <a
+                    class="nav-link lang"
+                    key="references"
+                    style="color: white;"
+                    href="{% url 'references' %}"
                     >References</a
                   >
                 </li>
                 <li class="nav-item active pr-4">
-                  <a class="nav-link" style="color: white;" href="#"
+                  <a
+                    class="nav-link lang"
+                    key="about"
+                    style="color: white;"
+                    href="{% url 'about' %}"
                     >About Us</a
                   >
                 </li>
@@ -126,7 +134,7 @@
           <!-- Grid column -->
           <div class="col-md-2 mb-3">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!">References</a>
+              <a href="{% url 'references' %}">References</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -134,15 +142,25 @@
           <!-- Grid column -->
           <div class="col-md-2 mb-3">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!">About Us</a>
+              <a href="{% url 'about' %}">About Us</a>
             </h6>
           </div>
           <!-- Grid column -->
 
           <!-- Grid column -->
           <div class="col-md-2 mb-3">
-            <h6 class="text-uppercase font-weight-bold">
-              <a href="#!">Contact</a>
+            <h6 class="text-uppercase font-weight-bold dropup">
+              <a
+                class="dropdown-toggle"
+                id="dropdownMenu2"
+                data-toggle="dropdown"
+              >
+                Change Language
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style="background-color: #2d82b5;">
+                <button class="translate dropdown-item" id="vn">Vietnam</button>
+                <button class="translate dropdown-item" id="en">English</button>
+              </div>
             </h6>
           </div>
           <!-- Grid column -->
@@ -173,6 +191,8 @@
       </footer>
       <!-- Footer -->
     </div>
+    <script type="text/javascript" src="{% static 'web/js/base.js' %}"></script>
+
     <!-- bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

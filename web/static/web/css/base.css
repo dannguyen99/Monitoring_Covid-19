@@ -1,16 +1,50 @@
 .m-10 {
   margin: 0% 10% 0%;
 }
-.header, .footer{
-  background-color: #2D82B5;
+.header,
+.footer {
+  background-color: #2d82b5;
 }
-a,
-a:hover,
-a:focus,
-a:active {
+.header > nav > div > a{
   text-decoration: none;
-  color: inherit;
 }
+.nav-brand > h1,h6{
+  color: white;
+}
+
+.navbar-nav {
+  margin-left: 7%;
+}
+.navbar-nav > li > a:hover {
+  color: #fb6602 !important;
+}
+.navbar-nav > li > .dropdown-menu > a:hover {
+  background-color: #88cdf6;
+}
+      /*  footer */
+.footer > div > div > h6 > a {
+  color: white;
+}
+.footer > div > div > h6 > a:hover {
+  color: #fb6602;
+  text-decoration: none;
+}
+.navbar-nav,
+.dropdown-menu,
+.footer {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+}
+.dropdown-menu > button{
+  color: white;
+}
+.dropdown-menu > button:hover{
+  background-color: #88cdf6;
+  color: white;
+}
+
+      /* end of footer */
+
 
 .tableFixHead {
   overflow-y: auto;
@@ -35,18 +69,4 @@ td {
 
 th {
   background: #eee;
-}
-.navbar-nav{
-  margin-left: 20%;
-}
-.navbar-nav, .dropdown-menu, .footer{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 30px;
-}
-.navbar-nav > li > .dropdown-menu > a:hover{
-  background-color: #88CDF6;
-}
-
-h1,h6{
-  color: white;
 }

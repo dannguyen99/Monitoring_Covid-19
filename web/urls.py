@@ -9,5 +9,7 @@ urlpatterns = [
     path("us", views.us_view, name="us"),
     path("country/<str:geoId>", views.country_view, name="country_view"),
     path("test", views.test, name="test"),
-    path("index/change_world_map", views.change_world_map, name = "change_world_map")
+    path("index/change_world_map", views.change_world_map, name = "change_world_map"),
+    path("references", views.references, name = "references"),
+    path("about", views.about, name = "about")
 ]
