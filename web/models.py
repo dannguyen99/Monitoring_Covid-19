@@ -34,8 +34,8 @@ class JhuData(models.Model):
         jhu_df['popData2019'] = jhu_df.Country_Region.map(
             ecdc_df.set_index('countriesAndTerritories')['popData2019'])
         jhu_df = jhu_df.dropna()
-        jhu_df['casesPer1M'] = (jhu_df['Confirmed'] / \
-            jhu_df['popData2019'] * 1000000).astype(int)
+        jhu_df['casesPer1M'] = (jhu_df['Confirmed'] /
+                                jhu_df['popData2019'] * 1000000).astype(int)
         jhu_df['new_cases'] = jhu_df.Country_Region.map(
             ecdc_df.set_index('countriesAndTerritories')['cases']).astype(int)
         jhu_df['new_deaths'] = jhu_df.Country_Region.map(
@@ -79,6 +79,23 @@ class VnData(models.Model):
         cities_arr = pd.read_csv(cities_csv).to_numpy()
         return cities_arr
 
+    def vietnam_daily():
+        cases = []
+        actives = []
+        for d in VnData.objects.filter(data_type="CT").order_by('date'):
+            csv_file = pd.read_csv(d.csv_file)
+            case = []
+            active = []
+            case.append(datetime.strftime(d.date, format='%Y,%m,%d'))
+            active.append(datetime.strftime(d.date, format='%Y,%m,%d'))
+            case.append(int(csv_file['Total cases'].sum()))
+            case.append(int(csv_file['Recovered'].sum()))
+            active.append(int(csv_file['Death'].sum()))
+            active.append(int(csv_file['Active'].sum()))
+            cases.append(case)
+            actives.append(active)
+        return cases, actives
+
 
 class EcdcData(models.Model):
     date = models.DateField()
@@ -87,6 +104,8 @@ class EcdcData(models.Model):
     def get_country(country_name):
         csv_file = EcdcData.objects.order_by('date').last().csv_file
         df = pd.read_csv(csv_file)
+        df['dateRep'] = pd.to_datetime(df.dateRep, format="%d/%m/%Y")
+        df['dateRep'] = df.dateRep.dt.strftime('%Y,%m,%d')
         df = df.replace({"countriesAndTerritories": country_dict})
         country_df = df.loc[df['countriesAndTerritories'] == country_name]
         if country_df.any()['year'] == False:

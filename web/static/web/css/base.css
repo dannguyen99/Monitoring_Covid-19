@@ -28,6 +28,7 @@ td {
 
 th {
   background: #eee;
+  color: #666666;
 }
 .navbar-nav{
   margin-left: 20%;
@@ -42,4 +43,9 @@ th {
 
 h1,h6{
   color: white;
+}
+
+td.number_with_commas{
+  font-weight: bold;
+  font-size: 16px;
 }

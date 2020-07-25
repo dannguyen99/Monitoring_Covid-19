@@ -25,8 +25,8 @@
             <tr class="table text-center">
               <td scope="col">{{ summary.1 }}</td>
               <td scope="col">{{ summary.3 }}</td>
-              <td scope="col">{{ summary.4 }}</td>
               <td scope="col">{{ summary.2 }}</td>
+              <td scope="col">{{ summary.4 }}</td>
             </tr>
           </thead>
         </table>
@@ -72,7 +72,10 @@
 
 
 <!-- other map -->
-<div class="h-75 mt-5 m-10" id="case_curve_chart"></div>
+<div class="h-100 m-10">
+  <div class="w-50 h-75 mt-5 float-left" id="case_curve_chart"></div>
+  <div class="w-50 h-75 mt-5 pl-5 float-right" id="active_curve_chart"></div>
+</div>
 
 <div class="h-100 m-10">
   <div class="w-50 h-75 mt-5 float-left" id="age_chart"></div>
@@ -81,41 +84,6 @@
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-<!-- case chart with curve -->
-<script type="text/javascript">
-  google.charts.load('current', { 'packages': ['corechart'] });
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Date')
-    data.addColumn('number', 'Confirmed');
-    data.addColumn('number', 'Death');
-    data.addColumn('number', 'Active');
-    data.addColumn('number', 'Recovered');
-
-    data.addRows({{ rows| safe}});
-
-  var options = {
-    axisTitlesPosition: 'out',
-    title: 'Vietnam Covid 19 cases by Days',
-    titleTextStyle: {
-      color: '#000000',
-      fontName: 'Times New Roman',
-      fontSize: 25,
-      bold: true,    // true or false
-      // italic: <boolean>   // true of false
-    },
-    curveType: 'function',
-    backgroundColor: '#fbf9f9',
-    legend: { position: 'right' }
-  };
-
-  var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
-
-  chart.draw(data, options);
-      };
-</script>
 
 <!-- case by age -->
 <script type="text/javascript">
@@ -209,4 +177,7 @@
   chart.draw(data, options);
     };
 </script>
+
+<script type="text/javascript" src="{% static 'web/js/vn_view.js' %}"></script>
+
 {% endblock %}

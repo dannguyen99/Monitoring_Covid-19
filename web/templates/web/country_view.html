@@ -10,23 +10,30 @@
 
     function drawChart() {
         var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Date')
+        data.addColumn('date', 'Date')
         data.addColumn('number', 'Cases');
         data.addColumn('number', 'Death');
 
         {% for day in time_line %}
-        data.addRow(['{{ day.2}}', {{ day.1 }}, {{ day.0 }}]);
-    {% endfor %}
+            day = new Date({{ day.2 }})
+            day.setMonth(day.getMonth() - 1)
+            data.addRow([day, {{ day.1 }}, {{ day.0 }}]);
+        {% endfor %}
 
     var options = {
-        title: '{{ name }} Covid 19 Cases',
+        title: '{{ name }} Covid 19 Daily Cases',
         backgroundColor: '#fbf9f9',
         legend: { position: 'right' },
-        };
+        animation: {
+            "startup": true,
+            "duration": 1000,
+            easing: 'in',
+        },
+    };
 
-        var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
+    var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
 
-        chart.draw(data, options);
+    chart.draw(data, options);
     };
 </script>
 
@@ -61,10 +68,10 @@
     </thead>
     <tbody>
         <tr>
-            <td>{{ summary.0 }}</td>
-            <td style="color: red;">{{ summary.1 }}</td>
-            <td style="color: green;">{{ summary.3 }}</td>
-            <td>{{ summary.2 }}</td>
+            <td class="number_with_commas">{{ summary.0 }}</td>
+            <td style="color: red;" class="number_with_commas">{{ summary.1 }}</td>
+            <td style="color: green;" class="number_with_commas">{{ summary.3 }}</td>
+            <td class="number_with_commas">{{ summary.2 }} </td>
         </tr>
     </tbody>
 </table>

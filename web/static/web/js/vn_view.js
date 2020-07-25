@@ -1,66 +1,71 @@
-// function drawChart() {
-//     google.charts.load('current', { 'packages': ['corechart'] });
-//     google.charts.setOnLoadCallback(drawChart);
-//     var data = new google.visualization.DataTable();
-//     data.addColumn('string', 'Date')
-//     data.addColumn('number', 'Confirmed');
-//     data.addColumn('number', 'Death');
-//     data.addColumn('number', 'Active');
-//     data.addColumn('number', 'Recovered');
-
-//     data.addRows({{ rows| safe}});
-
-// var options = {
-//     title: 'Vietnam Covid 19 Cases',
-//     curveType: 'function',
-//     legend: { position: 'bottom' }
-// };
-
-// var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-// chart.draw(data, options);
-// };
-// drawChart();
-/* <script type="text/javascript">
-    google.charts.load('current', {'packages': ['bar'] });
-  google.charts.setOnLoadCallback(drawChart);
-
-  function drawChart() {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Date')
-    data.addColumn('number', 'Male');
-    data.addColumn('number', 'Female');
-    data.addColumn('number', 'Total');
-
-    data.addRows({{ sexs| safe}});
+function drawCurveChart(divId, curveData) {
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(function () { drawChart(divId, curveData) });
+}
 
 
-  var options = {
-        chart: {
-        title: 'Cases by Gender',
-    }
-  };
-
-  var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
-
-  chart.draw(data, google.charts.Bar.convertOptions(options));
+function drawChart(divId, curveData) {
+  var data = new google.visualization.DataTable();
+  data.addColumn('date', 'Date');
+  if (divId === "active_curve_chart") {
+    data.addColumn('number', 'Death');
+    data.addColumn('number', 'Active');
+    colors = ['red', 'orange'];
+    title = "Vietnam Covid 19 Daily Active and Death";
   }
-</script>
+  else {
+    data.addColumn('number', 'Confirmed');
+    data.addColumn('number', 'Recovered');
+    colors = ['blue', 'green'];
+    title = "Vietnam Covid 19 Daily Confirmed and Recovered";
+  }
 
-    <script type="text/javascript">
-        google.charts.load("current", {packages: ["corechart"] });
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = new google.visualization.DataTable()
-    data.addColumn('string', 'Patient')
-    data.addColumn('number', 'Age')
-    data.addRows({{ ages| safe}})
+  for (d of curveData) {
+    day = new Date(d[0])
+    day.setMonth(day.getMonth() - 1)
+    data.addRow([day, d[1], d[2]]);
+  }
 
   var options = {
-            title: 'Age of patients, in year',
-    legend: {position: 'right' },
+    axisTitlesPosition: 'out',
+    title: title,
+    titleTextStyle: {
+      color: '#000000',
+      fontName: 'Times New Roman',
+      fontSize: 25,
+      bold: true,    // true or false
+      // italic: <boolean>   // true of false
+    },
+    colors: colors,
+    curveType: 'function',
+    backgroundColor: '#fbf9f9',
+    legend: { position: 'right' },
   };
 
-  var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+  var chart = new google.visualization.LineChart(document.getElementById(divId));
+
   chart.draw(data, options);
-  }
-</script> */
+};
+
+function loadDaily(filterType, divId) {
+  $.ajax({
+    url: '/vietnam/api',
+    data: {
+      'key': 'daily_data',
+      'filter_type': filterType
+    },
+    type: 'GET',
+    dataType: 'json',
+    success: function (data) {
+      drawCurveChart(divId, data.data);
+    },
+    failure: function (data) {
+      alert(data.message);
+    }
+  })
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  loadDaily('actives', "active_curve_chart");
+  loadDaily('cases', 'case_curve_chart');
+});

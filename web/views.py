@@ -9,6 +9,8 @@ from.models import JhuData, VnData, EcdcData
 # Create your views here.
 
 # render index.html
+
+
 def index(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
     jhu_df = JhuData.index_table()
@@ -19,13 +21,14 @@ def index(request):
     daily_cases = daily_data[:, [0, 1]].tolist()
     daily_deaths = daily_data[:, [0, 2]].tolist()
     context = {
-        "daily_deaths_data":daily_deaths,
+        "daily_deaths_data": daily_deaths,
         "daily_cases_data": daily_cases,
         "summary": summary,
         "countries": countryTable,
         "geochart_data": data_arr
     }
     return render(request, 'web/index.html', context)
+
 
 def change_world_map(request):
     try:
@@ -37,9 +40,11 @@ def change_world_map(request):
         else:
             geochart_data = geochart_data[:, [0, 12]]
         geochart_data = json.dumps(geochart_data.tolist())
-        return JsonResponse({"success": True, "geochart_data":geochart_data, "message":"success"})
+        return JsonResponse({"success": True, "geochart_data": geochart_data})
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
+
+# vietnam view
 
 
 def vietnam_view(request):
@@ -59,29 +64,38 @@ def vietnam_view(request):
             sex.append(male)
             sex.append(female)
             sexs.append(sex)
-        else:
-            cities_csv = csv_file
-            row = []
-            row.append(datetime.strftime(d.date, '%d/%m'))
-            row.append(int(csv_file['Total cases'].sum()))
-            row.append(int(csv_file['Death'].sum()))
-            row.append(int(csv_file['Active'].sum()))
-            row.append(int(csv_file['Recovered'].sum()))
-            rows.append(row)
     ages = pd.concat([age_csv['Patient number'],
                       age_csv['Age']], axis=1).to_numpy().tolist()
-    summary = rows[-1]
+    summary = pd.read_csv(VnData.objects.filter(data_type="CT").order_by(
+        'date').last().csv_file).sum().to_numpy()
+
     cities_geomap = VnData.cities_geomap()
     cities_summary = VnData.cities_summary()
     context = {
         "ages": json.dumps(ages),
-        "rows": json.dumps(rows),
         "sexs": json.dumps(sexs),
         "summary": summary,
         "cities_summary": cities_summary,
         "cities_geomap": cities_geomap
     }
     return render(request, 'web/vn_view.html', context)
+
+# vietnam api
+
+
+def vietnam_view_api(request):
+    try:
+        key = request.GET['key']
+        if key == "daily_data":
+            filter_type = request.GET['filter_type']
+            cases, actives = VnData.vietnam_daily()
+            if filter_type == "cases":
+                daily_data = cases
+            else:
+                daily_data = actives
+            return JsonResponse({"success": True, "data": daily_data})
+    except Exception as e:
+        return JsonResponse({"success": False, "message": str(e)})
 
 
 def euView(request):
