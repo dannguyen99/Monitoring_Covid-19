@@ -10,15 +10,17 @@
 {% endblock %} {% block body %}
 
 <div class="summary-cases m-10 mt-3">
-  <h3 class="text-center">Summary of Cases Worldwide</h3>
+  <h3 class="text-center lang" key="sum_world">
+    SUMMARY OF CASES WORLDWIDE
+  </h3>
   <div clss="table-responsive">
     <table class="table table-bordered">
       <thead>
         <tr class="table text-center">
-          <th scope="col">Total Cases</th>
-          <th scope="col">Active</th>
-          <th scope="col">Recovered</th>
-          <th scope="col">Death</th>
+          <th scope="col" class="lang" key="total_cases">Total Cases</th>
+          <th scope="col" class="lang" key="active">Active</th>
+          <th scope="col" class="lang" key="recover">Recovered</th>
+          <th scope="col" class="lang" key="death">Death</th>
         </tr>
         <tr class="table text-center">
           <td scope="col">{{ summary.0 }}</td>
@@ -33,7 +35,7 @@
 
 <div class="flex-fill mb-5 m-10" style="background-color: #f3f3f3;">
   <div>
-    <h3 class="float-left" style="margin-left: 5%;">COVID-19 World map</h3>
+    <h3 class="float-left lang" key="world_map" style="margin-left: 5%;">COVID-19 World map</h3>
     <div class="main-area float-right" style="margin-right: 5%;">
       <!-- option button -->
       <div class="btn-group" role="group" aria-label="Basic example">
@@ -58,16 +60,16 @@
 </div>
 
 <div class="summary-cases mt-5 m-10">
-  <h3 class="text-center">Summary of Cases Worldwide</h3>
+  <h3 class="text-center lang" key="per_country">SUMMARY OF CASES WORLDWIDE PER COUNTRIES</h3>
   <div class="tableFixHead table-responsive">
     <table class="table table-bordered">
       <thead>
         <tr class="table text-center">
-          <th scope="col">Country</th>
-          <th scope="col">Total Cases</th>
-          <th scope="col">Active</th>
-          <th scope="col">Recovered</th>
-          <th scope="col">Death</th>
+          <th scope="col" class="lang">Country</th>
+          <th scope="col" class="lang" key="total_cases">Total Cases</th>
+          <th scope="col" class="lang" key="active">Active</th>
+          <th scope="col" class="lang" key="recover">Recovered</th>
+          <th scope="col" class="lang" key="death">Death</th>
           <th scope="col">Total cases/1M pop</th>
           <th scope="col">Population Data 2019</th>
         </tr>

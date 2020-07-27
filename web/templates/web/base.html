@@ -24,108 +24,112 @@
 
   <body>
     <div class="container-fluid">
-      <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="col-7 d-inline-flex">
-            <!-- logo -->
-            <a class="nav-brand" href="{% url 'index' %}">
-              <h1
-                style="font-family: Georgia, 'Times New Roman', Times, serif;"
-              >
-                COVID-19 Outbreak In The World
-              </h1>
-              <h6>Last updated at today</h6>
-            </a>
-          </div>
-
-          <div class="col-3">
-            <!-- region dropdown -->
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav text-nowrap" id="nav-list">
-                <li class="nav-item dropdown active pr-4 h-100">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    id="navbarDropdownMenuLink"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    style="color: white;"
-                  >
-                    Region
-                  </a>
-
-                  <!-- dropdown menu -->
-                  <div
-                    class="dropdown-menu"
-                    aria-labelledby="navbarDropdownMenuLink"
-                    style="background-color: #2d82b5;"
-                  >
-                    <a
-                      class="nav-link dropdown-item"
-                      href="{% url 'index' %}"
-                      aria-selected="true"
-                      style="color: white;"
-                      >The World</a
-                    >
-                    <a
-                      class="nav-link dropdown-item"
-                      href="{% url 'vietnam' %}"
-                      aria-selected="true"
-                      style="color: white;"
-                      >Việt Nam</a
-                    >
-                    <a
-                      class="nav-link dropdown-item"
-                      href="{% url 'us' %}"
-                      aria-selected="true"
-                      style="color: white;"
-                      >America</a
-                    >
-                    <a
-                      class="nav-link dropdown-item"
-                      href="{% url 'europe' %}"
-                      aria-selected="true"
-                      style="color: white;"
-                      >Europe</a
-                    >
-                  </div>
-                </li>
-                <li class="nav-item active pr-4">
-                  <a
-                    class="nav-link lang"
-                    key="references"
-                    style="color: white;"
-                    href="{% url 'references' %}"
-                    >References</a
-                  >
-                </li>
-                <li class="nav-item active pr-4">
-                  <a
-                    class="nav-link lang"
-                    key="about"
-                    style="color: white;"
-                    href="{% url 'about' %}"
-                    >About Us</a
-                  >
-                </li>
-              </ul>
+      <div class="wrap-content">
+        <header class="header">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="col-7 d-inline-flex">
+              <!-- logo -->
+              <a class="nav-brand" href="{% url 'index' %}">
+                <h1>
+                  COVID-19 Outbreak In The World
+                </h1>
+                <h6>Last updated at today</h6>
+              </a>
             </div>
-          </div>
-        </nav>
-      </header>
 
-      {% block body %} {% endblock %}
+            <div class="col-3">
+              <!-- region dropdown -->
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav text-nowrap" id="nav-list">
+                  <li class="nav-item dropdown active pr-4 h-100">
+                    <a
+                      class="nav-link dropdown-toggle lang"
+                      key="region"
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      style="color: white;"
+                    >
+                      Region
+                    </a>
+
+                    <!-- dropdown menu -->
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                      style="background-color: #2d82b5;"
+                    >
+                      <a
+                        class="nav-link dropdown-item lang"
+                        key="world"
+                        href="{% url 'index' %}"
+                        aria-selected="true"
+                        style="color: white;"
+                        >The World</a
+                      >
+                      <a
+                        class="nav-link dropdown-item"
+                        href="{% url 'vietnam' %}"
+                        aria-selected="true"
+                        style="color: white;"
+                        >Việt Nam</a
+                      >
+                      <a
+                        class="nav-link dropdown-item lang"
+                        key="us"
+                        href="{% url 'us' %}"
+                        aria-selected="true"
+                        style="color: white;"
+                        >America</a
+                      >
+                      <a
+                        class="nav-link dropdown-item lang"
+                        key="eu"
+                        href="{% url 'europe' %}"
+                        aria-selected="true"
+                        style="color: white;"
+                        >Europe</a
+                      >
+                    </div>
+                  </li>
+                  <li class="nav-item active pr-4">
+                    <a
+                      class="nav-link lang"
+                      key="references"
+                      style="color: white;"
+                      href="{% url 'references' %}"
+                      >References</a
+                    >
+                  </li>
+                  <li class="nav-item active pr-4">
+                    <a
+                      class="nav-link lang"
+                      key="about"
+                      style="color: white;"
+                      href="{% url 'about' %}"
+                      >About Us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+        {% block body %} {% endblock %}
+      </div>
       <!-- Footer -->
       <footer class="footer page-footer mt-5">
         <!-- Footer Links -->
@@ -134,7 +138,9 @@
           <!-- Grid column -->
           <div class="col-md-2 mb-3">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="{% url 'references' %}">References</a>
+              <a class="lang" key="references" href="{% url 'references' %}"
+                >References</a
+              >
             </h6>
           </div>
           <!-- Grid column -->
@@ -142,7 +148,7 @@
           <!-- Grid column -->
           <div class="col-md-2 mb-3">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="{% url 'about' %}">About Us</a>
+              <a class="lang" key="about" href="{% url 'about' %}">About Us</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -151,13 +157,19 @@
           <div class="col-md-2 mb-3">
             <h6 class="text-uppercase font-weight-bold dropup">
               <a
-                class="dropdown-toggle"
+                class="dropdown-toggle lang"
+                key="change_lang"
                 id="dropdownMenu2"
                 data-toggle="dropdown"
+                type="button"
               >
                 Change Language
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style="background-color: #2d82b5;">
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenu2"
+                style="background-color: #2d82b5;"
+              >
                 <button class="translate dropdown-item" id="vn">Vietnam</button>
                 <button class="translate dropdown-item" id="en">English</button>
               </div>

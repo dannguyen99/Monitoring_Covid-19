@@ -1,3 +1,6 @@
+*{
+  font-family: 'Times New Roman', Times, serif;
+}
 .m-10 {
   margin: 0% 10% 0%;
 }
@@ -5,10 +8,18 @@
 .footer {
   background-color: #2d82b5;
 }
-.header > nav > div > a{
+
+.wrap-content {
+  min-height: 100%;
+  margin-bottom: 100px;
+}
+
+/* header */
+.header > nav > div > a {
   text-decoration: none;
 }
-.nav-brand > h1,h6{
+.nav-brand > h1,
+h6 {
   color: white;
 }
 
@@ -19,9 +30,16 @@
   color: #fb6602 !important;
 }
 .navbar-nav > li > .dropdown-menu > a:hover {
-  background-color: #88cdf6;
+  color: #fb6602 !important;
+  background-color: inherit;
 }
-      /*  footer */
+
+/* end of header */
+
+/*  footer */
+.footer{
+  height: 300px;
+}
 .footer > div > div > h6 > a {
   color: white;
 }
@@ -35,16 +53,19 @@
   font-family: "Times New Roman", Times, serif;
   font-size: 30px;
 }
-.dropdown-menu > button{
+.dropdown-menu > button {
   color: white;
 }
-.dropdown-menu > button:hover{
-  background-color: #88cdf6;
-  color: white;
+.dropdown-menu > button:hover {
+  color: #fb6602 !important;
+  background-color: inherit;
+}
+.dropdown-menu > button:active{
+  background-color: inherit;
+  outline: none;
 }
 
-      /* end of footer */
-
+/* end of footer */
 
 .tableFixHead {
   overflow-y: auto;
