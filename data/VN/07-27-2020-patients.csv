@@ -1,4 +1,11 @@
 Patient number,Age,Gender,Location,Status,Nationality
+BN438,56,Nam,Đà Nẵng,Đang điều trị,Việt Nam
+BN437,61,Nam,Đà Nẵng,Đang điều trị,Việt Nam
+BN436,66,Nam,Quảng Nam,Đang điều trị,Việt Nam
+BN435,29,Nữ,Đà Nẵng,Đang điều trị,Việt Nam
+BN434,71,Nữ,Đà Nẵng,Đang điều trị,Việt Nam
+BN433,67,Nữ,Quảng Nam,Đang điều trị,Việt Nam
+BN432,63,Nữ,Quảng Nam,Đang điều trị,Việt Nam
 BN431,55,Nam,Đà Nẵng,Đang điều trị,Việt Nam
 BN430,33,Nữ,Đà Nẵng,Đang điều trị,Việt Nam
 BN429,53,Nữ,Đà Nẵng,Đang điều trị,Việt Nam
@@ -57,9 +64,9 @@ BN377,32,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Nga
 BN376,35,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Nga
 BN375,51,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Nga
 BN374,35,Nam,Bà Rịa - Vũng Tàu,Đang điều trị,Nga
-BN373,53,Nam,Cà Mau,Đang điều trị,Việt Nam
-BN372,31,Nữ,Bạc Liêu,Đang điều trị,Việt Nam
-BN371,36,Nữ,Bạc Liêu,Đang điều trị,Việt Nam
+BN373,53,Nam,Cà Mau,Khỏi,Việt Nam
+BN372,31,Nữ,Bạc Liêu,Khỏi,Việt Nam
+BN371,36,Nữ,Bạc Liêu,Khỏi,Việt Nam
 BN370,29,Nam,Quảng Ngãi,Đang điều trị,Serbia và Montenegro
 BN369,30,Nữ,Thanh Hóa,Khỏi,Việt Nam
 BN368,36,Nam,Thanh Hóa,Khỏi,Việt Nam
@@ -73,7 +80,7 @@ BN361,32,Nam,Thanh Hóa,Khỏi,Việt Nam
 BN360,34,Nam,Thanh Hóa,Khỏi,Việt Nam
 BN359,35,Nam,Thanh Hóa,Đang điều trị,Việt Nam
 BN358,56,Nam,Thanh Hóa,Khỏi,Việt Nam
-BN357,55,Nam,Thanh Hóa,Đang điều trị,Việt Nam
+BN357,55,Nam,Thanh Hóa,Khỏi,Việt Nam
 BN356,42,Nam,Thanh Hóa,Đang điều trị,Việt Nam
 BN355,43,Nữ,Hưng Yên,Khỏi,Việt Nam
 BN354,48,Nữ,Hưng Yên,Khỏi,Việt Nam
