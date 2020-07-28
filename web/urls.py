@@ -11,5 +11,6 @@ urlpatterns = [
     path("test", views.test, name="test"),
     path("index/change_world_map", views.change_world_map, name = "change_world_map"),
     path("references", views.references, name = "references"),
-    path("about", views.about, name = "about")
+    path("about", views.about, name = "about"),
+    path("vietnam/api", views.vietnam_view_api, name = 'vietnam_api')
 ]

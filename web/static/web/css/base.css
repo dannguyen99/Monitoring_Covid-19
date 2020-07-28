@@ -1,5 +1,5 @@
-*{
-  font-family: 'Times New Roman', Times, serif;
+* {
+  font-family: "Times New Roman", Times, serif;
 }
 .m-10 {
   margin: 0% 10% 0%;
@@ -37,7 +37,7 @@ h6 {
 /* end of header */
 
 /*  footer */
-.footer{
+.footer {
   height: 300px;
 }
 .footer > div > div > h6 > a {
@@ -60,13 +60,14 @@ h6 {
   color: #fb6602 !important;
   background-color: inherit;
 }
-.dropdown-menu > button:active{
+.dropdown-menu > button:active {
   background-color: inherit;
   outline: none;
 }
 
 /* end of footer */
 
+/*  table */
 .tableFixHead {
   overflow-y: auto;
   height: 500px;
@@ -77,7 +78,6 @@ h6 {
   top: 0;
 }
 
-/* Just common table stuff. Really. */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -91,3 +91,9 @@ td {
 th {
   background: #eee;
 }
+td.number_with_commas {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* end of table */

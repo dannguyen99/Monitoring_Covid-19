@@ -1,222 +1,183 @@
-{% extends "web/base.html" %} 
+{% extends "web/base.html" %}
 {% load static %}
 
 
 {% block head %}
 <title>Vietnam Situation</title>
-<link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'web/css/vn.css' %}"
-    />
+<link rel="stylesheet" type="text/css" href="{% static 'web/css/vn.css' %}" />
 
 {% endblock %} {% block body %}
 <div class="d-flex mt-5 m-10" id="summary-div">
 
-<div class="justify-content-start">
-  <!-- summary of cases -->
-  <div class="summary-cases pl-4">
-    <h3 class="text-center">Summary of Cases in Vietnam</h3>
-    <div clss="table-responsive"> 
-      <table class="table table-bordered">
-        <thead>
-          <tr class="table text-center">
-            <th scope="col">Total Cases</th>
-            <th scope="col">Active</th>
-            <th scope="col">Recovered</th>
-            <th scope="col">Death</th>
-          </tr>
-          <tr class="table text-center">
-            <td scope="col">{{ summary.1 }}</td>
-            <td scope="col">{{ summary.3 }}</td>
-            <td scope="col">{{ summary.4 }}</td>
-            <td scope="col">{{ summary.2 }}</td>
-          </tr>
-        </thead>
-      </table>
+  <div class="justify-content-start">
+    <!-- summary of cases -->
+    <div class="summary-cases pl-4">
+      <h3 class="text-center">Summary of Cases in Vietnam</h3>
+      <div clss="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr class="table text-center">
+              <th scope="col">Total Cases</th>
+              <th scope="col">Active</th>
+              <th scope="col">Recovered</th>
+              <th scope="col">Death</th>
+            </tr>
+            <tr class="table text-center">
+              <td scope="col">{{ summary.1 }}</td>
+              <td scope="col">{{ summary.3 }}</td>
+              <td scope="col">{{ summary.2 }}</td>
+              <td scope="col">{{ summary.4 }}</td>
+            </tr>
+          </thead>
+        </table>
+      </div>
     </div>
-  </div>
 
-  <!-- cases by city -->
-  <div class="mt-5 pl-4">
-    <h3 class="text-center">Cases by City/Province</h3>
-    <div class="tableFixHead">
-      <table class="table-bordered">
-        <thead>
+    <!-- cases by city -->
+    <div class="mt-5 pl-4">
+      <h3 class="text-center">Cases by City/Province</h3>
+      <div class="tableFixHead">
+        <table class="table-bordered">
+          <thead>
             <th>City/Province</th>
             <th>Total Cases</th>
             <th>Active</th>
             <th>Recovered</th>
             <th>Death</th>
-          </tr>
-        </thead>
-        <tbody style="overflow-y: auto; height: 200px;">
-          {% for city in cities_summary %}
-          <tr>
-            <td>{{ city.0 }}</td>
-            <td>{{ city.1 }}</td>
-            <td>{{ city.2 }}</td>
-            <td>{{ city.3 }}</td>
-            <td>{{ city.4 }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+            </tr>
+          </thead>
+          <tbody style="overflow-y: auto; height: 200px;">
+            {% for city in cities_summary %}
+            <tr>
+              <td>{{ city.0 }}</td>
+              <td>{{ city.1 }}</td>
+              <td>{{ city.2 }}</td>
+              <td>{{ city.3 }}</td>
+              <td>{{ city.4 }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
 
   <!-- vietnam map -->
-  <div class="container justify-content-end ml-5 pl-5 pr-5" >
+  <div class="container justify-content-end ml-5 pl-5 pr-5">
     <h3>COVID-19 Vietnam map</h3>
-    <div
-      class="w-100 h-100"
-      id="geochart-colors"
-    ></div>
+    <div class="w-100 h-100" id="geochart-colors"></div>
   </div>
 </div>
 
 
 
-  <!-- other map -->
-  <div class="h-75 mt-5 m-10" id="case_curve_chart"></div>
+<!-- other map -->
+<div class="h-100 m-10">
+  <div class="w-50 h-75 mt-5 float-left" id="case_curve_chart"></div>
+  <div class="w-50 h-75 mt-5 pl-5 float-right" id="active_curve_chart"></div>
+</div>
 
-  <div class="h-100 m-10">
-    <div class="w-50 h-75 mt-5 float-left" id="age_chart"></div>
-    <div class="w-50 h-75 mt-5 pl-5 float-right" id="gender_chart"></div>
-  </div>
+<div class="h-100 m-10">
+  <div class="w-50 h-75 mt-5 float-left" id="age_chart"></div>
+  <div class="w-50 h-75 mt-5 pl-5 float-right" id="gender_chart"></div>
+</div>
 
-  <script
-    type="text/javascript"
-    src="https://www.gstatic.com/charts/loader.js"
-  ></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  <!-- case chart with curve -->
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['corechart'] });
-    google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Date')
-      data.addColumn('number', 'Confirmed');
-      data.addColumn('number', 'Death');
-      data.addColumn('number', 'Active');
-      data.addColumn('number', 'Recovered');
+<!-- case by age -->
+<script type="text/javascript">
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = new google.visualization.DataTable()
+    data.addColumn('string', 'Patient')
+    data.addColumn('number', 'Age')
+    data.addRows({{ ages| safe}})
 
-      data.addRows({{ rows| safe}});
+  var options = {
+    title: 'Vietnam COVID-19 cases by Ages',
+    titleTextStyle: {
+      color: '#000000',
+      fontName: 'Times New Roman',
+      fontSize: 25,
+      bold: true,    // true or false
+      // italic: <boolean>   // true of false
+    },
+    backgroundColor: '#fbf9f9',
+    legend: { position: 'right' },
+  };
 
-    var options = {
-      axisTitlesPosition:'out',
-      title: 'Vietnam Covid 19 cases by Days',
-      titleTextStyle: {
-        color: '#000000',
-        fontName: 'Times New Roman', 
-        fontSize: 25,
-        bold: true,    // true or false
-        // italic: <boolean>   // true of false
-      },
-      curveType: 'function',
-      backgroundColor: '#fbf9f9',
-      legend: { position: 'right' }
-    };
-
-    var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
-
-    chart.draw(data, options);
-      };
-  </script>
-
-  <!-- case by age -->
-  <script type="text/javascript">
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = new google.visualization.DataTable()
-      data.addColumn('string', 'Patient')
-      data.addColumn('number', 'Age')
-      data.addRows({{ ages|safe}})
-
-    var options = {
-      title: 'Vietnam COVID-19 cases by Ages',
-      titleTextStyle: {
-        color: '#000000',
-        fontName: 'Times New Roman', 
-        fontSize: 25,
-        bold: true,    // true or false
-        // italic: <boolean>   // true of false
-      },
-      backgroundColor: '#fbf9f9',
-      legend: { position: 'right' },
-    };
-
-    var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
-    chart.draw(data, options);
+  var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
+  chart.draw(data, options);
     }
-  </script>
+</script>
 
-  <!-- case by gender -->
-  <script type="text/javascript">
-    google.charts.load('current', { 'packages': ['bar'] });
-    google.charts.setOnLoadCallback(drawChart);
+<!-- case by gender -->
+<script type="text/javascript">
+  google.charts.load('current', { 'packages': ['bar'] });
+  google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Date')
-      data.addColumn('number', 'Male');
-      data.addColumn('number', 'Female');
-      data.addColumn('number', 'Total');
+  function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Date')
+    data.addColumn('number', 'Male');
+    data.addColumn('number', 'Female');
 
-      data.addRows({{ sexs| safe }});
+    data.addRows({{ sexs| safe }});
 
 
-    var options = {
-        title: 'Vietnam COVID-19 cases by Gender',
-        titleTextStyle: {
-        color: '#000000',
-        fontName: 'Times New Roman', 
-        fontSize: 25,
-        bold: true,    // true or false
-        // italic: <boolean>   // true of false
-        },
-        backgroundColor: '#fbf9f9',
-    };
+  var options = {
+    title: 'Vietnam COVID-19 cases by Gender',
+    titleTextStyle: {
+      color: '#000000',
+      fontName: 'Times New Roman',
+      fontSize: 25,
+      bold: true,    // true or false
+      // italic: <boolean>   // true of false
+    },
+    backgroundColor: '#fbf9f9',
+    isStacked: true,
+  };
 
-    var chart = new google.charts.Bar(document.getElementById('gender_chart'));
+  var chart = new google.charts.Bar(document.getElementById('gender_chart'));
 
-    chart.draw(data, google.charts.Bar.convertOptions(options));
+  chart.draw(data, google.charts.Bar.convertOptions(options));
     }
-  </script>
+</script>
 
-  <!-- map chart -->
-  <script type="text/javascript">
-    google.charts.load('current', {
-      'packages': ['geochart'],
-      // Note: you will need to get a mapsApiKey for your project.
-      // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-      'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-    });
-    google.charts.setOnLoadCallback(drawRegionsMap);
+<!-- map chart -->
+<script type="text/javascript">
+  google.charts.load('current', {
+    'packages': ['geochart'],
+    // Note: you will need to get a mapsApiKey for your project.
+    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+  });
+  google.charts.setOnLoadCallback(drawRegionsMap);
 
-    function drawRegionsMap() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', "City/Province")
-      data.addColumn('number', 'Confirmed')
-      {% for city in cities_geomap %}
-      data.addRow(['{{ city.0}}', {{ city.1 }}]);
-    {% endfor %}
+  function drawRegionsMap() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', "City/Province")
+    data.addColumn('number', 'Confirmed')
+    {% for city in cities_geomap %}
+    data.addRow(['{{ city.0}}', {{ city.1 }}]);
+  {% endfor %}
 
-    var options = {
-      region: 'VN',
-      colorAxis: { colors: ['green', 'yellow', 'orange', 'red'] },
-      backgroundColor: '#81d4fa',
-      datalessRegionColor: '#f8bbd0',
-      defaultColor: '#f5f5f5',
-      resolution: "provinces"
+  var options = {
+    region: 'VN',
+    colorAxis: { colors: ['green', 'yellow', 'orange', 'red'] },
+    backgroundColor: '#81d4fa',
+    datalessRegionColor: '#f8bbd0',
+    defaultColor: '#f5f5f5',
+    resolution: "provinces"
+  };
+
+  var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
+  chart.draw(data, options);
     };
+</script>
 
-    var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
-    chart.draw(data, options);
-    };
-  </script>
-  {% endblock %}
+<script type="text/javascript" src="{% static 'web/js/vn_view.js' %}"></script>
+
+{% endblock %}
