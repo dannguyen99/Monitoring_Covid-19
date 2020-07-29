@@ -1,6 +1,9 @@
 * {
   font-family: "Times New Roman", Times, serif;
 }
+.bg{
+  background-color: #fbf9f9;
+}
 .m-10 {
   margin: 0% 10% 0%;
 }

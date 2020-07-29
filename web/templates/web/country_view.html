@@ -19,18 +19,30 @@
             day.setMonth(day.getMonth() - 1)
             data.addRow([day, {{ day.1 }}, {{ day.0 }}]);
         {% endfor %}
-
-    var options = {
-        title: '{{ name }} Covid 19 Daily Cases',
-        backgroundColor: '#fbf9f9',
-        legend: { position: 'right' },
-        animation: {
-            "startup": true,
-            "duration": 1000,
-            easing: 'in',
-        },
-    };
-
+    if (lang =='en') {
+        var options = {
+            title: '{{ name }} Covid 19 Daily Cases',
+            backgroundColor: '#fbf9f9',
+            legend: { position: 'right' },
+            animation: {
+                "startup": true,
+                "duration": 1000,
+                easing: 'in',
+            },
+        };
+    }
+    else{
+        var options = {
+            title: 'CA NHIỄM TẠI {{ name }} THEO NGÀY',
+            backgroundColor: '#fbf9f9',
+            legend: { position: 'right' },
+            animation: {
+                "startup": true,
+                "duration": 1000,
+                easing: 'in',
+            },
+        };
+    }
     var chart = new google.visualization.LineChart(document.getElementById('case_curve_chart'));
 
     chart.draw(data, options);
@@ -56,14 +68,15 @@
 {% block body %}
 
 <!-- summary of cases -->
-<h3 class="text-center">Summary of Cases in {{ name }}</h3>
+<div class=" mt-3 m-10">
+<h3 class="text-center"><span class="lang" key='sum_each'>Summary of Cases in</span> {{ name }}</h3>
 <table>
     <thead>
         <tr>
-            <th>Total Cases</th>
-            <th style="color: red;">Death</th>
-            <th style="color: green;"> Total Cases/1M pop</th>
-            <th> Population in 2019 </th>
+            <th class="lang" key="total_cases">Total Cases</th>
+            <th class="lang" key="death" style="color: red;">Death</th>
+            <th class="lang" key="cases_per_1m" style="color: green;"> Total Cases/1M pop</th>
+            <th class="lang" key="population"> Population in 2019 </th>
         </tr>
     </thead>
     <tbody>
@@ -75,8 +88,8 @@
         </tr>
     </tbody>
 </table>
+</div>
 
 
-
-<div class="w-100 h-75 mt-5" id="case_curve_chart"></div>
+<div class="h-75 mt-5 m-10" id="case_curve_chart"></div>
 {% endblock %}

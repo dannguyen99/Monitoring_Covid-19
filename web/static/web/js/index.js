@@ -61,12 +61,23 @@ function drawTrendlines(divId, dailyData) {
     if (divId === 'daily_cases_chart_div') {
         colors_l = ['gray'];
         data.addColumn('number', 'Cases');
-        title = 'Daily New Cases';
+        if(lang == 'en'){
+            title = 'Daily New Cases';
+        }
+        else{
+            title = 'SỐ CA NHIỄM THEO NGÀY';
+        }
     }
     else {
         colors_l = ['red'];
         data.addColumn('number', 'Deaths');
-        title = 'Daily New Deaths';
+        if(lang == 'en'){
+            title = 'Daily New Deaths';
+        }
+        else{
+            title = 'SỐ CA TỬ VONG THEO NGÀY';
+        }
+
     }
     for (d of dailyData) {
         day = new Date(d[0])
@@ -75,7 +86,15 @@ function drawTrendlines(divId, dailyData) {
     }
 
     var options = {
+        backgroundColor:'#fbf9f9',
         title: title,
+        titleTextStyle: {
+      color: '#000000',
+      fontName: 'Times New Roman',
+      fontSize: 25,
+      bold: true,    // true or false
+      // italic: <boolean>   // true of false
+    },
         trendlines: {
             0: { type: 'exponential', lineWidth: 4, opacity: .5 }
         },

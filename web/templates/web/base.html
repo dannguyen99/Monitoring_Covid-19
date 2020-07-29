@@ -9,7 +9,7 @@
 
   <!-- js -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
+{% block head %}{% endblock %}
   <body>
     <div class="container-fluid">
       <div class="wrap-content">
@@ -18,10 +18,10 @@
             <div class="col-7 d-inline-flex">
               <!-- logo -->
               <a class="nav-brand" href="{% url 'index' %}">
-                <h1>
+                <h1 class="lang" key="title1">
                   COVID-19 Outbreak In The World
                 </h1>
-                <h6>Last updated at today</h6>
+                <h6 class="lang" key="title2">Last updated at today</h6>
               </a>
             </div>
 
@@ -191,9 +191,10 @@
       </footer>
       <!-- Footer -->
     </div>
-    <script type="text/javascript" src="{% static 'web/js/base.js' %}"></script>
 
     <!-- bootstrap -->
+    <script src="{% static 'web/js/base.js' %}"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
       integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
