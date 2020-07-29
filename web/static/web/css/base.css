@@ -1,10 +1,76 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+.bg{
+  background-color: #fbf9f9;
+}
 .m-10 {
   margin: 0% 10% 0%;
 }
-.header, .footer{
-  background-color: #2D82B5;
+.header,
+.footer {
+  background-color: #2d82b5;
 }
 
+.wrap-content {
+  min-height: 100%;
+  margin-bottom: 100px;
+}
+
+/* header */
+.header > nav > div > a {
+  text-decoration: none;
+}
+.nav-brand > h1,
+h6 {
+  color: white;
+}
+
+.navbar-nav {
+  margin-left: 7%;
+}
+.navbar-nav > li > a:hover {
+  color: #fb6602 !important;
+}
+.navbar-nav > li > .dropdown-menu > a:hover {
+  color: #fb6602 !important;
+  background-color: inherit;
+}
+
+/* end of header */
+
+/*  footer */
+.footer {
+  height: 300px;
+}
+.footer > div > div > h6 > a {
+  color: white;
+}
+.footer > div > div > h6 > a:hover {
+  color: #fb6602;
+  text-decoration: none;
+}
+.navbar-nav,
+.dropdown-menu,
+.footer {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 30px;
+}
+.dropdown-menu > button {
+  color: white;
+}
+.dropdown-menu > button:hover {
+  color: #fb6602 !important;
+  background-color: inherit;
+}
+.dropdown-menu > button:active {
+  background-color: inherit;
+  outline: none;
+}
+
+/* end of footer */
+
+/*  table */
 .tableFixHead {
   overflow-y: auto;
   height: 500px;
@@ -15,7 +81,6 @@
   top: 0;
 }
 
-/* Just common table stuff. Really. */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -30,22 +95,9 @@ th {
   background: #eee;
   color: #666666;
 }
-.navbar-nav{
-  margin-left: 20%;
-}
-.navbar-nav, .dropdown-menu, .footer{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 30px;
-}
-.navbar-nav > li > .dropdown-menu > a:hover{
-  background-color: #88CDF6;
-}
-
-h1,h6{
-  color: white;
-}
-
-td.number_with_commas{
+td.number_with_commas {
   font-weight: bold;
   font-size: 16px;
 }
+
+/* end of table */

@@ -44,6 +44,8 @@ def change_world_map(request):
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 
+# vietnam view
+
 
 def last_update(request):
     try:
@@ -139,6 +141,11 @@ def country_view(request, geoId):
     }
     return render(request, 'web/country_view.html', context)
 
+def references(request):
+    return render(request, 'web/references.html')
+
+def about(request):
+    return render(request, 'web/about.html')
 
 def test(request):
     ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')

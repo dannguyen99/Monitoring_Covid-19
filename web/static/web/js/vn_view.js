@@ -11,13 +11,21 @@ function drawChart(divId, curveData) {
     data.addColumn('number', 'Death');
     data.addColumn('number', 'Active');
     colors = ['red', 'orange'];
-    title = "Vietnam Covid 19 Daily Active and Death";
+    if (lang == "vn") {
+      title = "CÁC CA ĐANG ĐIỀU TRỊ VÀ TỬ VONG TÍNH THEO NGÀY";
+    }
+    else
+      title = "Vietnam COVID-19 Daily Active and Death";
   }
   else {
     data.addColumn('number', 'Confirmed');
     data.addColumn('number', 'Recovered');
     colors = ['blue', 'green'];
-    title = "Vietnam Covid 19 Daily Confirmed and Recovered";
+    if (lang == "vn") {
+      title = "CÁC CA NHIỄM MỚI VÀ ĐÃ HỒI PHỤC TÍNH THEO NGÀY";
+    }
+    else
+      title = "Vietnam Covid 19 Daily Confirmed and Recovered";
   }
 
   for (d of curveData) {
