@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
 logging.basicConfig(filename='app.log', filemode='a',
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+                    format='%(asctime)s ; %(name)s ; %(levelname)s ; %(message)s', level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'covid19.settings'
 django.setup()
@@ -60,7 +60,7 @@ def get_data_vn():
                 output_row.append(column.text)
             output_rows.append(output_row)
         filePath = 'data/VN/' + yesterday + '-' + name + '.csv'
-        with open(filePath, 'w') as csv_file:
+        with open(filePath, 'w', encoding="utf-8") as csv_file:
             csv_file.write(header)
             writer = csv.writer(csv_file)
             writer.writerows(output_rows)

@@ -3,6 +3,8 @@
 <html>
 
 <head>
+  <link rel="shortcut icon" href="{% static 'web/images/favicon.ico' %}" />
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="{% static 'web/css/base.css' %}" />
@@ -23,7 +25,7 @@
             <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">
               COVID-19 Outbreak In The World
             </h1>
-            <h6>Last updated at today</h6>
+            <h6 id="last_update">Last updated at today</h6>
           </a>
         </div>
 

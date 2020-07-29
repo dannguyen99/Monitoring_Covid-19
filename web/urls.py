@@ -10,5 +10,6 @@ urlpatterns = [
     path("country/<str:geoId>", views.country_view, name="country_view"),
     path("test", views.test, name="test"),
     path("index/change_world_map", views.change_world_map, name = "change_world_map"),
-    path("vietnam/api", views.vietnam_view_api, name = 'vietnam_api')
+    path("vietnam/api", views.vietnam_view_api, name = 'vietnam_api'),
+    path("last_update", views.last_update, name="last_update")
 ]
