@@ -125,7 +125,7 @@ function get_last_update() {
         success: function (data) {
             last_update = new Date(data.last_update);
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', seccond: 'numeric' };
-            if (localStorage.getItem('language') === "en") {
+            if (localStorage.getItem('language') === "vn") {
                 prefix = "Last update "
                 region = "en-US"
             }
