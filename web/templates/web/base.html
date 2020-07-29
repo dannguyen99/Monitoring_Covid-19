@@ -10,201 +10,133 @@
 
   <!-- js -->
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-{% block head %}{% endblock %}
-  <body>
-    <div class="container-fluid">
-      <div class="wrap-content">
-        <header class="header">
-          <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="col-7 d-inline-flex">
-              <!-- logo -->
-              <a class="nav-brand" href="{% url 'index' %}">
-                <h1 class="lang" key="title1">
-                  COVID-19 Outbreak In The World
-                </h1>
-                <h6 id="last_update" class="lang" key="title2">Last updated at today</h6>
-              </a>
+  {% block head %}{% endblock %}
+
+<body>
+  <div class="container-fluid">
+    <div class="wrap-content">
+      <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="col-7 d-inline-flex">
+            <!-- logo -->
+            <a class="nav-brand" href="{% url 'index' %}">
+              <h1 class="lang" key="title1">
+                COVID-19 Outbreak In The World
+              </h1>
+              <h6 id="last_update" key="title2">Last updated at today</h6>
+            </a>
+          </div>
+
+          <div class="col-3">
+            <!-- region dropdown -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav text-nowrap" id="nav-list">
+                <li class="nav-item dropdown active pr-4 h-100">
+                  <a class="nav-link dropdown-toggle lang" key="region" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" style="color: white;">
+                    Region
+                  </a>
+
+                  <!-- dropdown menu -->
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
+                    style="background-color: #2d82b5;">
+                    <a class="nav-link dropdown-item lang" key="world" href="{% url 'index' %}" aria-selected="true"
+                      style="color: white;">The World</a>
+                    <a class="nav-link dropdown-item" href="{% url 'vietnam' %}" aria-selected="true"
+                      style="color: white;">Việt Nam</a>
+                    <a class="nav-link dropdown-item lang" key="us" href="{% url 'us' %}" aria-selected="true"
+                      style="color: white;">America</a>
+                    <a class="nav-link dropdown-item lang" key="eu" href="{% url 'europe' %}" aria-selected="true"
+                      style="color: white;">Europe</a>
+                  </div>
+                </li>
+                <li class="nav-item active pr-4">
+                  <a class="nav-link lang" key="references" style="color: white;"
+                    href="{% url 'references' %}">References</a>
+                </li>
+                <li class="nav-item active pr-4">
+                  <a class="nav-link lang" key="about" style="color: white;" href="{% url 'about' %}">About Us</a>
+                </li>
+              </ul>
             </div>
-
-            <div class="col-3">
-              <!-- region dropdown -->
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav text-nowrap" id="nav-list">
-                  <li class="nav-item dropdown active pr-4 h-100">
-                    <a
-                      class="nav-link dropdown-toggle lang"
-                      key="region"
-                      id="navbarDropdownMenuLink"
-                      role="button"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      style="color: white;"
-                    >
-                      Region
-                    </a>
-
-                    <!-- dropdown menu -->
-                    <div
-                      class="dropdown-menu"
-                      aria-labelledby="navbarDropdownMenuLink"
-                      style="background-color: #2d82b5;"
-                    >
-                      <a
-                        class="nav-link dropdown-item lang"
-                        key="world"
-                        href="{% url 'index' %}"
-                        aria-selected="true"
-                        style="color: white;"
-                        >The World</a
-                      >
-                      <a
-                        class="nav-link dropdown-item"
-                        href="{% url 'vietnam' %}"
-                        aria-selected="true"
-                        style="color: white;"
-                        >Việt Nam</a
-                      >
-                      <a
-                        class="nav-link dropdown-item lang"
-                        key="us"
-                        href="{% url 'us' %}"
-                        aria-selected="true"
-                        style="color: white;"
-                        >America</a
-                      >
-                      <a
-                        class="nav-link dropdown-item lang"
-                        key="eu"
-                        href="{% url 'europe' %}"
-                        aria-selected="true"
-                        style="color: white;"
-                        >Europe</a
-                      >
-                    </div>
-                  </li>
-                  <li class="nav-item active pr-4">
-                    <a
-                      class="nav-link lang"
-                      key="references"
-                      style="color: white;"
-                      href="{% url 'references' %}"
-                      >References</a
-                    >
-                  </li>
-                  <li class="nav-item active pr-4">
-                    <a
-                      class="nav-link lang"
-                      key="about"
-                      style="color: white;"
-                      href="{% url 'about' %}"
-                      >About Us</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </header>
-
-        {% block body %} {% endblock %}
-      </div>
-      <!-- Footer -->
-      <footer class="footer page-footer mt-5">
-        <!-- Footer Links -->
-        <!-- Grid row-->
-        <div class="row text-center d-flex justify-content-center pt-5 mb-3">
-          <!-- Grid column -->
-          <div class="col-md-2 mb-3">
-            <h6 class="text-uppercase font-weight-bold">
-              <a class="lang" key="references" href="{% url 'references' %}"
-                >References</a
-              >
-            </h6>
           </div>
-          <!-- Grid column -->
+        </nav>
+      </header>
 
-          <!-- Grid column -->
-          <div class="col-md-2 mb-3">
-            <h6 class="text-uppercase font-weight-bold">
-              <a class="lang" key="about" href="{% url 'about' %}">About Us</a>
-            </h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 mb-3">
-            <h6 class="text-uppercase font-weight-bold dropup">
-              <a
-                class="dropdown-toggle lang"
-                key="change_lang"
-                id="dropdownMenu2"
-                data-toggle="dropdown"
-                type="button"
-              >
-                Change Language
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="dropdownMenu2"
-                style="background-color: #2d82b5;"
-              >
-                <button class="translate dropdown-item" id="vn">Vietnam</button>
-                <button class="translate dropdown-item" id="en">English</button>
-              </div>
-            </h6>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row-->
-        <hr class="rgba-white-light" style="margin: 0 15%;" />
-
-        <!-- Grid row-->
-        <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
-          <!-- Grid column -->
-          <div class="col-md-8 col-12 mt-5">
-            <p style="line-height: 1.7rem;">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit, sed quia consequuntur.
-            </p>
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row-->
-        <hr
-          class="clearfix d-md-none rgba-white-light"
-          style="margin: 10% 15% 5%;"
-        />
-        <!-- Footer Links -->
-      </footer>
-      <!-- Footer -->
+      {% block body %} {% endblock %}
     </div>
+    <!-- Footer -->
+    <footer class="footer page-footer mt-5">
+      <!-- Footer Links -->
+      <!-- Grid row-->
+      <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a class="lang" key="references" href="{% url 'references' %}">References</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
 
-    <!-- bootstrap -->
-    <script src="{% static 'web/js/base.js' %}"></script>
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold">
+            <a class="lang" key="about" href="{% url 'about' %}">About Us</a>
+          </h6>
+        </div>
+        <!-- Grid column -->
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+        <!-- Grid column -->
+        <div class="col-md-2 mb-3">
+          <h6 class="text-uppercase font-weight-bold dropup">
+            <a class="dropdown-toggle lang" key="change_lang" id="dropdownMenu2" data-toggle="dropdown" type="button">
+              Change Language
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2" style="background-color: #2d82b5;">
+              <button class="translate dropdown-item" id="vn">Vietnam</button>
+              <button class="translate dropdown-item" id="en">English</button>
+            </div>
+          </h6>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row-->
+      <hr class="rgba-white-light" style="margin: 0 15%;" />
+
+      <!-- Grid row-->
+      <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+        <!-- Grid column -->
+        <div class="col-md-8 col-12 mt-5">
+          <p style="line-height: 1.7rem;">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae vitae
+            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+            aspernatur aut odit aut fugit, sed quia consequuntur.
+          </p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row-->
+      <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;" />
+      <!-- Footer Links -->
+    </footer>
+    <!-- Footer -->
+  </div>
+
+  <!-- bootstrap -->
+  <script src="{% static 'web/js/base.js' %}"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

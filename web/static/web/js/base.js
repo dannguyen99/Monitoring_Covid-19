@@ -6,7 +6,6 @@ arrLang["vn"] = new Array();
 
 // title
 arrLang["en"]["title1"] = "COVID-19 OUTBREAK IN THE WORLD";
-arrLang["en"]["title2"] = "Last updated at today";
 
 // nav tab 
 arrLang["en"]["region"] = "Region";
@@ -53,7 +52,6 @@ arrLang["en"]["btn-pp"] = "Total cases/1M population";
 
 // title
 arrLang["vn"]["title1"] = "Tình hình dịch bệnh COVID-19 trên thế giới";
-arrLang["vn"]["title2"] = "Cập nhật lần cuối vào hôm nay";
 
 // nav tab
 arrLang["vn"]["region"] = "Khu vực";
@@ -104,6 +102,7 @@ $(document).ready(function () {
         $(".lang").each(function (index, item) {
             $(this).text(arrLang[lang][$(this).attr("key")]);
         });
+        get_last_update()
     });
     $(".lang").each(function (index, item) {
         $(this).text(arrLang[lang][$(this).attr("key")]);
@@ -125,9 +124,17 @@ function get_last_update() {
         dataType: 'json',
         success: function (data) {
             last_update = new Date(data.last_update);
-            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', seccond: 'numeric'};
-            last_update = last_update.toLocaleDateString("en-US", options);
-            document.getElementById('last_update').innerHTML = "Last update at " + last_update;
+            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', seccond: 'numeric' };
+            if (localStorage.getItem('language') === "en") {
+                prefix = "Last update "
+                region = "en-US"
+            }
+            else {
+                prefix = "Cập nhật lần cuối "
+                region = "vi-VN"
+            }
+            last_update = last_update.toLocaleDateString(region, options);
+            document.getElementById('last_update').innerHTML = prefix + last_update;
         },
         failure: function (data) {
             alert(data.message);
