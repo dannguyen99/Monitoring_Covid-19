@@ -47,6 +47,21 @@ def change_world_map(request):
 # vietnam view
 
 
+def last_update(request):
+    try:
+        with open('app.log', 'r') as log_file:
+            lines = log_file.read().splitlines()
+            time = lines[-1].split(';')[0]
+            print(time)
+            last_update = datetime.strptime(time, "%Y-%m-%d %H:%M:%S ")
+            last_update = datetime.strftime(last_update, "%Y-%m-%dT%H:%M:%S")
+            return JsonResponse({"success": True, "last_update": last_update})
+    except Exception as e:
+        return JsonResponse({"success": False, "message": str(e)})
+
+# vietnam view
+
+
 def vietnam_view(request):
     rows = []
     sexs = []

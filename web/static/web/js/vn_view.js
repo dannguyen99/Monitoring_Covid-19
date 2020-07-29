@@ -7,7 +7,6 @@ function drawCurveChart(divId, curveData) {
 function drawChart(divId, curveData) {
   var data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
-
   if (divId === "active_curve_chart") {
     data.addColumn('number', 'Death');
     data.addColumn('number', 'Active');
@@ -78,5 +77,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
   loadDaily('actives', "active_curve_chart");
   loadDaily('cases', 'case_curve_chart');
 });
-
-

@@ -9,8 +9,8 @@ import csv
 from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 
-logging.basicConfig(filename='app.log', filemode='w',
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='app.log', filemode='a',
+                    format='%(asctime)s ; %(name)s ; %(levelname)s ; %(message)s', level=logging.INFO, datefmt="%Y-%m-%d %H:%M:%S")
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'covid19.settings'
 django.setup()
@@ -26,7 +26,7 @@ def get_data_jhu():
         filePath = 'data/JHU/%s.csv' % yesterday
         data.to_csv(filePath)
         insertJhuData(filePath)
-        logging.warning("Successfully updated data from JHU on %s" % yesterday)
+        logging.info("Successfully updated data from JHU on %s" % yesterday)
     except Exception as e:
         logging.error(e)
 
@@ -38,7 +38,7 @@ def get_data_ecdc():
         "https://opendata.ecdc.europa.eu/covid19/casedistribution/csv")
     filePath = 'data/ECDC/%s.csv' % yesterday
     data.to_csv(filePath)
-    logging.warning("Successfully updated data from ECDC on %s" % yesterday)
+    logging.info("Successfully updated data from ECDC on %s" % yesterday)
     insertEcdcData(filePath)
 
 
@@ -60,11 +60,11 @@ def get_data_vn():
                 output_row.append(column.text)
             output_rows.append(output_row)
         filePath = 'data/VN/' + yesterday + '-' + name + '.csv'
-        with open(filePath, 'w') as csv_file:
+        with open(filePath, 'w', encoding="utf-8") as csv_file:
             csv_file.write(header)
             writer = csv.writer(csv_file)
             writer.writerows(output_rows)
-            logging.warning(
+            logging.info(
                 "Successfully updated data from VN on %s" % yesterday)
             insertVnData(filePath, name)
 

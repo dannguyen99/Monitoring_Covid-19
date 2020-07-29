@@ -93,6 +93,7 @@ td {
 
 th {
   background: #eee;
+  color: #666666;
 }
 td.number_with_commas {
   font-weight: bold;
