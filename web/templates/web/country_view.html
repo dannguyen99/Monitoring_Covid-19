@@ -77,6 +77,8 @@
             <th class="lang" key="death" style="color: red;">Death</th>
             <th class="lang" key="cases_per_1m" style="color: green;"> Total Cases/1M pop</th>
             <th class="lang" key="population"> Population in 2019 </th>
+            <th class="lang"> Incidence Rate</th>
+            <th class="lang"> Case-fatality Ratio</th>
         </tr>
     </thead>
     <tbody>
@@ -85,6 +87,8 @@
             <td style="color: red;" class="number_with_commas">{{ summary.1 }}</td>
             <td style="color: green;" class="number_with_commas">{{ summary.3 }}</td>
             <td class="number_with_commas">{{ summary.2 }} </td>
+            <td>{{ summary.4 }}</td>
+            <td>{{ summary.5 }}</td>
         </tr>
     </tbody>
 </table>

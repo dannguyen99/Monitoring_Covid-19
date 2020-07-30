@@ -126,12 +126,12 @@ function get_last_update() {
             last_update = new Date(data.last_update);
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', seccond: 'numeric' };
             if (localStorage.getItem('language') === "vn") {
-                prefix = "Last update "
-                region = "en-US"
-            }
-            else {
                 prefix = "Cập nhật lần cuối "
                 region = "vi-VN"
+            }
+            else {
+                prefix = "Last update "
+                region = "en-US"
             }
             last_update = last_update.toLocaleDateString(region, options);
             document.getElementById('last_update').innerHTML = prefix + last_update;

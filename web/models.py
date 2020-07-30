@@ -45,6 +45,15 @@ class JhuData(models.Model):
         jhu_df = jhu_df.sort_values(by='Confirmed', ascending=False)
         return jhu_df
 
+    def country_rate(country_name):
+        csv_file = JhuData.objects.order_by('date').last().csv_file
+        df = pd.read_csv(csv_file)
+        df = df.groupby('Country_Region').mean().reset_index()
+        df = df.loc[df['Country_Region'] == country_name].round(2).to_numpy()
+        incidence_rate = df[0][9]
+        case_fatality_ratio = df[0][10]
+        return incidence_rate, case_fatality_ratio
+
 
 class VnData(models.Model):
     TYPE_CHOICES = [

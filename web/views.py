@@ -133,7 +133,9 @@ def country_view(request, geoId):
         raise Http404("Country does not exist")
     cases, deaths, time_line, pop_2019 = EcdcData.get_country(geoId)
     cases_per_100k = round(cases/pop_2019 * 1000000, 2)
-    summary = [cases, deaths, pop_2019, cases_per_100k]
+    incidence_rate, case_fatality_ratio = JhuData.country_rate(geoId)
+    summary = [cases, deaths, pop_2019, cases_per_100k,
+               incidence_rate, case_fatality_ratio]
     context = {
         "summary": summary,
         "time_line": time_line,
@@ -141,11 +143,14 @@ def country_view(request, geoId):
     }
     return render(request, 'web/country_view.html', context)
 
+
 def references(request):
     return render(request, 'web/references.html')
 
+
 def about(request):
     return render(request, 'web/about.html')
+
 
 def test(request):
     ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')

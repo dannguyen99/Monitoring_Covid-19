@@ -2,10 +2,7 @@
 <title>Home</title>
 <link rel="stylesheet" href="{% static 'web/css/index.css' %}" />
 
-<script
-  type="text/javascript"
-  src="https://www.gstatic.com/charts/loader.js"
-></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 {% endblock %} {% block body %}
 
@@ -45,37 +42,21 @@
     <div class="main-area float-right" style="margin-right: 5%;">
       <!-- option button -->
       <div class="btn-group" role="group" aria-label="Basic example">
-        <button
-          type="button"
-          class="btn btn-primary lang"
-          key="btn-cf"
-          filter_type="confirmed"
-        >
+        <button type="button" class="btn btn-primary lang" key="btn-cf" filter_type="confirmed">
           Confirmed Cases
         </button>
-        <button
-          type="button"
-          class="btn btn-secondary lang"
-          key="btn-pp"
-          filter_type="cases_per_1m"
-        >
+        <button type="button" class="btn btn-secondary lang" key="btn-pp" filter_type="cases_per_1m">
           Total cases/1M population
         </button>
       </div>
     </div>
-    <div
-      class="h-75 d-flex align-items-end"
-      id="regions_div"
-      style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"
-    ></div>
+    <div class="h-75 d-flex align-items-end" id="regions_div"
+      style="width: 90%; height: auto; margin: 0 auto; padding-bottom: 15px;"></div>
   </div>
 </div>
 <div class="h-80 m-10">
   <div id="daily_cases_chart_div" class="w-50 h-75 mt-5 float-left mb-5"></div>
-  <div
-    id="daily_deaths_chart_div"
-    class="w-50 h-75 mt-5 pl-5 float-right mb-5"
-  ></div>
+  <div id="daily_deaths_chart_div" class="w-50 h-75 mt-5 pl-5 float-right mb-5"></div>
 </div>
 <div class="summary-cases m-10 mt-5">
   <h3 class="text-center lang" key="per_country">
@@ -84,6 +65,7 @@
   <div class="table-responsive">
     <table class="table table-bordered">
       <tr class="table text-center">
+        <th scope="col">#</th>
         <th scope="col" class="sort_header lang" key="country">
           Countries and Territories
         </th>
@@ -104,10 +86,9 @@
       </tr>
       {% for country in countries %}
       <tr class="table text-center">
+        <td scope="col">{{ forloop.counter }}</td>
         <td scope="col">
-          <a href="{% url 'country_view' country.0 %}" class="country_name"
-            >{{ country.0 }}</a
-          >
+          <a href="{% url 'country_view' country.0 %}" class="country_name">{{ country.0 }}</a>
         </td>
         <td scope="col" class="number_with_commas" style="color: green;">
           {{ country.7 }}
