@@ -110,6 +110,13 @@ function drawTrendlines(divId, dailyData) {
     chart.draw(data, options);
 }
 
+function resetFixedColumn() {
+    fixed_columns = document.querySelectorAll('.fixed_column');
+    for (const [index, row] of fixed_columns.entries()) {
+        row.innerHTML = index + 1;
+    }
+}
+
 //sort table
 const getCellValue = (tr, idx) => tr.children[idx].innerText.replace(/,/g, '') || tr.children[idx].textContent.replace(/,/g, '');
 
@@ -123,4 +130,5 @@ document.querySelectorAll('.sort_header').forEach(th => th.addEventListener('cli
     Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
         .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
         .forEach(tr => table.appendChild(tr));
+    resetFixedColumn();
 })));

@@ -86,7 +86,7 @@
       </tr>
       {% for country in countries %}
       <tr class="table text-center">
-        <td scope="col">{{ forloop.counter }}</td>
+        <td scope="col" class="fixed_column">{{ forloop.counter }}</td>
         <td scope="col">
           <a href="{% url 'country_view' country.0 %}" class="country_name">{{ country.0 }}</a>
         </td>

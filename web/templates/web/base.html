@@ -36,7 +36,7 @@
             <div class="navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav text-nowrap" id="nav-list">
                 <li class="nav-item dropdown active pr-4 h-100">
-                  <a class="nav-link dropdown-toggle lang" key="region" id="navbarDropdownMenuLink" role="button"
+                  <a class="nav-link dropdown-toggle" key="region" id="navbarDropdownMenuLink" role="button"
                     data-toggle="dropdown" aria-haspopup="true" style="color: white;">
                     Region
                   </a>
@@ -45,8 +45,8 @@
                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"
                     style="background-color: #2d82b5;">
                     <a class="nav-link dropdown-item lang" key="world" href="{% url 'index' %}" aria-selected="true"
-                      style="color: white;">The World</a>
-                    <a class="nav-link dropdown-item" href="{% url 'vietnam' %}" aria-selected="true"
+                      style="color: white;">World</a>
+                    <a class="nav-link dropdown-item lang" key="vn" href="{% url 'vietnam' %}" aria-selected="true"
                       style="color: white;">Việt Nam</a>
                     <a class="nav-link dropdown-item lang" key="us" href="{% url 'us' %}" aria-selected="true"
                       style="color: white;">America</a>

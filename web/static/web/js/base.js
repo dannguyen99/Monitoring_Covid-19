@@ -11,7 +11,8 @@ arrLang["en"]["title1"] = "COVID-19 OUTBREAK IN THE WORLD";
 arrLang["en"]["region"] = "Region";
 arrLang["en"]["references"] = "References";
 arrLang["en"]["about"] = "About Us";
-arrLang["en"]["world"] = "The World";
+arrLang["en"]["world"] = "World";
+arrLang["en"]["vn"] = "Vietnam"
 arrLang["en"]["us"] = "America";
 arrLang["en"]["eu"] = "Europe";
 arrLang["en"]["about"] = "About Us";
@@ -32,6 +33,8 @@ arrLang["en"]["total_cases"] = "Total cases";
 arrLang["en"]["active"] = "Actives";
 arrLang["en"]["recover"] = "Recovered";
 arrLang["en"]["death"] = "Death";
+arrLang["en"]["incidence_rate"] = "Incidence Rate"
+arrLang["en"]["case_fatality_ratio"] = "Case-fatality Ratio"
 arrLang["en"]["new_case"] = "NEWS CASES";
 arrLang["en"]["new_death"] = "NEW DEATH";
 arrLang["en"]["per_country"] = "SUMMARY OF CASES WORLDWIDE PER COUNTRIES";
@@ -58,6 +61,7 @@ arrLang["vn"]["region"] = "Khu vực";
 arrLang["vn"]["references"] = "Tham khảo";
 arrLang["vn"]["about"] = "Về chúng tôi";
 arrLang["vn"]["world"] = "Toàn thế giới";
+arrLang["vn"]["vn"] = "Việt Nam"
 arrLang["vn"]["us"] = "Hoa Kỳ";
 arrLang["vn"]["eu"] = "Châu Âu";
 arrLang["vn"]["change_lang"] = "đổi ngôn ngữ";
@@ -77,6 +81,8 @@ arrLang["vn"]["total_cases"] = "SỐ CA NHIỄM";
 arrLang["vn"]["active"] = "ĐANG NHIỄM";
 arrLang["vn"]["recover"] = "KHỎI";
 arrLang["vn"]["death"] = "TỬ VONG";
+arrLang["vn"]["incidence_rate"] = "TỈ LỆ MẮC MỚI"
+arrLang["vn"]["case_fatality_ratio"] = "TỈ LỆ TỬ VONG"
 arrLang["vn"]["new_case"] = "CA NHIỄM MỚI";
 arrLang["vn"]["new_death"] = "CA TỬ VONG MỚI";
 arrLang["vn"]["per_country"] = "DIỄN BIẾN DỊCH Ở TỪNG NƯỚC";
@@ -142,9 +148,28 @@ function get_last_update() {
     })
 }
 
+function getSection() {
+    if (sessionStorage['section']) {
+        var menuLink = document.getElementById("navbarDropdownMenuLink")
+        menuLink.innerHTML = arrLang[localStorage.getItem('language')][sessionStorage.getItem('section')]
+    }
+}
+
+function setSection() {
+    document.querySelectorAll('.nav-link.dropdown-item.lang').forEach(button => {
+        button.onclick = () => {
+            sessionStorage.setItem('section', button.getAttribute('key'));
+        }
+    });
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.number_with_commas').forEach(numberWithCommas);
     get_last_update();
+    getSection();
+    setSection()
 });
+
 
 
