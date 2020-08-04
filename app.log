@@ -53,3 +53,7 @@
 2020-07-31 03:26:55 ; root ; INFO ; Successfully updated data from ECDC on 07-30-2020
 2020-07-31 03:26:55 ; root ; INFO ; Successfully updated data from VN on 07-30-2020
 2020-07-31 03:26:55 ; root ; INFO ; Successfully updated data from VN on 07-30-2020
+2020-08-04 08:49:19 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-08-04 08:49:33 ; root ; INFO ; Successfully updated data from ECDC on 08-03-2020
+2020-08-04 08:49:34 ; root ; INFO ; Successfully updated data from VN on 08-03-2020
+2020-08-04 08:49:34 ; root ; INFO ; Successfully updated data from VN on 08-03-2020
