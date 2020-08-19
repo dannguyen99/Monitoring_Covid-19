@@ -44,7 +44,7 @@ arrLang["en"]["us_map"] = "COVID-19 America map";
 
 arrLang["en"]["country"] = "Countries and Territories";
 arrLang["en"]["cases_per_1m"] = "Total cases/1M pop";
-arrLang["en"]["population"] = "Population Data 2019";
+arrLang["en"]["population"] = "Population 2019";
 
 // button
 

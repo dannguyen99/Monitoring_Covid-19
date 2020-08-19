@@ -140,3 +140,8 @@ class EcdcData(models.Model):
 
     def __str__(self):
         return self.csv_file
+
+
+class WhoData(models.Model):
+    date = models.DateField()
+    csv_file = models.FilePathField(path='data/WHO')

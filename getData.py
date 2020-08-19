@@ -15,7 +15,7 @@ logging.basicConfig(filename='app.log', filemode='a',
 os.environ['DJANGO_SETTINGS_MODULE'] = 'covid19.settings'
 django.setup()
 
-from web.models import JhuData, VnData, EcdcData
+from web.models import JhuData, VnData, EcdcData, WhoData
 
 def get_data_jhu():
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
@@ -40,6 +40,16 @@ def get_data_ecdc():
     data.to_csv(filePath)
     logging.info("Successfully updated data from ECDC on %s" % yesterday)
     insertEcdcData(filePath)
+
+
+def get_data_who():
+    yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
+    data = pd.read_csv(
+        "https://covid19.who.int/WHO-COVID-19-global-data.csv")
+    filePath = 'data/WHO/%s.csv' % yesterday
+    data.to_csv(filePath)
+    logging.info("Successfully updated data from WHO on %s" % yesterday)
+    insertWhoData(filePath)
 
 
 def get_data_vn():
@@ -73,6 +83,7 @@ def collect_data():
     get_data_jhu()
     get_data_ecdc()
     get_data_vn()
+    get_data_who()
 
 
 def insertVnData(filePath, data_type):
@@ -99,6 +110,13 @@ def insertEcdcData(filePath):
     yesterday = datetime.now() - timedelta(1)
     EcdcData.objects.filter(date=yesterday).delete()
     data = EcdcData(date=yesterday, csv_file=filePath)
+    data.save()
+
+
+def insertWhoData(filePath):
+    yesterday = datetime.now() - timedelta(1)
+    WhoData.objects.filter(date=yesterday).delete()
+    data = WhoData(date=yesterday, csv_file=filePath)
     data.save()
 
 

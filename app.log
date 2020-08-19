@@ -57,3 +57,33 @@
 2020-08-04 08:49:33 ; root ; INFO ; Successfully updated data from ECDC on 08-03-2020
 2020-08-04 08:49:34 ; root ; INFO ; Successfully updated data from VN on 08-03-2020
 2020-08-04 08:49:34 ; root ; INFO ; Successfully updated data from VN on 08-03-2020
+2020-08-14 11:39:46 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-08-14 11:40:05 ; root ; INFO ; Successfully updated data from ECDC on 08-13-2020
+2020-08-14 11:40:06 ; root ; INFO ; Successfully updated data from VN on 08-13-2020
+2020-08-14 11:40:06 ; root ; INFO ; Successfully updated data from VN on 08-13-2020
+2020-08-17 15:52:09 ; root ; INFO ; Successfully updated data from JHU on 08-16-2020
+2020-08-17 15:52:36 ; root ; INFO ; Successfully updated data from ECDC on 08-16-2020
+2020-08-17 15:52:37 ; root ; INFO ; Successfully updated data from VN on 08-16-2020
+2020-08-17 15:52:37 ; root ; INFO ; Successfully updated data from VN on 08-16-2020
+2020-08-18 08:55:14 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-08-18 08:55:50 ; root ; INFO ; Successfully updated data from ECDC on 08-17-2020
+2020-08-18 08:55:50 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 08:55:50 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 14:58:50 ; root ; INFO ; Successfully updated data from JHU on 08-17-2020
+2020-08-18 14:59:05 ; root ; INFO ; Successfully updated data from ECDC on 08-17-2020
+2020-08-18 14:59:06 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 14:59:06 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 15:00:50 ; root ; INFO ; Successfully updated data from JHU on 08-17-2020
+2020-08-18 15:01:05 ; root ; INFO ; Successfully updated data from ECDC on 08-17-2020
+2020-08-18 15:01:05 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 15:01:05 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 15:01:39 ; root ; INFO ; Successfully updated data from JHU on 08-17-2020
+2020-08-18 15:01:57 ; root ; INFO ; Successfully updated data from ECDC on 08-17-2020
+2020-08-18 15:01:58 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 15:01:58 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 15:02:00 ; root ; INFO ; Successfully updated data from WHO on 08-17-2020
+2020-08-18 15:02:29 ; root ; INFO ; Successfully updated data from JHU on 08-17-2020
+2020-08-18 15:02:44 ; root ; INFO ; Successfully updated data from ECDC on 08-17-2020
+2020-08-18 15:02:44 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 15:02:44 ; root ; INFO ; Successfully updated data from VN on 08-17-2020
+2020-08-18 15:02:46 ; root ; INFO ; Successfully updated data from WHO on 08-17-2020

@@ -29,7 +29,7 @@ function drawRegionsMap(geochartData) {
 };
 
 // change world map filter
-document.querySelectorAll('.btn').forEach(button => {
+document.querySelectorAll('.filter').forEach(button => {
     button.onclick = () => {
         $.ajax({
             url: '/index/change_world_map',
@@ -61,23 +61,10 @@ function drawTrendlines(divId, dailyData) {
     if (divId === 'daily_cases_chart_div') {
         colors_l = ['gray'];
         data.addColumn('number', 'Cases');
-        if (lang == 'en') {
-            title = 'Daily New Cases';
-        }
-        else {
-            title = 'SỐ CA NHIỄM THEO NGÀY';
-        }
     }
     else {
         colors_l = ['red'];
         data.addColumn('number', 'Deaths');
-        if (lang == 'en') {
-            title = 'Daily New Deaths';
-        }
-        else {
-            title = 'SỐ CA TỬ VONG THEO NGÀY';
-        }
-
     }
     for (d of dailyData) {
         day = new Date(d[0])
@@ -87,13 +74,11 @@ function drawTrendlines(divId, dailyData) {
 
     var options = {
         backgroundColor: '#fbf9f9',
-        title: title,
         titleTextStyle: {
             color: '#000000',
             fontName: 'Times New Roman',
             fontSize: 25,
-            bold: true,    // true or false
-            // italic: <boolean>   // true of false
+            bold: true,
         },
         trendlines: {
             0: { type: 'exponential', lineWidth: 4, opacity: .5 }
@@ -104,31 +89,25 @@ function drawTrendlines(divId, dailyData) {
             "duration": 3000,
             easing: 'in',
         },
+        legend: { position: "in" }
     }
 
     var chart = new google.visualization.ColumnChart(document.getElementById(divId));
     chart.draw(data, options);
 }
 
-function resetFixedColumn() {
-    fixed_columns = document.querySelectorAll('.fixed_column');
-    for (const [index, row] of fixed_columns.entries()) {
-        row.innerHTML = index + 1;
-    }
-}
-
-//sort table
-const getCellValue = (tr, idx) => tr.children[idx].innerText.replace(/,/g, '') || tr.children[idx].textContent.replace(/,/g, '');
-
-const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
-    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-)(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
-
-// do the work...
-document.querySelectorAll('.sort_header').forEach(th => th.addEventListener('click', (() => {
-    const table = th.closest('table');
-    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-        .forEach(tr => table.appendChild(tr));
-    resetFixedColumn();
-})));
+$(document).ready(function() {
+    var t = $('#dataTable').DataTable( {
+        "columnDefs": [ {
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        } ],
+    } );
+ 
+    t.on( 'order.dt search.dt', function () {
+        t.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
+            cell.innerHTML = i+1;
+        } );
+    } ).draw();
+} );
