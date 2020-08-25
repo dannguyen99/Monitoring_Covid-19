@@ -19,7 +19,7 @@ function drawRegionsMap(geochartData) {
         title: "World Corona Virus Case by 1M pop",
         colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
         backgroundColor: '#81d4fa',
-        datalessRegionColor: '#f8bbd0',
+        datalessRegionColor: '#fff',
         defaultColor: '#f5f5f5',
     };
 
@@ -59,11 +59,11 @@ function drawTrendlines(divId, dailyData) {
     var data = new google.visualization.DataTable();
     data.addColumn('date', 'Day');
     if (divId === 'daily_cases_chart_div') {
-        colors_l = ['gray'];
+        colors_l = ['#dc3545'];
         data.addColumn('number', 'Cases');
     }
     else {
-        colors_l = ['red'];
+        colors_l = ['#343a40'];
         data.addColumn('number', 'Deaths');
     }
     for (d of dailyData) {
@@ -73,13 +73,6 @@ function drawTrendlines(divId, dailyData) {
     }
 
     var options = {
-        backgroundColor: '#fbf9f9',
-        titleTextStyle: {
-            color: '#000000',
-            fontName: 'Times New Roman',
-            fontSize: 25,
-            bold: true,
-        },
         trendlines: {
             0: { type: 'exponential', lineWidth: 4, opacity: .5 }
         },
@@ -103,6 +96,7 @@ $(document).ready(function() {
             "orderable": false,
             "targets": 0
         } ],
+        "order": [[ 4, 'desc' ]]
     } );
  
     t.on( 'order.dt search.dt', function () {

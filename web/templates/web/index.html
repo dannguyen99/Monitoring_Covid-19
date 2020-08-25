@@ -16,91 +16,90 @@
 
 
 <div class="container-fluid">
-
-  <!-- <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-dark">Sumarry Of Cases Worldwide</h6>
-    </div>
-    <div class="card-body">
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr class="table text-center">
-              <th scope="col" class="lang" key="total_cases">Total Cases</th>
-              <th scope="col" class="lang" key="active">Active</th>
-              <th scope="col" class="lang" key="recover">Recovered</th>
-              <th scope="col" class="lang" key="death">Death</th>
-              <th scope="col" class="lang" key="new_case">New Cases</th>
-              <th scope="col" class="lang" key="new_death">New Death</th>
-            </tr>
-            <tr class="table text-center">
-              <td scope="col" class="number_with_commas">{{ summary.0 }}</td>
-              <td scope="col" class="number_with_commas">{{ summary.3 }}</td>
-              <td scope="col" class="number_with_commas">{{ summary.2 }}</td>
-              <td scope="col" class="number_with_commas">{{ summary.1 }}</td>
-              <td scope="col" class="number_with_commas">{{ summary.8 }}</td>
-              <td scope="col" class="number_with_commas">{{ summary.9 }}</td>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-  </div> -->
+  
+  <div class="m-10 mt-3 mb-4">
+    <h3 class="text-center text-gray-800">Summary Worldwide</h3>
+  </div>
 
   <div class="row">
+    <div class="col-xl-2 col-md-6 mb-4">
+      <div class="card border-left-danger shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">New Cases</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.8 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-2 col-md-6 mb-4">
       <div class="card border-left-danger shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total Cases</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ summary.0 }}</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.0 }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-2 col-md-6 mb-4">
+      <div class="card border-left-dark shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">New Deaths</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.9 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-2 col-md-6 mb-4">
+      <div class="card border-left-dark shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Total Deaths</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.1 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-2 col-md-6 mb-4">
       <div class="card border-left-warning shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Active Cases</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ summary.3 }}</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.3 }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-xl-3 col-md-6 mb-4">
+    <div class="col-xl-2 col-md-6 mb-4">
       <div class="card border-left-success shadow h-100 py-2">
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recovered</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ summary.2 }}</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.2 }}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-
-    <div class="col-xl-3 col-md-6 mb-4">
-      <div class="card border-left-dark shadow h-100 py-2">
-        <div class="card-body">
-          <div class="row no-gutters align-items-center">
-            <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Deaths</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800">{{ summary.1 }}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 
   <div class="row">
@@ -131,16 +130,20 @@
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-dark">Daily New Cases</h6>
         </div>
-        <div id="daily_cases_chart_div"></div>
+        <div class="card-body">
+          <div id="daily_cases_chart_div"></div>
+        </div>
       </div>
     </div>
 
     <div class="col-md-6">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-dark">Daily New Cases</h6>
+          <h6 class="m-0 font-weight-bold text-dark">Daily Deaths Cases</h6>
         </div>
-        <div id="daily_deaths_chart_div"></div>
+        <div class="card-body">
+          <div id="daily_deaths_chart_div"></div>
+        </div>
       </div>
     </div>
   </div>
