@@ -57,7 +57,7 @@ def get_data_vn():
     soup = BeautifulSoup(req.text, "lxml")
     table_ncov = soup.find_all(
         "table", {"class": "table table-striped table-covid19"})
-    headers = ["City,Total cases,Active,Recovered,Death",
+    headers = ["patient_number,age,medical_information,city,status,nationality",
                "Patient number,Age,Gender,Location,Status,Nationality"]
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%m-%d-%Y')
     names = ["cities", "patients"]

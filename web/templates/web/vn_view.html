@@ -7,79 +7,70 @@
 <link rel="stylesheet" type="text/css" href="{% static 'web/css/vn.css' %}" />
 
 {% endblock %} {% block body %}
-<div class="d-flex mt-5 m-10" id="summary-div">
+<div class="container-fluid">
+  <div class="m-10 mt-3 mb-4">
+    <h3 class="text-center text-gray-800">Vietnam Summary</h3>
+  </div>
+  <div class="row">
 
-  <div class="justify-content-start">
-    <!-- summary of cases -->
-    <div class="summary-cases pl-4">
-      <h3 class="text-center lang" key="sum_vn">Summary of Cases in Vietnam</h3>
-      <div clss="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr class="table text-center">
-              <th scope="col" class="lang" key="total_cases">Total Cases</th>
-              <th scope="col" class="lang" key="active">Active</th>
-              <th scope="col" class="lang" key="recover">Recovered</th>
-              <th scope="col" class="lang" key="death">Death</th>
-            </tr>
-            <tr class="table text-center">
-              <td scope="col">{{ summary.1 }}</td>
-              <td scope="col">{{ summary.3 }}</td>
-              <td scope="col">{{ summary.2 }}</td>
-              <td scope="col">{{ summary.4 }}</td>
-            </tr>
-          </thead>
-        </table>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-danger shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total Cases</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.4 }}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- cases by city -->
-    <div class="mt-5 pl-4">
-      <h3 class="text-center lang" key="per_city">Cases by City/Province</h3>
-      <div class="tableFixHead">
-        <table class="table-bordered">
-          <thead>
-            <th class="lang" key="city">City/Province</th>
-            <th class="lang" key="total_cases">Total Cases</th>
-            <th class="lang" key="active">Active</th>
-            <th class="lang" key="recover">Recovered</th>
-            <th class="lang" key="death">Death</th>
-            </tr>
-          </thead>
-          <tbody style="overflow-y: auto; height: 200px;">
-            {% for city in cities_summary %}
-            <tr>
-              <td>{{ city.0 }}</td>
-              <td>{{ city.1 }}</td>
-              <td>{{ city.2 }}</td>
-              <td>{{ city.3 }}</td>
-              <td>{{ city.4 }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-dark shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Total Deaths</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.1 }}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-warning shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Active Cases</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.3 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-success shadow h-100 py-2">
+        <div class="card-body">
+          <div class="row no-gutters align-items-center">
+            <div class="col mr-2">
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recovered</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.2 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- vietnam map -->
-  <div class="container justify-content-end ml-5 pl-5 pr-5">
-    <h3>COVID-19 Vietnam map</h3>
-    <div class="w-100 h-100" id="geochart-colors"></div>
+  <div class="h-100 m-10">
+    <div class="w-50 h-75 float-left" id="age_chart"></div>
+    <div class="w-50 h-75 pl-5 float-right" id="gender_chart"></div>
   </div>
-</div>
-
-
-
-<!-- other map -->
-<div class="h-100 m-10">
-  <div class="w-50 h-75 mt-5 float-left" id="case_curve_chart"></div>
-  <div class="w-50 h-75 mt-5 pl-5 float-right" id="active_curve_chart"></div>
-</div>
-
-<div class="h-100 m-10">
-  <div class="w-50 h-75 float-left" id="age_chart"></div>
-  <div class="w-50 h-75 pl-5 float-right" id="gender_chart"></div>
 </div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -94,7 +85,7 @@
     data.addColumn('string', 'Patient')
     data.addColumn('number', 'Age')
     data.addRows({{ ages| safe}})
-  
+
   if (lang == 'en') {
     var options = {
       title: 'Vietnam COVID-19 cases by Ages',
@@ -109,7 +100,7 @@
       legend: { position: 'right' },
     };
   }
-  else{
+  else {
     var options = {
       title: 'CA NHIỄM THEO ĐỘ TUỔI',
       titleTextStyle: {
@@ -141,8 +132,8 @@
 
     data.addRows({{ sexs| safe }});
 
-  
-  if (lang =='en') {
+
+  if (lang == 'en') {
     var options = {
       title: 'Vietnam COVID-19 cases by Gender',
       titleTextStyle: {
@@ -156,7 +147,7 @@
       isStacked: true,
     };
   }
-  else{
+  else {
     var options = {
       title: 'CA NHIỄM THEO GIỚI TÍNH',
       titleTextStyle: {

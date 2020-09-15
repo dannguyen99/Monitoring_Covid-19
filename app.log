@@ -148,3 +148,39 @@
 2020-09-09 09:13:28 ; root ; INFO ; Successfully updated data from ECDC on 09-08-2020
 2020-09-09 09:13:32 ; root ; INFO ; Successfully updated data from VN on 09-08-2020
 2020-09-09 09:13:33 ; root ; INFO ; Successfully updated data from WHO on 09-08-2020
+2020-09-10 10:15:48 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-09-10 10:16:05 ; root ; INFO ; Successfully updated data from ECDC on 09-09-2020
+2020-09-10 10:16:07 ; root ; INFO ; Successfully updated data from VN on 09-09-2020
+2020-09-10 10:16:08 ; root ; INFO ; Successfully updated data from WHO on 09-09-2020
+2020-09-10 10:25:39 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-09-10 10:25:53 ; root ; INFO ; Successfully updated data from ECDC on 09-09-2020
+2020-09-10 10:25:55 ; root ; INFO ; Successfully updated data from VN on 09-09-2020
+2020-09-10 10:25:56 ; root ; INFO ; Successfully updated data from WHO on 09-09-2020
+2020-09-10 15:31:36 ; root ; INFO ; Successfully updated data from JHU on 09-09-2020
+2020-09-10 15:31:53 ; root ; INFO ; Successfully updated data from ECDC on 09-09-2020
+2020-09-10 15:31:56 ; root ; INFO ; Successfully updated data from VN on 09-09-2020
+2020-09-10 15:31:57 ; root ; INFO ; Successfully updated data from WHO on 09-09-2020
+2020-09-11 14:29:43 ; root ; INFO ; Successfully updated data from JHU on 09-10-2020
+2020-09-11 14:29:59 ; root ; INFO ; Successfully updated data from ECDC on 09-10-2020
+2020-09-11 14:30:01 ; root ; INFO ; Successfully updated data from VN on 09-10-2020
+2020-09-11 14:30:02 ; root ; INFO ; Successfully updated data from WHO on 09-10-2020
+2020-09-13 19:30:17 ; root ; INFO ; Successfully updated data from JHU on 09-12-2020
+2020-09-13 19:30:37 ; root ; INFO ; Successfully updated data from ECDC on 09-12-2020
+2020-09-13 19:30:39 ; root ; INFO ; Successfully updated data from VN on 09-12-2020
+2020-09-13 19:30:40 ; root ; INFO ; Successfully updated data from WHO on 09-12-2020
+2020-09-14 09:52:42 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-09-14 09:52:59 ; root ; INFO ; Successfully updated data from ECDC on 09-13-2020
+2020-09-14 09:53:01 ; root ; INFO ; Successfully updated data from VN on 09-13-2020
+2020-09-14 09:53:02 ; root ; INFO ; Successfully updated data from WHO on 09-13-2020
+2020-09-15 13:47:30 ; root ; INFO ; Successfully updated data from JHU on 09-14-2020
+2020-09-15 13:47:48 ; root ; INFO ; Successfully updated data from ECDC on 09-14-2020
+2020-09-15 13:47:50 ; root ; INFO ; Successfully updated data from VN on 09-14-2020
+2020-09-15 13:47:52 ; root ; INFO ; Successfully updated data from WHO on 09-14-2020
+2020-09-15 14:58:52 ; root ; INFO ; Successfully updated data from JHU on 09-14-2020
+2020-09-15 14:59:10 ; root ; INFO ; Successfully updated data from ECDC on 09-14-2020
+2020-09-15 14:59:13 ; root ; INFO ; Successfully updated data from VN on 09-14-2020
+2020-09-15 14:59:15 ; root ; INFO ; Successfully updated data from WHO on 09-14-2020
+2020-09-15 15:04:22 ; root ; INFO ; Successfully updated data from JHU on 09-14-2020
+2020-09-15 15:04:38 ; root ; INFO ; Successfully updated data from ECDC on 09-14-2020
+2020-09-15 15:04:40 ; root ; INFO ; Successfully updated data from VN on 09-14-2020
+2020-09-15 15:04:41 ; root ; INFO ; Successfully updated data from WHO on 09-14-2020

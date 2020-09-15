@@ -1,38 +1,53 @@
-from datetime import datetime
 import json
+from datetime import datetime, date
+
 import pandas as pd
 import numpy as np
-from django.http import HttpResponse, Http404, JsonResponse
+from django.http import Http404, JsonResponse
 from django.shortcuts import render
-from.models import JhuData, VnData, EcdcData
+
+from .models import JhuData, VnData, EcdcData
+from .utils import views_functions
+
 
 # Create your views here.
 
 # render index.html
-
-
 def index(request):
-    csv_file = pd.read_csv(JhuData.objects.last().csv_file)
-    jhu_df = JhuData.index_table()
+    jhu_df = views_functions.index_table()
     summary = jhu_df.sum().to_numpy()[5:15]
     data_arr = jhu_df.dropna().to_numpy()[:, [0, 12]].tolist()
-    countryTable = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12, 13, 14]]
-    daily_data = EcdcData.index_daily_cases_chart()
+    country_table = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12, 13, 14]]
+    daily_data = views_functions.index_daily_cases_chart()
     daily_cases = daily_data[:, [0, 1]].tolist()
     daily_deaths = daily_data[:, [0, 2]].tolist()
     context = {
         "daily_deaths_data": daily_deaths,
         "daily_cases_data": daily_cases,
         "summary": summary,
-        "countries": countryTable,
+        "countries": country_table,
         "geochart_data": data_arr
     }
     return render(request, 'web/index.html', context)
 
 
+def index_view_api(request):
+    try:
+        key = request.GET['key']
+        if key == "who_region_new_cases":
+            data = views_functions.who_region_new_cases()
+            print(data)
+            return JsonResponse({"success": True, "data": data})
+        elif key == "case_ratio":
+            data = views_functions.case_ratio()
+            return JsonResponse({"success": True, "data": data})
+    except Exception as e:
+        return JsonResponse({"success": False, "message": str(e)})
+
+
 def change_world_map(request):
     try:
-        jhu_df = JhuData.index_table()
+        jhu_df = views_functions.index_table()
         filter_type = request.GET['filter_type']
         geochart_data = jhu_df.dropna().to_numpy()
         if filter_type == "confirmed":
@@ -44,20 +59,18 @@ def change_world_map(request):
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 
-# vietnam view
-
 
 def last_update(request):
     try:
         with open('app.log', 'r') as log_file:
             lines = log_file.read().splitlines()
             time = lines[-1].split(';')[0]
-            print(time)
             last_update = datetime.strptime(time, "%Y-%m-%d %H:%M:%S ")
             last_update = datetime.strftime(last_update, "%Y-%m-%dT%H:%M:%S")
             return JsonResponse({"success": True, "last_update": last_update})
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
+
 
 # vietnam view
 
@@ -65,7 +78,7 @@ def last_update(request):
 def vietnam_view(request):
     rows = []
     sexs = []
-    for d in VnData.objects.all().order_by('date'):
+    for d in VnData.objects.filter(date__range=["2020-01-01", "2020-08-31"]).order_by('date'):
         csv_file = pd.read_csv(d.csv_file)
         if d.data_type == "PT":
             age_csv = csv_file
@@ -81,11 +94,9 @@ def vietnam_view(request):
             sexs.append(sex)
     ages = pd.concat([age_csv['Patient number'],
                       age_csv['Age']], axis=1).to_numpy().tolist()
-    summary = pd.read_csv(VnData.objects.filter(data_type="CT").order_by(
-        'date').last().csv_file).sum().to_numpy()
-
-    cities_geomap = VnData.cities_geomap()
-    cities_summary = VnData.cities_summary()
+    summary = views_functions.vietnam_summary()
+    cities_geomap = views_functions.cities_geomap()
+    cities_summary = views_functions.cities_summary()
     context = {
         "ages": json.dumps(ages),
         "sexs": json.dumps(sexs),
@@ -95,6 +106,7 @@ def vietnam_view(request):
     }
     return render(request, 'web/vn_view.html', context)
 
+
 # vietnam api
 
 
@@ -103,12 +115,15 @@ def vietnam_view_api(request):
         key = request.GET['key']
         if key == "daily_data":
             filter_type = request.GET['filter_type']
-            cases, actives = VnData.vietnam_daily()
+            cases, actives = views_functions.vietnam_daily()
             if filter_type == "cases":
                 daily_data = cases
             else:
                 daily_data = actives
             return JsonResponse({"success": True, "data": daily_data})
+        if key == "summary":
+            data = views_functions.vietnam_summary()
+            return JsonResponse({"success": True, "data": data})
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 
@@ -129,11 +144,11 @@ def us_view(request):
 
 
 def country_view(request, geoId):
-    if EcdcData.get_country(geoId) is None:
+    if views_functions.get_country(geoId) is None:
         raise Http404("Country does not exist")
-    cases, deaths, time_line, pop_2019 = EcdcData.get_country(geoId)
-    cases_per_100k = round(cases/pop_2019 * 1000000, 2)
-    incidence_rate, case_fatality_ratio = JhuData.country_rate(geoId)
+    cases, deaths, time_line, pop_2019 = views_functions.get_country(geoId)
+    cases_per_100k = round(cases / pop_2019 * 1000000, 2)
+    incidence_rate, case_fatality_ratio = views_functions.country_rate(geoId)
     summary = [cases, deaths, pop_2019, cases_per_100k,
                incidence_rate, case_fatality_ratio]
     context = {
@@ -153,11 +168,8 @@ def about(request):
 
 
 def test(request):
-    ecdc = pd.read_csv('data/ECDC/05-19-2020.csv')
-    datas = EcdcData.objects.all()
-    cities_csv = VnData.cities_geomap()
+    data = views_functions.country_geomap()
     context = {
-        'datas': datas,
-        'ecdc': ecdc
+        "data": data
     }
     return render(request, 'web/test.html', context)
