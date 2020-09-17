@@ -83,13 +83,22 @@ function drawTrendlines(divId, dailyData) {
             "duration": 3000,
             easing: 'in',
         },
-        legend: { position: "in" }
+        legend: { position: "in" },
+        hAxis: {
+            title: 'Date',
+
+        },
+        vAxis: {
+            title: 'Number of cases'
+        },
+        fontName: 'Nunito',
     }
 
     var chart = new google.visualization.ColumnChart(document.getElementById(divId));
     chart.draw(data, options);
 }
 
+// prepare datatable
 $(document).ready(function () {
     var t = $('#dataTable').DataTable({
         "columnDefs": [{
@@ -142,7 +151,6 @@ function loadRatio(key, divId) {
         type: 'GET',
         dataType: 'json',
         success: (data) => {
-            console.log(data.data)
             drawRatePieChart(divId, data.data);
         },
         failure: function (data) {

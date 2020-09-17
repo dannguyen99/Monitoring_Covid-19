@@ -36,7 +36,6 @@ def index_view_api(request):
         key = request.GET['key']
         if key == "who_region_new_cases":
             data = views_functions.who_region_new_cases()
-            print(data)
             return JsonResponse({"success": True, "data": data})
         elif key == "case_ratio":
             data = views_functions.case_ratio()
@@ -124,6 +123,12 @@ def vietnam_view_api(request):
         if key == "summary":
             data = views_functions.vietnam_summary()
             return JsonResponse({"success": True, "data": data})
+        if key == "age":
+            data = views_functions.vietnam_age()
+            return JsonResponse({"success": True, "data": data})
+        if key == "nationality":
+            data = views_functions.vietnam_nationality()
+            return JsonResponse({"success": True, "data": data}) 
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 

@@ -1,3 +1,4 @@
+//draw daily data
 function drawCurveChart(divId, curveData) {
   google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(function () { drawChart(divId, curveData) });
@@ -46,7 +47,6 @@ function drawChart(divId, curveData) {
     },
     colors: colors,
     curveType: 'function',
-    backgroundColor: '#fbf9f9',
     legend: { position: 'right' },
   };
 
@@ -55,6 +55,7 @@ function drawChart(divId, curveData) {
   chart.draw(data, options);
 };
 
+//load daily data
 function loadDaily(filterType, divId) {
   $.ajax({
     url: '/vietnam/api',
@@ -73,7 +74,107 @@ function loadDaily(filterType, divId) {
   })
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+//draw age chart
+function drawAgeChart(histoData) {
+  google.charts.load("current", { packages: ["corechart"] });
+  google.charts.setOnLoadCallback(function () { drawHistogram(histoData) });
+}
+
+
+function drawHistogram(histoData) {
+  var data = new google.visualization.DataTable()
+  data.addColumn('string', 'Patient')
+  data.addColumn('number', 'Age')
+  data.addRows(histoData)
+
+  var options = {
+    // hAxis: {
+    //   title: 'Age',
+
+    // },
+    vAxis: {
+      title: 'Count'
+    },
+    fontName: 'Nunito',
+    fontSize: 15,
+  };
+
+  var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
+  chart.draw(data, options);
+}
+
+//load age data
+function loadAge() {
+  $.ajax({
+    url: '/vietnam/api',
+    data: {
+      'key': 'age',
+    },
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      console.log(data.data)
+      drawAgeChart(data.data);
+    },
+    failure: (data) => {
+      alert(data.message);
+    }
+  })
+}
+
+function drawRatePieChart(divId, data) {
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(function () { drawPieChart(divId, data) });
+}
+
+
+function drawPieChart(divId, pieData) {
+
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', 'Type')
+  data.addColumn('number', 'Cases');
+  data.addRows(pieData);
+
+
+  var options = {
+      colors: ['#343a40', '#28a745', '#ffc107', '#dc3545', '#e83e8c', '#007bff', '#6610f2'],
+      chartArea: { width: '100%', height: '90%' },
+      fontName: 'Nunito',
+      fontSize: 15,
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById(divId));
+
+  chart.draw(data, options);
+}
+
+function loadRatio(key, divId) {
+  $.ajax({
+      url: '/index/api',
+      data: {
+          'key': key,
+      },
+      type: 'GET',
+      dataType: 'json',
+      success: (data) => {
+          drawRatePieChart(divId, data.data);
+      },
+      failure: function (data) {
+          alert(data.message);
+      }
+  })
+}
+
+//load all chart
+document.addEventListener('DOMContentLoaded', () => {
   loadDaily('actives', "active_curve_chart");
   loadDaily('cases', 'case_curve_chart');
+  loadAge();
+});
+
+//prepare datatable
+$(document).ready(function () {
+  $('#dataTable').DataTable({
+    "order": [[1, 'desc']]
+  });
 });

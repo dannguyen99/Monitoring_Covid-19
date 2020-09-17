@@ -5,6 +5,13 @@
 {% block head %}
 <title>Vietnam Situation</title>
 <link rel="stylesheet" type="text/css" href="{% static 'web/css/vn.css' %}" />
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+
+
+<script type="text/javascript" charset="utf8"
+  src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8"
+  src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 
 {% endblock %} {% block body %}
 <div class="container-fluid">
@@ -32,7 +39,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Total Deaths</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.1 }}</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.2 }}</div>
             </div>
           </div>
         </div>
@@ -58,7 +65,7 @@
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
               <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recovered</div>
-              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.2 }}</div>
+              <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.1 }}</div>
             </div>
           </div>
         </div>
@@ -67,57 +74,82 @@
 
   </div>
 
-  <div class="h-100 m-10">
-    <div class="w-50 h-75 float-left" id="age_chart"></div>
-    <div class="w-50 h-75 pl-5 float-right" id="gender_chart"></div>
+  <div class="row">
+
+    <div class="col-xl-7 col-lg-7">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-dark">Summary by City</h6>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable">
+              <thead>
+                <tr class="table text-center">
+                  <th class="lang" key="city">City/Province</th>
+                  <th class="lang" key="total_cases">Total Cases</th>
+                  <th class="lang" key="active">Active</th>
+                  <th class="lang" key="recover">Recovered</th>
+                  <th class="lang" key="death">Death</th>
+                </tr>
+              </thead>
+              <tbody style="overflow-y: auto; height: 200px;">
+                {% for city in cities_summary %}
+                <tr class="table text-center">
+                  <td>{{ city.0 }}</td>
+                  <td>{{ city.1 }}</td>
+                  <td>{{ city.2 }}</td>
+                  <td>{{ city.3 }}</td>
+                  <td>{{ city.4 }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-5 col-lg-7">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-dark">Vietnam Map</h6>
+        </div>
+        <div id="geochart-colors" style="height: 332;"></div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-xl-6 col-lg-7">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-dark">Covid 19 Cases by Age</h6>
+        </div>
+        <div class="card-body">
+          <div id="age_chart" style="height: 500px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6 col-lg-7">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+          <h6 class="m-0 font-weight-bold text-dark">Case by Gender</h6>
+        </div>
+        <div class="card-body">
+          <div id="gender_chart" style="height: 500px;"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-
-<!-- case by age -->
-<script type="text/javascript">
-  google.charts.load("current", { packages: ["corechart"] });
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = new google.visualization.DataTable()
-    data.addColumn('string', 'Patient')
-    data.addColumn('number', 'Age')
-    data.addRows({{ ages| safe}})
-
-  if (lang == 'en') {
-    var options = {
-      title: 'Vietnam COVID-19 cases by Ages',
-      titleTextStyle: {
-        color: '#000000',
-        fontName: 'Times New Roman',
-        fontSize: 25,
-        bold: true,    // true or false
-        // italic: <boolean>   // true of false
-      },
-      backgroundColor: '#fbf9f9',
-      legend: { position: 'right' },
-    };
-  }
-  else {
-    var options = {
-      title: 'CA NHIỄM THEO ĐỘ TUỔI',
-      titleTextStyle: {
-        color: '#000000',
-        fontName: 'Times New Roman',
-        fontSize: 25,
-        bold: true,    // true or false
-        // italic: <boolean>   // true of false
-      },
-      backgroundColor: '#fbf9f9',
-      legend: { position: 'right' },
-    };
-  }
-  var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
-  chart.draw(data, options);
-    }
-</script>
 
 <!-- case by gender -->
 <script type="text/javascript">
@@ -135,29 +167,11 @@
 
   if (lang == 'en') {
     var options = {
-      title: 'Vietnam COVID-19 cases by Gender',
-      titleTextStyle: {
-        color: '#000000',
-        fontName: 'Times New Roman',
-        fontSize: 25,
-        bold: true,    // true or false
-        // italic: <boolean>   // true of false
-      },
-      backgroundColor: '#fbf9f9',
       isStacked: true,
     };
   }
   else {
     var options = {
-      title: 'CA NHIỄM THEO GIỚI TÍNH',
-      titleTextStyle: {
-        color: '#000000',
-        fontName: 'Times New Roman',
-        fontSize: 25,
-        bold: true,    // true or false
-        // italic: <boolean>   // true of false
-      },
-      backgroundColor: '#fbf9f9',
       isStacked: true,
     };
   }
@@ -191,7 +205,8 @@
     backgroundColor: '#81d4fa',
     datalessRegionColor: '#f8bbd0',
     defaultColor: '#f5f5f5',
-    resolution: "provinces"
+    resolution: "provinces",
+    keepAspectRatio: false
   };
 
   var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));

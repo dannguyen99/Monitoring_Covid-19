@@ -93,11 +93,37 @@ def cities_geomap():
     return cities_arr
 
 
+def status_convertion(status):
+    if status == "Khỏi":
+        return 3
+    elif status == "Đang điều trị":
+        return 2
+    elif status == "Tử vong":
+        return 4
+    else:
+        return 5
+
+
 def cities_summary():
-    cities_csv = VnData.objects.filter(
-        data_type="CT", date="2020-08-31").first().csv_file
-    cities_arr = pd.read_csv(cities_csv).to_numpy()
-    return cities_arr
+    df = pd.read_csv(VnData.objects.last().csv_file)
+    data = df.groupby(['city', 'status']).count().reset_index()[
+        ['city', 'status', 'patient_number']].to_numpy()
+    result = []
+    for d in data:
+        if len(result) == 0:
+            temp = [d[0], 0, 0, 0, 0, 0]
+            temp[status_convertion(d[1])] = d[2]
+            temp[1] = sum(temp[2:])
+            result.append(temp)
+        elif result[len(result) - 1][0] == d[0]:
+            result[len(result) - 1][status_convertion(d[1])] = d[2]
+            result[len(result) - 1][1] = sum(result[len(result) - 1][2:])
+        else:
+            temp = [d[0], 0, 0, 0, 0, 0]
+            temp[status_convertion(d[1])] = d[2]
+            temp[1] = sum(temp[2:])
+            result.append(temp)
+    return result
 
 
 def vietnam_daily():
@@ -147,4 +173,14 @@ def vietnam_summary():
     df = pd.read_csv(VnData.objects.last().csv_file)
     data = df.groupby('status').count().patient_number.to_numpy().tolist()
     data.append(sum(data))
+    return data
+
+def vietnam_age():
+    df = pd.read_csv(VnData.objects.last().csv_file)
+    data = df[['patient_number', 'age']].to_numpy().tolist()
+    return data
+
+def vietnam_nationality():
+    df = pd.read_csv(VnData.objects.last().csv_file)
+    data = df.groupby('nationality').count().reset_index()[['nationality', 'age']].to_numpy().tolist()
     return data
