@@ -12,15 +12,16 @@ function drawWorldMap(geochartData) {
 function drawRegionsMap(geochartData) {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Country');
-    data.addColumn('number', 'Confirmed');
+    data.addColumn('number', 'Confirmed/1M');
     data.addRows(geochartData);
+    data.addRow(['Greenland', 14])
 
     var options = {
-        title: "World Corona Virus Case by 1M pop",
         colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
         backgroundColor: '#81d4fa',
-        datalessRegionColor: '#f8bbd0',
+        datalessRegionColor: '#fff',
         defaultColor: '#f5f5f5',
+        height: 560,
     };
 
     var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
@@ -29,7 +30,7 @@ function drawRegionsMap(geochartData) {
 };
 
 // change world map filter
-document.querySelectorAll('.btn').forEach(button => {
+document.querySelectorAll('.filter').forEach(button => {
     button.onclick = () => {
         $.ajax({
             url: '/index/change_world_map',
@@ -59,25 +60,12 @@ function drawTrendlines(divId, dailyData) {
     var data = new google.visualization.DataTable();
     data.addColumn('date', 'Day');
     if (divId === 'daily_cases_chart_div') {
-        colors_l = ['gray'];
+        colors_l = ['#dc3545'];
         data.addColumn('number', 'Cases');
-        if (lang == 'en') {
-            title = 'Daily New Cases';
-        }
-        else {
-            title = 'SỐ CA NHIỄM THEO NGÀY';
-        }
     }
     else {
-        colors_l = ['red'];
+        colors_l = ['#343a40'];
         data.addColumn('number', 'Deaths');
-        if (lang == 'en') {
-            title = 'Daily New Deaths';
-        }
-        else {
-            title = 'SỐ CA TỬ VONG THEO NGÀY';
-        }
-
     }
     for (d of dailyData) {
         day = new Date(d[0])
@@ -86,15 +74,6 @@ function drawTrendlines(divId, dailyData) {
     }
 
     var options = {
-        backgroundColor: '#fbf9f9',
-        title: title,
-        titleTextStyle: {
-            color: '#000000',
-            fontName: 'Times New Roman',
-            fontSize: 25,
-            bold: true,    // true or false
-            // italic: <boolean>   // true of false
-        },
         trendlines: {
             0: { type: 'exponential', lineWidth: 4, opacity: .5 }
         },
@@ -104,31 +83,83 @@ function drawTrendlines(divId, dailyData) {
             "duration": 3000,
             easing: 'in',
         },
+        legend: { position: "in" },
+        hAxis: {
+            title: 'Date',
+
+        },
+        vAxis: {
+            title: 'Number of cases'
+        },
+        fontName: 'Nunito',
     }
 
     var chart = new google.visualization.ColumnChart(document.getElementById(divId));
     chart.draw(data, options);
 }
 
-function resetFixedColumn() {
-    fixed_columns = document.querySelectorAll('.fixed_column');
-    for (const [index, row] of fixed_columns.entries()) {
-        row.innerHTML = index + 1;
-    }
+// prepare datatable
+$(document).ready(function () {
+    var t = $('#dataTable').DataTable({
+        "columnDefs": [{
+            "searchable": false,
+            "orderable": false,
+            "targets": 0
+        }],
+        "order": [[2, 'desc']]
+    });
+
+    t.on('order.dt search.dt', function () {
+        t.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1;
+        });
+    }).draw();
+});
+
+function drawRatePieChart(divId, data) {
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(function () { drawPieChart(divId, data) });
 }
 
-//sort table
-const getCellValue = (tr, idx) => tr.children[idx].innerText.replace(/,/g, '') || tr.children[idx].textContent.replace(/,/g, '');
 
-const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
-    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2)
-)(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+function drawPieChart(divId, pieData) {
 
-// do the work...
-document.querySelectorAll('.sort_header').forEach(th => th.addEventListener('click', (() => {
-    const table = th.closest('table');
-    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
-        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
-        .forEach(tr => table.appendChild(tr));
-    resetFixedColumn();
-})));
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Type')
+    data.addColumn('number', 'Cases');
+    data.addRows(pieData);
+
+
+    var options = {
+        colors: ['#343a40', '#28a745', '#ffc107', '#dc3545', '#e83e8c', '#007bff', '#6610f2'],
+        chartArea: { width: '100%', height: '90%' },
+        fontName: 'Nunito',
+        fontSize: 15,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById(divId));
+
+    chart.draw(data, options);
+}
+
+function loadRatio(key, divId) {
+    $.ajax({
+        url: '/index/api',
+        data: {
+            'key': key,
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: (data) => {
+            drawRatePieChart(divId, data.data);
+        },
+        failure: function (data) {
+            alert(data.message);
+        }
+    })
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    loadRatio("case_ratio", "piechart_case_ratio");
+    loadRatio("who_region_new_cases", "piechart_region_ratio")
+});

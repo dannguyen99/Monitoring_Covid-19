@@ -35,8 +35,8 @@ arrLang["en"]["recover"] = "Recovered";
 arrLang["en"]["death"] = "Death";
 arrLang["en"]["incidence_rate"] = "Incidence Rate"
 arrLang["en"]["case_fatality_ratio"] = "Case-fatality Ratio"
-arrLang["en"]["new_case"] = "NEWS CASES";
-arrLang["en"]["new_death"] = "NEW DEATH";
+arrLang["en"]["new_case"] = "New Cases";
+arrLang["en"]["new_death"] = "New Deaths";
 arrLang["en"]["per_country"] = "SUMMARY OF CASES WORLDWIDE PER COUNTRIES";
 arrLang["en"]["world_map"] = "COVID-19 World map";
 arrLang["en"]["vn_map"] = "COVID-19 Vietnam map";
@@ -44,7 +44,7 @@ arrLang["en"]["us_map"] = "COVID-19 America map";
 
 arrLang["en"]["country"] = "Countries and Territories";
 arrLang["en"]["cases_per_1m"] = "Total cases/1M pop";
-arrLang["en"]["population"] = "Population Data 2019";
+arrLang["en"]["population"] = "Population 2019";
 
 // button
 

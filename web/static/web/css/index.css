@@ -1,3 +1,41 @@
-th.sort_header {
-    cursor: pointer;
-}
+.border-dark {
+    border-left: .25rem solid #343a40!important;
+    border-right: .25rem solid #343a40!important;
+  }
+  
+  .border-success {
+    border-left: .25rem solid #28a745!important;
+    border-right: .25rem solid #28a745!important;
+  }
+  
+  .border-danger {
+    border-left: .25rem solid #dc3545!important;
+    border-right: .25rem solid #dc3545!important;
+  }
+  
+  .border-warning {
+    border-left: .25rem solid #f6c23e!important;
+    border-right: .25rem solid #f6c23e!important;
+  }
+  
+  .text-gray-800 {
+    color: #5a5c69!important;
+  }
+  
+  .shadow {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+  }
+  
+  .card {
+    border: 1px solid #e3e6f0;
+    border-radius: .35rem;
+  }
+  
+  .text-xs {
+    font-size: .7rem;
+  }
+  
+  
+  .row.no-gutters.align-items-center{
+    text-align: center;
+  }
