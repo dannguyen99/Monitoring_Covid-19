@@ -170,9 +170,17 @@ def case_ratio():
 
 
 def vietnam_summary():
-    df = pd.read_csv(VnData.objects.last().csv_file)
+    records = VnData.objects.all().order_by('-date')
+    today_record = records[0]
+    prev_record = records[1]  
+    df = pd.read_csv(today_record.csv_file)
+    prev_df = pd.read_csv(prev_record.csv_file)
+    new_cases = len(df.index) - len(prev_df.index)
+    new_deaths = df.groupby('status').count().age[2] - prev_df.groupby('status').count().age[2]
     data = df.groupby('status').count().patient_number.to_numpy().tolist()
-    data.append(sum(data))
+    data.append(int(sum(data)))
+    data.append(int(new_cases))
+    data.append(int(new_deaths))
     return data
 
 def vietnam_age():

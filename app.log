@@ -192,3 +192,15 @@
 2020-09-17 08:58:29 ; root ; INFO ; Successfully updated data from ECDC on 09-16-2020
 2020-09-17 08:58:31 ; root ; INFO ; Successfully updated data from VN on 09-16-2020
 2020-09-17 08:58:33 ; root ; INFO ; Successfully updated data from WHO on 09-16-2020
+2020-09-17 17:35:52 ; root ; INFO ; Successfully updated data from JHU on 09-16-2020
+2020-09-17 17:36:09 ; root ; INFO ; Successfully updated data from ECDC on 09-16-2020
+2020-09-17 17:36:11 ; root ; INFO ; Successfully updated data from VN on 09-16-2020
+2020-09-17 17:36:13 ; root ; INFO ; Successfully updated data from WHO on 09-16-2020
+2020-09-18 09:41:13 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-09-18 09:41:32 ; root ; INFO ; Successfully updated data from ECDC on 09-17-2020
+2020-09-18 09:41:34 ; root ; INFO ; Successfully updated data from VN on 09-17-2020
+2020-09-18 09:41:36 ; root ; INFO ; Successfully updated data from WHO on 09-17-2020
+2020-09-20 20:35:17 ; root ; INFO ; Successfully updated data from JHU on 09-19-2020
+2020-09-20 20:35:32 ; root ; INFO ; Successfully updated data from ECDC on 09-19-2020
+2020-09-20 20:35:33 ; root ; INFO ; Successfully updated data from VN on 09-19-2020
+2020-09-20 20:35:35 ; root ; INFO ; Successfully updated data from WHO on 09-19-2020
