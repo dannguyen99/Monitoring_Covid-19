@@ -113,7 +113,6 @@ function loadAge() {
     type: 'GET',
     dataType: 'json',
     success: (data) => {
-      console.log(data.data)
       drawAgeChart(data.data);
     },
     failure: (data) => {
@@ -122,42 +121,41 @@ function loadAge() {
   })
 }
 
-function drawRatePieChart(divId, data) {
+function drawRatePieChart(data) {
   google.charts.load('current', { 'packages': ['corechart'] });
-  google.charts.setOnLoadCallback(function () { drawPieChart(divId, data) });
+  google.charts.setOnLoadCallback(function () { drawPieChart(data) });
 }
 
 
-function drawPieChart(divId, pieData) {
+function drawPieChart(pieData) {
 
   var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Type')
+  data.addColumn('string', 'Nationality')
   data.addColumn('number', 'Cases');
   data.addRows(pieData);
 
 
   var options = {
-      colors: ['#343a40', '#28a745', '#ffc107', '#dc3545', '#e83e8c', '#007bff', '#6610f2'],
       chartArea: { width: '100%', height: '90%' },
       fontName: 'Nunito',
       fontSize: 15,
   };
 
-  var chart = new google.visualization.PieChart(document.getElementById(divId));
+  var chart = new google.visualization.PieChart(document.getElementById('piechart_nationality'));
 
   chart.draw(data, options);
 }
 
-function loadRatio(key, divId) {
+function loadRatio() {
   $.ajax({
-      url: '/index/api',
+      url: '/vietnam/api',
       data: {
-          'key': key,
+          'key': 'nationality',
       },
       type: 'GET',
       dataType: 'json',
       success: (data) => {
-          drawRatePieChart(divId, data.data);
+          drawRatePieChart(data.data);
       },
       failure: function (data) {
           alert(data.message);
@@ -170,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDaily('actives', "active_curve_chart");
   loadDaily('cases', 'case_curve_chart');
   loadAge();
+  loadRatio();
 });
 
 //prepare datatable
