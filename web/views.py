@@ -15,7 +15,7 @@ from .utils import views_functions
 # render index.html
 def index(request):
     jhu_df = views_functions.index_table()
-    summary = jhu_df.sum().to_numpy()[5:15]
+    summary = views_functions.world_summary()
     data_arr = jhu_df.dropna().to_numpy()[:, [0, 12]].tolist()
     country_table = jhu_df.to_numpy()[:, [0, 5, 6, 7, 8, 11, 12, 13, 14]]
     daily_data = views_functions.index_daily_cases_chart()
@@ -29,22 +29,6 @@ def index(request):
         "geochart_data": data_arr
     }
     return render(request, 'web/index.html', context)
-
-
-def index_view_api(request):
-    try:
-        key = request.GET['key']
-        if key == "who_region_new_cases":
-            data = views_functions.who_region_new_cases()
-            return JsonResponse({"success": True, "data": data})
-        elif key == "case_ratio":
-            data = views_functions.case_ratio()
-            return JsonResponse({"success": True, "data": data})
-        elif key == "summary":
-            data = views_functions.index_table().sum().to_numpy()[5:15].tolist()
-            return JsonResponse({"success": True, "data": data})
-    except Exception as e:
-        return JsonResponse({"success": False, "message": str(e)})
 
 
 def change_world_map(request):
@@ -109,44 +93,7 @@ def vietnam_view(request):
     return render(request, 'web/vn_view.html', context)
 
 
-# vietnam api
-
-
-def vietnam_view_api(request):
-    try:
-        key = request.GET['key']
-        if key == "daily_data":
-            filter_type = request.GET['filter_type']
-            cases, actives = views_functions.vietnam_daily()
-            if filter_type == "cases":
-                daily_data = cases
-            else:
-                daily_data = actives
-            return JsonResponse({"success": True, "data": daily_data})
-        elif key == "summary":
-            data = views_functions.vietnam_summary()
-            return JsonResponse({"success": True, "data": data})
-        elif key == "age":
-            data = views_functions.vietnam_age()
-            return JsonResponse({"success": True, "data": data})
-        elif key == "nationality":
-            data = views_functions.vietnam_nationality()
-            return JsonResponse({"success": True, "data": data})
-        elif key == "summary":
-            data = views_function.vietnam_summary()
-            return JsonResponse({"success": True, "data": data})
-        elif key == "city_summary":
-            data = views_functions.cities_summary()
-            return JsonResponse({"success": True, "data": data})
-    except Exception as e:
-        return JsonResponse({"success": False, "message": str(e)})
-
-
-def euView(request):
-    return render(request, 'web/eu_view.html')
-
-
-def us_view(request):
+def visualization(request):
     csv_file = pd.read_csv(JhuData.objects.last().csv_file)
     country = csv_file.groupby(['Province_State']).sum(
     ).reset_index().sort_values(by='Confirmed', ascending=False)
@@ -154,7 +101,7 @@ def us_view(request):
     context = {
         "states": data_arr
     }
-    return render(request, 'web/us_view.html', context)
+    return render(request, 'web/visualization.html', context)
 
 
 def country_view(request, geoId):

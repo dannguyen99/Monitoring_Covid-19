@@ -50,7 +50,6 @@ def index_daily_cases_chart():
     data = df.to_numpy()[:, [0, 5, 6]]
     return data
 
-
 def country_rate(country_name):
     csv_file = JhuData.objects.order_by('date').last().csv_file
     df = pd.read_csv(csv_file)
@@ -59,6 +58,17 @@ def country_rate(country_name):
     incidence_rate = df[0][9]
     case_fatality_ratio = df[0][10]
     return incidence_rate, case_fatality_ratio
+
+def world_summary():
+    df = pd.read_csv(JhuData.objects.last().csv_file)
+    data = df.sum()[['Recovered','Deaths', 'Active','Confirmed']].astype(int).tolist()
+    data.insert(0, 0)
+    df = pd.read_csv(WhoData.objects.last().csv_file)
+    lasted_date = df.iloc[-1]['Date_reported']
+    temp = df.loc[df['Date_reported'] == lasted_date].sum()[[' New_cases', ' New_deaths']].astype(int).tolist()
+    data.append(temp[0])
+    data.append(temp[1])
+    return data
 
 
 def get_country(country_name):
@@ -188,7 +198,12 @@ def vietnam_age():
     data = df[['patient_number', 'age']].to_numpy().tolist()
     return data
 
-def vietnam_nationality():
+def vietnam_nationality():									    
     df = pd.read_csv(VnData.objects.last().csv_file)
     data = df.groupby('nationality').count().reset_index()[['nationality', 'age']].to_numpy().tolist()
     return data
+
+def vietnam_gender():
+	df = pd.read_csv(VnData.objects.filter(data_type='PT').last().csv_file)
+	data = df.groupby('Gender')['Patient number'].nunique().tolist()
+	return data

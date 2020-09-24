@@ -1,18 +1,18 @@
 from django.urls import path
 
 from . import views
+from . import apis
 
 urlpatterns = [
     path("", views.index, name="index"),
     path("vietnam", views.vietnam_view, name="vietnam"),
-    path("europe", views.euView, name="europe"),
-    path("us", views.us_view, name="us"),
+    path("visualization", views.visualization, name="visualization"),
     path("country/<str:geoId>", views.country_view, name="country_view"),
     path("test", views.test, name="test"),
     path("index/change_world_map", views.change_world_map, name="change_world_map"),
     path("references", views.references, name="references"),
     path("about", views.about, name="about"),
-    path("vietnam/api", views.vietnam_view_api, name='vietnam_api'),
+    path("vietnam/api", apis.vietnam_view_api, name='vietnam_api'),
     path("last_update", views.last_update, name="last_update"),
-    path("index/api", views.index_view_api, name='index_api')
+    path("index/api", apis.index_view_api, name='index_api')
 ]
