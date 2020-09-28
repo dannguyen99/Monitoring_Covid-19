@@ -1,0 +1,1070 @@
+patient_number,age,medical_information,city,status,nationality
+BN1069,18,Thông tin dịch tễ,Hưng Yên,Đang điều trị,Việt Nam
+BN1068,36,Thông tin dịch tễ,Khánh Hòa,Đang điều trị,Việt Nam
+BN1067,36,Thông tin dịch tễ,Khánh Hòa,Đang điều trị,Việt Nam
+BN1066,38,Thông tin dịch tễ,Hà Nội,Đang điều trị,Việt Nam
+BN1065,41,Thông tin dịch tễ,Hà Nội,Đang điều trị,Việt Nam
+BN1064,37,Thông tin dịch tễ,Hà Nội,Đang điều trị,Việt Nam
+BN1063,26,Thông tin dịch tễ,Phú Yên,Đang điều trị,Việt Nam
+BN1062,24,Thông tin dịch tễ,Phú Yên,Đang điều trị,Việt Nam
+BN1061,23,Thông tin dịch tễ,Phú Yên,Đang điều trị,Việt Nam
+BN1060,21,Thông tin dịch tễ,Hà Nội,Đang điều trị,Việt Nam
+BN1059,37,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1058,4,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1057,30,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1056,11,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1055,60,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1054,26,Thông tin dịch tễ,Tây Ninh,Khỏi,Việt Nam
+BN1053,2,Thông tin dịch tễ,Tây Ninh,Khỏi,Việt Nam
+BN1052,35,Thông tin dịch tễ,Tây Ninh,Khỏi,Việt Nam
+BN1051,28,Thông tin dịch tễ,Cần Thơ,Đang điều trị,Việt Nam
+BN1050,51,Thông tin dịch tễ,Cần Thơ,Khỏi,Việt Nam
+BN1049,43,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1048,35,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1047,8,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN1046,30,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN1045,72,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN 1044,62,Thông tin dịch tễ,Phú Thọ,Khỏi,Ấn Độ
+BN 1043,29,Thông tin dịch tễ,Hà Nội,Đang điều trị,Việt Nam
+BN 1042,32,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Ấn Độ
+BN 1041,33,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Ấn Độ
+BN1040,55,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN1039,20,Thông tin dịch tễ,Bình Dương,Khỏi,Việt Nam
+BN1038,23,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN1037,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1036,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1035,34,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN1034,34,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN1033,58,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN1032,21,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN1031,38,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN1030,42,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN1029,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1028,20,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1027,43,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1026,21,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1025,70,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1024,16,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1023,20,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1022,63,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN1021,8,Thông tin dịch tễ,Hải Dương,Đang điều trị,Việt Nam
+BN1020,26,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1019,37,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1018,57,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1017,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1016,33,Thông tin dịch tễ,Hải Dương,Đang điều trị,Việt Nam
+BN1015,44,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1014,60,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1013,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1012,69,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1011,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1010,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1009,47,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1008,75,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN994,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1007,27,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN1006,48,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1005,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1004,44,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1003,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1002,55,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1001,24,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN1000,33,Thông tin dịch tễ,Khánh Hòa,Khỏi,Philippines
+BN999,26,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN998,47,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN997,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN996,28,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN995,49,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN993,40,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN992,37,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN991,34,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN990,25,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN989,35,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN988,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN987,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN986,54,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN985,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN984,45,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN983,15,Thông tin dịch tễ,Quảng Nam,Đang điều trị,Việt Nam
+BN982,90,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN981,32,Thông tin dịch tễ,Quảng Nam,Đang điều trị,Việt Nam
+BN980,37,Thông tin dịch tễ,Cần Thơ,Đang điều trị,Việt Nam
+BN979,33,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN978,46,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN977,46,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN976,42,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN975,33,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN974,33,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN973,41,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN972,34,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN971,14,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN970,13,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN964,49,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN963,30,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN962,30,Thông tin dịch tễ,Hà Nội,Đang điều trị,Việt Nam
+BN961,32,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN960,66,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN959,24,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN958,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN957,67,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN956,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN955,31,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN954,0,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN953,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN952,57,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN951,27,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN969,25,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN968,49,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN967,59,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN966,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN965,35,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN950,15,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN949,42,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN948,22,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN947,57,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN946,53,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN945,19,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN944,37,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN943,31,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN942,62,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN941,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN940,50,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN939,66,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN938,34,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN937,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN936,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN935,91,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN934,35,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN933,35,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN932,14,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN931,66,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN930,41,Thông tin dịch tễ,Nam Định,Khỏi,Việt Nam
+BN929,57,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN928,5,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN927,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN926,66,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN925,37,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN924,37,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN923,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN922,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN921,49,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN920,66,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN919,49,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN918,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN917,84,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN916,34,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN915,66,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN914,60,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN913,59,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN912,27,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Trung Quốc
+BN911,79,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN910,6,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN909,38,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN908,59,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN907,17,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN906,72,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN905,65,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN904,36,Thông tin dịch tễ,Quảng Trị,Đang điều trị,Việt Nam
+BN903,23,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN902,24,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN901,27,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN900,45,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN899,27,Thông tin dịch tễ,Khánh Hòa,Đang điều trị,Việt Nam
+BN898,27,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN897,35,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN896,73,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN895,17,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+"BN894,",21,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN893,48,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN892,53,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN891,39,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN890,47,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN889,34,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN888,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN887,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN886,64,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN885,63,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN884,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN883,83,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN882,51,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN881,40,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN880,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN879,33,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN878,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN877,41,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN876,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN875,26,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN874,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN873,77,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN872,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN871,59,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN870,35,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN869,83,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN868,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN867,63,Thông tin dịch tễ,Hà Nội,Đang điều trị,Việt Nam
+BN866,33,Thông tin dịch tễ,Hải Phòng,Khỏi,Việt Nam
+BN865,33,Thông tin dịch tễ,Hải Phòng,Khỏi,Việt Nam
+BN864,36,Thông tin dịch tễ,Hải Phòng,Khỏi,Việt Nam
+BN863,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN862,66,Thông tin dịch tễ,Quảng Trị,Đang điều trị,Việt Nam
+BN861,36,Thông tin dịch tễ,Quảng Trị,Khỏi,Việt Nam
+BN860,55,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN859,47,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN858,55,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN857,26,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN856,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN855,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN854,70,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN853,14,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN852,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN851,67,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN850,55,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN849,39,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN848,78,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN847,44,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN846,17,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN845,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN844,31,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN843,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN842,8,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN825,60,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN841,11,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN840,36,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN839,60,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN838,47,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN837,56,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN836,13,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN835,26,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN834,0,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN833,29,Thông tin dịch tễ,Quảng Trị,Khỏi,Việt Nam
+BN832,37,Thông tin dịch tễ,Quảng Trị,Tử vong,Việt Nam
+BN831,7,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN830,15,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN829,49,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN828,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN827,56,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN826,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN824,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN823,43,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN822,57,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN821,67,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN820,85,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN819,84,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN818,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN817,43,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN816,39,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN815,26,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN814,15,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN813,35,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN812,63,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN811,33,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN810,21,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN809,55,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN808,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN807,25,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN806,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN805,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN804,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN803,13,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN802,63,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN801,41,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN800,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN799,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN798,16,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN797,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN796,56,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN795,55,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN794,2,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN793,58,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN792,25,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN791,45,Thông tin dịch tễ,Khánh Hòa,Đang điều trị,Việt Nam
+BN790,17,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN789,33,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN788,38,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN787,51,Thông tin dịch tễ,Quảng Ngãi,Khỏi,Việt Nam
+BN786,45,Thông tin dịch tễ,Quảng Ngãi,Khỏi,Việt Nam
+BN785,42,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN784,50,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN783,17,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN782,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN781,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN780,9,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN779,20,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN778,48,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN777,62,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN776,62,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN775,26,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN774,63,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN773,37,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN772,65,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN771,0,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN770,48,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN769,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN768,54,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN767,71,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN766,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN765,76,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN764,67,Thông tin dịch tễ,Đà Nẵng,Khác,Việt Nam
+BN763,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN762,23,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN761,83,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN760,62,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN759,64,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN758,36,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN757,70,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN756,35,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN755,73,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN754,50,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN753,74,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN752,30,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN751,45,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN750,28,Thông tin dịch tễ,Quảng Trị,Đang điều trị,Việt Nam
+BN749,27,Thông tin dịch tễ,Quảng Trị,Đang điều trị,Việt Nam
+BN748,54,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN747,27,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN746,31,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN745,26,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Đang điều trị,Việt Nam
+BN744,7,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN743,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN742,69,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN741,23,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN740,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN739,53,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN738,49,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN737,47,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN736,39,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN735,47,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN734,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN733,49,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN732,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN731,36,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN730,59,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN729,51,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN728,66,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN727,31,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN726,1,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN725,47,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN724,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN723,56,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN722,28,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN721,26,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN720,30,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN719,28,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN 718,67,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN717,44,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN716,43,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN715,42,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN714,42,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN713,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN712,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN711,24,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN710,76,Thông tin dịch tễ,Quảng Ngãi,Khỏi,Việt Nam
+BN709,28,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN708,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN707,50,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN706,57,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN705,59,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN704,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN703,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN702,63,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN701,72,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN700,45,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN699,75,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN698,51,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN697,50,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN696,51,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN695,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN694,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN693,60,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN692,2,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN691,19,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN690,19,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN689,50,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN688,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN687,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN686,66,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN685,1,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN684,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN683,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN682,75,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN681,72,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN680,39,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN679,44,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN678,38,Thông tin dịch tễ,Lạng Sơn,Khỏi,Việt Nam
+BN677,10,Thông tin dịch tễ,Lạng Sơn,Khỏi,Việt Nam
+BN676,13,Thông tin dịch tễ,Lạng Sơn,Khỏi,Việt Nam
+BN675,41,Thông tin dịch tễ,Lạng Sơn,Khỏi,Việt Nam
+BN674,57,Thông tin dịch tễ,Bắc Giang,Đang điều trị,Việt Nam
+BN673,34,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN672,37,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN671,33,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN670,50,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN669,50,Thông tin dịch tễ,Đồng Nai,Khỏi,Việt Nam
+BN668,35,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN667,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN666,93,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN665,22,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN664,12,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN663,12,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN662,45,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN661,83,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN660,32,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN659,48,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN658,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN657,48,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN656,54,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN655,8,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN654,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN653,34,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN652,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN651,67,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN650,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN649,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN648,48,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN647,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN646,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN645,67,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN644,35,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN643,64,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN642,50,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN641,20,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN640,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN639,32,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN638,23,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN637,25,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN636,67,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN635,78,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN634,54,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN633,43,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN632,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN631,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN630,54,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN629,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN628,43,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN627,46,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN626,38,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN625,51,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN624,69,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN623,83,Thông tin dịch tễ,Quảng Nam,Tử vong,Việt Nam
+BN622,39,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN621,60,Thông tin dịch tễ,Quảng Ngãi,Khỏi,Việt Nam
+BN620,44,Thông tin dịch tễ,Hà Nam,Khỏi,Việt Nam
+BN619,26,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN618,47,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN617,31,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN616,34,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN615,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN614,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN613,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN612,25,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN611,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN610,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN609,31,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN608,64,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN607,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN606,40,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN605,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN604,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN603,21,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN602,14,Thông tin dịch tễ,Đắk Lắk,Khỏi,Việt Nam
+BN601,41,Thông tin dịch tễ,Đắk Lắk,Khỏi,Việt Nam
+BN600,7,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN599,9,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN598,8,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN597,39,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN596,23,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN595,50,Thông tin dịch tễ,Đồng Nai,Khỏi,Việt Nam
+BN594,68,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN593,75,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN592,100,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN591,63,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN590,40,Thông tin dịch tễ,Quảng Ngãi,Khỏi,Việt Nam
+BN589,42,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN588,25,Thông tin dịch tễ,Hoà Bình,Khỏi,Việt Nam
+BN587,24,Thông tin dịch tễ,Hoà Bình,Khỏi,Việt Nam
+BN586,33,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN585,61,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN584,23,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN583,33,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN582,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN581,24,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN580,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN579,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN578,86,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN577,73,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN576,32,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN575,82,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN574,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN573,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN572,43,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN571,36,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN570,36,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN569,35,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN568,26,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN567,49,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN566,59,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN565,75,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN564,19,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN563,41,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN562,53,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN561,19,Thông tin dịch tễ,Quảng Nam,Đang điều trị,Việt Nam
+BN560,26,Thông tin dịch tễ,Trà Vinh,Khỏi,Việt Nam
+BN559,29,Thông tin dịch tễ,Trà Vinh,Khỏi,Việt Nam
+BN558,72,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN557,2,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN556,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN555,33,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN554,37,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN553,25,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN552,78,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN551,35,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN550,75,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN549,55,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN548,37,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN547,52,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN514,36,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN546,28,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN545,31,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN544,33,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN543,30,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN542,45,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN541,55,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN540,48,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN539,35,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN538,30,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN537,37,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN536,23,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN535,29,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN534,42,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN533,35,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN532,55,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN531,32,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN530,38,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN529,35,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN528,28,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN527,53,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN526,50,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN525,90,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN524,86,Thông tin dịch tễ,Quảng Nam,Tử vong,Việt Nam
+BN522,68,Thông tin dịch tễ,Quảng Nam,Tử vong,Việt Nam
+BN523,63,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN521,15,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN520,51,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN519,40,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN518,61,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN517,55,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN516,45,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN515,23,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN513,27,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN512,30,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN511,30,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN510,57,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN509,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN508,31,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN507,57,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN506,69,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN505,57,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN504,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN503,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN502,60,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN501,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN500,41,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN499,68,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN498,46,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN497,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN496,65,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN495,30,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN494,41,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN493,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN492,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN491,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN490,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN489,71,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN488,67,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN487,66,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN486,64,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN485,55,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN484,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN483,37,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN482,82,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN481,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN480,59,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN479,87,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN478,80,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN477,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN476,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN475,83,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN474,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN473,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN472,51,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN471,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN470,67,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN469,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN468,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN467,42,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN466,64,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN465,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN464,69,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN463,45,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN462,53,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN461,45,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN460,49,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN459,76,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN458,38,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN457,70,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN456,57,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN455,32,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN454,65,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN453,56,Thông tin dịch tễ,Đà Nẵng,Khác,Việt Nam
+BN452,52,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN451,36,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN450,46,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN449,57,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Hoa Kỳ
+BN448,21,Thông tin dịch tễ,Đắk Lắk,Khỏi,Việt Nam
+BN447,23,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN446,39,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN445,61,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN444,19,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN443,63,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN442,55,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN441,43,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN440,41,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN439,68,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN438,56,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN437,61,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN436,66,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN435,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN434,71,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN433,67,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN432,63,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN431,55,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN430,33,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN429,53,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN428,70,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN427,45,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN426,62,Thông tin dịch tễ,Đà Nẵng,Tử vong,Việt Nam
+BN425,24,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN424,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN423,41,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN422,63,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN421,26,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN420,71,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN419,17,Thông tin dịch tễ,Quảng Ngãi,Khỏi,Việt Nam
+BN418,61,Thông tin dịch tễ,Đà Nẵng,Khác,Việt Nam
+BN417,5,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN416,57,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN415,25,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN414,34,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN413,31,Thông tin dịch tễ,Quảng Ninh,Khỏi,Mi-an-ma
+BN412,49,Thông tin dịch tễ,Nam Định,Khỏi,Việt Nam
+BN411,30,Thông tin dịch tễ,Nam Định,Đang điều trị,Việt Nam
+BN410,25,Thông tin dịch tễ,Nam Định,Khỏi,Việt Nam
+BN409,37,Thông tin dịch tễ,Kiên Giang,Khỏi,Philippines
+BN408,42,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN407,46,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN406,46,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN405,55,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN404,49,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN403,55,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN402,54,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN401,24,Thông tin dịch tễ,Hoà Bình,Khỏi,Việt Nam
+BN400,25,Thông tin dịch tễ,Hoà Bình,Khỏi,Việt Nam
+BN399,25,Thông tin dịch tễ,Hoà Bình,Khỏi,Việt Nam
+BN398,25,Thông tin dịch tễ,Hoà Bình,Khỏi,Việt Nam
+BN397,58,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN396,38,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN395,26,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN394,25,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN393,26,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN392,24,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN391,24,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN390,41,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN389,34,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN388,24,Thông tin dịch tễ,Nam Định,Khỏi,Việt Nam
+BN387,25,Thông tin dịch tễ,Nam Định,Khỏi,Việt Nam
+BN386,53,Thông tin dịch tễ,Nam Định,Khỏi,Việt Nam
+BN385,51,Thông tin dịch tễ,Nam Định,Khỏi,Việt Nam
+BN384,27,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN383,40,Thông tin dịch tễ,Quảng Ninh,Khỏi,Mi-an-ma
+BN382,64,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN381,55,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN380,30,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN379,31,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN378,35,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN377,32,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN376,35,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN375,51,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN374,35,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Nga
+BN373,53,Thông tin dịch tễ,Cà Mau,Khỏi,Việt Nam
+BN372,31,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN371,36,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN370,29,Thông tin dịch tễ,Quảng Ngãi,Khỏi,Serbia và Montenegro
+BN369,30,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN368,36,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN367,26,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN366,0,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN365,36,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN364,29,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN363,33,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN362,34,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN361,32,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN360,34,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN359,35,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN358,56,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN357,55,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN356,42,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN355,43,Thông tin dịch tễ,Hưng Yên,Khỏi,Việt Nam
+BN354,48,Thông tin dịch tễ,Hưng Yên,Khỏi,Việt Nam
+BN353,31,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN352,30,Thông tin dịch tễ,Hưng Yên,Khỏi,Việt Nam
+BN351,46,Thông tin dịch tễ,Hưng Yên,Khỏi,Việt Nam
+BN350,36,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN349,12,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN348,39,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN347,6,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN346,6,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN345,39,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN344,52,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN343,27,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN342,41,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN341,35,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN340,33,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN339,37,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN338,38,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN337,25,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN336,29,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN335,24,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN334,29,Thông tin dịch tễ,Quảng Ninh,Khỏi,Việt Nam
+BN333,37,Thông tin dịch tễ,Bà Rịa - Vũng Tàu,Khỏi,Việt Nam
+BN332,18,Thông tin dịch tễ,Đồng Tháp,Khỏi,Việt Nam
+BN331,47,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN330,28,Thông tin dịch tễ,Quảng Nam,Khỏi,Việt Nam
+BN329,22,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN328,1,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN327,31,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN326,20,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN325,34,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN324,18,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN323,19,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN322,39,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN321,44,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN320,29,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN319,26,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN318,41,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN317,29,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN316,19,Thông tin dịch tễ,Đồng Tháp,Khỏi,Việt Nam
+BN315,39,Thông tin dịch tễ,Tây Ninh,Khỏi,Việt Nam
+BN314,62,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN313,28,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN312,50,Thông tin dịch tễ,Quảng Ninh,Khỏi,Việt Nam
+BN311,26,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN310,26,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN309,30,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN308,42,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN307,30,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN306,25,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN305,36,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN304,47,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN303,48,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN302,25,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN301,29,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN300,26,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN299,35,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN298,29,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN297,30,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN296,45,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN295,26,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN294,29,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN293,30,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN292,27,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN291,24,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN290,40,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN289,25,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN288,32,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN287,28,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN286,23,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN285,30,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN284,30,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN283,20,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN282,37,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN281,30,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN280,29,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN279,20,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN278,50,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN277,22,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN276,36,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN275,33,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN274,0,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN273,30,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN272,58,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN271,37,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN270,22,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN269,23,Thông tin dịch tễ,Thái Bình,Khỏi,Việt Nam
+BN268,16,Thông tin dịch tễ,Hà Giang,Khỏi,Việt Nam
+BN267,46,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN266,36,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN265,26,Thông tin dịch tễ,Hà Tĩnh,Khỏi,Việt Nam
+BN264,24,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN263,45,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN262,26,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN261,60,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN260,35,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN259,41,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN258,47,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN257,15,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN256,52,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN255,29,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN254,51,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN253,41,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN252,6,Thông tin dịch tễ,Tây Ninh,Khỏi,Việt Nam
+BN251,64,Thông tin dịch tễ,Hà Nam,Khỏi,Việt Nam
+BN250,50,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN249,55,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN248,20,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN247,28,Thông tin dịch tễ,Đồng Nai,Khỏi,Việt Nam
+BN246,33,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN245,21,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN244,44,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN243,47,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN242,34,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN241,20,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN240,29,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN239,71,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN238,17,Thông tin dịch tễ,Hà Tĩnh,Khỏi,Việt Nam
+BN237,64,Thông tin dịch tễ,Hà Nội,Khỏi,Thụy Điển
+BN236,26,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN235,25,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN234,69,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN233,24,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN232,67,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN231,57,Thông tin dịch tễ,Hà Nam,Khỏi,Việt Nam
+BN230,28,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN229,30,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN228,29,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN227,32,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN226,22,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN225,35,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN224,39,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Bra-xin
+BN223,29,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN222,22,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN221,24,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN220,20,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN219,59,Thông tin dịch tễ,Hưng Yên,Khỏi,Việt Nam
+BN218,43,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN217,25,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN216,48,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN215,31,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN214,45,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN213,40,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN212,35,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN211,23,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN210,26,Thông tin dịch tễ,Hà Tĩnh,Khỏi,Việt Nam
+BN209,55,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN208,38,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN207,49,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Bra-xin
+BN206,48,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN205,41,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN204,10,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN203,35,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN202,57,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN201,23,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN200,61,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN199,57,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN198,53,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN197,41,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN196,34,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN195,41,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN194,42,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN193,23,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN192,21,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN191,36,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN190,49,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN189,46,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN188,44,Thông tin dịch tễ,Hà Nam,Khỏi,Việt Nam
+BN187,30,Thông tin dịch tễ,Hà Nội,Khỏi,Hoa Kỳ
+BN186,52,Thông tin dịch tễ,Hà Nội,Khỏi,Pháp
+BN185,38,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN184,42,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN183,43,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN182,19,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN181,33,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN180,27,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN179,62,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN178,44,Thông tin dịch tễ,Thái Nguyên,Khỏi,Việt Nam
+BN177,49,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN176,38,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN175,57,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN174,57,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN173,43,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN172,35,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN171,19,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN170,27,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN169,47,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN168,35,Thông tin dịch tễ,Hà Nam,Khỏi,Việt Nam
+BN167,20,Thông tin dịch tễ,Hà Nội,Khỏi,Đan Mạch
+BN166,25,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN165,58,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN164,23,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN163,43,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN162,63,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN161,88,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN160,30,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN159,33,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Bra-xin
+BN158,45,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Bra-xin
+BN157,31,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN156,21,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN155,21,Thông tin dịch tễ,Bạc Liêu,Khỏi,Việt Nam
+BN154,23,Thông tin dịch tễ,Cần Thơ,Khỏi,Việt Nam
+BN153,60,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN152,27,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN151,45,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Bra-xin
+BN150,55,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN149,40,Thông tin dịch tễ,Quảng Ninh,Khỏi,Việt Nam
+BN148,58,Thông tin dịch tễ,Hà Nội,Khỏi,Pháp
+BN147,19,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN146,17,Thông tin dịch tễ,Hà Tĩnh,Khỏi,Việt Nam
+BN145,34,Thông tin dịch tễ,Cần Thơ,Khỏi,Việt Nam
+BN144,22,Thông tin dịch tễ,Trà Vinh,Khỏi,Việt Nam
+BN143,58,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Cộng hòa Nam Phi
+BN142,26,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN141,29,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN140,21,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN139,24,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN138,23,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN137,36,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN136,23,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN135,27,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN134,10,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN133,66,Thông tin dịch tễ,Lai Châu,Khỏi,Việt Nam
+BN132,25,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN131,23,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN130,30,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN129,20,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN128,20,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN127,23,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN126,28,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Cộng hòa Nam Phi
+BN125,22,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Cộng hòa Nam Phi
+BN124,52,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Bra-xin
+BN123,17,Thông tin dịch tễ,Bến Tre,Khỏi,Việt Nam
+BN122,24,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN121,58,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN120,27,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Canada
+BN119,29,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Hoa Kỳ
+BN118,23,Thông tin dịch tễ,Tây Ninh,Khỏi,Việt Nam
+BN117,30,Thông tin dịch tễ,Tây Ninh,Khỏi,Việt Nam
+BN116,29,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN115,44,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN114,19,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN113,18,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN112,30,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN111,25,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN110,19,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN109,42,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN108,19,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN107,25,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN106,20,Thông tin dịch tễ,Trà Vinh,Khỏi,Việt Nam
+BN105,35,Thông tin dịch tễ,Trà Vinh,Khỏi,Việt Nam
+BN104,33,Thông tin dịch tễ,Đồng Tháp,Khỏi,Việt Nam
+BN103,22,Thông tin dịch tễ,Đồng Tháp,Khỏi,Việt Nam
+BN102,9,Thông tin dịch tễ,Đồng Tháp,Khỏi,Việt Nam
+BN101,26,Thông tin dịch tễ,Đồng Tháp,Khỏi,Việt Nam
+BN100,55,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN99,29,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN98,34,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN97,34,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN96,21,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN95,20,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN94,64,Thông tin dịch tễ,Bắc Giang,Khỏi,Việt Nam
+BN93,20,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN92,21,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN91,43,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Vương quốc Anh
+BN90,21,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN89,22,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN88,25,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN87,34,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN86,54,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN85,20,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN84,21,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN83,50,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Hoa Kỳ
+BN82,16,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN81,20,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN80,18,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN79,48,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN78,22,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN77,25,Thông tin dịch tễ,Bắc Ninh,Khỏi,Việt Nam
+BN76,52,Thông tin dịch tễ,Hà Nội,Khỏi,Pháp
+BN75,40,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN74,23,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN73,11,Thông tin dịch tễ,Hải Dương,Khỏi,Việt Nam
+BN72,25,Thông tin dịch tễ,Hà Nội,Khỏi,Pháp
+BN71,19,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN70,19,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN69,30,Thông tin dịch tễ,Hà Nội,Khỏi,Đức
+BN68,41,Thông tin dịch tễ,Đà Nẵng,Khỏi,Hoa Kỳ
+BN67,36,Thông tin dịch tễ,Ninh Thuận,Khỏi,Việt Nam
+BN66,21,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN65,28,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN64,36,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN63,20,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN62,18,Thông tin dịch tễ,Quảng Ninh,Khỏi,Việt Nam
+BN61,42,Thông tin dịch tễ,Ninh Thuận,Khỏi,Việt Nam
+BN60,29,Thông tin dịch tễ,Hà Nội,Khỏi,Pháp
+BN59,26,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN58,26,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN57,66,Thông tin dịch tễ,Quảng Nam,Khỏi,Vương quốc Anh
+BN56,30,Thông tin dịch tễ,Hà Nội,Khỏi,Vương quốc Anh
+BN55,35,Thông tin dịch tễ,Hà Nội,Khỏi,Đức
+BN54,33,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Lát-vi-a
+BN53,53,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Cộng hòa Séc
+BN52,24,Thông tin dịch tễ,Quảng Ninh,Khỏi,Việt Nam
+BN51,22,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN50,50,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN49,71,Thông tin dịch tễ,Thừa Thiên Huế,Khỏi,Vương quốc Anh
+BN48,31,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN47,43,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN46,30,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN45,25,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN44,13,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN43,47,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN42,28,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN41,59,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN40,2,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN39,25,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN38,28,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN37,37,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN36,64,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN35,29,Thông tin dịch tễ,Đà Nẵng,Khỏi,Việt Nam
+BN34,51,Thông tin dịch tễ,Bình Thuận,Khỏi,Việt Nam
+BN33,58,Thông tin dịch tễ,Quảng Nam,Khỏi,Vương quốc Anh
+BN32,24,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Việt Nam
+BN31,49,Thông tin dịch tễ,Quảng Nam,Khỏi,Vương quốc Anh
+BN30,66,Thông tin dịch tễ,Thừa Thiên Huế,Khỏi,Vương quốc Anh
+BN29,58,Thông tin dịch tễ,Đà Nẵng,Khỏi,Vương quốc Anh
+BN28,74,Thông tin dịch tễ,Đà Nẵng,Khỏi,Vương quốc Anh
+BN27,67,Thông tin dịch tễ,Lào Cai,Khỏi,Vương quốc Anh
+BN26,50,Thông tin dịch tễ,Lào Cai,Khỏi,Ai-xơ-len
+BN25,70,Thông tin dịch tễ,Quảng Ninh,Khỏi,Vương quốc Anh
+BN24,69,Thông tin dịch tễ,Quảng Ninh,Khỏi,Vương quốc Anh
+BN23,66,Thông tin dịch tễ,Quảng Ninh,Khỏi,Vương quốc Anh
+BN22,60,Thông tin dịch tễ,Quảng Ninh,Khỏi,Vương quốc Anh
+BN21,61,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN20,28,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN19,64,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN18,27,Thông tin dịch tễ,Ninh Bình,Khỏi,Việt Nam
+BN17,26,Thông tin dịch tễ,Hà Nội,Khỏi,Việt Nam
+BN16,50,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN15,0,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN14,55,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN13,29,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN12,16,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN11,49,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN10,42,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN9,30,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN8,29,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN7,73,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Hoa Kỳ
+BN6,25,Thông tin dịch tễ,Khánh Hòa,Khỏi,Việt Nam
+BN5,23,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN4,29,Thông tin dịch tễ,Vĩnh Phúc,Khỏi,Việt Nam
+BN3,25,Thông tin dịch tễ,Thanh Hóa,Khỏi,Việt Nam
+BN2,28,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Trung Quốc
+BN1,66,Thông tin dịch tễ,Hồ Chí Minh,Khỏi,Trung Quốc

@@ -50,6 +50,7 @@ def index_daily_cases_chart():
     data = df.to_numpy()[:, [0, 5, 6]]
     return data
 
+
 def country_rate(country_name):
     csv_file = JhuData.objects.order_by('date').last().csv_file
     df = pd.read_csv(csv_file)
@@ -59,15 +60,21 @@ def country_rate(country_name):
     case_fatality_ratio = df[0][10]
     return incidence_rate, case_fatality_ratio
 
+
 def world_summary():
     df = pd.read_csv(JhuData.objects.last().csv_file)
-    data = df.sum()[['Recovered','Deaths', 'Active','Confirmed']].astype(int).tolist()
+    data = df.sum()[['Recovered', 'Deaths', 'Active',
+                     'Confirmed']].astype(int).tolist()
     data.insert(0, 0)
     df = pd.read_csv(WhoData.objects.last().csv_file)
     lasted_date = df.iloc[-1]['Date_reported']
-    temp = df.loc[df['Date_reported'] == lasted_date].sum()[[' New_cases', ' New_deaths']].astype(int).tolist()
+    temp = df.loc[df['Date_reported'] == lasted_date][[
+        ' New_cases', ' New_deaths']].sum().astype(int).tolist()
     data.append(temp[0])
     data.append(temp[1])
+    temp = df[[' New_cases', ' New_deaths']].sum().astype(int).tolist()
+    data[2] = temp[1]
+    data[4] = temp[0]
     return data
 
 
@@ -182,28 +189,33 @@ def case_ratio():
 def vietnam_summary():
     records = VnData.objects.all().order_by('-date')
     today_record = records[0]
-    prev_record = records[1]  
+    prev_record = records[1]
     df = pd.read_csv(today_record.csv_file)
     prev_df = pd.read_csv(prev_record.csv_file)
     new_cases = len(df.index) - len(prev_df.index)
-    new_deaths = df.groupby('status').count().age[2] - prev_df.groupby('status').count().age[2]
+    new_deaths = df.groupby('status').count(
+    ).age[2] - prev_df.groupby('status').count().age[2]
     data = df.groupby('status').count().patient_number.to_numpy().tolist()
     data.append(int(sum(data)))
     data.append(int(new_cases))
     data.append(int(new_deaths))
     return data
 
+
 def vietnam_age():
     df = pd.read_csv(VnData.objects.last().csv_file)
     data = df[['patient_number', 'age']].to_numpy().tolist()
     return data
 
-def vietnam_nationality():									    
+
+def vietnam_nationality():
     df = pd.read_csv(VnData.objects.last().csv_file)
-    data = df.groupby('nationality').count().reset_index()[['nationality', 'age']].to_numpy().tolist()
+    data = df.groupby('nationality').count().reset_index()[
+        ['nationality', 'age']].to_numpy().tolist()
     return data
 
+
 def vietnam_gender():
-	df = pd.read_csv(VnData.objects.filter(data_type='PT').last().csv_file)
-	data = df.groupby('Gender')['Patient number'].nunique().tolist()
-	return data
+    df = pd.read_csv(VnData.objects.filter(data_type='PT').last().csv_file)
+    data = df.groupby('Gender')['Patient number'].nunique().tolist()
+    return data

@@ -37,9 +37,6 @@ def vietnam_view_api(request):
         elif key == "nationality":
             data = views_functions.vietnam_nationality()
             return JsonResponse({"success": True, "data": data})
-        elif key == "summary":
-            data = views_function.vietnam_summary()
-            return JsonResponse({"success": True, "data": data})
         elif key == "city_summary":
             data = views_functions.cities_summary()
             return JsonResponse({"success": True, "data": data})
