@@ -217,5 +217,5 @@ def vietnam_nationality():
 
 def vietnam_gender():
     df = pd.read_csv(VnData.objects.filter(data_type='PT').last().csv_file)
-    data = df.groupby('Gender')['Patient number'].nunique().tolist()
+    data = df.groupby('gender')['patient_number'].nunique().tolist()
     return data
