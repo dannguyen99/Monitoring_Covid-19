@@ -78,6 +78,19 @@ def world_summary():
     return data
 
 
+def continent_cases(filter_type):
+    df = pd.read_csv(EcdcData.objects.last().csv_file)
+    if filter_type == 'total_cases':
+        data = df.groupby('continentExp').cases.sum(
+        ).reset_index().to_numpy().tolist()
+        return data
+    elif filter_type == 'new_cases':
+        lasted_date = df.iloc[0]['dateRep']
+        data = df.loc[df['dateRep'] == lasted_date].groupby(
+            'continentExp').cases.sum().reset_index().to_numpy().tolist()
+        return data
+
+
 def get_country(country_name):
     csv_file = EcdcData.objects.order_by('date').last().csv_file
     df = pd.read_csv(csv_file)
@@ -170,19 +183,19 @@ def country_geomap():
 
 def who_region_new_cases():
     df = pd.read_csv(WhoData.objects.last().csv_file)
-    df = df.groupby(' WHO_region').sum().reset_index()[
-        [' WHO_region', ' New_cases']]
+    df = df.groupby(' WHO_region')[
+        [' WHO_region', ' New_cases']].sum().reset_index()
     data = df.to_numpy().tolist()
     return data
 
 
 def case_ratio():
     df = pd.read_csv(JhuData.objects.last().csv_file)
-    df = df.sum().reset_index()
-    data = df.to_numpy()[7:10].tolist()
+    data = df[['Deaths', 'Recovered', 'Active']].sum().to_numpy()
+    types = ['Death Cases', 'Recovered Cases', 'Active Cases']
     result = []
-    for i in data:
-        result.append([i[0], int(i[1])])
+    for number, type in zip(data, types):
+        result.append([type, number])
     return result
 
 

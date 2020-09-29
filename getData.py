@@ -70,6 +70,11 @@ def get_data_vn():
     df = pd.json_normalize(patients)
     df.columns = ['patient_number', 'status', 'gender',
                   'city', 'description', 'age', 'classCss']
+    req = requests.get('https://ncov.moh.gov.vn/', verify=False)
+    soup = BeautifulSoup(req.text, "html.parser")
+    table_rows = soup.find_all('tr')
+    nationality_serie = pd.Series(row.find_all('td')[-1].text for row in table_rows[1:])
+    df = df.assign(nationality=nationality_serie)
     filePath = 'data/VN/%s.csv' % today
     df.to_csv(filePath)
     logging.info("Successfully updated data from VN on %s" % today)

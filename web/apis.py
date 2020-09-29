@@ -13,6 +13,10 @@ def index_view_api(request):
         elif key == "summary":
             data = views_functions.world_summary()
             return JsonResponse({"success": True, "data": data})
+        elif key == "continent":
+             filter_type = request.GET['filter_type']
+             data = views_functions.continent_cases(filter_type)
+             return JsonResponse({"success": True, "data": data}) 
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 
