@@ -170,11 +170,11 @@ function drawCityGeomap(data) {
   google.charts.setOnLoadCallback(function () { drawGeomap(data) });
 }
 
-function drawGeomap(data) {
+function drawGeomap(geoData) {
   var data = new google.visualization.DataTable();
   data.addColumn('string', "City/Province")
   data.addColumn('number', 'Confirmed')
-  data.addRows(data)
+  data.addRows(geoData)
 
 
   var options = {
@@ -200,6 +200,7 @@ function loadGepmap() {
     type: 'GET',
     dataType: 'json',
     success: (data) => {
+      console.log(data.data)
       drawCityGeomap(data.data);
     },
     failure: function (data) {
@@ -214,6 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadDaily('cases', 'case_curve_chart');
   loadAge();
   loadRatio();
+  loadGepmap();
 });
 
 //prepare datatable
