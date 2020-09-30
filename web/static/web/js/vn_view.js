@@ -1,72 +1,56 @@
 //draw daily data
-function drawCurveChart(divId, curveData) {
+function drawCurveChart(curveData) {
   google.charts.load('current', { 'packages': ['corechart'] });
-  google.charts.setOnLoadCallback(function () { drawChart(divId, curveData) });
+  google.charts.setOnLoadCallback(function () { drawChart(curveData) });
 }
 
 
-function drawChart(divId, curveData) {
+function drawChart(curveData) {
   var data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
-  if (divId === "active_curve_chart") {
-    data.addColumn('number', 'Death');
-    data.addColumn('number', 'Active');
-    colors = ['red', 'orange'];
-    if (lang == "vn") {
-      title = "CÁC CA ĐANG ĐIỀU TRỊ VÀ TỬ VONG TÍNH THEO NGÀY";
-    }
-    else
-      title = "Vietnam COVID-19 Daily Active and Death";
-  }
-  else {
-    data.addColumn('number', 'Confirmed');
-    data.addColumn('number', 'Recovered');
-    colors = ['blue', 'green'];
-    if (lang == "vn") {
-      title = "CÁC CA NHIỄM MỚI VÀ ĐÃ HỒI PHỤC TÍNH THEO NGÀY";
-    }
-    else
-      title = "Vietnam Covid 19 Daily Confirmed and Recovered";
-  }
+  data.addColumn('number', 'Confirmed Cases');
+  data.addColumn('number', 'Death Cases')
 
   for (d of curveData) {
     day = new Date(d[0])
-    day.setMonth(day.getMonth() - 1)
     data.addRow([day, d[1], d[2]]);
   }
 
   var options = {
-    axisTitlesPosition: 'out',
-    title: title,
-    titleTextStyle: {
-      color: '#000000',
-      fontName: 'Times New Roman',
-      fontSize: 25,
-      bold: true,    // true or false
-      // italic: <boolean>   // true of false
+    legend: { position: 'bottom' },
+    height: 500,
+    series: {
+      0: { targetAxisIndex: 0 },
+      1: { targetAxisIndex: 1 }
     },
-    colors: colors,
-    curveType: 'function',
-    legend: { position: 'right' },
+    fontName: 'Nunito',
+    fontSize: 15,
+    vAxes: {
+      // Adds titles to each axis.
+      0: { title: 'Confirmed Cases' },
+      1: {
+        title: 'Death Cases',
+        format: '#,#'
+      }
+    },
+    colors: ['#dc3545', '#343a40']
   };
 
-  var chart = new google.visualization.LineChart(document.getElementById(divId));
-
+  var chart = new google.visualization.LineChart(document.getElementById('daily_linechart'));
   chart.draw(data, options);
 };
 
 //load daily data
-function loadDaily(filterType, divId) {
+function loadDaily() {
   $.ajax({
     url: '/vietnam/api',
     data: {
       'key': 'daily_data',
-      'filter_type': filterType
     },
     type: 'GET',
     dataType: 'json',
     success: function (data) {
-      drawCurveChart(divId, data.data);
+      drawCurveChart(data.data);
     },
     failure: function (data) {
       alert(data.message);
@@ -88,15 +72,16 @@ function drawHistogram(histoData) {
   data.addRows(histoData)
 
   var options = {
-    // hAxis: {
-    //   title: 'Age',
+    hAxis: {
+      title: 'Age Range',
 
-    // },
+    },
     vAxis: {
-      title: 'Count'
+      title: 'Number of Cases'
     },
     fontName: 'Nunito',
     fontSize: 15,
+    legend: { position: 'none' }
   };
 
   var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
@@ -164,9 +149,53 @@ function loadRatio() {
   })
 }
 
+//draw Gender chart
+function loadGenderRatio(){
+  $.ajax({
+    url: '/vietnam/api',
+    data: {
+      'key': 'gender',
+      'option': 'header',
+      'language': localStorage.getItem('language')
+    },
+    type: 'GET',
+    dataType: 'json',
+    success: (returnData) => {
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawGenderRateChart);
+
+      function drawGenderRateChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Gender')
+        data.addColumn('number', 'Cases');
+        data.addRows(returnData.data);
+
+        var options = {
+          chartArea: { width: '100%', height: '90%' },
+          fontName: 'Nunito',
+          fontSize: 15,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('gender_piechart'));
+
+        chart.draw(data, options);
+      }
+    },
+    failure: function (data) {
+      alert(data.message);
+    }
+  })
+}
+
 // draw geomap
 function drawCityGeomap(data) {
-  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.load('current', {
+    'packages': ['geochart'],
+    // Note: you will need to get a mapsApiKey for your project.
+    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+  });
   google.charts.setOnLoadCallback(function () { drawGeomap(data) });
 }
 
@@ -179,9 +208,9 @@ function drawGeomap(geoData) {
 
   var options = {
     region: 'VN',
-    colorAxis: { colors: ['green', 'yellow', 'orange', 'red'] },
+    colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
     backgroundColor: '#81d4fa',
-    datalessRegionColor: '#f8bbd0',
+    datalessRegionColor: '#fff',
     defaultColor: '#f5f5f5',
     resolution: "provinces",
     keepAspectRatio: false
@@ -191,7 +220,7 @@ function drawGeomap(geoData) {
   chart.draw(data, options);
 };
 
-function loadGepmap() {
+function loadGeomap() {
   $.ajax({
     url: '/vietnam/api',
     data: {
@@ -200,7 +229,6 @@ function loadGepmap() {
     type: 'GET',
     dataType: 'json',
     success: (data) => {
-      console.log(data.data)
       drawCityGeomap(data.data);
     },
     failure: function (data) {
@@ -211,11 +239,11 @@ function loadGepmap() {
 
 //load all chart
 document.addEventListener('DOMContentLoaded', () => {
-  loadDaily('actives', "active_curve_chart");
-  loadDaily('cases', 'case_curve_chart');
+  loadDaily();
   loadAge();
   loadRatio();
-  loadGepmap();
+  loadGeomap();
+  loadGenderRatio()
 });
 
 //prepare datatable

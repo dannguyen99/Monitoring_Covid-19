@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 
-from web.models import EcdcData, JhuData, VnData, WhoData
+from web.models import *
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 country_dict = {"United_States_of_America": "US", "Saudi_Arabia": "Saudi Arabia", "Congo": "Congo (Kinshasa)",
                 "Bosnia_and_Herzegovina": "Bosnia and Herzegovina",
@@ -89,10 +90,12 @@ def continent_cases(filter_type):
         data = df.loc[df['dateRep'] == lasted_date].groupby(
             'continentExp').cases.sum().reset_index().to_numpy().tolist()
         return data
-    
+
+
 def country_summary():
     df = index_table()
-    data = df[['Country_Region','Confirmed', 'Deaths', 'Active', 'Recovered', 'new_cases', 'new_deaths']].to_numpy().tolist()
+    data = df[['Country_Region', 'Confirmed', 'Deaths', 'Active',
+               'Recovered', 'new_cases', 'new_deaths']].to_numpy().tolist()
     return data
 
 
@@ -162,21 +165,14 @@ def cities_summary():
 
 
 def vietnam_daily():
-    cases = []
-    actives = []
-    for d in VnData.objects.filter(data_type="CT").order_by('date'):
-        csv_file = pd.read_csv(d.csv_file)
-        case = []
-        active = []
-        case.append(datetime.strftime(d.date, format='%Y,%m,%d'))
-        active.append(datetime.strftime(d.date, format='%Y,%m,%d'))
-        case.append(int(csv_file['Total cases'].sum()))
-        case.append(int(csv_file['Recovered'].sum()))
-        active.append(int(csv_file['Death'].sum()))
-        active.append(int(csv_file['Active'].sum()))
-        cases.append(case)
-        actives.append(active)
-    return cases, actives
+    df = pd.read_csv(WhoData.objects.last().csv_file)
+    last = df.iloc[-1].Date_reported
+    last_day = datetime.strptime(last, '%Y-%m-%d')
+    begin_day = last_day - relativedelta(months=3)
+    begin = begin_day.strftime("%Y-%m-%d")
+    data = df.loc[(df[' Country'] == "Viet Nam") & (df['Date_reported'] >= begin)][[
+        'Date_reported', ' New_cases', ' New_deaths']].to_numpy().tolist()
+    return data
 
 
 def country_geomap():
@@ -236,4 +232,15 @@ def vietnam_nationality():
 def vietnam_gender():
     df = pd.read_csv(VnData.objects.filter(data_type='PT').last().csv_file)
     data = df.groupby('gender')['patient_number'].nunique().tolist()
-    return data
+    return list(reversed(data))
+
+def vietnam_gender_with_header(language):
+    data = vietnam_gender()
+    result = []
+    if language == "vn":
+        gender = ["Nam", "Nữ"]
+    else:
+        gender = ["Male", "Female"]
+    result.append([gender[0], data[0]])
+    result.append([gender[1], data[1]])
+    return result

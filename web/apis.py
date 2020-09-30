@@ -1,6 +1,7 @@
 from django.http import Http404, JsonResponse
 from .utils import views_functions
 
+
 def index_view_api(request):
     try:
         key = request.GET['key']
@@ -14,9 +15,9 @@ def index_view_api(request):
             data = views_functions.world_summary()
             return JsonResponse({"success": True, "data": data})
         elif key == "continent":
-             filter_type = request.GET['filter_type']
-             data = views_functions.continent_cases(filter_type)
-             return JsonResponse({"success": True, "data": data})
+            filter_type = request.GET['filter_type']
+            data = views_functions.continent_cases(filter_type)
+            return JsonResponse({"success": True, "data": data})
         elif key == "country_summary":
             data = views_functions.country_summary()
             return JsonResponse({"success": True, "data": data})
@@ -28,13 +29,8 @@ def vietnam_view_api(request):
     try:
         key = request.GET['key']
         if key == "daily_data":
-            filter_type = request.GET['filter_type']
-            cases, actives = views_functions.vietnam_daily()
-            if filter_type == "cases":
-                daily_data = cases
-            else:
-                daily_data = actives
-            return JsonResponse({"success": True, "data": daily_data})
+            data = views_functions.vietnam_daily()
+            return JsonResponse({"success": True, "data": data})
         elif key == "summary":
             data = views_functions.vietnam_summary()
             return JsonResponse({"success": True, "data": data})
@@ -48,8 +44,13 @@ def vietnam_view_api(request):
             data = views_functions.cities_summary()
             return JsonResponse({"success": True, "data": data})
         elif key == "gender":
-            data = views_functions .vietnam_gender()
-            return JsonResponse({"success": True, "data": data})
+            if request.GET.get('option'):
+                if request.GET['option'] == "header":
+                    data = views_functions.vietnam_gender_with_header(request.GET['language'])
+                return JsonResponse({"success": True, "data": data})
+            else:
+                data = views_functions.vietnam_gender()
+                return JsonResponse({"success": True, "data": data})
         elif key == "city_geomap":
             data = views_functions.cities_geomap()
             return JsonResponse({"success": True, "data": data})
