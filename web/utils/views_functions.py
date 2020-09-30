@@ -89,6 +89,11 @@ def continent_cases(filter_type):
         data = df.loc[df['dateRep'] == lasted_date].groupby(
             'continentExp').cases.sum().reset_index().to_numpy().tolist()
         return data
+    
+def country_summary():
+    df = index_table()
+    data = df[['Country_Region','Confirmed', 'Deaths', 'Active', 'Recovered', 'new_cases', 'new_deaths']].to_numpy().tolist()
+    return data
 
 
 def get_country(country_name):
