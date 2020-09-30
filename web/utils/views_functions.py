@@ -118,14 +118,14 @@ def cities_geomap():
               "Bà Rịa - Vũng Tàu": "Bà Rịa-Vũng Tàu", "Đà Nẵng": "VN-DN",
               "Thừa Thiên Huế": "Thừa Thiên-Huế", "Hải Phòng": "Hải Phòng City",
               "Bạc Liêu": "VN-55", "Cần Thơ": "VN-`CT"}
-    cities_csv = VnData.objects.filter(
-        data_type="CT", date="2020-08-31").first().csv_file
-    cities_arr = pd.read_csv(cities_csv).to_numpy()
+    cities_arr = cities_summary()
+    data = []
     for c in cities_arr:
         city = c[0]
         if city in cities.keys():
             c[0] = cities[city]
-    return cities_arr
+        data.append(c[:2])
+    return data
 
 
 def status_convertion(status):

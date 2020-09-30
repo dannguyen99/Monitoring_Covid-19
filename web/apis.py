@@ -50,5 +50,8 @@ def vietnam_view_api(request):
         elif key == "gender":
             data = views_functions .vietnam_gender()
             return JsonResponse({"success": True, "data": data})
+        elif key == "city_geomap":
+            data = views_functions.cities_geomap()
+            return JsonResponse({"success": True, "data": data})
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})

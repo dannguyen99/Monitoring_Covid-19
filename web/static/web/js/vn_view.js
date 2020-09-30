@@ -121,6 +121,7 @@ function loadAge() {
   })
 }
 
+//draw rate pie chart
 function drawRatePieChart(data) {
   google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(function () { drawPieChart(data) });
@@ -136,9 +137,9 @@ function drawPieChart(pieData) {
 
 
   var options = {
-      chartArea: { width: '100%', height: '90%' },
-      fontName: 'Nunito',
-      fontSize: 15,
+    chartArea: { width: '100%', height: '90%' },
+    fontName: 'Nunito',
+    fontSize: 15,
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('piechart_nationality'));
@@ -148,18 +149,62 @@ function drawPieChart(pieData) {
 
 function loadRatio() {
   $.ajax({
-      url: '/vietnam/api',
-      data: {
-          'key': 'nationality',
-      },
-      type: 'GET',
-      dataType: 'json',
-      success: (data) => {
-          drawRatePieChart(data.data);
-      },
-      failure: function (data) {
-          alert(data.message);
-      }
+    url: '/vietnam/api',
+    data: {
+      'key': 'nationality',
+    },
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      drawRatePieChart(data.data);
+    },
+    failure: function (data) {
+      alert(data.message);
+    }
+  })
+}
+
+// draw geomap
+function drawCityGeomap(data) {
+  google.charts.load('current', { 'packages': ['corechart'] });
+  google.charts.setOnLoadCallback(function () { drawGeomap(data) });
+}
+
+function drawGeomap(data) {
+  var data = new google.visualization.DataTable();
+  data.addColumn('string', "City/Province")
+  data.addColumn('number', 'Confirmed')
+  data.addRows(data)
+
+
+  var options = {
+    region: 'VN',
+    colorAxis: { colors: ['green', 'yellow', 'orange', 'red'] },
+    backgroundColor: '#81d4fa',
+    datalessRegionColor: '#f8bbd0',
+    defaultColor: '#f5f5f5',
+    resolution: "provinces",
+    keepAspectRatio: false
+  };
+
+  var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
+  chart.draw(data, options);
+};
+
+function loadGepmap() {
+  $.ajax({
+    url: '/vietnam/api',
+    data: {
+      'key': 'city_geomap',
+    },
+    type: 'GET',
+    dataType: 'json',
+    success: (data) => {
+      drawCityGeomap(data.data);
+    },
+    failure: function (data) {
+      alert(data.message);
+    }
   })
 }
 
