@@ -48,7 +48,7 @@
 
 <body id="page-top">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-4">
-        <a class="navbar-brand" href="{% url 'index' %} ">Covid 19 Dashboard <small id="last_update">Last
+        <a class="navbar-brand" href="{% url 'index' %} " key="brand">COVID-19 Dashboard <small id="last_update">Last
                 update</small></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,33 +57,30 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle lang" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false" key="region">
                         Regions
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{% url 'index' %}">World</a>
-                        <a class="dropdown-item" href="{% url 'vietnam' %}">Vietnam</a>
-                        <a class="dropdown-item" href="{% url 'visualization' %}">Visualization</a>
+                        <a class="dropdown-item lang" href="{% url 'index' %}" key="world">World</a>
+                        <a class="dropdown-item lang" href="{% url 'vietnam' %}" key="vn">Vietnam</a>
+                        <!-- <a class="dropdown-item" href="{% url 'visualization' %}">Visualization</a> -->
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                    <a class="nav-link lang" href="{% url 'about' %}" key="about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'references' %}">Reference</a>
+                    <a class="nav-link lang" href="{% url 'references' %}" key="references">Reference</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <span class="flag-icon flag-icon-us"></span>
-                        English
-                    </a>
+                        aria-haspopup="true" aria-expanded="false"></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <button class="translate dropdown-item" id="en"><span class="flag-icon flag-icon-us"></span>
                             English</button>
                         <button class="translate dropdown-item" id="vn"><span class="flag-icon flag-icon-vn"></span>
-                            Vietnamese</button>
+                            Tiếng Việt</button>
                     </div>
                 </li>
             </ul>

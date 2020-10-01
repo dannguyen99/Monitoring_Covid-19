@@ -16,7 +16,7 @@
 {% endblock %} {% block body %}
 <div class="container-fluid">
   <div class="m-10 mt-3 mb-4">
-    <h3 class="text-center text-gray-800">Vietnam Summary</h3>
+    <h3 class="text-center text-gray-800 lang" key='sum_vn' style="text-transform: uppercase;">Vietnam Summary</h3>
   </div>
   <div class="row">
 
@@ -25,7 +25,8 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">New Cases</div>
+              <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 lang" key="new_cases">
+                New Cases</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.5 }}</div>
             </div>
           </div>
@@ -38,7 +39,8 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total Cases</div>
+              <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 lang" key="total_cases">Total Cases
+              </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.4 }}</div>
             </div>
           </div>
@@ -51,7 +53,7 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">New Deaths</div>
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1 lang" key="new_deaths">New Deaths</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.6 }}</div>
             </div>
           </div>
@@ -64,7 +66,8 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Total Deaths</div>
+              <div class="text-xs font-weight-bold text-dark text-uppercase mb-1 lang" key="total_deaths">Total Deaths
+              </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.2 }}</div>
             </div>
           </div>
@@ -77,7 +80,8 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Active Cases</div>
+              <div class="text-xs font-weight-bold text-warning text-uppercase mb-1 lang" key="active">Active Cases
+              </div>
               <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.3 }}</div>
             </div>
           </div>
@@ -90,7 +94,8 @@
         <div class="card-body">
           <div class="row no-gutters align-items-center">
             <div class="col mr-2">
-              <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recovered</div>
+              <div class="text-xs font-weight-bold text-success text-uppercase mb-1 lang" key="recover">
+                Recovered</div>
               <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.1 }}</div>
             </div>
           </div>
@@ -105,10 +110,11 @@
     <div class="col-xl-7 col-lg-7">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-dark">Daily Confirmed and Death Cases(Last 3 months)</h6>
+          <h6 class="m-0 font-weight-bold text-dark lang" key='daily_confirmed_death'
+            style="text-transform: uppercase;">Daily Confirmed and Death Cases(Last 3 months)</h6>
         </div>
         <div class="card-body">
-          <div id="daily_linechart"></div>
+          <div id="daily_linechart" style="height: 400px;"></div>
         </div>
       </div>
     </div>
@@ -117,9 +123,10 @@
 
       <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-          <h6 class="m-0 font-weight-bold text-dark">Vietnam COVID-19 Map</h6>
+          <h6 class="m-0 font-weight-bold text-dark lang" key='vn_map' style="text-transform: uppercase;">Vietnam
+            COVID-19 Map</h6>
         </div>
-        <div id="geochart-colors" style="height: 540px;"></div>
+        <div id="geochart-colors" style="height: 440px;"></div>
       </div>
     </div>
 
@@ -131,7 +138,9 @@
     <div class="col-xl-8 col-lg-7">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-dark">Summary by City</h6>
+          <h6 class="m-0 font-weight-bold text-dark lang" key='summary_by_city' style="text-transform: uppercase;">
+            Summary by
+            City</h6>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -142,10 +151,10 @@
                   <th class="lang" key="total_cases">Total Cases</th>
                   <th class="lang" key="active">Active</th>
                   <th class="lang" key="recover">Recovered</th>
-                  <th class="lang" key="death">Death</th>
+                  <th class="lang" key="total_deaths">Death</th>
                 </tr>
               </thead>
-              <tbody style="overflow-y: auto; height: 200px;">
+              <tbody>
                 {% for city in cities_summary %}
                 <tr class="table text-center">
                   <td>{{ city.0 }}</td>
@@ -166,25 +175,61 @@
 
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-dark">COVID-19 Incidence Rate by Gender</h6>
+          <h6 class="m-0 font-weight-bold text-dark lang" key='vietnam_incidence_ratio'
+            style="text-transform: uppercase;">COVID-19 Incidence Rate by Gender</h6>
         </div>
         <div class="card-body">
-          <div id="gender_piechart" style="height: 248;"></div>
+          <div id="gender_piechart" style="height: 246px;"></div>
         </div>
       </div>
 
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-dark">Case By Nationality</h6>
+          <h6 class="m-0 font-weight-bold text-dark lang" key='vietnam_nationality_ratio'
+            style="text-transform: uppercase;">Case By Nationality</h6>
         </div>
         <div class="card-body">
-          <div id="piechart_nationality" style="height: 248;"></div>
+          <div id="piechart_nationality" style="height: 246px;"></div>
         </div>
       </div>
-
     </div>
 
+  </div>
 
+  <div class="card shadow mb-4" id="patient_summary" style="display: none;">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-dark" style="text-transform: uppercase;">Thông tin các bệnh nhân</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="patient_dataTable">
+          <thead>
+            <tr class="table text-center">
+              <th class="lang">Mã</th>
+              <th class="lang">Tình trạng</th>
+              <th class="lang">Giới tính</th>
+              <th class="lang">Tỉnh/Thành phố</th>
+              <th class="lang">Mô tả</th>
+              <th class="lang">Tuổi</th>
+              <th class="lang">Quốc tịch</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for patient in patient_summary %}
+            <tr class="table text-center">
+              <td>{{ patient.0 }}</td>
+              <td>{{ patient.1 }}</td>
+              <td>{{ patient.2 }}</td>
+              <td>{{ patient.3 }}</td>
+              <td>{{ patient.4 }}</td>
+              <td>{{ patient.5 }}</td>
+              <td>{{ patient.6 }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <div class="row">
@@ -192,7 +237,8 @@
     <div class="col-xl-6 col-lg-7">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-dark">COVID-19 Cases by Age Ranges</h6>
+          <h6 class="m-0 font-weight-bold text-dark lang" key='vietnam_agerange' style="text-transform: uppercase;">
+            COVID-19 Cases by Age Ranges</h6>
         </div>
         <div class="card-body">
           <div id="age_chart" style="height: 500px;"></div>
@@ -203,7 +249,8 @@
     <div class="col-xl-6 col-lg-7">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-dark">Case by Gender</h6>
+          <h6 class="m-0 font-weight-bold text-dark lang" key='vietnam_daily_gender' style="text-transform: uppercase;">
+            Case by Gender</h6>
         </div>
         <div class="card-body">
           <div id="gender_chart" style="height: 500px;"></div>

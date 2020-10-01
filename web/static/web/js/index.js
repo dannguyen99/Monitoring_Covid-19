@@ -68,9 +68,7 @@ function drawTrendlines(divId, dailyData) {
         data.addColumn('number', 'Deaths');
     }
     for (d of dailyData) {
-        day = new Date(d[0])
-        day.setMonth(day.getMonth() - 1)
-        data.addRow([day, d[1]]);
+        data.addRow([new Date(d[0]), d[1]]);
     }
 
     var options = {
@@ -98,24 +96,68 @@ function drawTrendlines(divId, dailyData) {
     chart.draw(data, options);
 }
 
-// prepare datatable
-$(document).ready(function () {
-    var t = $('#dataTable').DataTable({
-        "columnDefs": [{
-            "searchable": false,
-            "orderable": false,
-            "targets": 0
-        }],
-        "order": [[2, 'desc']]
-    });
+//load daily chart
+function loadDaily(divId, filter_type = '') {
+    $.ajax({
+        url: '/index/api',
+        data: {
+            'key': 'timeline_data',
+            'language': localStorage.getItem('language'),
+            'filter_type': filter_type
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: (data) => {
+            drawDaily(divId, data.data);
+        },
+        failure: function (data) {
+            alert(data.message);
+        }
+    })
+}
 
-    t.on('order.dt search.dt', function () {
-        t.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
-            cell.innerHTML = i + 1;
+// prepare datatable
+
+$(document).ready(function () {
+    if (localStorage.getItem('language') === "vn") {
+        var t = $('#dataTable').DataTable({
+            "columnDefs": [{
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            }],
+            "order": [[2, 'desc']],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Vietnamese.json"
+            }
         });
-    }).draw();
+
+        t.on('order.dt search.dt', function () {
+            t.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    }
+    else {
+        var t = $('#dataTable').DataTable({
+            "columnDefs": [{
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            }],
+            "order": [[2, 'desc']],
+        });
+
+        t.on('order.dt search.dt', function () {
+            t.column(0, { search: 'applied', order: 'applied' }).nodes().each(function (cell, i) {
+                cell.innerHTML = i + 1;
+            });
+        }).draw();
+    }
 });
 
+
+//drawRatePieChart
 function drawRatePieChart(divId, data) {
     google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(function () { drawPieChart(divId, data) });
@@ -142,11 +184,13 @@ function drawPieChart(divId, pieData) {
     chart.draw(data, options);
 }
 
-function loadRatio(key, divId) {
+function loadRatio(key, divId, filter_type = '') {
     $.ajax({
         url: '/index/api',
         data: {
             'key': key,
+            'language': localStorage.getItem('language'),
+            'filter_type': filter_type
         },
         type: 'GET',
         dataType: 'json',
@@ -159,7 +203,17 @@ function loadRatio(key, divId) {
     })
 }
 
+//change continent chart filter
+document.querySelectorAll('.continent_filter').forEach(button => {
+    button.onclick = () => {
+        const filter_type = button.getAttribute("filter_type")
+        loadRatio("continent", "piechart_region_ratio", filter_type)
+    }
+});
+
 document.addEventListener('DOMContentLoaded', (event) => {
+    loadDaily('daily_cases_chart_div', 'cases')
+    loadDaily('daily_deaths_chart_div', 'deaths')
     loadRatio("case_ratio", "piechart_case_ratio");
-    loadRatio("who_region_new_cases", "piechart_region_ratio")
+    loadRatio("continent", "piechart_region_ratio", 'total_cases')
 });

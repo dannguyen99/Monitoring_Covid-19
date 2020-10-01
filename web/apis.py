@@ -9,18 +9,26 @@ def index_view_api(request):
             data = views_functions.who_region_new_cases()
             return JsonResponse({"success": True, "data": data})
         elif key == "case_ratio":
-            data = views_functions.case_ratio()
+            data = views_functions.case_ratio(request.GET['language'])
             return JsonResponse({"success": True, "data": data})
         elif key == "summary":
             data = views_functions.world_summary()
             return JsonResponse({"success": True, "data": data})
         elif key == "continent":
             filter_type = request.GET['filter_type']
-            data = views_functions.continent_cases(filter_type)
+            data = views_functions.continent_cases(filter_type, request.GET['language'])
             return JsonResponse({"success": True, "data": data})
         elif key == "country_summary":
             data = views_functions.country_summary()
             return JsonResponse({"success": True, "data": data})
+        elif key == "timeline_data":
+            filter_type = request.GET['filter_type']
+            daily_data = views_functions.index_daily_cases_chart()
+            if filter_type == 'cases':
+                data = daily_data[:, [0, 1]].tolist()
+            else:
+                data = daily_data[:, [0, 2]].tolist()
+            return JsonResponse({"success": True, "data": data}) 
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 

@@ -78,17 +78,13 @@ def vietnam_view(request):
             sex.append(male)
             sex.append(female)
             sexs.append(sex)
-    ages = pd.concat([age_csv['Patient number'],
-                      age_csv['Age']], axis=1).to_numpy().tolist()
     summary = views_functions.vietnam_summary()
-    cities_geomap = views_functions.cities_geomap()
     cities_summary = views_functions.cities_summary()
     context = {
-        "ages": json.dumps(ages),
         "sexs": json.dumps(sexs),
         "summary": summary,
         "cities_summary": cities_summary,
-        "cities_geomap": cities_geomap
+        "patient_summary": views_functions.patient_summary()
     }
     return render(request, 'web/vn_view.html', context)
 

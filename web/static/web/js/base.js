@@ -5,7 +5,7 @@ arrLang["vn"] = new Array();
 // English content
 
 // title
-arrLang["en"]["title1"] = "COVID-19 OUTBREAK IN THE WORLD";
+arrLang["en"]["brand"] = "COVID-19 Dashboard";
 
 // nav tab 
 arrLang["en"]["region"] = "Region";
@@ -13,37 +13,47 @@ arrLang["en"]["references"] = "References";
 arrLang["en"]["about"] = "About Us";
 arrLang["en"]["world"] = "World";
 arrLang["en"]["vn"] = "Vietnam"
-arrLang["en"]["us"] = "America";
-arrLang["en"]["eu"] = "Europe";
 arrLang["en"]["about"] = "About Us";
 arrLang["en"]["change_lang"] = "Change language";
+arrLang["en"]["english"] = "English";
+arrLang["en"]["vietnamese"] = "Vietnamese";
 
-// table
-arrLang["en"]["sum_world"] = "SUMMARY OF CASES WORLDWIDE";
-arrLang["en"]["sum_vn"] = "Summary of Cases in Vietnam";
-arrLang["en"]["sum_us"] = "Summary of Cases in US";
-arrLang["en"]["sum_each"] = "Summary of Cases in";
+// index
+arrLang["en"]["sum_world"] = "SUMMARY WORLDWIDE";
+arrLang["en"]["sum_vn"] = "Summary in Vietnam";
+arrLang["en"]["daily_new_cases"] = "DAILY NEW CASES";
+arrLang["en"]["daily_new_deaths"] = "DAILY NEW DEATHS";
+arrLang["en"]["global_map"] = "COVID-19 GLOBAL MAP"
+arrLang["en"]["cases_per_1m"] = "Case/1M population";
+arrLang["en"]["select_filter"] = "Select Filter:";
+arrLang["en"]["case_ratio"] = "Cases Ratio by Status";
+arrLang["en"]["continent_ratio"] = "number of cases by continent";
+arrLang["en"]["summary_by_country"] = "COVID-19 Summary by Country";
 
-arrLang["en"]["per_city"] = "Cases by City/Province";
+//vietnam
+arrLang["en"]["daily_confirmed_death"] = "Daily Confirmed and Death Cases(Last 3 months)";
 arrLang["en"]["city"] = "City/Province";
-arrLang["en"]["per_states"] = "Summary of Cases per States";
-arrLang["en"]["states"] = "State";
+arrLang["en"]["summary_by_city"] = "COVID-19 Summary by City";
+arrLang["en"]["vietnam_incidence_ratio"] = "COVID-19 INCIDENCE RATE BY GENDER";
+arrLang["en"]["vietnam_nationality_ratio"] = "COVID-19 INCIDENCE RATE BY Nationality";
+arrLang["en"]["vietnam_agerange"] = "COVID-19 Cases by Age Ranges";
+arrLang["en"]["vietnam_daily_gender"] = "COVID-19 Daily cases by gender";
+
 
 arrLang["en"]["total_cases"] = "Total cases";
 arrLang["en"]["active"] = "Actives";
 arrLang["en"]["recover"] = "Recovered";
-arrLang["en"]["death"] = "Death";
+arrLang["en"]["total_deaths"] = "Death";
 arrLang["en"]["incidence_rate"] = "Incidence Rate"
 arrLang["en"]["case_fatality_ratio"] = "Case-fatality Ratio"
-arrLang["en"]["new_case"] = "New Cases";
-arrLang["en"]["new_death"] = "New Deaths";
+arrLang["en"]["new_cases"] = "New Cases";
+arrLang["en"]["new_deaths"] = "New Deaths";
 arrLang["en"]["per_country"] = "SUMMARY OF CASES WORLDWIDE PER COUNTRIES";
 arrLang["en"]["world_map"] = "COVID-19 World map";
 arrLang["en"]["vn_map"] = "COVID-19 Vietnam map";
 arrLang["en"]["us_map"] = "COVID-19 America map";
 
 arrLang["en"]["country"] = "Countries and Territories";
-arrLang["en"]["cases_per_1m"] = "Total cases/1M pop";
 arrLang["en"]["population"] = "Population 2019";
 
 // button
@@ -54,45 +64,56 @@ arrLang["en"]["btn-pp"] = "Total cases/1M population";
 // VN content
 
 // title
-arrLang["vn"]["title1"] = "Tình hình dịch bệnh COVID-19 trên thế giới";
+arrLang["vn"]["brand"] = "Bảng Thông tin COVID-19";
 
 // nav tab
 arrLang["vn"]["region"] = "Khu vực";
 arrLang["vn"]["references"] = "Tham khảo";
 arrLang["vn"]["about"] = "Về chúng tôi";
-arrLang["vn"]["world"] = "Toàn thế giới";
+arrLang["vn"]["world"] = "Thế giới";
 arrLang["vn"]["vn"] = "Việt Nam"
 arrLang["vn"]["us"] = "Hoa Kỳ";
 arrLang["vn"]["eu"] = "Châu Âu";
 arrLang["vn"]["change_lang"] = "đổi ngôn ngữ";
+arrLang["vn"]["english"] = "Tiếng Anh";
+arrLang["vn"]["vietnamese"] = "Tiếng Việt";
 
-// table
-arrLang["vn"]["sum_world"] = "TÌNH HÌNH DỊCH BỆNH TOÀN THẾ GIỚI";
+// index
+arrLang["vn"]["sum_world"] = "TỔNG QUAN TOÀN CẦU";
 arrLang["vn"]["sum_vn"] = "TÌNH HÌNH DỊCH BỆNH Ở VIỆT NAM";
-arrLang["vn"]["sum_us"] = "TÌNH HÌNH DỊCH BỆNH Ở HOA KỲ";
-arrLang["vn"]["sum_each"] = "TÌNH HÌNH DỊCH BỆNH Ở";
+arrLang["vn"]["daily_new_cases"] = "Số ca nhiễm";
+arrLang["vn"]["daily_new_deaths"] = "Số ca tử vong";
+arrLang["vn"]["global_map"] = "BẢN ĐỒ COVID-19 TOÀN CẦU";
+arrLang["vn"]["cases_per_1m"] = "Số ca nhiễm/1 triệu người";
+arrLang["vn"]["select_filter"] = "Chọn bộ lọc:";
+arrLang["vn"]["case_ratio"] = "Tỉ lệ ca nhiễm theo trạng thái";
+arrLang["vn"]["continent_ratio"] = "tỉ lệ ca nhiễm theo lục địa";
+arrLang["vn"]["summary_by_country"] = "Tổng quan COVID-19 ở các quốc gia";
 
-arrLang["vn"]["per_city"] = "CA NHIỄM THEO TỈNH THÀNH";
-arrLang["vn"]["city"] = "TỈNH/THÀNH PHỐ";
-arrLang["vn"]["per_states"] = "CA NHIỄM THEO BANG";
-arrLang["vn"]["states"] = "BANG";
+//vietnam
+arrLang["vn"]["daily_confirmed_death"] = "Ca nhiễm mới và tử vong theo ngày (3 tháng gần nhất)";
+arrLang["vn"]["city"] = "Tỉnh/Thành phố";
+arrLang["vn"]["summary_by_city"] = "Tổng quan COVID-19 ở các Tỉnh/Thành phố";
+arrLang["vn"]["vietnam_incidence_ratio"] = "Tỉ lệ ca nhiễm theo giới tính";
+arrLang["vn"]["vietnam_nationality_ratio"] = "tỉ lệ ca nhiễm theo quốc tịch";
+arrLang["vn"]["vietnam_agerange"] = "Biểu đồ ca nhiễm theo độ tuổi"
+arrLang["vn"]["vietnam_daily_gender"] = "Tỉ lệ nhiễm mới nam và nữ theo ngày";
 
-arrLang["vn"]["total_cases"] = "SỐ CA NHIỄM";
-arrLang["vn"]["active"] = "ĐANG NHIỄM";
-arrLang["vn"]["recover"] = "KHỎI";
-arrLang["vn"]["death"] = "TỬ VONG";
+arrLang["vn"]["total_cases"] = "Số ca nhiễm";
+arrLang["vn"]["active"] = "Đang điều trị";
+arrLang["vn"]["recover"] = "Khỏi";
+arrLang["vn"]["total_deaths"] = "Tử vong";
 arrLang["vn"]["incidence_rate"] = "TỈ LỆ MẮC MỚI"
 arrLang["vn"]["case_fatality_ratio"] = "TỈ LỆ TỬ VONG"
-arrLang["vn"]["new_case"] = "CA NHIỄM MỚI";
-arrLang["vn"]["new_death"] = "CA TỬ VONG MỚI";
+arrLang["vn"]["new_cases"] = "Ca nhiễm mới";
+arrLang["vn"]["new_deaths"] = "Ca tử vong mới";
 arrLang["vn"]["per_country"] = "DIỄN BIẾN DỊCH Ở TỪNG NƯỚC";
 arrLang["vn"]["world_map"] = "BẢN ĐỒ DIỄN BIẾN DỊCH TRÊN THẾ GIỚI";
-arrLang["vn"]["vn_map"] = "BẢN ĐỒ DIỄN BIẾN DỊCH Ở VIỆT NAM";
+arrLang["vn"]["vn_map"] = "BẢN ĐỒ COVID-19 ở Việt Nam";
 arrLang["vn"]["us_map"] = "BẢN ĐỒ DIỄN BIẾN DỊCH Ở HOA KỲ";
 
-arrLang["vn"]["country"] = "QUỐC GIA/VÙNG LÃNH THỔ";
-arrLang["vn"]["cases_per_1m"] = "SỐ CA NHIỄM/1TR NGƯỜI";
-arrLang["vn"]["population"] = "DÂN SỐ NĂM 2019";
+arrLang["vn"]["country"] = "Quốc gia/Vùng lãnh thổ";
+arrLang["vn"]["population"] = "Dân số(2019)";
 
 // button
 
@@ -105,10 +126,7 @@ $(document).ready(function () {
     $(".translate").click(function () {
         var lang = $(this).attr("id");
         localStorage.setItem('language', lang);
-        $(".lang").each(function (index, item) {
-            $(this).text(arrLang[lang][$(this).attr("key")]);
-        });
-        get_last_update()
+        location.reload()
     });
     $(".lang").each(function (index, item) {
         $(this).text(arrLang[lang][$(this).attr("key")]);
@@ -132,7 +150,7 @@ function get_last_update() {
             last_update = new Date(data.last_update);
             var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', seccond: 'numeric' };
             if (localStorage.getItem('language') === "vn") {
-                prefix = "Cập nhật lần cuối "
+                prefix = "Cập nhật lúc "
                 region = "vi-VN"
             }
             else {
@@ -163,12 +181,30 @@ function setSection() {
     });
 }
 
+function setLanguageButton() {
+    if (localStorage.getItem('language') === "vn"){
+        var s = document.createElement('SPAN');
+        s.className = 'flag-icon flag-icon-vn'
+        var nd = document.getElementById('navbarDropdown')
+        nd.appendChild(s)
+        nd.innerHTML+=  ' Tiếng Việt'
+    }
+    else{
+        var s = document.createElement('SPAN');
+        s.className = 'flag-icon flag-icon-us'
+        var nd = document.getElementById('navbarDropdown')
+        nd.appendChild(s)
+        nd.innerHTML += ' English'
+    }
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.number_with_commas').forEach(numberWithCommas);
     get_last_update();
     getSection();
     setSection()
+    setLanguageButton()
 });
 
 

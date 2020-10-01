@@ -35,20 +35,18 @@ def index_table():
         ecdc_df.set_index('countriesAndTerritories')['deaths']).astype(int)
     jhu_df.Active = jhu_df.Active.astype(int)
     jhu_df.popData2019 = jhu_df.popData2019.astype(int)
-    jhu_df = jhu_df.sort_values(by='Confirmed', ascending=False)
     return jhu_df
 
 
 def index_daily_cases_chart():
-    csv_file = EcdcData.objects.order_by('date').last().csv_file
-    df = pd.read_csv(csv_file)
-    df['dateRep'] = pd.to_datetime(df.dateRep, format="%d/%m/%Y")
-    df = df.groupby('dateRep').sum().reset_index()
-    df = df.sort_values(by='dateRep')
-    begin = datetime(2020, 3, 13)
-    df = df[(df['dateRep'] >= begin)]
-    df['dateRep'] = df.dateRep.dt.strftime('%Y,%m,%d')
-    data = df.to_numpy()[:, [0, 5, 6]]
+    df = pd.read_csv(WhoData.objects.last().csv_file)
+    last = df.iloc[-1].Date_reported
+    last_day = datetime.strptime(last, '%Y-%m-%d')
+    begin_day = last_day - relativedelta(months=3)
+    begin = begin_day.strftime("%Y-%m-%d")
+    df = df.loc[df['Date_reported'] >= begin][[
+        'Date_reported', ' New_cases', ' New_deaths']]
+    data = df.groupby('Date_reported').sum().reset_index().to_numpy()
     return data
 
 
@@ -79,17 +77,24 @@ def world_summary():
     return data
 
 
-def continent_cases(filter_type):
+def continent_cases(filter_type, language):
+    continents = {
+        'Asia': 'Châu Á', 'Europe': 'Châu Âu', 'Africa': 'Châu Phi', 'Oceania': 'Châu Đại Dương', 'Other': 'Khác', 'America': 'Châu Mỹ'}
     df = pd.read_csv(EcdcData.objects.last().csv_file)
     if filter_type == 'total_cases':
         data = df.groupby('continentExp').cases.sum(
-        ).reset_index().to_numpy().tolist()
-        return data
+        ).reset_index().to_numpy()
     elif filter_type == 'new_cases':
         lasted_date = df.iloc[0]['dateRep']
         data = df.loc[df['dateRep'] == lasted_date].groupby(
-            'continentExp').cases.sum().reset_index().to_numpy().tolist()
-        return data
+            'continentExp').cases.sum().reset_index().to_numpy()
+    if language == "vn":
+        result = []
+        for d in data:
+            result.append([continents.get(d[0]), d[1]])
+        return result
+    else:
+        return data.tolist()
 
 
 def country_summary():
@@ -190,14 +195,18 @@ def who_region_new_cases():
     return data
 
 
-def case_ratio():
+def case_ratio(language):
+    types = {'Deaths': 'Tử vong', 'Recovered': 'Khỏi',
+             'Active': 'Đang điều trị'}
     df = pd.read_csv(JhuData.objects.last().csv_file)
-    data = df[['Deaths', 'Recovered', 'Active']].sum().to_numpy()
-    types = ['Death Cases', 'Recovered Cases', 'Active Cases']
-    result = []
-    for number, type in zip(data, types):
-        result.append([type, number])
-    return result
+    data = df[['Deaths', 'Recovered', 'Active']].sum().reset_index().to_numpy()
+    if language == 'vn':
+        result = []
+        for d in data:
+            result.append([types.get(d[0]), d[1]])
+        return result
+    else:
+        return data.tolist()
 
 
 def vietnam_summary():
@@ -234,6 +243,7 @@ def vietnam_gender():
     data = df.groupby('gender')['patient_number'].nunique().tolist()
     return list(reversed(data))
 
+
 def vietnam_gender_with_header(language):
     data = vietnam_gender()
     result = []
@@ -244,3 +254,10 @@ def vietnam_gender_with_header(language):
     result.append([gender[0], data[0]])
     result.append([gender[1], data[1]])
     return result
+
+
+def patient_summary():
+    df = pd.read_csv(VnData.objects.last().csv_file)
+    data = df[['patient_number', 'status', 'gender', 'city',
+               'description', 'age', 'nationality']].to_numpy().tolist()
+    return data

@@ -17,7 +17,8 @@
 <div class="container-fluid">
 
     <div class="m-10 mt-3 mb-4">
-        <h3 class="text-center text-gray-800">Summary Worldwide</h3>
+        <h3 class="text-center text-gray-800 lang" key="sum_world" style="text-transform: uppercase;">Summary Worldwide
+        </h3>
     </div>
 
     <div class="row">
@@ -26,7 +27,8 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">New Cases</div>
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 lang" key="new_cases">
+                                New Cases</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.5 }}</div>
                         </div>
                     </div>
@@ -39,7 +41,8 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Total Cases</div>
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1 lang"
+                                key="total_cases">Total Cases</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.4 }}</div>
                         </div>
                     </div>
@@ -52,7 +55,8 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">New Deaths</div>
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1 lang" key="new_deaths">
+                                New Deaths</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.6 }}</div>
                         </div>
                     </div>
@@ -65,7 +69,8 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1">Total Deaths</div>
+                            <div class="text-xs font-weight-bold text-dark text-uppercase mb-1 lang" key="total_deaths">
+                                Total Deaths</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.2 }}</div>
                         </div>
                     </div>
@@ -78,7 +83,8 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Active Cases</div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1 lang" key="active">
+                                Active Cases</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.3 }}</div>
                         </div>
                     </div>
@@ -91,7 +97,8 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Recovered</div>
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1 lang" key="recover">
+                                Recovered</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800 number_with_commas">{{ summary.1 }}</div>
                         </div>
                     </div>
@@ -105,7 +112,8 @@
         <div class="col-md-6">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-dark">Daily New Cases</h6>
+                    <h6 class="m-0 font-weight-bold text-dark lang" key="daily_new_cases"
+                        style="text-transform: uppercase;">Daily New Cases</h6>
                 </div>
                 <div class="card-body">
                     <div id="daily_cases_chart_div" style="height: 400px;"></div>
@@ -116,7 +124,8 @@
         <div class="col-md-6">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-dark">Daily Deaths Cases</h6>
+                    <h6 class="m-0 font-weight-bold text-dark lang" key="daily_new_deaths"
+                        style="text-transform: uppercase;">Daily Deaths Cases</h6>
                 </div>
                 <div class="card-body">
                     <div id="daily_deaths_chart_div" style="height: 400px;"></div>
@@ -129,15 +138,17 @@
         <div class="col-xl-8 col-lg-7">
             <div class="card shadow mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-dark">Global Map</h6>
+                    <h6 class="m-0 font-weight-bold text-dark lang" key='global_map'>Global Map</h6>
                     <div class="dropdown no-arrow">
                         <a class="dropdown-toggle text-dark" role="button" id="dropdownMenuLink" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false"> </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                             aria-labelledby="dropdownMenuLink">
-                            <div class="dropdown-header">Select Filter:</div>
-                            <button class="dropdown-item filter" filter_type="confirmed">Confirmed Case</button>
-                            <button class="dropdown-item filter" filter_type="cases_per_1m">Case/1M population</button>
+                            <div class="dropdown-header lang" key="select_filter">Select Filter:</div>
+                            <button class="dropdown-item filter lang" key="total_cases"
+                                filter_type="confirmed">Confirmed Case</button>
+                            <button class="dropdown-item filter lang" filter_type="cases_per_1m"
+                                key="cases_per_1m">Case/1M population</button>
                         </div>
                     </div>
                 </div>
@@ -148,15 +159,30 @@
         <div class="col-xl-4 col-lg-5">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-dark">Case Ratio</h6>
+                    <h6 class="m-0 font-weight-bold text-dark lang" key='case_ratio' style="text-transform: uppercase;">
+                        Case Ratio</h6>
                 </div>
                 <div class="card-body">
                     <div id="piechart_case_ratio"></div>
                 </div>
             </div>
+
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-dark">Case By WHO Region</h6>
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-dark lang" key='continent_ratio'
+                        style="text-transform: uppercase;"></h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle text-dark" role="button" id="dropdownMenuLinkContinent"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLinkContinent">
+                            <div class="dropdown-header lang" key="select_filter">Select Filter:</div>
+                            <button class="dropdown-item continent_filter lang" key="total_cases"
+                                filter_type="total_cases">Confirmed Case</button>
+                            <button class="dropdown-item continent_filter lang" filter_type="new_cases"
+                                key="new_cases">New Cases</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div id="piechart_region_ratio"></div>
@@ -168,7 +194,9 @@
 
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-dark">Sumarry Of Cases Worldwide Per Countries</h6>
+            <h6 class="m-0 font-weight-bold text-dark lang" key='summary_by_country' style="text-transform: uppercase;">
+                Sumarry Of Cases Worldwide Per
+                Countries</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -179,12 +207,12 @@
                             <th scope="col" class="lang" key="country">
                                 Countries and Territories
                             </th>
-                            <th scope="col" class="lang" key="new_case">New Cases</th>
+                            <th scope="col" class="lang" key="new_cases">New Cases</th>
                             <th scope="col" class="lang" key="total_cases">
                                 Total Cases
                             </th>
-                            <th scope="col" class="lang" key="new_death">New Deaths</th>
-                            <th scope="col" class="lang" key="death">Deaths</th>
+                            <th scope="col" class="lang" key="new_deaths">New Deaths</th>
+                            <th scope="col" class="lang" key="total_deaths">Deaths</th>
                             <th scope="col" class=" lang" key="cases_per_1m">
                                 Total cases/1M pop
                             </th>
@@ -200,11 +228,11 @@
                             <td scope="col">
                                 <a href="{% url 'country_view' country.0 %}" class="country_name">{{ country.0 }}</a>
                             </td>
-                            <td scope="col" class="number_with_commas">
+                            <td scope="col" class="number_with_commas" style="background-color: #FFEEAA;">
                                 {{ country.7 }}
                             </td>
                             <td scope="col" class="number_with_commas">{{ country.1 }}</td>
-                            <td scope="col" class="number_with_commas">
+                            <td scope="col" class="number_with_commas" style="background-color: #dc3545;color: white;">
                                 {{ country.8 }}
                             </td>
                             <td scope="col" class="number_with_commas">{{ country.2 }}</td>
@@ -225,17 +253,6 @@
     //draw geochart
     var geochart_data = {{ geochart_data| safe }};
     drawWorldMap(geochart_data);
-
-    //draw daily charts
-    var daily_cases_data = {{ daily_cases_data | safe }};
-    var daily_deaths_data = {{ daily_deaths_data | safe}}
-    drawDaily('daily_cases_chart_div', daily_cases_data);
-    drawDaily('daily_deaths_chart_div', daily_deaths_data)
-
-
-
-
-
 
 </script>
 {% endblock %}

@@ -18,7 +18,6 @@ function drawChart(curveData) {
 
   var options = {
     legend: { position: 'bottom' },
-    height: 500,
     series: {
       0: { targetAxisIndex: 0 },
       1: { targetAxisIndex: 1 }
@@ -239,6 +238,8 @@ function loadGeomap() {
 
 //load all chart
 document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('language') === "vn")
+    document.getElementById('patient_summary').style.display = 'block'
   loadDaily();
   loadAge();
   loadRatio();
@@ -248,7 +249,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //prepare datatable
 $(document).ready(function () {
-  $('#dataTable').DataTable({
-    "order": [[1, 'desc']]
-  });
+  if (localStorage.getItem('language') === "vn"){
+    $('#dataTable').DataTable({
+      "order": [[1, 'desc']],
+      "language": {
+        "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Vietnamese.json"
+    }
+    });
+    $('#patient_dataTable').DataTable({
+      "aaSorting": [],
+      "language": {
+        "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Vietnamese.json"
+    }
+    });
+  }
+  else{
+    $('#dataTable').DataTable({
+      "order": [[1, 'desc']]
+    });
+  }
 });
+
