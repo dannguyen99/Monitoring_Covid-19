@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import json
 
 from web.models import *
 from datetime import datetime
@@ -88,6 +89,13 @@ def continent_cases(filter_type, language):
         lasted_date = df.iloc[0]['dateRep']
         data = df.loc[df['dateRep'] == lasted_date].groupby(
             'continentExp').cases.sum().reset_index().to_numpy()
+    elif filter_type == 'total_deaths':
+        data = df.groupby('continentExp').deaths.sum(
+        ).reset_index().to_numpy()
+    elif filter_type == 'new_deaths':
+        lasted_date = df.iloc[0]['dateRep']
+        data = df.loc[df['dateRep'] == lasted_date].groupby(
+            'continentExp').deaths.sum().reset_index().to_numpy()
     if language == "vn":
         result = []
         for d in data:
@@ -126,13 +134,22 @@ def cities_geomap():
               "Bà Rịa - Vũng Tàu": "Bà Rịa-Vũng Tàu", "Đà Nẵng": "VN-DN",
               "Thừa Thiên Huế": "Thừa Thiên-Huế", "Hải Phòng": "Hải Phòng City",
               "Bạc Liêu": "VN-55", "Cần Thơ": "VN-`CT"}
+    full_cities = ['Bắc Giang', 'Bắc Kạn', 'Cao Bằng', 'Hà Giang', 'Lạng Sơn', 'Phú Thọ', 'Quảng Ninh', 'Thái Nguyên', 'Tuyên Quang', 'Lào Cai', 'Yên Bái', 'Điện Biên', 'Hòa Bình', 'Lai Châu', 'Sơn La', 'Bắc Ninh', 'Hà Nam', 'Hải Dương', 'Hưng Yên', 'Nam Định', 'Ninh Bình', 'Thái Bình', 'Vĩnh Phúc', 'Hà Nội City', 'VN-HP', 'Hà Tĩnh', 'Nghệ An', 'Quảng Bình', 'Quảng Trị', 'Thanh Hóa', 'Thừa Thiên–Huế', 'Đắk Lắk',
+                   'Đắk Nông', 'Gia Lai', 'Kon Tum', 'Lâm Đồng', 'Bình Định', 'Bình Thuận', 'Khánh Hòa', 'Ninh Thuận', 'Phú Yên', 'Quảng Nam', 'Quảng Ngãi', 'Đà Nẵng City', 'Bà Rịa–Vũng Tàu', 'Bình Dương', 'Bình Phước', 'Đồng Nai', 'Tây Ninh', 'Hồ Chí Minh City', 'An Giang', 'Bạc Liêu', 'Bến Tre', 'Cà Mau', 'Đồng Tháp', 'Hậu Giang', 'Kiên Giang', 'Long An', 'Sóc Trăng', 'Tiền Giang', 'Trà Vinh', 'Vĩnh Long', 'VN-CT', 'VN-DN']
     cities_arr = cities_summary()
     data = []
     for c in cities_arr:
         city = c[0]
         if city in cities.keys():
             c[0] = cities[city]
+            if cities[city] in full_cities:
+                full_cities.remove(cities[city])
+        else:
+            if city in full_cities:
+                full_cities.remove(city)
         data.append(c[:2])
+    for c in full_cities:
+        data.append([c, 0])
     return data
 
 
@@ -231,10 +248,18 @@ def vietnam_age():
     return data
 
 
-def vietnam_nationality():
+def vietnam_nationality(language):
+    en_nationality = {'Nga': 'Russia', 'Việt Nam': 'Vietnam', 'Ấn Độ': 'India', 'Đài Loan': 'Taiwan', 'Philippines': 'Philippines',
+                      'Trung Quốc': 'China', 'Hoa Kỳ': 'United States', 'Mi-an-ma': 'Myanmar', 'Serbia và Montenegro': 'Serbia and Montenegro',
+                      'Vương quốc Anh': 'UK', 'Thụy Điển': 'Sweden',  'Bra-xin': 'Brazil', 'Pháp': 'France', 'Đan Mạch': 'Denmark',
+                      'Cộng hòa Nam Phi': 'South Africa', 'Canada': 'Canada', 'Đức': 'Germany', 'Lát-vi-a': 'Latvia', 'Cộng hòa Séc': 'Czech Republic',
+                      'Ai-xơ-len': 'Iceland'}
     df = pd.read_csv(VnData.objects.last().csv_file)
     data = df.groupby('nationality').count().reset_index()[
         ['nationality', 'age']].to_numpy().tolist()
+    if language == "en":
+        for d in data:
+            d[0] = en_nationality.get(d[0])
     return data
 
 
@@ -261,3 +286,18 @@ def patient_summary():
     data = df[['patient_number', 'status', 'gender', 'city',
                'description', 'age', 'nationality']].to_numpy().tolist()
     return data
+
+
+def change_world_map(filter_type):
+    jhu_df = index_table()
+    if filter_type == "total_cases":
+        geochart_data = jhu_df[['Country_Region', 'Confirmed']]
+    elif filter_type == "cases_per_1m":
+        geochart_data = jhu_df[['Country_Region', 'casesPer1M']]
+    elif filter_type == "total_deaths":
+        geochart_data = jhu_df[['Country_Region', 'Deaths']]
+    elif filter_type == "new_cases":
+        geochart_data = jhu_df[['Country_Region', 'new_cases']]
+    elif filter_type == "new_deaths":
+        geochart_data = jhu_df[['Country_Region', 'new_deaths']]
+    return geochart_data.to_numpy().tolist()

@@ -1,25 +1,33 @@
 //draw World Map
-function drawWorldMap(geochartData) {
-    google.charts.load('current', {
-        'packages': ['geochart'],
-        // Note: you will need to get a mapsApiKey for your project.
-        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-    });
-    google.charts.setOnLoadCallback(function () { drawRegionsMap(geochartData) });
+function drawWorldMap(filter_type, geochartData) {
+    if (lang === "vn")
+        google.charts.load('current', {
+            'packages': ['geochart'], 'language': 'vi',
+            // Note: you will need to get a mapsApiKey for your project.
+            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+            'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+    else
+        google.charts.load('current', {
+            'packages': ['geochart'],
+            // Note: you will need to get a mapsApiKey for your project.
+            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+            'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+        });
+    google.charts.setOnLoadCallback(function () { drawRegionsMap(filter_type, geochartData) });
 }
 
-function drawRegionsMap(geochartData) {
+function drawRegionsMap(filter_type, geochartData) {
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Country');
-    data.addColumn('number', 'Confirmed/1M');
+    data.addColumn('number', arrLang[lang][filter_type]);
     data.addRows(geochartData);
     data.addRow(['Greenland', 14])
 
     var options = {
         colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
         backgroundColor: '#81d4fa',
-        datalessRegionColor: '#fff',
+        datalessRegionColor: '#f8bbd0',
         defaultColor: '#f5f5f5',
         height: 560,
     };
@@ -29,29 +37,38 @@ function drawRegionsMap(geochartData) {
     chart.draw(data, options);
 };
 
+function loadWorldMap(filter_type) {
+    $.ajax({
+        url: '/index/api',
+        data: {
+            'key': 'change_world_map',
+            'filter_type': filter_type
+        },
+        type: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            drawWorldMap(filter_type, data.geochart_data)
+        },
+        failure: function (data) {
+            alert(data.message);
+        }
+    })
+}
+
 // change world map filter
 document.querySelectorAll('.filter').forEach(button => {
     button.onclick = () => {
-        $.ajax({
-            url: '/index/change_world_map',
-            data: {
-                'filter_type': button.getAttribute("filter_type")
-            },
-            type: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                drawWorldMap(JSON.parse(data.geochart_data))
-            },
-            failure: function (data) {
-                alert(data.message);
-            }
-        })
+        filter_type = button.getAttribute("filter_type")
+        loadWorldMap(filter_type)
     }
 });
 
 //draw cases and death daily chart
 function drawDaily(divId, dailyData) {
-    google.charts.load('current', { packages: ['corechart', 'bar'] });
+    if (lang === "vn")
+        google.charts.load('current', { packages: ['corechart', 'bar'], 'language': 'vi' });
+    else
+        google.charts.load('current', { packages: ['corechart', 'bar'] });
     google.charts.setOnLoadCallback(function () { drawTrendlines(divId, dailyData) });
 }
 
@@ -61,11 +78,11 @@ function drawTrendlines(divId, dailyData) {
     data.addColumn('date', 'Day');
     if (divId === 'daily_cases_chart_div') {
         colors_l = ['#dc3545'];
-        data.addColumn('number', 'Cases');
+        data.addColumn('number', arrLang[lang]["daily_cases"]);
     }
     else {
         colors_l = ['#343a40'];
-        data.addColumn('number', 'Deaths');
+        data.addColumn('number', arrLang[lang]["daily_deaths"]);
     }
     for (d of dailyData) {
         data.addRow([new Date(d[0]), d[1]]);
@@ -83,11 +100,11 @@ function drawTrendlines(divId, dailyData) {
         },
         legend: { position: "in" },
         hAxis: {
-            title: 'Date',
+            title: arrLang[lang]["date"]
 
         },
         vAxis: {
-            title: 'Number of cases'
+            title: arrLang[lang]["daily_new_cases"]
         },
         fontName: 'Nunito',
     }
@@ -102,7 +119,7 @@ function loadDaily(divId, filter_type = '') {
         url: '/index/api',
         data: {
             'key': 'timeline_data',
-            'language': localStorage.getItem('language'),
+            'language': lang,
             'filter_type': filter_type
         },
         type: 'GET',
@@ -119,7 +136,7 @@ function loadDaily(divId, filter_type = '') {
 // prepare datatable
 
 $(document).ready(function () {
-    if (localStorage.getItem('language') === "vn") {
+    if (lang === "vn") {
         var t = $('#dataTable').DataTable({
             "columnDefs": [{
                 "searchable": false,
@@ -159,7 +176,10 @@ $(document).ready(function () {
 
 //drawRatePieChart
 function drawRatePieChart(divId, data) {
-    google.charts.load('current', { 'packages': ['corechart'] });
+    if (lang === "vn")
+        google.charts.load('current', { 'packages': ['corechart'], 'language': 'vi' });
+    else
+        google.charts.load('current', { 'packages': ['corechart'] });
     google.charts.setOnLoadCallback(function () { drawPieChart(divId, data) });
 }
 
@@ -177,6 +197,7 @@ function drawPieChart(divId, pieData) {
         chartArea: { width: '100%', height: '90%' },
         fontName: 'Nunito',
         fontSize: 15,
+
     };
 
     var chart = new google.visualization.PieChart(document.getElementById(divId));
@@ -189,7 +210,7 @@ function loadRatio(key, divId, filter_type = '') {
         url: '/index/api',
         data: {
             'key': key,
-            'language': localStorage.getItem('language'),
+            'language': lang,
             'filter_type': filter_type
         },
         type: 'GET',
@@ -214,6 +235,7 @@ document.querySelectorAll('.continent_filter').forEach(button => {
 document.addEventListener('DOMContentLoaded', (event) => {
     loadDaily('daily_cases_chart_div', 'cases')
     loadDaily('daily_deaths_chart_div', 'deaths')
+    loadWorldMap('total_cases')
     loadRatio("case_ratio", "piechart_case_ratio");
     loadRatio("continent", "piechart_region_ratio", 'total_cases')
 });

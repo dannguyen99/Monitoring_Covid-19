@@ -146,9 +146,15 @@
                             aria-labelledby="dropdownMenuLink">
                             <div class="dropdown-header lang" key="select_filter">Select Filter:</div>
                             <button class="dropdown-item filter lang" key="total_cases"
-                                filter_type="confirmed">Confirmed Case</button>
+                                filter_type="total_cases">Confirmed Case</button>
                             <button class="dropdown-item filter lang" filter_type="cases_per_1m"
                                 key="cases_per_1m">Case/1M population</button>
+                            <button class="dropdown-item filter lang" filter_type="new_cases"
+                                key="new_cases"></button>
+                            <button class="dropdown-item filter lang" filter_type="total_deaths"
+                                key="total_deaths"></button>
+                            <button class="dropdown-item filter lang" filter_type="new_deaths"
+                                key="new_deaths"></button>
                         </div>
                     </div>
                 </div>
@@ -181,6 +187,10 @@
                                 filter_type="total_cases">Confirmed Case</button>
                             <button class="dropdown-item continent_filter lang" filter_type="new_cases"
                                 key="new_cases">New Cases</button>
+                            <button class="dropdown-item continent_filter lang" filter_type="total_deaths"
+                                key="total_deaths">Total Deaths</button>
+                            <button class="dropdown-item continent_filter lang" filter_type="new_deaths"
+                                key="new_deaths">Total Deaths</button>
                         </div>
                     </div>
                 </div>
@@ -249,10 +259,4 @@
 
 </div>
 <script type="text/javascript" src="{% static 'web/js/index.js' %}"></script>
-<script type="text/javascript">
-    //draw geochart
-    var geochart_data = {{ geochart_data| safe }};
-    drawWorldMap(geochart_data);
-
-</script>
 {% endblock %}

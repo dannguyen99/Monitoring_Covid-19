@@ -21,33 +21,36 @@ arrLang["en"]["vietnamese"] = "Vietnamese";
 // index
 arrLang["en"]["sum_world"] = "SUMMARY WORLDWIDE";
 arrLang["en"]["sum_vn"] = "Summary in Vietnam";
-arrLang["en"]["daily_new_cases"] = "DAILY NEW CASES";
-arrLang["en"]["daily_new_deaths"] = "DAILY NEW DEATHS";
+arrLang["en"]["daily_new_cases"] = "Number of cases";
+arrLang["en"]["daily_new_deaths"] = "Number of deaths";
 arrLang["en"]["global_map"] = "COVID-19 GLOBAL MAP"
 arrLang["en"]["cases_per_1m"] = "Case/1M population";
 arrLang["en"]["select_filter"] = "Select Filter:";
-arrLang["en"]["case_ratio"] = "Cases Ratio by Status";
+arrLang["en"]["case_ratio"] = "number of cases by status";
 arrLang["en"]["continent_ratio"] = "number of cases by continent";
 arrLang["en"]["summary_by_country"] = "COVID-19 Summary by Country";
+arrLang["en"]["date"] = "Date";
+arrLang["en"]["daily_cases"] = "Daily cases";
+arrLang["en"]["daily_deaths"] = "Daily deaths";
 
 //vietnam
 arrLang["en"]["daily_confirmed_death"] = "Daily Confirmed and Death Cases(Last 3 months)";
 arrLang["en"]["city"] = "City/Province";
 arrLang["en"]["summary_by_city"] = "COVID-19 Summary by City";
-arrLang["en"]["vietnam_incidence_ratio"] = "COVID-19 INCIDENCE RATE BY GENDER";
-arrLang["en"]["vietnam_nationality_ratio"] = "COVID-19 INCIDENCE RATE BY Nationality";
+arrLang["en"]["vietnam_incidence_ratio"] = "Number of cases by gender";
+arrLang["en"]["vietnam_nationality_ratio"] = "Number of cases by nationality";
 arrLang["en"]["vietnam_agerange"] = "COVID-19 Cases by Age Ranges";
 arrLang["en"]["vietnam_daily_gender"] = "COVID-19 Daily cases by gender";
-
+arrLang["en"]["agerange"] = "Age range";
 
 arrLang["en"]["total_cases"] = "Total cases";
 arrLang["en"]["active"] = "Actives";
 arrLang["en"]["recover"] = "Recovered";
-arrLang["en"]["total_deaths"] = "Death";
+arrLang["en"]["total_deaths"] = "Deaths";
 arrLang["en"]["incidence_rate"] = "Incidence Rate"
 arrLang["en"]["case_fatality_ratio"] = "Case-fatality Ratio"
-arrLang["en"]["new_cases"] = "New Cases";
-arrLang["en"]["new_deaths"] = "New Deaths";
+arrLang["en"]["new_cases"] = "New cases";
+arrLang["en"]["new_deaths"] = "New deaths";
 arrLang["en"]["per_country"] = "SUMMARY OF CASES WORLDWIDE PER COUNTRIES";
 arrLang["en"]["world_map"] = "COVID-19 World map";
 arrLang["en"]["vn_map"] = "COVID-19 Vietnam map";
@@ -86,18 +89,22 @@ arrLang["vn"]["daily_new_deaths"] = "Số ca tử vong";
 arrLang["vn"]["global_map"] = "BẢN ĐỒ COVID-19 TOÀN CẦU";
 arrLang["vn"]["cases_per_1m"] = "Số ca nhiễm/1 triệu người";
 arrLang["vn"]["select_filter"] = "Chọn bộ lọc:";
-arrLang["vn"]["case_ratio"] = "Tỉ lệ ca nhiễm theo trạng thái";
-arrLang["vn"]["continent_ratio"] = "tỉ lệ ca nhiễm theo lục địa";
+arrLang["vn"]["case_ratio"] = "Số ca nhiễm theo trạng thái";
+arrLang["vn"]["continent_ratio"] = "số ca nhiễm theo lục địa";
 arrLang["vn"]["summary_by_country"] = "Tổng quan COVID-19 ở các quốc gia";
+arrLang["vn"]["date"] = "Ngày";
+arrLang["vn"]["daily_cases"] = "Ca nhiễm trong ngày";
+arrLang["vn"]["daily_deaths"] = "Ca tử vong trong ngày";
 
 //vietnam
-arrLang["vn"]["daily_confirmed_death"] = "Ca nhiễm mới và tử vong theo ngày (3 tháng gần nhất)";
+arrLang["vn"]["daily_confirmed_death"] = "Số ca nhiễm mới và tử vong (3 tháng gần nhất)";
 arrLang["vn"]["city"] = "Tỉnh/Thành phố";
 arrLang["vn"]["summary_by_city"] = "Tổng quan COVID-19 ở các Tỉnh/Thành phố";
-arrLang["vn"]["vietnam_incidence_ratio"] = "Tỉ lệ ca nhiễm theo giới tính";
-arrLang["vn"]["vietnam_nationality_ratio"] = "tỉ lệ ca nhiễm theo quốc tịch";
+arrLang["vn"]["vietnam_incidence_ratio"] = "Số ca nhiễm theo giới tính";
+arrLang["vn"]["vietnam_nationality_ratio"] = "số ca nhiễm theo quốc tịch";
 arrLang["vn"]["vietnam_agerange"] = "Biểu đồ ca nhiễm theo độ tuổi"
 arrLang["vn"]["vietnam_daily_gender"] = "Tỉ lệ nhiễm mới nam và nữ theo ngày";
+arrLang["vn"]["agerange"] = "Độ tuổi";
 
 arrLang["vn"]["total_cases"] = "Số ca nhiễm";
 arrLang["vn"]["active"] = "Đang điều trị";

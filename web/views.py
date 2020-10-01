@@ -30,22 +30,6 @@ def index(request):
     }
     return render(request, 'web/index.html', context)
 
-
-def change_world_map(request):
-    try:
-        jhu_df = views_functions.index_table()
-        filter_type = request.GET['filter_type']
-        geochart_data = jhu_df.dropna().to_numpy()
-        if filter_type == "confirmed":
-            geochart_data = geochart_data[:, [0, 5]]
-        else:
-            geochart_data = geochart_data[:, [0, 12]]
-        geochart_data = json.dumps(geochart_data.tolist())
-        return JsonResponse({"success": True, "geochart_data": geochart_data})
-    except Exception as e:
-        return JsonResponse({"success": False, "message": str(e)})
-
-
 def last_update(request):
     try:
         with open('app.log', 'r') as log_file:

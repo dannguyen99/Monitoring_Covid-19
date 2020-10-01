@@ -1,6 +1,9 @@
 //draw daily data
 function drawCurveChart(curveData) {
-  google.charts.load('current', { 'packages': ['corechart'] });
+  if (lang === "vn")
+    google.charts.load('current', { 'packages': ['corechart'], 'language': 'vi' });
+  else
+    google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(function () { drawChart(curveData) });
 }
 
@@ -8,8 +11,8 @@ function drawCurveChart(curveData) {
 function drawChart(curveData) {
   var data = new google.visualization.DataTable();
   data.addColumn('date', 'Date');
-  data.addColumn('number', 'Confirmed Cases');
-  data.addColumn('number', 'Death Cases')
+  data.addColumn('number', arrLang[lang]['daily_cases']);
+  data.addColumn('number', arrLang[lang]['daily_deaths'])
 
   for (d of curveData) {
     day = new Date(d[0])
@@ -26,9 +29,9 @@ function drawChart(curveData) {
     fontSize: 15,
     vAxes: {
       // Adds titles to each axis.
-      0: { title: 'Confirmed Cases' },
+      0: { title: arrLang[lang]['total_cases'] },
       1: {
-        title: 'Death Cases',
+        title: arrLang[lang]['total_deaths'],
         format: '#,#'
       }
     },
@@ -59,7 +62,10 @@ function loadDaily() {
 
 //draw age chart
 function drawAgeChart(histoData) {
-  google.charts.load("current", { packages: ["corechart"] });
+  if (lang === "vn")
+    google.charts.load('current', { 'packages': ['corechart'], 'language': 'vi' });
+  else
+    google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(function () { drawHistogram(histoData) });
 }
 
@@ -67,16 +73,16 @@ function drawAgeChart(histoData) {
 function drawHistogram(histoData) {
   var data = new google.visualization.DataTable()
   data.addColumn('string', 'Patient')
-  data.addColumn('number', 'Age')
+  data.addColumn('number', arrLang[lang]['agerange'])
   data.addRows(histoData)
 
   var options = {
     hAxis: {
-      title: 'Age Range',
+      title: arrLang[lang]['agerange'],
 
     },
     vAxis: {
-      title: 'Number of Cases'
+      title: arrLang[lang]['total_cases']
     },
     fontName: 'Nunito',
     fontSize: 15,
@@ -107,7 +113,10 @@ function loadAge() {
 
 //draw rate pie chart
 function drawRatePieChart(data) {
-  google.charts.load('current', { 'packages': ['corechart'] });
+  if (lang === "vn")
+    google.charts.load('current', { 'packages': ['corechart'], 'language': 'vi' });
+  else
+    google.charts.load('current', { 'packages': ['corechart'] });
   google.charts.setOnLoadCallback(function () { drawPieChart(data) });
 }
 
@@ -136,6 +145,7 @@ function loadRatio() {
     url: '/vietnam/api',
     data: {
       'key': 'nationality',
+      'language': lang
     },
     type: 'GET',
     dataType: 'json',
@@ -149,18 +159,21 @@ function loadRatio() {
 }
 
 //draw Gender chart
-function loadGenderRatio(){
+function loadGenderRatio() {
   $.ajax({
     url: '/vietnam/api',
     data: {
       'key': 'gender',
       'option': 'header',
-      'language': localStorage.getItem('language')
+      'language': lang
     },
     type: 'GET',
     dataType: 'json',
     success: (returnData) => {
-      google.charts.load('current', {'packages':['corechart']});
+      if (lang === "vn")
+        google.charts.load('current', { 'packages': ['corechart'], 'language': 'vi' });
+      else
+        google.charts.load('current', { 'packages': ['corechart'] });
       google.charts.setOnLoadCallback(drawGenderRateChart);
 
       function drawGenderRateChart() {
@@ -189,19 +202,27 @@ function loadGenderRatio(){
 
 // draw geomap
 function drawCityGeomap(data) {
-  google.charts.load('current', {
-    'packages': ['geochart'],
-    // Note: you will need to get a mapsApiKey for your project.
-    // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-  });
+  if (lang === "vn")
+    google.charts.load('current', {
+      'packages': ['geochart'], 'language': 'vi',
+      // Note: you will need to get a mapsApiKey for your project.
+      // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    });
+  else
+    google.charts.load('current', {
+      'packages': ['geochart'],
+      // Note: you will need to get a mapsApiKey for your project.
+      // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+      'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    });
   google.charts.setOnLoadCallback(function () { drawGeomap(data) });
 }
 
 function drawGeomap(geoData) {
   var data = new google.visualization.DataTable();
   data.addColumn('string', "City/Province")
-  data.addColumn('number', 'Confirmed')
+  data.addColumn('number', arrLang[lang]['total_cases'])
   data.addRows(geoData)
 
 
@@ -209,7 +230,7 @@ function drawGeomap(geoData) {
     region: 'VN',
     colorAxis: { colors: ['#00853f', 'black', '#e31b23'] },
     backgroundColor: '#81d4fa',
-    datalessRegionColor: '#fff',
+    datalessRegionColor: '#f8bbd0',
     defaultColor: '#f5f5f5',
     resolution: "provinces",
     keepAspectRatio: false
@@ -238,7 +259,7 @@ function loadGeomap() {
 
 //load all chart
 document.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('language') === "vn")
+  if (lang === "vn")
     document.getElementById('patient_summary').style.display = 'block'
   loadDaily();
   loadAge();
@@ -249,21 +270,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //prepare datatable
 $(document).ready(function () {
-  if (localStorage.getItem('language') === "vn"){
+  if (lang === "vn") {
     $('#dataTable').DataTable({
       "order": [[1, 'desc']],
       "language": {
         "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Vietnamese.json"
-    }
+      }
     });
     $('#patient_dataTable').DataTable({
       "aaSorting": [],
       "language": {
         "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Vietnamese.json"
-    }
+      }
     });
   }
-  else{
+  else {
     $('#dataTable').DataTable({
       "order": [[1, 'desc']]
     });

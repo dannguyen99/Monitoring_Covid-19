@@ -28,7 +28,11 @@ def index_view_api(request):
                 data = daily_data[:, [0, 1]].tolist()
             else:
                 data = daily_data[:, [0, 2]].tolist()
-            return JsonResponse({"success": True, "data": data}) 
+            return JsonResponse({"success": True, "data": data})
+        elif key =="change_world_map":
+            filter_type = request.GET['filter_type']
+            data = views_functions.change_world_map(filter_type)
+            return JsonResponse({"success": True, "geochart_data": data})
     except Exception as e:
         return JsonResponse({"success": False, "message": str(e)})
 
@@ -46,7 +50,7 @@ def vietnam_view_api(request):
             data = views_functions.vietnam_age()
             return JsonResponse({"success": True, "data": data})
         elif key == "nationality":
-            data = views_functions.vietnam_nationality()
+            data = views_functions.vietnam_nationality(request.GET['language'])
             return JsonResponse({"success": True, "data": data})
         elif key == "city_summary":
             data = views_functions.cities_summary()
