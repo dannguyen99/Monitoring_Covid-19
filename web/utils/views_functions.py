@@ -301,3 +301,13 @@ def change_world_map(filter_type):
     elif filter_type == "new_deaths":
         geochart_data = jhu_df[['Country_Region', 'new_deaths']]
     return geochart_data.to_numpy().tolist()
+
+def vietnam_gender_timeline():
+    data_list = VnData.objects.filter(date__gte='2020-09-28').all()
+    data = []
+    for d in data_list:
+        df = pd.read_csv(d.csv_file)
+        number = df.groupby('gender')['patient_number'].nunique().tolist()
+        number.append(d.date.strftime("%Y-%m-%d"))
+        data.append(list(reversed(number)))
+    return data

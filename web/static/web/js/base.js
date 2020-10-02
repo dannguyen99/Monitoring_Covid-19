@@ -42,6 +42,8 @@ arrLang["en"]["vietnam_nationality_ratio"] = "Number of cases by nationality";
 arrLang["en"]["vietnam_agerange"] = "COVID-19 Cases by Age Ranges";
 arrLang["en"]["vietnam_daily_gender"] = "COVID-19 Daily cases by gender";
 arrLang["en"]["agerange"] = "Age range";
+arrLang["en"]["male"] = "Male";
+arrLang["en"]["female"] = "Female";
 
 arrLang["en"]["total_cases"] = "Total cases";
 arrLang["en"]["active"] = "Actives";
@@ -105,6 +107,8 @@ arrLang["vn"]["vietnam_nationality_ratio"] = "số ca nhiễm theo quốc tịch
 arrLang["vn"]["vietnam_agerange"] = "Biểu đồ ca nhiễm theo độ tuổi"
 arrLang["vn"]["vietnam_daily_gender"] = "Tỉ lệ nhiễm mới nam và nữ theo ngày";
 arrLang["vn"]["agerange"] = "Độ tuổi";
+arrLang["vn"]["male"] = "Nam";
+arrLang["vn"]["female"] = "Nữ";
 
 arrLang["vn"]["total_cases"] = "Số ca nhiễm";
 arrLang["vn"]["active"] = "Đang điều trị";

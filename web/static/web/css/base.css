@@ -11,3 +11,7 @@ body {
   display:block;
   font-size: .7rem;
 }
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+width: 80%;
+}

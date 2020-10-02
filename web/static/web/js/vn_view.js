@@ -257,19 +257,55 @@ function loadGeomap() {
   })
 }
 
-//load all chart
-document.addEventListener('DOMContentLoaded', () => {
-  if (lang === "vn")
-    document.getElementById('patient_summary').style.display = 'block'
-  loadDaily();
-  loadAge();
-  loadRatio();
-  loadGeomap();
-  loadGenderRatio()
-});
+function loadGenderTimeline() {
+  $.ajax({
+    url: '/vietnam/api',
+    data: {
+      'key': 'gender',
+      'option': 'timeline'
+    },
+    type: 'GET',
+    dataType: 'json',
+    success: (returnData) => {
+      google.charts.load('current', { 'packages': ['bar'] });
+      google.charts.setOnLoadCallback(drawTimeline);
+
+      function drawTimeline() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('date', arrLang[lang]['date'])
+        data.addColumn('number', arrLang[lang]['male']);
+        data.addColumn('number', arrLang[lang]['female']);
+        
+        for (d of returnData.data) {
+          day = new Date(d[0])
+          data.addRow([day, d[1], d[2]]);
+        }
+
+        var options = {
+          hAxis: {
+            title: arrLang[lang]['date'],
+      
+          },
+          vAxis: {
+            title: arrLang[lang]['total_cases']
+          },
+          fontName: 'Nunito',
+          fontSize: 15,
+          legend: { position: 'top' },
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('gender_chart'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    },
+    failure: function (data) {
+      alert(data.message);
+    }
+  })
+}
 
 //prepare datatable
-$(document).ready(function () {
+function prepareDatatable() {
   if (lang === "vn") {
     $('#dataTable').DataTable({
       "order": [[1, 'desc']],
@@ -289,5 +325,20 @@ $(document).ready(function () {
       "order": [[1, 'desc']]
     });
   }
+}
+
+//load all chart
+document.addEventListener('DOMContentLoaded', () => {
+  if (lang === "vn")
+    document.getElementById('patient_summary').style.display = 'block'
+  loadDaily();
+  loadAge();
+  loadRatio();
+  loadGeomap();
+  loadGenderRatio()
+  loadGenderTimeline();
+  prepareDatatable()
 });
+
+
 

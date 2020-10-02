@@ -16,7 +16,8 @@ def index_view_api(request):
             return JsonResponse({"success": True, "data": data})
         elif key == "continent":
             filter_type = request.GET['filter_type']
-            data = views_functions.continent_cases(filter_type, request.GET['language'])
+            data = views_functions.continent_cases(
+                filter_type, request.GET['language'])
             return JsonResponse({"success": True, "data": data})
         elif key == "country_summary":
             data = views_functions.country_summary()
@@ -29,7 +30,7 @@ def index_view_api(request):
             else:
                 data = daily_data[:, [0, 2]].tolist()
             return JsonResponse({"success": True, "data": data})
-        elif key =="change_world_map":
+        elif key == "change_world_map":
             filter_type = request.GET['filter_type']
             data = views_functions.change_world_map(filter_type)
             return JsonResponse({"success": True, "geochart_data": data})
@@ -58,8 +59,12 @@ def vietnam_view_api(request):
         elif key == "gender":
             if request.GET.get('option'):
                 if request.GET['option'] == "header":
-                    data = views_functions.vietnam_gender_with_header(request.GET['language'])
-                return JsonResponse({"success": True, "data": data})
+                    data = views_functions.vietnam_gender_with_header(
+                        request.GET['language'])
+                    return JsonResponse({"success": True, "data": data})
+                elif request.GET['option'] == "timeline":
+                    data = views_functions.vietnam_gender_timeline()
+                    return JsonResponse({"success": True, "data": data})
             else:
                 data = views_functions.vietnam_gender()
                 return JsonResponse({"success": True, "data": data})

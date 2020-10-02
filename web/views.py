@@ -30,6 +30,7 @@ def index(request):
     }
     return render(request, 'web/index.html', context)
 
+
 def last_update(request):
     try:
         with open('app.log', 'r') as log_file:
@@ -46,26 +47,9 @@ def last_update(request):
 
 
 def vietnam_view(request):
-    rows = []
-    sexs = []
-    for d in VnData.objects.filter(date__range=["2020-01-01", "2020-08-31"]).order_by('date'):
-        csv_file = pd.read_csv(d.csv_file)
-        if d.data_type == "PT":
-            age_csv = csv_file
-            sex = []
-            stats = csv_file.groupby(
-                'Gender')['Patient number'].nunique().to_numpy()
-            male = int(stats[0])
-            female = int(stats[1])
-            total = male + female
-            sex.append(datetime.strftime(d.date, '%d/%m'))
-            sex.append(male)
-            sex.append(female)
-            sexs.append(sex)
     summary = views_functions.vietnam_summary()
     cities_summary = views_functions.cities_summary()
     context = {
-        "sexs": json.dumps(sexs),
         "summary": summary,
         "cities_summary": cities_summary,
         "patient_summary": views_functions.patient_summary()
