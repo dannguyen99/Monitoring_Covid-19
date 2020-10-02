@@ -248,7 +248,7 @@ def vietnam_age():
     return data
 
 
-def vietnam_nationality(language):
+def vietnam_nationality(language='vi'):
     en_nationality = {'Nga': 'Russia', 'Việt Nam': 'Vietnam', 'Ấn Độ': 'India', 'Đài Loan': 'Taiwan', 'Philippines': 'Philippines',
                       'Trung Quốc': 'China', 'Hoa Kỳ': 'United States', 'Mi-an-ma': 'Myanmar', 'Serbia và Montenegro': 'Serbia and Montenegro',
                       'Vương quốc Anh': 'UK', 'Thụy Điển': 'Sweden',  'Bra-xin': 'Brazil', 'Pháp': 'France', 'Đan Mạch': 'Denmark',
