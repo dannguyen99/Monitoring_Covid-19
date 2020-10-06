@@ -54,7 +54,7 @@ def vietnam_view_api(request):
             if request.GET.get('language'):
                 data = views_functions.vietnam_nationality(request.GET['language'])
             else:
-                data = views_functions.vietnam_nationality()
+                data = views_functions.vietnam_nationality('en')
             return JsonResponse({"success": True, "data": data})
         elif key == "city_summary":
             data = views_functions.cities_summary()
