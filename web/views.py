@@ -98,3 +98,6 @@ def test(request):
         "data": data
     }
     return render(request, 'web/test.html', context)
+
+def covid19(request):
+    return render(request, 'web/covid19.html')

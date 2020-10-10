@@ -86,7 +86,8 @@ function drawHistogram(histoData) {
     },
     fontName: 'Nunito',
     fontSize: 15,
-    legend: { position: 'none' }
+    legend: { position: 'none' },
+    histogram: { bucketSize: 10 }
   };
 
   var chart = new google.visualization.Histogram(document.getElementById('age_chart'));
