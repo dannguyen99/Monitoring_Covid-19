@@ -2,55 +2,100 @@
 <title>About us</title>
 <link href="{% static 'web/css/about.css' %}" rel="stylesheet">
 {% endblock %} {% block body %}
-<div class="row">
-  <!--Profile Card 5-->
-  <div class="col-md-4 mt-4">
-    <div class="card profile-card-5">
-      <div class="card-img-block">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c"
-          alt="Card image cap">
-      </div>
-      <div class="card-body pt-0">
-        <h5 class="card-title">Florence Garza</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
+<div class="container-fluid">
+  <h3 class="font-weight-bold text-dark lang" style="text-align:center;margin-bottom: 20px;">About this website</h3>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <p style="color: black;">In December 2019, a local outbreak of pneumonia of initially unknown cause was detected
+        in Wuhan(Hubei Province,
+        China), and was quickly determined to be caused by a novel coronavirus, namely severe acute respiratory syndrome
+        coronavirus 2 (SARS-CoV-2). This disease rapidly spread to other parts of China and other countries around the
+        world, despite China’s massive efforts to contain the disease within Hubei. As of 8th October 2020, there had
+        been 35.6 million confirmed cases worldwide, and more than 1.05 million deaths had been attributed to COVID-19
+      </p>
+      <p style="color: black;">In response to this ongoing public health emergency, we developed anonline interactive
+        website to visualize and
+        track reported cases of COVID-19in real-time. The web application illustrates the location and number of
+        con-firmed COVID-19 cases, deaths, and recoveries for all affected countries. Italso provides better
+        visualization and monitoring of the pandemic situationutilizing charts and tables. The website was developed to
+        provide researchersand the general public with a user-friendly tool to track the outbreak as itunfolds. All data
+        collected and displayed are made freely available throughan API system along with the original records, which
+        are now included inthe GitHub repository of the project.</p>
     </div>
-    <p class="mt-3 w-100 float-left text-center"><strong>Card with Floting Picture</strong></p>
   </div>
 
-  <div class="col-md-4 mt-4">
-    <div class="card profile-card-5">
-      <div class="card-img-block">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c"
-          alt="Card image cap">
-      </div>
-      <div class="card-body pt-0">
-        <h5 class="card-title">Florence Garza</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
-      </div>
-    </div>
-    <p class="mt-3 w-100 float-left text-center"><strong>Card with Floting Picture</strong></p>
-  </div>
-  
-  <div class="col-md-4 mt-4">
-    <div class="card profile-card-5">
-      <div class="card-img-block">
-        <img class="card-img-top" src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c"
-          alt="Card image cap">
-      </div>
-      <div class="card-body pt-0">
-        <h5 class="card-title">Florence Garza</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-
+  <h3 class="font-weight-bold text-dark lang" style="text-align:center;margin-top: 50px;">Meet Our Team</h3>
+  <div class="row">
+    <!--Profile Card 4-->
+    <div class="col-md-4 mt-4">
+      <div class="card profile-card-4 shadow">
+        <div class="card-img-block">
+          <div class="info-box">Department of Computer Science, Faculty of Computer Sciences and Electrical
+            Engineering, VSB.</div>
+          <img class="img-fluid"
+            src="https://lh3.googleusercontent.com/proxy/ivLIcgltVagO8SqgTofdEhjh3FqRyifNnwMO56S1ix3SsUFbsQceuJI0NSFXm7bMt0oEglq6zYFFydZNn0h4WzxwFaEVQ629ZrfqvFo2vBle9hd3Fw"
+            alt="Card image cap">
+        </div>
+        <div class="card-body pt-5">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="profile-image" class="profile" />
+          <h5 class="card-title text-center">Dr. Sebastián Basterrech</h5>
+          <p class="card-text text-center">Project Supervisor
+          </p>
+          <div class="icon-block text-center">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
       </div>
     </div>
-    <p class="mt-3 w-100 float-left text-center"><strong>Card with Floting Picture</strong></p>
+    <!--Profile Card 4-->
+    <div class="col-md-4 mt-4">
+      <div class="card profile-card-4 shadow">
+        <div class="card-img-block">
+          <div class="info-box">Bachelor in Information and Communication Technology (ICT), University of Science and
+            Technology of Hanoi</div>
+          <img class="img-fluid" src="https://usth.edu.vn/uploads/tin-tuc/2020_04/1-4/usth.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body pt-5">
+          <img
+            src="https://instagram.fhan1-1.fna.fbcdn.net/v/t51.2885-15/e35/60480993_2315963675130998_92777120321115993_n.jpg?_nc_ht=instagram.fhan1-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=vTtYUZhp49kAX-9mvoj&_nc_tp=18&oh=6ecf9dc746734f7a60a7106b527b1063&oe=5FAA8DE3"
+            alt="profile-image" class="profile" />
+          <h5 class="card-title text-center">Nguyen Tri Huan</h5>
+          <p class="card-text text-center">Android Application Developer</p>
+          <div class="icon-block text-center">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Profile Card 4-->
+    <div class="col-md-4 mt-4">
+      <div class="card profile-card-4 shadow">
+        <div class="card-img-block">
+          <div class="info-box">Bachelor in Information and Communication Technology (ICT), University of Science and
+            Technology of Hanoi</div>
+          <img class="img-fluid" src="https://usth.edu.vn/uploads/tin-tuc/2020_04/1-4/usth.jpg" alt="Card image cap">
+        </div>
+        <div class="card-body pt-5">
+          <img
+            src="https://scontent.fhan1-1.fna.fbcdn.net/v/t1.0-0/p600x600/84329549_1698709460269043_557861624061362176_o.jpg?_nc_cat=103&_nc_sid=09cbfe&_nc_ohc=zYpjCft9NJ8AX9ph9ww&_nc_ht=scontent.fhan1-1.fna&tp=6&oh=7000123bf7b502c7f715ea2de146eeb2&oe=5FA6DACD"
+            alt="profile-image" class="profile" />
+          <h5 class="card-title text-center">Nguyen Duc Dan</h5>
+          <p class="card-text text-center">Web Application Developer</p>
+          <div class="icon-block text-center">
+            <a href="https://www.facebook.com/dan.nguyen.718689/"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/mrkaitou1412"><i class="fa fa-twitter"></i></a>
+            <a href="https://github.com/dannguyen99"><i class="fa fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
-
 {% endblock %}
