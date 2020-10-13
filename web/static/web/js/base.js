@@ -145,7 +145,7 @@ $(document).ready(function () {
 });
 
 // load change language localstorage
-var lang = localStorage.getItem('language');
+var lang = localStorage.getItem('language') == null ? "en" : localStorage.getItem('language');
 
 function numberWithCommas(number) {
     x = number.innerHTML
@@ -193,14 +193,14 @@ function setSection() {
 }
 
 function setLanguageButton() {
-    if (localStorage.getItem('language') === "vn"){
+    if (localStorage.getItem('language') === "vn") {
         var s = document.createElement('SPAN');
         s.className = 'flag-icon flag-icon-vn'
         var nd = document.getElementById('navbarDropdown')
         nd.appendChild(s)
-        nd.innerHTML+=  ' Tiếng Việt'
+        nd.innerHTML += ' Tiếng Việt'
     }
-    else{
+    else {
         var s = document.createElement('SPAN');
         s.className = 'flag-icon flag-icon-us'
         var nd = document.getElementById('navbarDropdown')
