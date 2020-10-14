@@ -1,0 +1,99 @@
+{% extends "web/base.html" %} {% load static %} {% block head%}
+<title>COVID-19</title>
+<link href="{% static 'web/css/covid19.css' %}" rel="stylesheet">
+
+<script src="{% static 'web/js/covid19.js' %}"></script>
+{% endblock %} {% block body %}
+<div class="container-fluid">
+    <h3 class="font-weight-bold text-dark lang" style="text-align:center;" key="what_is_corona">What is a
+        coronavirus?
+    </h3>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <p class="lang" key="what_is_corona_ans">Coronaviruses are a large family of viruses which may cause illness
+                in animals or
+                humans. In humans, several coronaviruses are known to cause respiratory infections ranging from
+                the
+                common cold to more severe diseases such as Middle East Respiratory Syndrome (MERS) and Severe
+                Acute
+                Respiratory Syndrome (SARS). The most recently discovered coronavirus causes coronavirus disease
+                COVID-19.</p>
+        </div>
+    </div>
+
+    <h3 class="font-weight-bold text-dark lang" style="text-align:center;" key="what_is_covid19">What is COVID-19?</h3>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <p class="lang" key="what_is_covid19_ans">COVID-19 is the infectious disease caused by the most recently
+                discovered coronavirus. This new
+                virus
+                and
+                disease were unknown before the outbreak began in Wuhan, China, in December 2019. COVID-19 is
+                now a
+                pandemic affecting many countries globally.</p>
+        </div>
+    </div>
+
+    <h3 class="font-weight-bold text-dark lang" style="text-align:center;" key="what_are_symptoms"> What are the
+        symptoms of COVID-19?</h3>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <ul></ul>
+            <li class="lang" key="fever">Fever or chills</li>
+            <li class="lang" key="cough">Cough</li>
+            <li class="lang" key="fatigue">Fatigue</li>
+            <li class="lang" key="breath">Shortness of breath or difficulty breathing</li>
+            <li class="lang" key="muscle">Muscle or body aches</li>
+            <li class="lang" key="loss_of_taste">New loss of taste or smell</li>
+            <li class="lang" key="sore_throat">Sore throat</li>
+            <li class="lang" key="congestion">Congestion or runny nose</li>
+            <li class="lang" key="nausea">Nausea or vomiting</li>
+            <li class="lang" key="headche">Headache</li>
+            <li class="lang" key="diarrhea">Diarrhea</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3 class="font-weight-bold text-dark lang" style="text-align:center;" key="how_spread"> How does COVID-19 spread?
+    </h3>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <p class="lang" key="how_spread_ans"> People can catch COVID-19 from others who have the virus. The disease
+                spreads primarily from person to
+                person through small droplets from the nose or mouth, which are expelled when a person with COVID-19
+                coughs,
+                sneezes, or speaks. These droplets are relatively heavy, do not travel far and quickly sink to the
+                ground.
+                People can catch COVID-19 if they breathe in these droplets from a person infected with the virus. This
+                is
+                why it is important to stay at least 1 meter) away from others. These droplets can land on objects and
+                surfaces around the person such as tables, doorknobs and handrails. People can become infected by
+                touching
+                these objects or surfaces, then touching their eyes, nose or mouth. This is why it is important to wash
+                your
+                hands regularly with soap and water or clean with alcohol-based hand rub.
+
+                WHO is assessing ongoing research on the ways that COVID-19 is spread and will continue to share updated
+                findings.</p>
+        </div>
+    </div>
+
+
+    <h3 class="font-weight-bold text-dark lang" style="text-align:center;" key="how_protect"> How can we protect others
+        and ourselves if we don't know who is infected?
+
+    </h3>
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <p class="lang" key="how_protect_ans"> Practicing hand and respiratory hygiene is important at ALL times and
+                is the best way to protect others and yourself.
+
+                When possible maintain at least a 1 meter distance between yourself and others. This is especially
+                important if you are standing by someone who is coughing or sneezing. Since some infected persons may
+                not yet be exhibiting symptoms or their symptoms may be mild, maintaining a physical distance with
+                everyone is a good idea if you are in an area where COVID-19 is circulating. </p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

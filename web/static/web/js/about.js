@@ -1,0 +1,17 @@
+//english
+arrLang["en"]["about_this_website"] = "About This Website"
+arrLang["en"]["our_team"] = "Meet Our Team"
+arrLang["en"]["project_supervisor"] = "Project Supervisor"
+arrLang["en"]["android_developer"] = "Android Application Developer"
+arrLang["en"]["web_developer"] = "Web Application Developer"
+arrLang["en"]["about_web_1"] = "In December 2019, a local outbreak of pneumonia of initially unknown cause was detected in Wuhan(Hubei Province, China), and was quickly determined to be caused by a novel coronavirus, namely severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). This disease rapidly spread to other parts of China and other countries around the world, despite China’s massive efforts to contain the disease within Hubei. As of 8th October 2020, there had been 35.6 million confirmed cases worldwide, and more than 1.05 million deaths had been attributed to COVID-19"
+arrLang["en"]["about_web_2"] = "In response to this ongoing public health emergency, we developed anonline interactive website to visualize and track reported cases of COVID-19 in real-time. The web application illustrates the location and number of confirmed COVID-19 cases, deaths, and recoveries for all affected countries. It also provides better visualization and monitoring of the pandemic situation utilizing charts and tables. The website was developed to provide researchers and the general public with a user-friendly tool to track the outbreak as it unfolds. All data collected and displayed are made freely available through an API system along with the original records, which are now included in the GitHub repository of the project."
+
+//vietnamese
+arrLang["vn"]["about_this_website"] = "Về Trang Này"
+arrLang["vn"]["our_team"] = "Đội Ngũ Phát Triển"
+arrLang["vn"]["project_supervisor"] = "Giám Sát Dự Án"
+arrLang["vn"]["android_developer"] = "Phát Triển Ứng Dụng Android"
+arrLang["vn"]["web_developer"] = "Phát Triển Ứng Dụng Web"
+arrLang["vn"]["about_web_1"] = "Vào tháng 12 năm 2019, một ổ dịch viêm phổi địa phương ban đầu không rõ nguyên nhân đã được phát hiện ở Vũ Hán (tỉnh Hồ Bắc, Trung Quốc) và nhanh chóng được xác định là do một loại coronavirus mới, cụ thể là coronavirus 2 (SARS-CoV-2) gây ra. Căn bệnh này nhanh chóng lây lan sang các khu vực khác của Trung Quốc và các quốc gia khác trên thế giới, bất chấp những nỗ lực lớn của Trung Quốc nhằm ngăn chặn dịch bệnh ở Hồ Bắc. Tính đến ngày 8 tháng 10 năm 2020, đã có 35,6 triệu trường hợp được xác nhận trên toàn thế giới và hơn 1,05 triệu trường hợp tử vong được cho là do COVID-19"
+arrLang["vn"]["about_web_2"] = "Để đối phó với tình trạng khẩn cấp liên tục về sức khỏe cộng đồng này, chúng tôi đã phát triển trang web tương tác trực tuyến để trực quan hóa và theo dõi các trường hợp COVID-19 được báo cáo trong thời gian thực. Ứng dụng web minh họa vị trí và số lượng các trường hợp, tử vong và phục hồi COVID-19 được xác nhận cho tất cả các quốc gia bị ảnh hưởng. Nó cũng cung cấp hình ảnh và giám sát tốt hơn về tình hình đại dịch bằng cách sử dụng các biểu đồ và bảng. Trang web được phát triển để cung cấp cho các nhà nghiên cứu và công chúng một công cụ thân thiện với người dùng để theo dõi sự bùng phát khi nó bùng phát. Tất cả dữ liệu được thu thập và hiển thị đều được cung cấp miễn phí thông qua hệ thống API cùng với các bản ghi gốc, hiện được đưa vào kho lưu trữ GitHub của dự án."

@@ -45,6 +45,11 @@ arrLang["en"]["agerange"] = "Age range";
 arrLang["en"]["male"] = "Male";
 arrLang["en"]["female"] = "Female";
 
+//about
+
+
+
+
 arrLang["en"]["total_cases"] = "Total cases";
 arrLang["en"]["active"] = "Actives";
 arrLang["en"]["recover"] = "Recovered";
@@ -109,6 +114,10 @@ arrLang["vn"]["vietnam_daily_gender"] = "Tỉ lệ nhiễm mới nam và nữ th
 arrLang["vn"]["agerange"] = "Độ tuổi";
 arrLang["vn"]["male"] = "Nam";
 arrLang["vn"]["female"] = "Nữ";
+
+//about
+
+
 
 arrLang["vn"]["total_cases"] = "Số ca nhiễm";
 arrLang["vn"]["active"] = "Đang điều trị";

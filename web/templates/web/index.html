@@ -1,5 +1,5 @@
 {% extends "web/base.html" %} {% load static %} {% block head%}
-<title>Home</title>
+<title class="lang" key="world">Home</title>
 
 <link rel="stylesheet" href="{% static 'web/css/index.css' %}" />
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
@@ -109,7 +109,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-xl-6 col-md-12 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-dark lang" key="daily_new_cases"
@@ -121,7 +121,7 @@
             </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-xl-6 col-md-12 mb-4">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-dark lang" key="daily_new_deaths"

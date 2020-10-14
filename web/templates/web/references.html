@@ -1,34 +1,89 @@
 {% extends "web/base.html" %} {% load static %} {% block head%}
-<title>References</title>
+<title class="lang" key="references">References</title>
+
+<script src="{% static 'web/js/references.js' %}"></script>
+<link href="{% static 'web/css/references.css' %}" rel="stylesheet">
 {% endblock %} {% block body %}
-<div class="mt-5" style="margin-left: 2%;">
-  <h2 class="lang" key="references">
+<div class="container-fluid">
+  <h3 class="font-weight-bold text-dark lang" style="text-align:center;margin-bottom: 100px;" key="references">
     References
-  </h2>
-  <ul>
-    <li>
-      <a href="https://ncov.moh.gov.vn/"
-        >TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19
-      </a>
-    </li>
-    <li>
-      <a href="https://www.worldometers.info/coronavirus/"
-        >COVID-19 CORONAVIRUS PANDEMIC
-      </a>
-    </li>
-    <li>
-      <a href="https://coronavirus.jhu.edu/map.html">
-        COVID-19 Dashboard by the Center for Systems Science and Engineering
-        (CSSE) at Johns Hopkins University (JHU)
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://www.ecdc.europa.eu/en/geographical-distribution-2019-ncov-cases"
-      >
-        European Centre for Disease Prevention and Control
-      </a>
-    </li>
-  </ul>
+  </h3>
+  <div class="row">
+
+    <div class="col-xl-6 col-md-6 mb-4">
+      <div class="card shadow mb-4 text-center">
+        <div class="card-header py-3">
+          <h5 class="m-0 font-weight-bold text-dark lang">
+            WHO Coronavirus Disease (COVID-19) Dashboard</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text lang" key="who">The World Health Organization is a specialized agency of the United
+            Nations responsible
+            for international public health. WHO is considered the largest health organization in the world. <br>The WHO
+            coronavirus disease (COVID-19) dashboard provides official daily counts of confirmed cases and deaths
+            reported by countries, territories and areas.</p>
+          <a href="https://covid19.who.int/" class="btn btn-primary lang" key="go_to_source">Go to source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6 col-md-6 mb-4">
+      <div class="card shadow mb-4 text-center">
+        <div class="card-header py-3">
+          <h5 class="m-0 font-weight-bold text-dark lang">
+            COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins
+            University</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text lang" key="jhu">This is the data repository for the 2019 Novel Coronavirus Visual
+            Dashboard operated by
+            the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). Also, Supported by ESRI
+            Living Atlas Team and the Johns Hopkins University Applied Physics Lab (JHU APL).</p>
+          <a href="https://coronavirus.jhu.edu/map.html" class="btn btn-primary lang" key="go_to_source">Go to
+            source</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-xl-6 col-md-6 mb-4">
+      <div class="card shadow mb-4 text-center">
+        <div class="card-header py-3">
+          <h5 class="m-0 font-weight-bold text-dark lang">
+
+            European Centre for Disease Prevention and Control</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text lang" key="ecdc">ECDC is an EU agency aimed at strengthening Europe's defences
+            against infectious
+            diseases. The core functions cover a wide spectrum of activities: surveillance, epidemic intelligence,
+            response, scientific advice, microbiology, preparedness, public health training, international relations,
+            health communication, and the scientific journal Eurosurveillance.</p>
+          <a href="https://coronavirus.jhu.edu/map.html" class="btn btn-primary lang" key="go_to_source">Go to
+            source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xl-6 col-md-6 mb-4">
+      <div class="card shadow mb-4 text-center">
+        <div class="card-header py-3">
+          <h5 class="m-0 font-weight-bold text-dark lang">
+            TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19 - Ministry of Health of Vietnam</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text lang" key="moh">The Ministry of Health is the government ministry responsible for
+          the governance and
+          guidance of the health, healthcare and health industry of Vietnam. <br>
+          TRANG TIN VỀ DỊCH BỆNH VIÊM ĐƯỜNG HÔ HẤP CẤP COVID-19 is the official website for news and information of
+          COVID-19 pandemic in Vietnam</p>
+          <a href="https://coronavirus.jhu.edu/map.html" class="btn btn-primary lang" key="go_to_source">Go to
+            source</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 {% endblock %}

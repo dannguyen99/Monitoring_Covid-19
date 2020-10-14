@@ -13,6 +13,8 @@
         integrity="sha512-Cv93isQdFwaKBV+Z4X8kaVBYWHST58Xb/jVOcV9aRsGSArZsgAnFIhMpDoMDcFNoUtday1hdjn0nGp3+KZyyFw=="
         crossorigin="anonymous" />
 
+    <link rel="icon" href="{% static 'web/images/32.png' %}" type="image/gif" sizes="32x32">
+
     <!-- JS, Popper.js, and jQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
@@ -48,7 +50,9 @@
 
 <body id="page-top">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark mb-4">
-        <a class="navbar-brand" href="{% url 'index' %} " key="brand">COVID-19 Dashboard <small id="last_update">Last
+        <a class="navbar-brand" href="{% url 'index' %} " key="brand">
+            <img src="{% static 'web/images/playstore.png' %}" width="35" height="35"
+                class="d-inline-block align-top" alt=""> COVID-19 Dashboard <small id="last_update">Last
                 update</small></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,6 +70,9 @@
                         <a class="dropdown-item lang" href="{% url 'vietnam' %}" key="vn">Vietnam</a>
                         <!-- <a class="dropdown-item" href="{% url 'visualization' %}">Visualization</a> -->
                     </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link lang" href="{% url 'covid19' %}" key="covid19">COVID-19</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link lang" href="{% url 'about' %}" key="about">About</a>
