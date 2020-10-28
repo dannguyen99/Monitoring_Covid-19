@@ -406,3 +406,7 @@
 2020-10-27 08:36:01 ; root ; INFO ; Successfully updated data from ECDC on 10-27-2020
 2020-10-27 08:38:11 ; root ; INFO ; Successfully updated data from VN on 10-27-2020
 2020-10-27 08:38:12 ; root ; INFO ; Successfully updated data from WHO on 10-27-2020
+2020-10-28 09:37:33 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-10-28 09:38:20 ; root ; INFO ; Successfully updated data from ECDC on 10-28-2020
+2020-10-28 09:40:51 ; root ; INFO ; Successfully updated data from VN on 10-28-2020
+2020-10-28 09:40:54 ; root ; INFO ; Successfully updated data from WHO on 10-28-2020
