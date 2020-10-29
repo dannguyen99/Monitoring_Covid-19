@@ -293,6 +293,7 @@ function loadGenderTimeline() {
           fontName: 'Nunito',
           fontSize: 15,
           legend: { position: 'top' },
+          isStacked: true,
         };
 
         var chart = new google.charts.Bar(document.getElementById('gender_chart'));
