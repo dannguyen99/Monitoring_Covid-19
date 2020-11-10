@@ -450,3 +450,7 @@
 2020-11-09 09:32:55 ; root ; INFO ; Successfully updated data from ECDC on 11-09-2020
 2020-11-09 09:35:34 ; root ; INFO ; Successfully updated data from VN on 11-09-2020
 2020-11-09 09:35:37 ; root ; INFO ; Successfully updated data from WHO on 11-09-2020
+2020-11-10 08:51:05 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-11-10 08:51:31 ; root ; INFO ; Successfully updated data from ECDC on 11-10-2020
+2020-11-10 08:53:51 ; root ; INFO ; Successfully updated data from VN on 11-10-2020
+2020-11-10 08:53:53 ; root ; INFO ; Successfully updated data from WHO on 11-10-2020
