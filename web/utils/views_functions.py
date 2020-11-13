@@ -253,7 +253,7 @@ def vietnam_nationality(language='vi'):
                       'Trung Quốc': 'China', 'Hoa Kỳ': 'United States', 'Mi-an-ma': 'Myanmar', 'Serbia và Montenegro': 'Serbia and Montenegro',
                       'Vương quốc Anh': 'UK', 'Thụy Điển': 'Sweden',  'Bra-xin': 'Brazil', 'Pháp': 'France', 'Đan Mạch': 'Denmark',
                       'Cộng hòa Nam Phi': 'South Africa', 'Canada': 'Canada', 'Đức': 'Germany', 'Lát-vi-a': 'Latvia', 'Cộng hòa Séc': 'Czech Republic',
-                      'Ai-xơ-len': 'Iceland', 'Malaysia':'Malaysia', 'Úc': 'Australia'}
+                      'Ai-xơ-len': 'Iceland', 'Malaysia': 'Malaysia', 'Úc': 'Australia', 'Hung-ga-ri': 'Hungary', 'Đức': 'Germany'}
     df = pd.read_csv(VnData.objects.last().csv_file)
     data = df.groupby('nationality').count().reset_index()[
         ['nationality', 'age']].to_numpy().tolist()
@@ -301,6 +301,7 @@ def change_world_map(filter_type):
     elif filter_type == "new_deaths":
         geochart_data = jhu_df[['Country_Region', 'new_deaths']]
     return geochart_data.to_numpy().tolist()
+
 
 def vietnam_gender_timeline():
     data_list = VnData.objects.filter(date__gte='2020-09-28').all()
