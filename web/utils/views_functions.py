@@ -253,7 +253,7 @@ def vietnam_nationality(language='vi'):
                       'Trung Quốc': 'China', 'Hoa Kỳ': 'United States', 'Mi-an-ma': 'Myanmar', 'Serbia và Montenegro': 'Serbia and Montenegro',
                       'Vương quốc Anh': 'UK', 'Thụy Điển': 'Sweden',  'Bra-xin': 'Brazil', 'Pháp': 'France', 'Đan Mạch': 'Denmark',
                       'Cộng hòa Nam Phi': 'South Africa', 'Canada': 'Canada', 'Đức': 'Germany', 'Lát-vi-a': 'Latvia', 'Cộng hòa Séc': 'Czech Republic',
-                      'Ai-xơ-len': 'Iceland', 'Malaysia': 'Malaysia', 'Úc': 'Australia', 'Hung-ga-ri': 'Hungary', 'Đức': 'Germany'}
+                      'Ai-xơ-len': 'Iceland', 'Malaysia': 'Malaysia', 'Úc': 'Australia', 'Hung-ga-ri': 'Hungary', 'Đức': 'Germany', 'Israel': 'Israel'}
     df = pd.read_csv(VnData.objects.last().csv_file)
     data = df.groupby('nationality').count().reset_index()[
         ['nationality', 'age']].to_numpy().tolist()
