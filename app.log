@@ -466,3 +466,13 @@
 2020-11-13 08:49:14 ; root ; INFO ; Successfully updated data from ECDC on 11-13-2020
 2020-11-13 08:52:55 ; root ; INFO ; Successfully updated data from VN on 11-13-2020
 2020-11-13 08:52:57 ; root ; INFO ; Successfully updated data from WHO on 11-13-2020
+2020-11-16 09:08:01 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-11-16 09:08:23 ; root ; INFO ; Successfully updated data from ECDC on 11-16-2020
+2020-11-16 09:11:16 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-11-16 09:12:14 ; root ; INFO ; Successfully updated data from ECDC on 11-16-2020
+2020-11-16 09:16:17 ; root ; INFO ; Successfully updated data from VN on 11-16-2020
+2020-11-16 09:16:19 ; root ; INFO ; Successfully updated data from WHO on 11-16-2020
+2020-11-16 09:16:24 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-11-16 09:17:03 ; root ; INFO ; Successfully updated data from ECDC on 11-16-2020
+2020-11-16 09:20:18 ; root ; INFO ; Successfully updated data from VN on 11-16-2020
+2020-11-16 09:20:21 ; root ; INFO ; Successfully updated data from WHO on 11-16-2020
