@@ -46,7 +46,7 @@ def index_daily_cases_chart():
     begin_day = last_day - relativedelta(months=3)
     begin = begin_day.strftime("%Y-%m-%d")
     df = df.loc[df['Date_reported'] >= begin][[
-        'Date_reported', ' New_cases', ' New_deaths']]
+        'Date_reported', 'New_cases', 'New_deaths']]
     data = df.groupby('Date_reported').sum().reset_index().to_numpy()
     return data
 
@@ -69,10 +69,10 @@ def world_summary():
     df = pd.read_csv(WhoData.objects.last().csv_file)
     lasted_date = df.iloc[-1]['Date_reported']
     temp = df.loc[df['Date_reported'] == lasted_date][[
-        ' New_cases', ' New_deaths']].sum().astype(int).tolist()
+        'New_cases', 'New_deaths']].sum().astype(int).tolist()
     data.append(temp[0])
     data.append(temp[1])
-    temp = df[[' New_cases', ' New_deaths']].sum().astype(int).tolist()
+    temp = df[['New_cases', 'New_deaths']].sum().astype(int).tolist()
     data[2] = temp[1]
     data[4] = temp[0]
     return data
