@@ -520,3 +520,9 @@
 2020-11-26 09:14:49 ; root ; INFO ; Successfully updated data from ECDC on 11-26-2020
 2020-11-26 09:18:57 ; root ; INFO ; Successfully updated data from VN on 11-26-2020
 2020-11-26 09:19:01 ; root ; INFO ; Successfully updated data from WHO on 11-26-2020
+2020-11-27 08:42:24 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-11-27 08:42:50 ; root ; INFO ; Successfully updated data from ECDC on 11-27-2020
+2020-11-27 09:23:51 ; root ; ERROR ; HTTP Error 404: Not Found
+2020-11-27 09:24:12 ; root ; INFO ; Successfully updated data from ECDC on 11-27-2020
+2020-11-27 09:27:35 ; root ; INFO ; Successfully updated data from VN on 11-27-2020
+2020-11-27 09:27:39 ; root ; INFO ; Successfully updated data from WHO on 11-27-2020
