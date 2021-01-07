@@ -1,0 +1,1 @@
+$ git clone https://git.vmo.dev/c3/BSS352-SmartBuilding/backend.git

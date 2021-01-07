@@ -616,3 +616,11 @@
 2021-01-05 08:49:14 ; root ; INFO ; Successfully updated data from ECDC on 01-05-2021
 2021-01-05 08:53:02 ; root ; INFO ; Successfully updated data from VN on 01-05-2021
 2021-01-05 08:53:07 ; root ; INFO ; Successfully updated data from WHO on 01-05-2021
+2021-01-06 09:56:10 ; root ; ERROR ; HTTP Error 404: Not Found
+2021-01-06 09:56:17 ; root ; INFO ; Successfully updated data from ECDC on 01-06-2021
+2021-01-06 09:59:14 ; root ; INFO ; Successfully updated data from VN on 01-06-2021
+2021-01-06 09:59:17 ; root ; INFO ; Successfully updated data from WHO on 01-06-2021
+2021-01-07 14:29:15 ; root ; INFO ; Successfully updated data from JHU on 01-07-2021
+2021-01-07 14:29:22 ; root ; INFO ; Successfully updated data from ECDC on 01-07-2021
+2021-01-07 14:50:56 ; root ; INFO ; Successfully updated data from VN on 01-07-2021
+2021-01-07 14:50:59 ; root ; INFO ; Successfully updated data from WHO on 01-07-2021
